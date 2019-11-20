@@ -5,9 +5,9 @@
   <subtitle>大佬闫的博客</subtitle>
   <link href="/luggage.github.io/atom.xml" rel="self"/>
   
-  <link href="https://addonepiece.github.io/luggage.github.io/"/>
+  <link href="https://addonepiece.github.io/"/>
   <updated>2019-11-20T06:33:52.658Z</updated>
-  <id>https://addonepiece.github.io/luggage.github.io/</id>
+  <id>https://addonepiece.github.io/</id>
   
   <author>
     <name>dalaoyan</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>基于Vue、ElementUI的换肤解决方案</title>
-    <link href="https://addonepiece.github.io/luggage.github.io/2019/07/01/vue-element-change-theme/"/>
-    <id>https://addonepiece.github.io/luggage.github.io/2019/07/01/vue-element-change-theme/</id>
+    <link href="https://addonepiece.github.io/2019/07/01/vue-element-change-theme/"/>
+    <id>https://addonepiece.github.io/2019/07/01/vue-element-change-theme/</id>
     <published>2019-06-30T19:25:24.000Z</published>
     <updated>2019-11-20T06:33:52.658Z</updated>
     
@@ -32,19 +32,19 @@
     
     </summary>
     
-      <category term="前端" scheme="https://addonepiece.github.io/luggage.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+      <category term="前端" scheme="https://addonepiece.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
-      <category term="JavaScript" scheme="https://addonepiece.github.io/luggage.github.io/tags/JavaScript/"/>
+      <category term="JavaScript" scheme="https://addonepiece.github.io/tags/JavaScript/"/>
     
-      <category term="Vue" scheme="https://addonepiece.github.io/luggage.github.io/tags/Vue/"/>
+      <category term="Vue" scheme="https://addonepiece.github.io/tags/Vue/"/>
     
   </entry>
   
   <entry>
     <title>【转】如何优雅处理前端异常</title>
-    <link href="https://addonepiece.github.io/luggage.github.io/2019/05/01/js-exception-handing/"/>
-    <id>https://addonepiece.github.io/luggage.github.io/2019/05/01/js-exception-handing/</id>
+    <link href="https://addonepiece.github.io/2019/05/01/js-exception-handing/"/>
+    <id>https://addonepiece.github.io/2019/05/01/js-exception-handing/</id>
     <published>2019-04-30T19:25:24.000Z</published>
     <updated>2019-11-20T06:33:52.650Z</updated>
     
@@ -59,17 +59,17 @@
     
     </summary>
     
-      <category term="前端" scheme="https://addonepiece.github.io/luggage.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+      <category term="前端" scheme="https://addonepiece.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
-      <category term="JavaScript" scheme="https://addonepiece.github.io/luggage.github.io/tags/JavaScript/"/>
+      <category term="JavaScript" scheme="https://addonepiece.github.io/tags/JavaScript/"/>
     
   </entry>
   
   <entry>
     <title>手把手教你 Vue 服务端渲染</title>
-    <link href="https://addonepiece.github.io/luggage.github.io/2019/03/31/vue-ssr/"/>
-    <id>https://addonepiece.github.io/luggage.github.io/2019/03/31/vue-ssr/</id>
+    <link href="https://addonepiece.github.io/2019/03/31/vue-ssr/"/>
+    <id>https://addonepiece.github.io/2019/03/31/vue-ssr/</id>
     <published>2019-03-30T23:25:24.000Z</published>
     <updated>2019-11-20T06:33:52.659Z</updated>
     
@@ -83,17 +83,17 @@
     
     </summary>
     
-      <category term="前端" scheme="https://addonepiece.github.io/luggage.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+      <category term="前端" scheme="https://addonepiece.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
-      <category term="Vue" scheme="https://addonepiece.github.io/luggage.github.io/tags/Vue/"/>
+      <category term="Vue" scheme="https://addonepiece.github.io/tags/Vue/"/>
     
   </entry>
   
   <entry>
     <title>使用 Travis CI 自动更新 GitHub Pages</title>
-    <link href="https://addonepiece.github.io/luggage.github.io/2019/02/05/travis-ci/"/>
-    <id>https://addonepiece.github.io/luggage.github.io/2019/02/05/travis-ci/</id>
+    <link href="https://addonepiece.github.io/2019/02/05/travis-ci/"/>
+    <id>https://addonepiece.github.io/2019/02/05/travis-ci/</id>
     <published>2019-02-04T23:25:24.000Z</published>
     <updated>2019-11-20T06:33:52.657Z</updated>
     
@@ -105,17 +105,17 @@
     
     </summary>
     
-      <category term="前端" scheme="https://addonepiece.github.io/luggage.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+      <category term="前端" scheme="https://addonepiece.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
-      <category term="CI" scheme="https://addonepiece.github.io/luggage.github.io/tags/CI/"/>
+      <category term="CI" scheme="https://addonepiece.github.io/tags/CI/"/>
     
   </entry>
   
   <entry>
     <title>Hexo-NexT搭建个人博客（六）</title>
-    <link href="https://addonepiece.github.io/luggage.github.io/2018/10/15/hexo-next-six/"/>
-    <id>https://addonepiece.github.io/luggage.github.io/2018/10/15/hexo-next-six/</id>
+    <link href="https://addonepiece.github.io/2018/10/15/hexo-next-six/"/>
+    <id>https://addonepiece.github.io/2018/10/15/hexo-next-six/</id>
     <published>2018-10-15T15:25:24.000Z</published>
     <updated>2019-11-20T06:33:52.647Z</updated>
     
@@ -129,19 +129,19 @@
     
     </summary>
     
-      <category term="Hexo" scheme="https://addonepiece.github.io/luggage.github.io/categories/Hexo/"/>
+      <category term="Hexo" scheme="https://addonepiece.github.io/categories/Hexo/"/>
     
     
-      <category term="Hexo" scheme="https://addonepiece.github.io/luggage.github.io/tags/Hexo/"/>
+      <category term="Hexo" scheme="https://addonepiece.github.io/tags/Hexo/"/>
     
-      <category term="Next" scheme="https://addonepiece.github.io/luggage.github.io/tags/Next/"/>
+      <category term="Next" scheme="https://addonepiece.github.io/tags/Next/"/>
     
   </entry>
   
   <entry>
     <title>Yarn安装与使用详细介绍</title>
-    <link href="https://addonepiece.github.io/luggage.github.io/2018/07/20/yarn/"/>
-    <id>https://addonepiece.github.io/luggage.github.io/2018/07/20/yarn/</id>
+    <link href="https://addonepiece.github.io/2018/07/20/yarn/"/>
+    <id>https://addonepiece.github.io/2018/07/20/yarn/</id>
     <published>2018-07-19T19:25:24.000Z</published>
     <updated>2019-11-20T06:33:52.660Z</updated>
     
@@ -157,17 +157,17 @@
     
     </summary>
     
-      <category term="前端" scheme="https://addonepiece.github.io/luggage.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+      <category term="前端" scheme="https://addonepiece.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
-      <category term="Yarn" scheme="https://addonepiece.github.io/luggage.github.io/tags/Yarn/"/>
+      <category term="Yarn" scheme="https://addonepiece.github.io/tags/Yarn/"/>
     
   </entry>
   
   <entry>
     <title>Vue 服务端渲染 or 预渲染</title>
-    <link href="https://addonepiece.github.io/luggage.github.io/2018/06/18/vue-prerender/"/>
-    <id>https://addonepiece.github.io/luggage.github.io/2018/06/18/vue-prerender/</id>
+    <link href="https://addonepiece.github.io/2018/06/18/vue-prerender/"/>
+    <id>https://addonepiece.github.io/2018/06/18/vue-prerender/</id>
     <published>2018-06-18T08:25:24.000Z</published>
     <updated>2019-11-20T06:33:52.658Z</updated>
     
@@ -180,17 +180,17 @@
     
     </summary>
     
-      <category term="前端" scheme="https://addonepiece.github.io/luggage.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+      <category term="前端" scheme="https://addonepiece.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
-      <category term="vue" scheme="https://addonepiece.github.io/luggage.github.io/tags/vue/"/>
+      <category term="vue" scheme="https://addonepiece.github.io/tags/vue/"/>
     
   </entry>
   
   <entry>
     <title>关于 JavaScript 中 this 的详细总结</title>
-    <link href="https://addonepiece.github.io/luggage.github.io/2018/06/01/js-this/"/>
-    <id>https://addonepiece.github.io/luggage.github.io/2018/06/01/js-this/</id>
+    <link href="https://addonepiece.github.io/2018/06/01/js-this/"/>
+    <id>https://addonepiece.github.io/2018/06/01/js-this/</id>
     <published>2018-05-31T19:25:24.000Z</published>
     <updated>2019-11-20T06:33:52.652Z</updated>
     
@@ -209,17 +209,17 @@
     
     </summary>
     
-      <category term="前端" scheme="https://addonepiece.github.io/luggage.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+      <category term="前端" scheme="https://addonepiece.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
-      <category term="JavaScript" scheme="https://addonepiece.github.io/luggage.github.io/tags/JavaScript/"/>
+      <category term="JavaScript" scheme="https://addonepiece.github.io/tags/JavaScript/"/>
     
   </entry>
   
   <entry>
     <title>vue2.x 做一个音乐app</title>
-    <link href="https://addonepiece.github.io/luggage.github.io/2018/05/01/vue-music/"/>
-    <id>https://addonepiece.github.io/luggage.github.io/2018/05/01/vue-music/</id>
+    <link href="https://addonepiece.github.io/2018/05/01/vue-music/"/>
+    <id>https://addonepiece.github.io/2018/05/01/vue-music/</id>
     <published>2018-04-30T19:25:24.000Z</published>
     <updated>2019-11-20T06:33:52.658Z</updated>
     
@@ -231,17 +231,17 @@
     
     </summary>
     
-      <category term="前端" scheme="https://addonepiece.github.io/luggage.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+      <category term="前端" scheme="https://addonepiece.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
-      <category term="vue" scheme="https://addonepiece.github.io/luggage.github.io/tags/vue/"/>
+      <category term="vue" scheme="https://addonepiece.github.io/tags/vue/"/>
     
   </entry>
   
   <entry>
     <title>vue2.x 做一个外卖app</title>
-    <link href="https://addonepiece.github.io/luggage.github.io/2017/11/11/vue-sell/"/>
-    <id>https://addonepiece.github.io/luggage.github.io/2017/11/11/vue-sell/</id>
+    <link href="https://addonepiece.github.io/2017/11/11/vue-sell/"/>
+    <id>https://addonepiece.github.io/2017/11/11/vue-sell/</id>
     <published>2017-11-10T19:25:24.000Z</published>
     <updated>2019-11-20T06:33:52.658Z</updated>
     
@@ -256,17 +256,17 @@
     
     </summary>
     
-      <category term="前端" scheme="https://addonepiece.github.io/luggage.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+      <category term="前端" scheme="https://addonepiece.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
-      <category term="vue" scheme="https://addonepiece.github.io/luggage.github.io/tags/vue/"/>
+      <category term="vue" scheme="https://addonepiece.github.io/tags/vue/"/>
     
   </entry>
   
   <entry>
     <title>Hexo-NexT搭建个人博客（五）</title>
-    <link href="https://addonepiece.github.io/luggage.github.io/2017/07/15/hexo-next-five/"/>
-    <id>https://addonepiece.github.io/luggage.github.io/2017/07/15/hexo-next-five/</id>
+    <link href="https://addonepiece.github.io/2017/07/15/hexo-next-five/"/>
+    <id>https://addonepiece.github.io/2017/07/15/hexo-next-five/</id>
     <published>2017-07-15T15:25:24.000Z</published>
     <updated>2019-11-20T06:33:52.647Z</updated>
     
@@ -281,19 +281,19 @@
     
     </summary>
     
-      <category term="Hexo" scheme="https://addonepiece.github.io/luggage.github.io/categories/Hexo/"/>
+      <category term="Hexo" scheme="https://addonepiece.github.io/categories/Hexo/"/>
     
     
-      <category term="Hexo" scheme="https://addonepiece.github.io/luggage.github.io/tags/Hexo/"/>
+      <category term="Hexo" scheme="https://addonepiece.github.io/tags/Hexo/"/>
     
-      <category term="Next" scheme="https://addonepiece.github.io/luggage.github.io/tags/Next/"/>
+      <category term="Next" scheme="https://addonepiece.github.io/tags/Next/"/>
     
   </entry>
   
   <entry>
     <title>CSS 各种Hack手段</title>
-    <link href="https://addonepiece.github.io/luggage.github.io/2017/06/25/css-hack/"/>
-    <id>https://addonepiece.github.io/luggage.github.io/2017/06/25/css-hack/</id>
+    <link href="https://addonepiece.github.io/2017/06/25/css-hack/"/>
+    <id>https://addonepiece.github.io/2017/06/25/css-hack/</id>
     <published>2017-06-24T19:25:24.000Z</published>
     <updated>2019-11-20T06:33:52.645Z</updated>
     
@@ -305,17 +305,17 @@
     
     </summary>
     
-      <category term="前端" scheme="https://addonepiece.github.io/luggage.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+      <category term="前端" scheme="https://addonepiece.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
-      <category term="CSS" scheme="https://addonepiece.github.io/luggage.github.io/tags/CSS/"/>
+      <category term="CSS" scheme="https://addonepiece.github.io/tags/CSS/"/>
     
   </entry>
   
   <entry>
     <title>使用 Service worker 实现加速/离线访问博客</title>
-    <link href="https://addonepiece.github.io/luggage.github.io/2017/06/08/service-worker/"/>
-    <id>https://addonepiece.github.io/luggage.github.io/2017/06/08/service-worker/</id>
+    <link href="https://addonepiece.github.io/2017/06/08/service-worker/"/>
+    <id>https://addonepiece.github.io/2017/06/08/service-worker/</id>
     <published>2017-06-08T03:25:24.000Z</published>
     <updated>2019-11-20T06:33:52.655Z</updated>
     
@@ -328,17 +328,17 @@
     
     </summary>
     
-      <category term="前端" scheme="https://addonepiece.github.io/luggage.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+      <category term="前端" scheme="https://addonepiece.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
-      <category term="Service-worker" scheme="https://addonepiece.github.io/luggage.github.io/tags/Service-worker/"/>
+      <category term="Service-worker" scheme="https://addonepiece.github.io/tags/Service-worker/"/>
     
   </entry>
   
   <entry>
     <title>npm 的一个小细节</title>
-    <link href="https://addonepiece.github.io/luggage.github.io/2017/05/20/npm-two/"/>
-    <id>https://addonepiece.github.io/luggage.github.io/2017/05/20/npm-two/</id>
+    <link href="https://addonepiece.github.io/2017/05/20/npm-two/"/>
+    <id>https://addonepiece.github.io/2017/05/20/npm-two/</id>
     <published>2017-05-19T17:25:24.000Z</published>
     <updated>2019-11-20T06:33:52.654Z</updated>
     
@@ -351,17 +351,17 @@
     
     </summary>
     
-      <category term="前端" scheme="https://addonepiece.github.io/luggage.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+      <category term="前端" scheme="https://addonepiece.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
-      <category term="npm" scheme="https://addonepiece.github.io/luggage.github.io/tags/npm/"/>
+      <category term="npm" scheme="https://addonepiece.github.io/tags/npm/"/>
     
   </entry>
   
   <entry>
     <title>gulp 详解与使用</title>
-    <link href="https://addonepiece.github.io/luggage.github.io/2017/05/01/gulp/"/>
-    <id>https://addonepiece.github.io/luggage.github.io/2017/05/01/gulp/</id>
+    <link href="https://addonepiece.github.io/2017/05/01/gulp/"/>
+    <id>https://addonepiece.github.io/2017/05/01/gulp/</id>
     <published>2017-04-30T17:25:24.000Z</published>
     <updated>2019-11-20T06:33:52.646Z</updated>
     
@@ -375,17 +375,17 @@
     
     </summary>
     
-      <category term="前端" scheme="https://addonepiece.github.io/luggage.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+      <category term="前端" scheme="https://addonepiece.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
-      <category term="gulp" scheme="https://addonepiece.github.io/luggage.github.io/tags/gulp/"/>
+      <category term="gulp" scheme="https://addonepiece.github.io/tags/gulp/"/>
     
   </entry>
   
   <entry>
     <title>npm 全面介绍</title>
-    <link href="https://addonepiece.github.io/luggage.github.io/2017/04/10/npm/"/>
-    <id>https://addonepiece.github.io/luggage.github.io/2017/04/10/npm/</id>
+    <link href="https://addonepiece.github.io/2017/04/10/npm/"/>
+    <id>https://addonepiece.github.io/2017/04/10/npm/</id>
     <published>2017-04-09T19:25:24.000Z</published>
     <updated>2019-11-20T06:33:52.654Z</updated>
     
@@ -397,17 +397,17 @@
     
     </summary>
     
-      <category term="前端" scheme="https://addonepiece.github.io/luggage.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+      <category term="前端" scheme="https://addonepiece.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
-      <category term="npm" scheme="https://addonepiece.github.io/luggage.github.io/tags/npm/"/>
+      <category term="npm" scheme="https://addonepiece.github.io/tags/npm/"/>
     
   </entry>
   
   <entry>
     <title>AMD，CMD 规范详解</title>
-    <link href="https://addonepiece.github.io/luggage.github.io/2017/03/20/amd-cmd/"/>
-    <id>https://addonepiece.github.io/luggage.github.io/2017/03/20/amd-cmd/</id>
+    <link href="https://addonepiece.github.io/2017/03/20/amd-cmd/"/>
+    <id>https://addonepiece.github.io/2017/03/20/amd-cmd/</id>
     <published>2017-03-19T19:25:24.000Z</published>
     <updated>2019-11-20T06:33:52.645Z</updated>
     
@@ -419,17 +419,17 @@
     
     </summary>
     
-      <category term="前端" scheme="https://addonepiece.github.io/luggage.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+      <category term="前端" scheme="https://addonepiece.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
-      <category term="JavaScript" scheme="https://addonepiece.github.io/luggage.github.io/tags/JavaScript/"/>
+      <category term="JavaScript" scheme="https://addonepiece.github.io/tags/JavaScript/"/>
     
   </entry>
   
   <entry>
     <title>CommonJS 详细介绍</title>
-    <link href="https://addonepiece.github.io/luggage.github.io/2017/03/07/commonjs/"/>
-    <id>https://addonepiece.github.io/luggage.github.io/2017/03/07/commonjs/</id>
+    <link href="https://addonepiece.github.io/2017/03/07/commonjs/"/>
+    <id>https://addonepiece.github.io/2017/03/07/commonjs/</id>
     <published>2017-03-07T05:25:24.000Z</published>
     <updated>2019-11-20T06:33:52.645Z</updated>
     
@@ -441,17 +441,17 @@
     
     </summary>
     
-      <category term="前端" scheme="https://addonepiece.github.io/luggage.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+      <category term="前端" scheme="https://addonepiece.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
-      <category term="JavaScript" scheme="https://addonepiece.github.io/luggage.github.io/tags/JavaScript/"/>
+      <category term="JavaScript" scheme="https://addonepiece.github.io/tags/JavaScript/"/>
     
   </entry>
   
   <entry>
     <title>如何解决内存泄漏引发的血案</title>
-    <link href="https://addonepiece.github.io/luggage.github.io/2017/02/28/memory-leak/"/>
-    <id>https://addonepiece.github.io/luggage.github.io/2017/02/28/memory-leak/</id>
+    <link href="https://addonepiece.github.io/2017/02/28/memory-leak/"/>
+    <id>https://addonepiece.github.io/2017/02/28/memory-leak/</id>
     <published>2017-02-27T17:01:00.000Z</published>
     <updated>2019-11-20T06:33:52.653Z</updated>
     
@@ -464,17 +464,17 @@
     
     </summary>
     
-      <category term="综合" scheme="https://addonepiece.github.io/luggage.github.io/categories/%E7%BB%BC%E5%90%88/"/>
+      <category term="综合" scheme="https://addonepiece.github.io/categories/%E7%BB%BC%E5%90%88/"/>
     
     
-      <category term="JavaScript" scheme="https://addonepiece.github.io/luggage.github.io/tags/JavaScript/"/>
+      <category term="JavaScript" scheme="https://addonepiece.github.io/tags/JavaScript/"/>
     
   </entry>
   
   <entry>
     <title>JavaScript 内存管理 &amp; 垃圾回收机制</title>
-    <link href="https://addonepiece.github.io/luggage.github.io/2017/02/18/js-memory-management-and-gc/"/>
-    <id>https://addonepiece.github.io/luggage.github.io/2017/02/18/js-memory-management-and-gc/</id>
+    <link href="https://addonepiece.github.io/2017/02/18/js-memory-management-and-gc/"/>
+    <id>https://addonepiece.github.io/2017/02/18/js-memory-management-and-gc/</id>
     <published>2017-02-18T05:25:24.000Z</published>
     <updated>2019-11-20T06:33:52.651Z</updated>
     
@@ -486,10 +486,10 @@
     
     </summary>
     
-      <category term="综合" scheme="https://addonepiece.github.io/luggage.github.io/categories/%E7%BB%BC%E5%90%88/"/>
+      <category term="综合" scheme="https://addonepiece.github.io/categories/%E7%BB%BC%E5%90%88/"/>
     
     
-      <category term="JavaScript" scheme="https://addonepiece.github.io/luggage.github.io/tags/JavaScript/"/>
+      <category term="JavaScript" scheme="https://addonepiece.github.io/tags/JavaScript/"/>
     
   </entry>
   
