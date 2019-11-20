@@ -52,26 +52,6 @@
 
     
   <url>
-    <loc>https://addonepiece.github.io/luggage.github.io/luggage.github.io/2019/03/31/vue-ssr/</loc>
-    <lastmod>2019-11-20T06:33:52.659Z</lastmod>
-    <data>
-        <display>
-        <title>手把手教你 Vue 服务端渲染</title>
-        <pubTime>2019-03-30T23:25:24.000Z</pubTime>
-        
-        <tag>Vue</tag>
-         
-         
-           
-             
-              <breadCrumb title="前端" url="https://addonepiece.github.io/luggage.github.io/luggage.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://addonepiece.github.io/luggage.github.io/luggage.github.io/2016/12/24/why-introversion-like-alone/</loc>
     <lastmod>2019-11-20T06:33:52.659Z</lastmod>
     <data>
@@ -85,6 +65,26 @@
            
              
               <breadCrumb title="综合" url="https://addonepiece.github.io/luggage.github.io/luggage.github.io/categories/%E7%BB%BC%E5%90%88/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://addonepiece.github.io/luggage.github.io/luggage.github.io/2019/03/31/vue-ssr/</loc>
+    <lastmod>2019-11-20T06:33:52.659Z</lastmod>
+    <data>
+        <display>
+        <title>手把手教你 Vue 服务端渲染</title>
+        <pubTime>2019-03-30T23:25:24.000Z</pubTime>
+        
+        <tag>Vue</tag>
+         
+         
+           
+             
+              <breadCrumb title="前端" url="https://addonepiece.github.io/luggage.github.io/luggage.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
           
         </display>
     </data>
@@ -134,26 +134,6 @@
 
     
   <url>
-    <loc>https://addonepiece.github.io/luggage.github.io/luggage.github.io/2018/06/18/vue-prerender/</loc>
-    <lastmod>2019-11-20T06:33:52.658Z</lastmod>
-    <data>
-        <display>
-        <title>Vue 服务端渲染 or 预渲染</title>
-        <pubTime>2018-06-18T08:25:24.000Z</pubTime>
-        
-        <tag>vue</tag>
-         
-         
-           
-             
-              <breadCrumb title="前端" url="https://addonepiece.github.io/luggage.github.io/luggage.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://addonepiece.github.io/luggage.github.io/luggage.github.io/2017/11/11/vue-sell/</loc>
     <lastmod>2019-11-20T06:33:52.658Z</lastmod>
     <data>
@@ -174,14 +154,14 @@
 
     
   <url>
-    <loc>https://addonepiece.github.io/luggage.github.io/luggage.github.io/2019/02/05/travis-ci/</loc>
-    <lastmod>2019-11-20T06:33:52.657Z</lastmod>
+    <loc>https://addonepiece.github.io/luggage.github.io/luggage.github.io/2018/06/18/vue-prerender/</loc>
+    <lastmod>2019-11-20T06:33:52.658Z</lastmod>
     <data>
         <display>
-        <title>使用 Travis CI 自动更新 GitHub Pages</title>
-        <pubTime>2019-02-04T23:25:24.000Z</pubTime>
+        <title>Vue 服务端渲染 or 预渲染</title>
+        <pubTime>2018-06-18T08:25:24.000Z</pubTime>
         
-        <tag>CI</tag>
+        <tag>vue</tag>
          
          
            
@@ -204,6 +184,26 @@
         <tag>JavaScript</tag>
          
         <tag>jQuery</tag>
+         
+         
+           
+             
+              <breadCrumb title="前端" url="https://addonepiece.github.io/luggage.github.io/luggage.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://addonepiece.github.io/luggage.github.io/luggage.github.io/2019/02/05/travis-ci/</loc>
+    <lastmod>2019-11-20T06:33:52.657Z</lastmod>
+    <data>
+        <display>
+        <title>使用 Travis CI 自动更新 GitHub Pages</title>
+        <pubTime>2019-02-04T23:25:24.000Z</pubTime>
+        
+        <tag>CI</tag>
          
          
            
@@ -425,9 +425,9 @@
         <title>【转】在2016年学JavaScript是一种什么样的体验</title>
         <pubTime>2016-10-16T15:25:24.000Z</pubTime>
         
-        <tag>essay</tag>
-         
         <tag>JavaScript</tag>
+         
+        <tag>essay</tag>
          
          
            
@@ -632,28 +632,6 @@
 
     
   <url>
-    <loc>https://addonepiece.github.io/luggage.github.io/luggage.github.io/2016/11/18/china-javascript-environment/</loc>
-    <lastmod>2019-11-20T06:33:52.645Z</lastmod>
-    <data>
-        <display>
-        <title>中国国内 JavaScript 圈的现状如何</title>
-        <pubTime>2016-11-18T05:25:24.000Z</pubTime>
-        
-        <tag>essay</tag>
-         
-        <tag>JavaScript</tag>
-         
-         
-           
-             
-              <breadCrumb title="综合" url="https://addonepiece.github.io/luggage.github.io/luggage.github.io/categories/%E7%BB%BC%E5%90%88/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://addonepiece.github.io/luggage.github.io/luggage.github.io/2017/03/20/amd-cmd/</loc>
     <lastmod>2019-11-20T06:33:52.645Z</lastmod>
     <data>
@@ -674,19 +652,21 @@
 
     
   <url>
-    <loc>https://addonepiece.github.io/luggage.github.io/luggage.github.io/2017/03/07/commonjs/</loc>
+    <loc>https://addonepiece.github.io/luggage.github.io/luggage.github.io/2016/11/18/china-javascript-environment/</loc>
     <lastmod>2019-11-20T06:33:52.645Z</lastmod>
     <data>
         <display>
-        <title>CommonJS 详细介绍</title>
-        <pubTime>2017-03-07T05:25:24.000Z</pubTime>
+        <title>中国国内 JavaScript 圈的现状如何</title>
+        <pubTime>2016-11-18T05:25:24.000Z</pubTime>
         
         <tag>JavaScript</tag>
+         
+        <tag>essay</tag>
          
          
            
              
-              <breadCrumb title="前端" url="https://addonepiece.github.io/luggage.github.io/luggage.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+              <breadCrumb title="综合" url="https://addonepiece.github.io/luggage.github.io/luggage.github.io/categories/%E7%BB%BC%E5%90%88/"/>
           
         </display>
     </data>
@@ -702,6 +682,26 @@
         <pubTime>2017-06-24T19:25:24.000Z</pubTime>
         
         <tag>CSS</tag>
+         
+         
+           
+             
+              <breadCrumb title="前端" url="https://addonepiece.github.io/luggage.github.io/luggage.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://addonepiece.github.io/luggage.github.io/luggage.github.io/2017/03/07/commonjs/</loc>
+    <lastmod>2019-11-20T06:33:52.645Z</lastmod>
+    <data>
+        <display>
+        <title>CommonJS 详细介绍</title>
+        <pubTime>2017-03-07T05:25:24.000Z</pubTime>
+        
+        <tag>JavaScript</tag>
          
          
            
