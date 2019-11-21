@@ -592,26 +592,6 @@
 
     
   <url>
-    <loc>https://addonepiece.github.io/luggage.github.io/2017/05/01/gulp/</loc>
-    <lastmod>2019-11-20T06:33:52.646Z</lastmod>
-    <data>
-        <display>
-        <title>gulp 详解与使用</title>
-        <pubTime>2017-04-30T17:25:24.000Z</pubTime>
-        
-        <tag>gulp</tag>
-         
-         
-           
-             
-              <breadCrumb title="前端" url="https://addonepiece.github.io/luggage.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://addonepiece.github.io/luggage.github.io/2016/10/07/git/</loc>
     <lastmod>2019-11-20T06:33:52.646Z</lastmod>
     <data>
@@ -632,14 +612,14 @@
 
     
   <url>
-    <loc>https://addonepiece.github.io/luggage.github.io/2017/03/20/amd-cmd/</loc>
-    <lastmod>2019-11-20T06:33:52.645Z</lastmod>
+    <loc>https://addonepiece.github.io/luggage.github.io/2017/05/01/gulp/</loc>
+    <lastmod>2019-11-20T06:33:52.646Z</lastmod>
     <data>
         <display>
-        <title>AMD，CMD 规范详解</title>
-        <pubTime>2017-03-19T19:25:24.000Z</pubTime>
+        <title>gulp 详解与使用</title>
+        <pubTime>2017-04-30T17:25:24.000Z</pubTime>
         
-        <tag>JavaScript</tag>
+        <tag>gulp</tag>
          
          
            
@@ -652,12 +632,12 @@
 
     
   <url>
-    <loc>https://addonepiece.github.io/luggage.github.io/2017/03/07/commonjs/</loc>
+    <loc>https://addonepiece.github.io/luggage.github.io/2017/03/20/amd-cmd/</loc>
     <lastmod>2019-11-20T06:33:52.645Z</lastmod>
     <data>
         <display>
-        <title>CommonJS 详细介绍</title>
-        <pubTime>2017-03-07T05:25:24.000Z</pubTime>
+        <title>AMD，CMD 规范详解</title>
+        <pubTime>2017-03-19T19:25:24.000Z</pubTime>
         
         <tag>JavaScript</tag>
          
@@ -687,6 +667,26 @@
            
              
               <breadCrumb title="综合" url="https://addonepiece.github.io/luggage.github.io/categories/%E7%BB%BC%E5%90%88/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://addonepiece.github.io/luggage.github.io/2017/03/07/commonjs/</loc>
+    <lastmod>2019-11-20T06:33:52.645Z</lastmod>
+    <data>
+        <display>
+        <title>CommonJS 详细介绍</title>
+        <pubTime>2017-03-07T05:25:24.000Z</pubTime>
+        
+        <tag>JavaScript</tag>
+         
+         
+           
+             
+              <breadCrumb title="前端" url="https://addonepiece.github.io/luggage.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
           
         </display>
     </data>
