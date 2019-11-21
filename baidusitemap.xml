@@ -216,14 +216,16 @@
 
     
   <url>
-    <loc>https://addonepiece.github.io/luggage.github.io/2017/06/08/service-worker/</loc>
+    <loc>https://addonepiece.github.io/luggage.github.io/2016/10/23/sass/</loc>
     <lastmod>2019-11-20T06:33:52.655Z</lastmod>
     <data>
         <display>
-        <title>使用 Service worker 实现加速/离线访问博客</title>
-        <pubTime>2017-06-08T03:25:24.000Z</pubTime>
+        <title>Sass 教程</title>
+        <pubTime>2016-10-23T02:49:15.000Z</pubTime>
         
-        <tag>Service-worker</tag>
+        <tag>css</tag>
+         
+        <tag>sass</tag>
          
          
            
@@ -236,16 +238,14 @@
 
     
   <url>
-    <loc>https://addonepiece.github.io/luggage.github.io/2016/10/23/sass/</loc>
+    <loc>https://addonepiece.github.io/luggage.github.io/2017/06/08/service-worker/</loc>
     <lastmod>2019-11-20T06:33:52.655Z</lastmod>
     <data>
         <display>
-        <title>Sass 教程</title>
-        <pubTime>2016-10-23T02:49:15.000Z</pubTime>
+        <title>使用 Service worker 实现加速/离线访问博客</title>
+        <pubTime>2017-06-08T03:25:24.000Z</pubTime>
         
-        <tag>css</tag>
-         
-        <tag>sass</tag>
+        <tag>Service-worker</tag>
          
          
            
@@ -425,9 +425,9 @@
         <title>【转】在2016年学JavaScript是一种什么样的体验</title>
         <pubTime>2016-10-16T15:25:24.000Z</pubTime>
         
-        <tag>JavaScript</tag>
-         
         <tag>essay</tag>
+         
+        <tag>JavaScript</tag>
          
          
            
@@ -446,6 +446,28 @@
         <display>
         <title>Hexo-NexT搭建个人博客（二）</title>
         <pubTime>2016-09-30T14:18:22.000Z</pubTime>
+        
+        <tag>Hexo</tag>
+         
+        <tag>Next</tag>
+         
+         
+           
+             
+              <breadCrumb title="Hexo" url="https://addonepiece.github.io/luggage.github.io/categories/Hexo/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://addonepiece.github.io/luggage.github.io/2016/12/15/hexo-next-four/</loc>
+    <lastmod>2019-11-20T06:33:52.647Z</lastmod>
+    <data>
+        <display>
+        <title>Hexo-NexT搭建个人博客（四）</title>
+        <pubTime>2016-12-15T15:25:24.000Z</pubTime>
         
         <tag>Hexo</tag>
          
@@ -550,28 +572,6 @@
 
     
   <url>
-    <loc>https://addonepiece.github.io/luggage.github.io/2016/12/15/hexo-next-four/</loc>
-    <lastmod>2019-11-20T06:33:52.647Z</lastmod>
-    <data>
-        <display>
-        <title>Hexo-NexT搭建个人博客（四）</title>
-        <pubTime>2016-12-15T15:25:24.000Z</pubTime>
-        
-        <tag>Hexo</tag>
-         
-        <tag>Next</tag>
-         
-         
-           
-             
-              <breadCrumb title="Hexo" url="https://addonepiece.github.io/luggage.github.io/categories/Hexo/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://addonepiece.github.io/luggage.github.io/2016/09/25/essay-20160925/</loc>
     <lastmod>2019-11-20T06:33:52.646Z</lastmod>
     <data>
@@ -632,26 +632,6 @@
 
     
   <url>
-    <loc>https://addonepiece.github.io/luggage.github.io/2017/03/20/amd-cmd/</loc>
-    <lastmod>2019-11-20T06:33:52.645Z</lastmod>
-    <data>
-        <display>
-        <title>AMD，CMD 规范详解</title>
-        <pubTime>2017-03-19T19:25:24.000Z</pubTime>
-        
-        <tag>JavaScript</tag>
-         
-         
-           
-             
-              <breadCrumb title="前端" url="https://addonepiece.github.io/luggage.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://addonepiece.github.io/luggage.github.io/2016/11/18/china-javascript-environment/</loc>
     <lastmod>2019-11-20T06:33:52.645Z</lastmod>
     <data>
@@ -659,9 +639,9 @@
         <title>中国国内 JavaScript 圈的现状如何</title>
         <pubTime>2016-11-18T05:25:24.000Z</pubTime>
         
-        <tag>JavaScript</tag>
-         
         <tag>essay</tag>
+         
+        <tag>JavaScript</tag>
          
          
            
@@ -680,6 +660,26 @@
         <display>
         <title>CommonJS 详细介绍</title>
         <pubTime>2017-03-07T05:25:24.000Z</pubTime>
+        
+        <tag>JavaScript</tag>
+         
+         
+           
+             
+              <breadCrumb title="前端" url="https://addonepiece.github.io/luggage.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://addonepiece.github.io/luggage.github.io/2017/03/20/amd-cmd/</loc>
+    <lastmod>2019-11-20T06:33:52.645Z</lastmod>
+    <data>
+        <display>
+        <title>AMD，CMD 规范详解</title>
+        <pubTime>2017-03-19T19:25:24.000Z</pubTime>
         
         <tag>JavaScript</tag>
          
