@@ -12,26 +12,6 @@
     
     
   <url>
-    <loc>https://addonepiece.github.io/luggage.github.io/2017/02/14/why-we-dropped-zepto/</loc>
-    <lastmod>2019-11-20T06:33:52.660Z</lastmod>
-    <data>
-        <display>
-        <title>【转】为什么我们放弃了 Zepto</title>
-        <pubTime>2017-02-13T17:25:24.000Z</pubTime>
-        
-        <tag>zepto</tag>
-         
-         
-           
-             
-              <breadCrumb title="综合" url="https://addonepiece.github.io/luggage.github.io/categories/%E7%BB%BC%E5%90%88/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://addonepiece.github.io/luggage.github.io/2018/07/20/yarn/</loc>
     <lastmod>2019-11-20T06:33:52.660Z</lastmod>
     <data>
@@ -45,6 +25,26 @@
            
              
               <breadCrumb title="前端" url="https://addonepiece.github.io/luggage.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://addonepiece.github.io/luggage.github.io/2017/02/14/why-we-dropped-zepto/</loc>
+    <lastmod>2019-11-20T06:33:52.660Z</lastmod>
+    <data>
+        <display>
+        <title>【转】为什么我们放弃了 Zepto</title>
+        <pubTime>2017-02-13T17:25:24.000Z</pubTime>
+        
+        <tag>zepto</tag>
+         
+         
+           
+             
+              <breadCrumb title="综合" url="https://addonepiece.github.io/luggage.github.io/categories/%E7%BB%BC%E5%90%88/"/>
           
         </display>
     </data>
@@ -484,28 +484,6 @@
 
     
   <url>
-    <loc>https://addonepiece.github.io/luggage.github.io/2016/09/03/hexo-next-one/</loc>
-    <lastmod>2019-11-20T06:33:52.647Z</lastmod>
-    <data>
-        <display>
-        <title>Hexo-NexT搭建个人博客（一）</title>
-        <pubTime>2016-09-03T05:25:24.000Z</pubTime>
-        
-        <tag>Hexo</tag>
-         
-        <tag>Next</tag>
-         
-         
-           
-             
-              <breadCrumb title="Hexo" url="https://addonepiece.github.io/luggage.github.io/categories/Hexo/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://addonepiece.github.io/luggage.github.io/2016/12/15/hexo-next-four/</loc>
     <lastmod>2019-11-20T06:33:52.647Z</lastmod>
     <data>
@@ -528,12 +506,12 @@
 
     
   <url>
-    <loc>https://addonepiece.github.io/luggage.github.io/2018/10/15/hexo-next-six/</loc>
+    <loc>https://addonepiece.github.io/luggage.github.io/2016/09/03/hexo-next-one/</loc>
     <lastmod>2019-11-20T06:33:52.647Z</lastmod>
     <data>
         <display>
-        <title>Hexo-NexT搭建个人博客（六）</title>
-        <pubTime>2018-10-15T15:25:24.000Z</pubTime>
+        <title>Hexo-NexT搭建个人博客（一）</title>
+        <pubTime>2016-09-03T05:25:24.000Z</pubTime>
         
         <tag>Hexo</tag>
          
@@ -556,6 +534,28 @@
         <display>
         <title>Hexo-NexT搭建个人博客（三）</title>
         <pubTime>2016-11-11T05:25:24.000Z</pubTime>
+        
+        <tag>Hexo</tag>
+         
+        <tag>Next</tag>
+         
+         
+           
+             
+              <breadCrumb title="Hexo" url="https://addonepiece.github.io/luggage.github.io/categories/Hexo/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://addonepiece.github.io/luggage.github.io/2018/10/15/hexo-next-six/</loc>
+    <lastmod>2019-11-20T06:33:52.647Z</lastmod>
+    <data>
+        <display>
+        <title>Hexo-NexT搭建个人博客（六）</title>
+        <pubTime>2018-10-15T15:25:24.000Z</pubTime>
         
         <tag>Hexo</tag>
          
