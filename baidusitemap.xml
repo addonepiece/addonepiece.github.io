@@ -12,26 +12,6 @@
     
     
   <url>
-    <loc>https://addonepiece.github.io/luggage.github.io/2018/07/20/yarn/</loc>
-    <lastmod>2019-11-20T06:33:52.660Z</lastmod>
-    <data>
-        <display>
-        <title>Yarn安装与使用详细介绍</title>
-        <pubTime>2018-07-19T19:25:24.000Z</pubTime>
-        
-        <tag>Yarn</tag>
-         
-         
-           
-             
-              <breadCrumb title="前端" url="https://addonepiece.github.io/luggage.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://addonepiece.github.io/luggage.github.io/2017/02/14/why-we-dropped-zepto/</loc>
     <lastmod>2019-11-20T06:33:52.660Z</lastmod>
     <data>
@@ -45,6 +25,26 @@
            
              
               <breadCrumb title="综合" url="https://addonepiece.github.io/luggage.github.io/categories/%E7%BB%BC%E5%90%88/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://addonepiece.github.io/luggage.github.io/2018/07/20/yarn/</loc>
+    <lastmod>2019-11-20T06:33:52.660Z</lastmod>
+    <data>
+        <display>
+        <title>Yarn安装与使用详细介绍</title>
+        <pubTime>2018-07-19T19:25:24.000Z</pubTime>
+        
+        <tag>Yarn</tag>
+         
+         
+           
+             
+              <breadCrumb title="前端" url="https://addonepiece.github.io/luggage.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
           
         </display>
     </data>
@@ -92,26 +92,6 @@
 
     
   <url>
-    <loc>https://addonepiece.github.io/luggage.github.io/2018/05/01/vue-music/</loc>
-    <lastmod>2019-11-20T06:33:52.658Z</lastmod>
-    <data>
-        <display>
-        <title>vue2.x 做一个音乐app</title>
-        <pubTime>2018-04-30T19:25:24.000Z</pubTime>
-        
-        <tag>vue</tag>
-         
-         
-           
-             
-              <breadCrumb title="前端" url="https://addonepiece.github.io/luggage.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://addonepiece.github.io/luggage.github.io/2019/07/01/vue-element-change-theme/</loc>
     <lastmod>2019-11-20T06:33:52.658Z</lastmod>
     <data>
@@ -134,12 +114,12 @@
 
     
   <url>
-    <loc>https://addonepiece.github.io/luggage.github.io/2017/11/11/vue-sell/</loc>
+    <loc>https://addonepiece.github.io/luggage.github.io/2018/05/01/vue-music/</loc>
     <lastmod>2019-11-20T06:33:52.658Z</lastmod>
     <data>
         <display>
-        <title>vue2.x 做一个外卖app</title>
-        <pubTime>2017-11-10T19:25:24.000Z</pubTime>
+        <title>vue2.x 做一个音乐app</title>
+        <pubTime>2018-04-30T19:25:24.000Z</pubTime>
         
         <tag>vue</tag>
          
@@ -160,6 +140,26 @@
         <display>
         <title>Vue 服务端渲染 or 预渲染</title>
         <pubTime>2018-06-18T08:25:24.000Z</pubTime>
+        
+        <tag>vue</tag>
+         
+         
+           
+             
+              <breadCrumb title="前端" url="https://addonepiece.github.io/luggage.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://addonepiece.github.io/luggage.github.io/2017/11/11/vue-sell/</loc>
+    <lastmod>2019-11-20T06:33:52.658Z</lastmod>
+    <data>
+        <display>
+        <title>vue2.x 做一个外卖app</title>
+        <pubTime>2017-11-10T19:25:24.000Z</pubTime>
         
         <tag>vue</tag>
          
@@ -484,6 +484,28 @@
 
     
   <url>
+    <loc>https://addonepiece.github.io/luggage.github.io/2016/12/15/hexo-next-four/</loc>
+    <lastmod>2019-11-20T06:33:52.647Z</lastmod>
+    <data>
+        <display>
+        <title>Hexo-NexT搭建个人博客（四）</title>
+        <pubTime>2016-12-15T15:25:24.000Z</pubTime>
+        
+        <tag>Hexo</tag>
+         
+        <tag>Next</tag>
+         
+         
+           
+             
+              <breadCrumb title="Hexo" url="https://addonepiece.github.io/luggage.github.io/categories/Hexo/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://addonepiece.github.io/luggage.github.io/2016/09/03/hexo-next-one/</loc>
     <lastmod>2019-11-20T06:33:52.647Z</lastmod>
     <data>
@@ -512,28 +534,6 @@
         <display>
         <title>Hexo-NexT搭建个人博客（六）</title>
         <pubTime>2018-10-15T15:25:24.000Z</pubTime>
-        
-        <tag>Hexo</tag>
-         
-        <tag>Next</tag>
-         
-         
-           
-             
-              <breadCrumb title="Hexo" url="https://addonepiece.github.io/luggage.github.io/categories/Hexo/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://addonepiece.github.io/luggage.github.io/2016/12/15/hexo-next-four/</loc>
-    <lastmod>2019-11-20T06:33:52.647Z</lastmod>
-    <data>
-        <display>
-        <title>Hexo-NexT搭建个人博客（四）</title>
-        <pubTime>2016-12-15T15:25:24.000Z</pubTime>
         
         <tag>Hexo</tag>
          
@@ -592,26 +592,6 @@
 
     
   <url>
-    <loc>https://addonepiece.github.io/luggage.github.io/2016/10/07/git/</loc>
-    <lastmod>2019-11-20T06:33:52.646Z</lastmod>
-    <data>
-        <display>
-        <title>Git学习总结</title>
-        <pubTime>2016-10-07T05:25:24.000Z</pubTime>
-        
-        <tag>Git</tag>
-         
-         
-           
-             
-              <breadCrumb title="综合" url="https://addonepiece.github.io/luggage.github.io/categories/%E7%BB%BC%E5%90%88/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://addonepiece.github.io/luggage.github.io/2017/05/01/gulp/</loc>
     <lastmod>2019-11-20T06:33:52.646Z</lastmod>
     <data>
@@ -632,12 +612,52 @@
 
     
   <url>
+    <loc>https://addonepiece.github.io/luggage.github.io/2016/10/07/git/</loc>
+    <lastmod>2019-11-20T06:33:52.646Z</lastmod>
+    <data>
+        <display>
+        <title>Git学习总结</title>
+        <pubTime>2016-10-07T05:25:24.000Z</pubTime>
+        
+        <tag>Git</tag>
+         
+         
+           
+             
+              <breadCrumb title="综合" url="https://addonepiece.github.io/luggage.github.io/categories/%E7%BB%BC%E5%90%88/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://addonepiece.github.io/luggage.github.io/2017/03/20/amd-cmd/</loc>
     <lastmod>2019-11-20T06:33:52.645Z</lastmod>
     <data>
         <display>
         <title>AMD，CMD 规范详解</title>
         <pubTime>2017-03-19T19:25:24.000Z</pubTime>
+        
+        <tag>JavaScript</tag>
+         
+         
+           
+             
+              <breadCrumb title="前端" url="https://addonepiece.github.io/luggage.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://addonepiece.github.io/luggage.github.io/2017/03/07/commonjs/</loc>
+    <lastmod>2019-11-20T06:33:52.645Z</lastmod>
+    <data>
+        <display>
+        <title>CommonJS 详细介绍</title>
+        <pubTime>2017-03-07T05:25:24.000Z</pubTime>
         
         <tag>JavaScript</tag>
          
@@ -682,26 +702,6 @@
         <pubTime>2017-06-24T19:25:24.000Z</pubTime>
         
         <tag>CSS</tag>
-         
-         
-           
-             
-              <breadCrumb title="前端" url="https://addonepiece.github.io/luggage.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://addonepiece.github.io/luggage.github.io/2017/03/07/commonjs/</loc>
-    <lastmod>2019-11-20T06:33:52.645Z</lastmod>
-    <data>
-        <display>
-        <title>CommonJS 详细介绍</title>
-        <pubTime>2017-03-07T05:25:24.000Z</pubTime>
-        
-        <tag>JavaScript</tag>
          
          
            
