@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://addonepiece.github.io/reward/index.html</loc>
+    
+    <lastmod>2019-11-27T07:34:30.949Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://addonepiece.github.io/about/index.html</loc>
     
     <lastmod>2019-11-21T01:05:48.153Z</lastmod>
@@ -19,13 +26,6 @@
     <loc>https://addonepiece.github.io/tags/index.html</loc>
     
     <lastmod>2019-11-20T06:33:52.824Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://addonepiece.github.io/reward/index.html</loc>
-    
-    <lastmod>2019-11-20T06:33:52.822Z</lastmod>
     
   </url>
   
@@ -86,13 +86,6 @@
   </url>
   
   <url>
-    <loc>https://addonepiece.github.io/2019/07/01/vue-element-change-theme/</loc>
-    
-    <lastmod>2019-11-20T06:33:52.658Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://addonepiece.github.io/2018/05/01/vue-music/</loc>
     
     <lastmod>2019-11-20T06:33:52.658Z</lastmod>
@@ -101,6 +94,13 @@
   
   <url>
     <loc>https://addonepiece.github.io/2018/06/18/vue-prerender/</loc>
+    
+    <lastmod>2019-11-20T06:33:52.658Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://addonepiece.github.io/2019/07/01/vue-element-change-theme/</loc>
     
     <lastmod>2019-11-20T06:33:52.658Z</lastmod>
     
@@ -268,20 +268,6 @@
   </url>
   
   <url>
-    <loc>https://addonepiece.github.io/2017/03/20/amd-cmd/</loc>
-    
-    <lastmod>2019-11-20T06:33:52.645Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://addonepiece.github.io/2016/11/18/china-javascript-environment/</loc>
-    
-    <lastmod>2019-11-20T06:33:52.645Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://addonepiece.github.io/2017/03/07/commonjs/</loc>
     
     <lastmod>2019-11-20T06:33:52.645Z</lastmod>
@@ -289,7 +275,21 @@
   </url>
   
   <url>
+    <loc>https://addonepiece.github.io/2017/03/20/amd-cmd/</loc>
+    
+    <lastmod>2019-11-20T06:33:52.645Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://addonepiece.github.io/2017/06/25/css-hack/</loc>
+    
+    <lastmod>2019-11-20T06:33:52.645Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://addonepiece.github.io/2016/11/18/china-javascript-environment/</loc>
     
     <lastmod>2019-11-20T06:33:52.645Z</lastmod>
     

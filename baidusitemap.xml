@@ -92,28 +92,6 @@
 
     
   <url>
-    <loc>https://addonepiece.github.io/2019/07/01/vue-element-change-theme/</loc>
-    <lastmod>2019-11-20T06:33:52.658Z</lastmod>
-    <data>
-        <display>
-        <title>基于Vue、ElementUI的换肤解决方案</title>
-        <pubTime>2019-06-30T19:25:24.000Z</pubTime>
-        
-        <tag>JavaScript</tag>
-         
-        <tag>Vue</tag>
-         
-         
-           
-             
-              <breadCrumb title="前端" url="https://addonepiece.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://addonepiece.github.io/2018/05/01/vue-music/</loc>
     <lastmod>2019-11-20T06:33:52.658Z</lastmod>
     <data>
@@ -142,6 +120,28 @@
         <pubTime>2018-06-18T08:25:24.000Z</pubTime>
         
         <tag>vue</tag>
+         
+         
+           
+             
+              <breadCrumb title="前端" url="https://addonepiece.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://addonepiece.github.io/2019/07/01/vue-element-change-theme/</loc>
+    <lastmod>2019-11-20T06:33:52.658Z</lastmod>
+    <data>
+        <display>
+        <title>基于Vue、ElementUI的换肤解决方案</title>
+        <pubTime>2019-06-30T19:25:24.000Z</pubTime>
+        
+        <tag>JavaScript</tag>
+         
+        <tag>Vue</tag>
          
          
            
@@ -632,12 +632,12 @@
 
     
   <url>
-    <loc>https://addonepiece.github.io/2017/03/20/amd-cmd/</loc>
+    <loc>https://addonepiece.github.io/2017/03/07/commonjs/</loc>
     <lastmod>2019-11-20T06:33:52.645Z</lastmod>
     <data>
         <display>
-        <title>AMD，CMD 规范详解</title>
-        <pubTime>2017-03-19T19:25:24.000Z</pubTime>
+        <title>CommonJS 详细介绍</title>
+        <pubTime>2017-03-07T05:25:24.000Z</pubTime>
         
         <tag>JavaScript</tag>
          
@@ -652,34 +652,12 @@
 
     
   <url>
-    <loc>https://addonepiece.github.io/2016/11/18/china-javascript-environment/</loc>
+    <loc>https://addonepiece.github.io/2017/03/20/amd-cmd/</loc>
     <lastmod>2019-11-20T06:33:52.645Z</lastmod>
     <data>
         <display>
-        <title>中国国内 JavaScript 圈的现状如何</title>
-        <pubTime>2016-11-18T05:25:24.000Z</pubTime>
-        
-        <tag>JavaScript</tag>
-         
-        <tag>essay</tag>
-         
-         
-           
-             
-              <breadCrumb title="综合" url="https://addonepiece.github.io/categories/%E7%BB%BC%E5%90%88/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://addonepiece.github.io/2017/03/07/commonjs/</loc>
-    <lastmod>2019-11-20T06:33:52.645Z</lastmod>
-    <data>
-        <display>
-        <title>CommonJS 详细介绍</title>
-        <pubTime>2017-03-07T05:25:24.000Z</pubTime>
+        <title>AMD，CMD 规范详解</title>
+        <pubTime>2017-03-19T19:25:24.000Z</pubTime>
         
         <tag>JavaScript</tag>
          
@@ -707,6 +685,28 @@
            
              
               <breadCrumb title="前端" url="https://addonepiece.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://addonepiece.github.io/2016/11/18/china-javascript-environment/</loc>
+    <lastmod>2019-11-20T06:33:52.645Z</lastmod>
+    <data>
+        <display>
+        <title>中国国内 JavaScript 圈的现状如何</title>
+        <pubTime>2016-11-18T05:25:24.000Z</pubTime>
+        
+        <tag>JavaScript</tag>
+         
+        <tag>essay</tag>
+         
+         
+           
+             
+              <breadCrumb title="综合" url="https://addonepiece.github.io/categories/%E7%BB%BC%E5%90%88/"/>
           
         </display>
     </data>
