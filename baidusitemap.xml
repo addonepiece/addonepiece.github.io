@@ -572,6 +572,26 @@
 
     
   <url>
+    <loc>https://addonepiece.github.io/2016/09/25/essay-20160925/</loc>
+    <lastmod>2019-11-20T06:33:52.646Z</lastmod>
+    <data>
+        <display>
+        <title>如果深圳的夜晚没有风</title>
+        <pubTime>2016-09-25T15:25:24.000Z</pubTime>
+        
+        <tag>essay</tag>
+         
+         
+           
+             
+              <breadCrumb title="随笔" url="https://addonepiece.github.io/categories/%E9%9A%8F%E7%AC%94/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://addonepiece.github.io/2016/10/07/git/</loc>
     <lastmod>2019-11-20T06:33:52.646Z</lastmod>
     <data>
@@ -612,26 +632,6 @@
 
     
   <url>
-    <loc>https://addonepiece.github.io/2016/09/25/essay-20160925/</loc>
-    <lastmod>2019-11-20T06:33:52.646Z</lastmod>
-    <data>
-        <display>
-        <title>如果深圳的夜晚没有风</title>
-        <pubTime>2016-09-25T15:25:24.000Z</pubTime>
-        
-        <tag>essay</tag>
-         
-         
-           
-             
-              <breadCrumb title="随笔" url="https://addonepiece.github.io/categories/%E9%9A%8F%E7%AC%94/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://addonepiece.github.io/2017/03/20/amd-cmd/</loc>
     <lastmod>2019-11-20T06:33:52.645Z</lastmod>
     <data>
@@ -645,6 +645,28 @@
            
              
               <breadCrumb title="前端" url="https://addonepiece.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://addonepiece.github.io/2016/11/18/china-javascript-environment/</loc>
+    <lastmod>2019-11-20T06:33:52.645Z</lastmod>
+    <data>
+        <display>
+        <title>中国国内 JavaScript 圈的现状如何</title>
+        <pubTime>2016-11-18T05:25:24.000Z</pubTime>
+        
+        <tag>JavaScript</tag>
+         
+        <tag>essay</tag>
+         
+         
+           
+             
+              <breadCrumb title="综合" url="https://addonepiece.github.io/categories/%E7%BB%BC%E5%90%88/"/>
           
         </display>
     </data>
@@ -685,28 +707,6 @@
            
              
               <breadCrumb title="前端" url="https://addonepiece.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://addonepiece.github.io/2016/11/18/china-javascript-environment/</loc>
-    <lastmod>2019-11-20T06:33:52.645Z</lastmod>
-    <data>
-        <display>
-        <title>中国国内 JavaScript 圈的现状如何</title>
-        <pubTime>2016-11-18T05:25:24.000Z</pubTime>
-        
-        <tag>JavaScript</tag>
-         
-        <tag>essay</tag>
-         
-         
-           
-             
-              <breadCrumb title="综合" url="https://addonepiece.github.io/categories/%E7%BB%BC%E5%90%88/"/>
           
         </display>
     </data>
