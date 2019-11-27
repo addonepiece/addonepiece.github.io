@@ -113,6 +113,26 @@
 
     
   <url>
+    <loc>https://addonepiece.github.io/2017/11/11/vue-sell/</loc>
+    <lastmod>2019-11-20T06:33:52.658Z</lastmod>
+    <data>
+        <display>
+        <title>vue2.x 做一个外卖app</title>
+        <pubTime>2017-11-10T19:25:24.000Z</pubTime>
+        
+        <tag>vue</tag>
+         
+         
+           
+             
+              <breadCrumb title="前端" url="https://addonepiece.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://addonepiece.github.io/2019/07/01/vue-element-change-theme/</loc>
     <lastmod>2019-11-20T06:33:52.658Z</lastmod>
     <data>
@@ -141,26 +161,6 @@
         <display>
         <title>Vue 服务端渲染 or 预渲染</title>
         <pubTime>2018-06-18T08:25:24.000Z</pubTime>
-        
-        <tag>vue</tag>
-         
-         
-           
-             
-              <breadCrumb title="前端" url="https://addonepiece.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://addonepiece.github.io/2017/11/11/vue-sell/</loc>
-    <lastmod>2019-11-20T06:33:52.658Z</lastmod>
-    <data>
-        <display>
-        <title>vue2.x 做一个外卖app</title>
-        <pubTime>2017-11-10T19:25:24.000Z</pubTime>
         
         <tag>vue</tag>
          
@@ -217,14 +217,16 @@
 
     
   <url>
-    <loc>https://addonepiece.github.io/2017/06/08/service-worker/</loc>
+    <loc>https://addonepiece.github.io/2016/10/23/sass/</loc>
     <lastmod>2019-11-20T06:33:52.655Z</lastmod>
     <data>
         <display>
-        <title>使用 Service worker 实现加速/离线访问博客</title>
-        <pubTime>2017-06-08T03:25:24.000Z</pubTime>
+        <title>Sass 教程</title>
+        <pubTime>2016-10-23T02:49:15.000Z</pubTime>
         
-        <tag>Service-worker</tag>
+        <tag>css</tag>
+         
+        <tag>sass</tag>
          
          
            
@@ -237,16 +239,14 @@
 
     
   <url>
-    <loc>https://addonepiece.github.io/2016/10/23/sass/</loc>
+    <loc>https://addonepiece.github.io/2017/06/08/service-worker/</loc>
     <lastmod>2019-11-20T06:33:52.655Z</lastmod>
     <data>
         <display>
-        <title>Sass 教程</title>
-        <pubTime>2016-10-23T02:49:15.000Z</pubTime>
+        <title>使用 Service worker 实现加速/离线访问博客</title>
+        <pubTime>2017-06-08T03:25:24.000Z</pubTime>
         
-        <tag>css</tag>
-         
-        <tag>sass</tag>
+        <tag>Service-worker</tag>
          
          
            
