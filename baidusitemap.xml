@@ -11,6 +11,7 @@
     
     
     
+    
   <url>
     <loc>https://addonepiece.github.io/2017/02/14/why-we-dropped-zepto/</loc>
     <lastmod>2019-11-20T06:33:52.660Z</lastmod>
@@ -134,12 +135,12 @@
 
     
   <url>
-    <loc>https://addonepiece.github.io/2017/11/11/vue-sell/</loc>
+    <loc>https://addonepiece.github.io/2018/06/18/vue-prerender/</loc>
     <lastmod>2019-11-20T06:33:52.658Z</lastmod>
     <data>
         <display>
-        <title>vue2.x 做一个外卖app</title>
-        <pubTime>2017-11-10T19:25:24.000Z</pubTime>
+        <title>Vue 服务端渲染 or 预渲染</title>
+        <pubTime>2018-06-18T08:25:24.000Z</pubTime>
         
         <tag>vue</tag>
          
@@ -154,12 +155,12 @@
 
     
   <url>
-    <loc>https://addonepiece.github.io/2018/06/18/vue-prerender/</loc>
+    <loc>https://addonepiece.github.io/2017/11/11/vue-sell/</loc>
     <lastmod>2019-11-20T06:33:52.658Z</lastmod>
     <data>
         <display>
-        <title>Vue 服务端渲染 or 预渲染</title>
-        <pubTime>2018-06-18T08:25:24.000Z</pubTime>
+        <title>vue2.x 做一个外卖app</title>
+        <pubTime>2017-11-10T19:25:24.000Z</pubTime>
         
         <tag>vue</tag>
          
@@ -652,6 +653,26 @@
 
     
   <url>
+    <loc>https://addonepiece.github.io/2017/03/07/commonjs/</loc>
+    <lastmod>2019-11-20T06:33:52.645Z</lastmod>
+    <data>
+        <display>
+        <title>CommonJS 详细介绍</title>
+        <pubTime>2017-03-07T05:25:24.000Z</pubTime>
+        
+        <tag>JavaScript</tag>
+         
+         
+           
+             
+              <breadCrumb title="前端" url="https://addonepiece.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://addonepiece.github.io/2016/11/18/china-javascript-environment/</loc>
     <lastmod>2019-11-20T06:33:52.645Z</lastmod>
     <data>
@@ -692,25 +713,4 @@
     </data>
     </url>
 
-    
-  <url>
-    <loc>https://addonepiece.github.io/2017/03/07/commonjs/</loc>
-    <lastmod>2019-11-20T06:33:52.645Z</lastmod>
-    <data>
-        <display>
-        <title>CommonJS 详细介绍</title>
-        <pubTime>2017-03-07T05:25:24.000Z</pubTime>
-        
-        <tag>JavaScript</tag>
-         
-         
-           
-             
-              <breadCrumb title="前端" url="https://addonepiece.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
 </urlset>

@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://addonepiece.github.io/offline.html</loc>
+    
+    <lastmod>2019-11-27T08:18:43.386Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://addonepiece.github.io/404.html</loc>
+    
+    <lastmod>2019-11-27T08:10:59.956Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://addonepiece.github.io/reward/index.html</loc>
     
     <lastmod>2019-11-27T07:34:30.949Z</lastmod>
@@ -26,13 +40,6 @@
     <loc>https://addonepiece.github.io/tags/index.html</loc>
     
     <lastmod>2019-11-20T06:33:52.824Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://addonepiece.github.io/offline.html</loc>
-    
-    <lastmod>2019-11-20T06:33:52.821Z</lastmod>
     
   </url>
   
@@ -100,14 +107,14 @@
   </url>
   
   <url>
-    <loc>https://addonepiece.github.io/2017/11/11/vue-sell/</loc>
+    <loc>https://addonepiece.github.io/2018/06/18/vue-prerender/</loc>
     
     <lastmod>2019-11-20T06:33:52.658Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://addonepiece.github.io/2018/06/18/vue-prerender/</loc>
+    <loc>https://addonepiece.github.io/2017/11/11/vue-sell/</loc>
     
     <lastmod>2019-11-20T06:33:52.658Z</lastmod>
     
@@ -275,6 +282,13 @@
   </url>
   
   <url>
+    <loc>https://addonepiece.github.io/2017/03/07/commonjs/</loc>
+    
+    <lastmod>2019-11-20T06:33:52.645Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://addonepiece.github.io/2016/11/18/china-javascript-environment/</loc>
     
     <lastmod>2019-11-20T06:33:52.645Z</lastmod>
@@ -285,20 +299,6 @@
     <loc>https://addonepiece.github.io/2017/06/25/css-hack/</loc>
     
     <lastmod>2019-11-20T06:33:52.645Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://addonepiece.github.io/2017/03/07/commonjs/</loc>
-    
-    <lastmod>2019-11-20T06:33:52.645Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://addonepiece.github.io/404.html</loc>
-    
-    <lastmod>2019-11-20T06:33:52.642Z</lastmod>
     
   </url>
   
