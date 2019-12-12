@@ -4,6 +4,108 @@
 
     
   <url>
+    <loc>https://addonepiece.github.io/2019/03/31/vue-ssr/</loc>
+    <lastmod>2019-12-12T10:08:24.008Z</lastmod>
+    <data>
+        <display>
+        <title>手把手教你 Vue 服务端渲染</title>
+        <pubTime>2019-03-30T23:25:24.000Z</pubTime>
+        
+        <tag>Vue</tag>
+         
+         
+           
+             
+              <breadCrumb title="前端" url="https://addonepiece.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://addonepiece.github.io/2017/11/11/vue-sell/</loc>
+    <lastmod>2019-12-12T10:06:54.030Z</lastmod>
+    <data>
+        <display>
+        <title>vue2.x 做一个外卖app</title>
+        <pubTime>2017-11-10T19:25:24.000Z</pubTime>
+        
+        <tag>vue</tag>
+         
+         
+           
+             
+              <breadCrumb title="前端" url="https://addonepiece.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://addonepiece.github.io/2018/06/18/vue-prerender/</loc>
+    <lastmod>2019-12-12T10:06:03.403Z</lastmod>
+    <data>
+        <display>
+        <title>Vue 服务端渲染 or 预渲染</title>
+        <pubTime>2018-06-18T08:25:24.000Z</pubTime>
+        
+        <tag>vue</tag>
+         
+         
+           
+             
+              <breadCrumb title="前端" url="https://addonepiece.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://addonepiece.github.io/2019/07/01/vue-element-change-theme/</loc>
+    <lastmod>2019-12-12T10:02:15.989Z</lastmod>
+    <data>
+        <display>
+        <title>基于Vue、ElementUI的换肤解决方案</title>
+        <pubTime>2019-06-30T19:25:24.000Z</pubTime>
+        
+        <tag>JavaScript</tag>
+         
+        <tag>Vue</tag>
+         
+         
+           
+             
+              <breadCrumb title="前端" url="https://addonepiece.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://addonepiece.github.io/2019/02/05/travis-ci/</loc>
+    <lastmod>2019-12-12T09:42:09.662Z</lastmod>
+    <data>
+        <display>
+        <title>使用 Travis CI 自动更新 GitHub Pages</title>
+        <pubTime>2019-02-04T23:25:24.000Z</pubTime>
+        
+        <tag>CI</tag>
+         
+         
+           
+             
+              <breadCrumb title="前端" url="https://addonepiece.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://addonepiece.github.io/2017/06/08/service-worker/</loc>
     <lastmod>2019-12-12T07:45:13.652Z</lastmod>
     <data>
@@ -215,26 +317,6 @@
     
     
   <url>
-    <loc>https://addonepiece.github.io/2017/02/14/why-we-dropped-zepto/</loc>
-    <lastmod>2019-11-20T06:33:52.660Z</lastmod>
-    <data>
-        <display>
-        <title>【转】为什么我们放弃了 Zepto</title>
-        <pubTime>2017-02-13T17:25:24.000Z</pubTime>
-        
-        <tag>zepto</tag>
-         
-         
-           
-             
-              <breadCrumb title="综合" url="https://addonepiece.github.io/categories/%E7%BB%BC%E5%90%88/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://addonepiece.github.io/2018/07/20/yarn/</loc>
     <lastmod>2019-11-20T06:33:52.660Z</lastmod>
     <data>
@@ -255,19 +337,19 @@
 
     
   <url>
-    <loc>https://addonepiece.github.io/2019/03/31/vue-ssr/</loc>
-    <lastmod>2019-11-20T06:33:52.659Z</lastmod>
+    <loc>https://addonepiece.github.io/2017/02/14/why-we-dropped-zepto/</loc>
+    <lastmod>2019-11-20T06:33:52.660Z</lastmod>
     <data>
         <display>
-        <title>手把手教你 Vue 服务端渲染</title>
-        <pubTime>2019-03-30T23:25:24.000Z</pubTime>
+        <title>【转】为什么我们放弃了 Zepto</title>
+        <pubTime>2017-02-13T17:25:24.000Z</pubTime>
         
-        <tag>Vue</tag>
+        <tag>zepto</tag>
          
          
            
              
-              <breadCrumb title="前端" url="https://addonepiece.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+              <breadCrumb title="综合" url="https://addonepiece.github.io/categories/%E7%BB%BC%E5%90%88/"/>
           
         </display>
     </data>
@@ -295,28 +377,6 @@
 
     
   <url>
-    <loc>https://addonepiece.github.io/2019/07/01/vue-element-change-theme/</loc>
-    <lastmod>2019-11-20T06:33:52.658Z</lastmod>
-    <data>
-        <display>
-        <title>基于Vue、ElementUI的换肤解决方案</title>
-        <pubTime>2019-06-30T19:25:24.000Z</pubTime>
-        
-        <tag>JavaScript</tag>
-         
-        <tag>Vue</tag>
-         
-         
-           
-             
-              <breadCrumb title="前端" url="https://addonepiece.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://addonepiece.github.io/2018/05/01/vue-music/</loc>
     <lastmod>2019-11-20T06:33:52.658Z</lastmod>
     <data>
@@ -325,66 +385,6 @@
         <pubTime>2018-04-30T19:25:24.000Z</pubTime>
         
         <tag>vue</tag>
-         
-         
-           
-             
-              <breadCrumb title="前端" url="https://addonepiece.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://addonepiece.github.io/2018/06/18/vue-prerender/</loc>
-    <lastmod>2019-11-20T06:33:52.658Z</lastmod>
-    <data>
-        <display>
-        <title>Vue 服务端渲染 or 预渲染</title>
-        <pubTime>2018-06-18T08:25:24.000Z</pubTime>
-        
-        <tag>vue</tag>
-         
-         
-           
-             
-              <breadCrumb title="前端" url="https://addonepiece.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://addonepiece.github.io/2017/11/11/vue-sell/</loc>
-    <lastmod>2019-11-20T06:33:52.658Z</lastmod>
-    <data>
-        <display>
-        <title>vue2.x 做一个外卖app</title>
-        <pubTime>2017-11-10T19:25:24.000Z</pubTime>
-        
-        <tag>vue</tag>
-         
-         
-           
-             
-              <breadCrumb title="前端" url="https://addonepiece.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://addonepiece.github.io/2019/02/05/travis-ci/</loc>
-    <lastmod>2019-11-20T06:33:52.657Z</lastmod>
-    <data>
-        <display>
-        <title>使用 Travis CI 自动更新 GitHub Pages</title>
-        <pubTime>2019-02-04T23:25:24.000Z</pubTime>
-        
-        <tag>CI</tag>
          
          
            
@@ -565,12 +565,12 @@
 
     
   <url>
-    <loc>https://addonepiece.github.io/2017/07/15/hexo-next-five/</loc>
+    <loc>https://addonepiece.github.io/2016/12/15/hexo-next-four/</loc>
     <lastmod>2019-11-20T06:33:52.647Z</lastmod>
     <data>
         <display>
-        <title>Hexo-NexT搭建个人博客（五）</title>
-        <pubTime>2017-07-15T15:25:24.000Z</pubTime>
+        <title>Hexo-NexT搭建个人博客（四）</title>
+        <pubTime>2016-12-15T15:25:24.000Z</pubTime>
         
         <tag>Hexo</tag>
          
@@ -587,12 +587,12 @@
 
     
   <url>
-    <loc>https://addonepiece.github.io/2016/12/15/hexo-next-four/</loc>
+    <loc>https://addonepiece.github.io/2017/07/15/hexo-next-five/</loc>
     <lastmod>2019-11-20T06:33:52.647Z</lastmod>
     <data>
         <display>
-        <title>Hexo-NexT搭建个人博客（四）</title>
-        <pubTime>2016-12-15T15:25:24.000Z</pubTime>
+        <title>Hexo-NexT搭建个人博客（五）</title>
+        <pubTime>2017-07-15T15:25:24.000Z</pubTime>
         
         <tag>Hexo</tag>
          

@@ -12,7 +12,7 @@
 <h1 id="方案一、使用全局的样式覆盖（前端通用）"><a href="#方案一、使用全局的样式覆盖（前端通用）" class="headerlink" title="方案一、使用全局的样式覆盖（前端通用）"></a>方案一、使用全局的样式覆盖（前端通用）</h1><blockquote>
 <p>这个应该是最常见，也是大家最容易想到的，也是最容易实现的一种方案。</p>
 </blockquote>
-<p>我们单独写一份样式表（css 文件 <a href="https://github.com/Neveryu/vue-cms/blob/master/src/assets/custom-theme/science-blue.css" target="_blank" rel="external">深空蓝.css</a>），以一个特定的命名开头（比如 <code>.blue-theme</code>），然后在这个 css 文件中，完成我们第二套皮肤的样式代码，然后当我们点击换肤的时候，就将 <code>blue-theme</code> 这个 <code>class</code> 添加到 <code>body</code> 标签中，那么这个时候，我们的换肤效果就出来了。</p>
+<p>我们单独写一份样式表（css 文件 <a href="https://github.com/addonepiece/vue-cms/blob/master/src/assets/custom-theme/science-blue.css" target="_blank" rel="external">深空蓝.css</a>），以一个特定的命名开头（比如 <code>.blue-theme</code>），然后在这个 css 文件中，完成我们第二套皮肤的样式代码，然后当我们点击换肤的时候，就将 <code>blue-theme</code> 这个 <code>class</code> 添加到 <code>body</code> 标签中，那么这个时候，我们的换肤效果就出来了。</p>
 <p><img src="https://img-blog.csdnimg.cn/20190904142928156.gif" alt="在这里插入图片描述"></p>
 <p>当我们这里点击深空蓝的时候，将 class <code>science-blue</code> 添加到 <code>body</code> 上，点击青铜绿的时候，就将 <code>science-blue</code> 去掉，因为我们默认的就是青铜绿。</p>
 <h1 id="方案二、自定义自己的Element-ui配色"><a href="#方案二、自定义自己的Element-ui配色" class="headerlink" title="方案二、自定义自己的Element-ui配色"></a>方案二、自定义自己的Element-ui配色</h1><p>默认的 Element 的配色是：</p>
@@ -36,7 +36,7 @@
 <p>加完以后，我们按照前面介绍的切换 <code>body</code> 元素的 <code>class</code> 的方法，就可以实现皮肤切换的功能了。</p>
 <p><img src="https://img-blog.csdnimg.cn/20190904143459163.gif" alt=""></p>
 <h1 id="方案三、快速改变网站颜色"><a href="#方案三、快速改变网站颜色" class="headerlink" title="方案三、快速改变网站颜色"></a>方案三、快速改变网站颜色</h1><p>依据 Element 官网所介绍，Element 使用 SCSS 编写，如果你的项目也使用了 SCSS，那么可以直接在项目中改变 Element 的样式变量。新建一个 <code>element-variables.scss</code> 样式文件。（温馨提示：请确保你安装了 <code>node-sass</code> 与 <code>sass-loader</code>）</p>
-<p><code>element-variables.scss</code> 文件，这里就不贴出来了，具体可以看这里：<a href="https://github.com/Neveryu/vue-cms/blob/master/src/element-variables.scss" target="_blank" rel="external">element-variables.scss</a>，这个文件里面定义了很多颜色变量</p>
+<p><code>element-variables.scss</code> 文件，这里就不贴出来了，具体可以看这里：<a href="https://github.com/addonepiece/vue-cms/blob/master/src/element-variables.scss" target="_blank" rel="external">element-variables.scss</a>，这个文件里面定义了很多颜色变量</p>
 <p>这种方法使用起来是简单的，你只需将其引入<br><img src="https://img-blog.csdnimg.cn/20190831181453850.png" alt="在这里插入图片描述"><br>修改里面的颜色变量即可生效。<br><img src="https://img-blog.csdnimg.cn/20190831181844187.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2NzZG5feXVkb25n,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>这种方法是快捷的，修改几个颜色变量即可生效。（然后就可以部署啦~）</p>
 <font color="red">这里有一个问题，如何在 js 中修改这个 <code>element-variables.scss</code> 文件里面的变量？如果可以实现，那么就可以实现实时动态换色了。</font>
 
@@ -52,7 +52,7 @@
 <li>颜色替换（用刚刚生成的颜色来替换样式文件中的颜色）</li>
 <li>直接在页面上加 <code>style</code> 标签，把生成的样式填进去</li>
 </ul>
-<font color="#1a6">我们一起来看一下技术实现细节吧，强烈建议你打开代码一起来看： <a href="https://github.com/Neveryu/vue-cms/blob/master/src/views/theme/index.vue#L167-L297" target="_blank" rel="external">https://github.com/Neveryu/vue-cms/blob/master/src/views/theme/index.vue#L167-L297</a>）</font>
+<font color="#1a6">我们一起来看一下技术实现细节吧，强烈建议你打开代码一起来看： <a href="https://github.com/addonepiece/vue-cms/blob/master/src/views/theme/index.vue#L167-L297" target="_blank" rel="external">https://github.com/addonepiece/vue-cms/blob/master/src/views/theme/index.vue#L167-L297</a>）</font>
 
 <p>1、首先我们需要拿到通过 package.json 拿到 <code>element-ui</code> 的版本号，根据该版本号去请求相应的样式。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 如果没有chalk就是第一次换颜色，需要远程获取css文件，赋值给chalk</span></span><br><span class="line"><span class="comment">// 后续的换颜色操作，就不用远程获取了</span></span><br><span class="line"><span class="keyword">if</span> (!<span class="keyword">this</span>.chalk) &#123;</span><br><span class="line">    <span class="keyword">const</span> url = <span class="string">`https://unpkg.com/element-ui@<span class="subst">$&#123;version&#125;</span>/lib/theme-chalk/index.css`</span></span><br><span class="line">    <span class="keyword">await</span> <span class="keyword">this</span>.getCSSString(url, <span class="string">'chalk'</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p><code>getCSSString</code> 方法是一个常用 <code>XHR</code>，用来获取远程 <code>css</code> 资源文件。</p>
@@ -62,7 +62,7 @@
 <p>第一次换颜色的时候，需要创建一个 <code>style</code> 标签，添加到 <code>body</code> 中，后面的换颜色，就不用了。</p>
 <p>OK啦，看下效果：</p>
 <p><img src="https://img-blog.csdnimg.cn/20190904185728363.gif" alt="在这里插入图片描述"></p>
-<p id="div-border-left-blue">【在线演示：<a href="https://neveryu.github.io/vue-cms/index.html" target="_blank" rel="external">vue-cms</a>】<br>【源代码：<a href="https://github.com/Neveryu/vue-cms/blob/master/src/views/theme/index.vue" target="_blank" rel="external">github.com/Neveryu/vue-cms</a>】<br></p>
+<p id="div-border-left-blue">【在线演示：<a href="https://addonepiece.github.io/vue-cms/index.html">vue-cms</a>】<br>【源代码：<a href="https://github.com/addonepiece/vue-cms/blob/master/src/views/theme/index.vue" target="_blank" rel="external">github.com/addonepiece/vue-cms</a>】<br></p>
 
 ]]></content>
       
@@ -232,7 +232,7 @@
     <entry>
       <title><![CDATA[手把手教你 Vue 服务端渲染]]></title>
       <url>https://addonepiece.github.io/2019/03/31/vue-ssr/</url>
-      <content type="html"><![CDATA[<h1 id="序"><a href="#序" class="headerlink" title="序"></a>序</h1><p>在写这篇文章之前，我有写一篇 <a href="https://neveryu.github.io/2018/06/18/vue-prerender/" target="_blank" rel="external">Vue 预渲染的教程</a> 以及 <a href="https://neveryu.github.io/prerender-website/index.html" target="_blank" rel="external">在线示例</a>，有需要的可以看一下~</p>
+      <content type="html"><![CDATA[<h1 id="序"><a href="#序" class="headerlink" title="序"></a>序</h1><p>在写这篇文章之前，我有写一篇 <a href="https://addonepiece.github.io/2018/06/18/vue-prerender/">Vue 预渲染的教程</a> 以及 <a href="https://addonepiece.github.io/prerender-website/index.html">在线示例</a>，有需要的可以看一下~</p>
 <hr>
 <font color="green">【下面开始 Vue 服务端渲染】</font>
 
@@ -240,11 +240,11 @@
 <p>服务端渲染 = SSR = Server-Side Rendering</p>
 <p><a href="https://ssr.vuejs.org/zh/" target="_blank" rel="external">Vue 服务器渲染</a> 可以说是我们学习 Vue 技术的最后一个环节了；也是上手难度稍为高一点的一个环节。</p>
 <p>目前还没有发现很好的学习资料或者教程，文档也不是特别明白，这也导致了很多人没能拿下 vue 的 ssr。</p>
-<p>所以就想着写一个曲线平滑，循序渐进，明了易懂的 <a href="https://github.com/Neveryu/vue-ssr-lessons" target="_blank" rel="external">教程</a> 来帮助大家找到 Vue SSR 的感觉。</p>
+<p>所以就想着写一个曲线平滑，循序渐进，明了易懂的 <a href="https://github.com/addonepiece/vue-ssr-lessons" target="_blank" rel="external">教程</a> 来帮助大家找到 Vue SSR 的感觉。</p>
 <h1 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h1><p><font color="red">由于内容较多，如果只写一篇文章就想把 Vue SSR 介绍清晰透彻的话，我觉得不太现实；</font>所以就想着把一个完整的 Vue SSR 项目细分开来，每一个小节讲解一个知识点，这样效果应该会好一点吧。这个项目虽然不大，但已经包含了 Vue SSR 的所有内容。</p>
-<p id="div-border-top-green">项目仓库：<a href="https://github.com/Neveryu/vue-ssr-lessons" target="_blank" rel="external">https://github.com/Neveryu/vue-ssr-lessons</a><br></p>
+<p id="div-border-top-green">项目仓库：<a href="https://github.com/addonepiece/vue-ssr-lessons" target="_blank" rel="external">https://github.com/addonepiece/vue-ssr-lessons</a><br></p>
 
-<p>1、<a href="https://github.com/Neveryu/vue-ssr-lessons" target="_blank" rel="external">这个教程</a> 分为 7 个小节，每个小节都是一个独立的可以运行的小项目，这样可以减少大家出错的概率（如果只给出最终的代码，那万一又跑不起来，岂不凉凉，影响大家学习的心情）；每个小节简单配备了 <strong>运行步骤</strong> 以及 <strong>简要说明</strong> 来帮助大家运行项目以及了解本节的知识点。</p>
+<p>1、<a href="https://github.com/addonepiece/vue-ssr-lessons" target="_blank" rel="external">这个教程</a> 分为 7 个小节，每个小节都是一个独立的可以运行的小项目，这样可以减少大家出错的概率（如果只给出最终的代码，那万一又跑不起来，岂不凉凉，影响大家学习的心情）；每个小节简单配备了 <strong>运行步骤</strong> 以及 <strong>简要说明</strong> 来帮助大家运行项目以及了解本节的知识点。</p>
 <p><img src="/images/vue-ssr-1.png" alt=""></p>
 <p>2、其次，每个小节都是在前一小节的基础上，继续补充写代码的，这样，大家对比就能知道，这一节具体增加了哪些代码，哪些内容；方便大家学习某一个小节的知识（如果笼统的一次性给出最终代码，这样在找代码之间逻辑关系时，比较吃力）</p>
 <h1 id="章节介绍"><a href="#章节介绍" class="headerlink" title="章节介绍"></a>章节介绍</h1><p>第一节：一个最简单的服务端渲染原型（10 行代码）【难度：<i class="fa fa-star"></i>】<br>第二节：与服务器集成，使用 Express 作为服务器提供服务【难度：<i class="fa fa-star"></i>】<br>第三节：使用一个页面模版【难度：<i class="fa fa-star"></i>】<br>第四节：开发客户端与服务端入口文件，配置webpack【难度：<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>】<br>第五节：使用vue-router来做路由【难度：<i class="fa fa-star"></i><i class="fa fa-star"></i>】<br>第六节：数据，vuex，状态容器【难度：<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>】<br>第七节：增加一些额外的功能，完善项目【难度：<i class="fa fa-star"></i><i class="fa fa-star"></i>】</p>
@@ -288,7 +288,7 @@
       <content type="html"><![CDATA[<p><a href="https://travis-ci.org/" target="_blank" rel="external">Travis CI</a> 提供的是持续集成服务（Continuous Integration，简称 CI）。我们在软件开发过程中，有构建、测试、部署这些必不可少的步骤，而这些会花掉我们很多的时间。为了提高软件开发的效率，现在涌现了很多自动化工具。<a href="https://travis-ci.org/" target="_blank" rel="external">Travis CI</a> 是目前<a href="https://github.blog/2017-11-07-github-welcomes-all-ci-tools/" target="_blank" rel="external">市场份额</a>最大的一个，而且有很详细的文档以及可以和 Github 很好的对接。</p>
 <a id="more"></a>
 <p>Travis CI 还是很强大的，用好这个工具不仅可以提高效率，还能使开发流程更可靠和专业化。</p>
-<p>就我写的 <a href="https://neveryu.github.io/web-bookmarks/" target="_blank" rel="external">web-bookmarks</a> 这个项目来说的话，每次更改完都要手动部署到 GitHub Pages。</p>
+<p>就我写的 <a href="https://addonepiece.github.io/web-bookmarks/">web-bookmarks</a> 这个项目来说的话，每次更改完都要手动部署到 GitHub Pages。</p>
 <p>从最开始的手动构建部署：手动敲构建命令，然后手动推到 GitHub。(<em>重复的次数多了就显得很麻烦，出错的几率也会变大。</em>)</p>
 <p>后来写了一个构建部署的脚本：每次开发完，再手动执行脚本，完成构建部署。</p>
 <p>再到现在的使用 CI 自动更新：开发完，我只用将源码 push 到 GitHub 做版本管理，就 ok 了；Travis 监测到代码有变化，然后就会自动执行我们设定好的任务。【优秀～】</p>
@@ -324,15 +324,15 @@
 <p>首先，安装 Ruby 的包 <code>travis</code> 。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 安装 Travis CI 命令行工具</span></span><br><span class="line">$ gem install travis</span><br></pre></td></tr></table></figure></p>
 <p>然后，就可以用 <code>travis encrypt</code> 命令加密信息。<br>在项目的根目录下，执行下面的命令。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ travis encrypt name=secretvalue</span><br></pre></td></tr></table></figure></p>
 <p>上面命令中，<code>gh_token</code> 是要加密的变量名，<code>secretvalue</code> 是要加密的变量值。执行以后，屏幕上会输出如下信息。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">secure: &quot;... encrypted data ...&quot;</span><br></pre></td></tr></table></figure></p>
-<p>现在，就可以把这一行加入 <code>.travis.yml</code> 。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">env:</span><br><span class="line">  global:</span><br><span class="line">    - GH_REF: github.com/Neveryu/xxxxx.git</span><br><span class="line">    - secure: <span class="string">"... entrypted data ..."</span></span><br></pre></td></tr></table></figure></p>
+<p>现在，就可以把这一行加入 <code>.travis.yml</code> 。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">env:</span><br><span class="line">  global:</span><br><span class="line">    - GH_REF: github.com/addonepiece/xxxxx.git</span><br><span class="line">    - secure: <span class="string">"... entrypted data ..."</span></span><br></pre></td></tr></table></figure></p>
 <p>然后，脚本里面就可以使用环境变量 <code>gh_token</code> 了，Travis 会在运行时自动对它解密。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># $&#123;gh_token&#125; 对应就是 Personal access tokens ， gh_token 是环境变量名</span></span><br><span class="line"><span class="comment"># $&#123;GH_REF&#125; 对应的是你的 Github 仓库地址，GH_REF 是变量名</span></span><br><span class="line">git push -f <span class="string">"https://<span class="variable">$&#123;gh_token&#125;</span>@<span class="variable">$&#123;GH_REF&#125;</span>"</span> master:gh-pages</span><br></pre></td></tr></table></figure>
 <p><code>travis encrypt</code> 命令的 <code>--add</code> 参数会把输出自动写入 <code>.travis.yml</code>，省掉了修改 <code>env</code> 字段的步骤。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ travis encrypt name=secretvalue --add</span><br></pre></td></tr></table></figure></p>
 <p>详细信息请看<a href="https://docs.travis-ci.com/user/encryption-keys/" target="_blank" rel="external">官方文档</a></p>
-<p id="div-border-top-red">可以参考我的 <a href="https://github.com/Neveryu/vue-cms" target="_blank" title="vue-cms">vue-cms</a> 这个项目中的 <code>.travis.yml</code> 文件</p>
+<p id="div-border-top-red">可以参考我的 <a href="https://github.com/addonepiece/vue-cms" target="_blank" title="vue-cms">vue-cms</a> 这个项目中的 <code>.travis.yml</code> 文件</p>
 
-<h1 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h1><h2 id="如何显示-Status-Image"><a href="#如何显示-Status-Image" class="headerlink" title="如何显示 Status Image"></a>如何显示 Status Image</h2><p><a href="https://travis-ci.org/Neveryu/web-bookmarks" target="_blank" rel="external"><img src="https://travis-ci.org/Neveryu/web-bookmarks.svg?branch=master" alt="Build Status"></a></p>
-<p><img src="/images/travis-ci-4.png" alt="travis-ci-4"></p>
+<h1 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h1><h2 id="如何显示-Status-Image"><a href="#如何显示-Status-Image" class="headerlink" title="如何显示 Status Image"></a>如何显示 Status Image</h2><p><a href="https://travis-ci.org/addonepiece/web-bookmarks" target="_blank" rel="external"><img src="https://travis-ci.org/addonepiece/web-bookmarks.svg?branch=master" alt="Build Status"></a></p>
+<p><img src="/images/travis-ci-4x.png" alt="travis-ci-4"></p>
 <h2 id="如何跳过自动构建"><a href="#如何跳过自动构建" class="headerlink" title="如何跳过自动构建"></a>如何跳过自动构建</h2><p>如果 commit 不想让 Travis 构建，那么就在 commit message 里加上 [ci skip] 就行了。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit -m <span class="string">"[ci skip] commit message"</span></span><br></pre></td></tr></table></figure></p>
 <h2 id="权限问题"><a href="#权限问题" class="headerlink" title="权限问题"></a>权限问题</h2><p>如果遇到脚本权限不够的提示或者问题，你可以给你的脚本加上权限：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod u+x deploy.sh</span><br></pre></td></tr></table></figure></p>
 <p>或者在 <code>.travis.yml</code> 里加：<br><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">before_install:</span></span><br><span class="line"><span class="bullet">  -</span> <span class="string">chmod</span> <span class="string">u+x</span> <span class="string">deploy.sh</span></span><br></pre></td></tr></table></figure></p>
@@ -501,17 +501,17 @@
 <li>更好的 SEO</li>
 <li>更快的内容到达时间</li>
 </ul>
-<h3 id="服务端渲染-or-预渲染"><a href="#服务端渲染-or-预渲染" class="headerlink" title="服务端渲染 or 预渲染"></a>服务端渲染 or 预渲染</h3><p>就像官网所说的，如果你调研服务器端渲染(SSR)只是用来改善少数营销页面（例如 /, /about, /contact 等）的 SEO，那么你可能需要<a href="https://github.com/chrisvfritz/prerender-spa-plugin" target="_blank" rel="external">预渲染</a>，一个典型的预渲染使用场景可能类似<a href="https://neveryu.github.io/vue-tour/" target="_blank" rel="external">这个网站</a>。</p>
-<h3 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h3><p><strong>服务端渲染</strong>和<strong>预渲染</strong>的使用场景还是有较明显的区别的。预渲染的使用场景更多是我们所说的静态页面的形式，比如说<a href="https://neveryu.github.io/vue-tour/" target="_blank" rel="external">这个网站</a>。服务端渲染适用于大型的、页面数据处理较多且较为复杂的、与服务端有数据交互的功能型网站，一个明显的使用场景就是电商网站。</p>
-<h2 id="如何使用预渲染"><a href="#如何使用预渲染" class="headerlink" title="如何使用预渲染"></a>如何使用预渲染</h2><p><strong>预渲染</strong>的核心是使用 <a href="https://github.com/chrisvfritz/prerender-spa-plugin" target="_blank" rel="external">prerender-spa-plugin</a>，如何使用它呢？我们还是以<a href="https://neveryu.github.io/vue-tour/" target="_blank" rel="external">这个网站</a>的<a href="https://github.com/Neveryu/prerender-website" target="_blank" rel="external">源代码</a>中的 webpack 配置为例：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> PrerenderSPAPlugin(&#123;</span><br><span class="line">  staticDir: path.join(__dirname, <span class="string">'dist'</span>),</span><br><span class="line">  routes: [ <span class="string">'/'</span>, <span class="string">'/home'</span>, <span class="string">'/infomation'</span>, <span class="string">'/ticket'</span>, <span class="string">'/scenery'</span>, <span class="string">'/about'</span> ],</span><br><span class="line">  renderer: <span class="keyword">new</span> Renderer(&#123;</span><br><span class="line">    headless: <span class="literal">false</span>,</span><br><span class="line">    renderAfterDocumentEvent: <span class="string">'render-event'</span></span><br><span class="line">  &#125;)</span><br><span class="line">&#125;),</span><br></pre></td></tr></table></figure></p>
+<h3 id="服务端渲染-or-预渲染"><a href="#服务端渲染-or-预渲染" class="headerlink" title="服务端渲染 or 预渲染"></a>服务端渲染 or 预渲染</h3><p>就像官网所说的，如果你调研服务器端渲染(SSR)只是用来改善少数营销页面（例如 /, /about, /contact 等）的 SEO，那么你可能需要<a href="https://github.com/chrisvfritz/prerender-spa-plugin" target="_blank" rel="external">预渲染</a>，一个典型的预渲染使用场景可能类似<a href="https://addonepiece.github.io/vue-tour/">这个网站</a>。</p>
+<h3 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h3><p><strong>服务端渲染</strong>和<strong>预渲染</strong>的使用场景还是有较明显的区别的。预渲染的使用场景更多是我们所说的静态页面的形式，比如说<a href="https://addonepiece.github.io/vue-tour/">这个网站</a>。服务端渲染适用于大型的、页面数据处理较多且较为复杂的、与服务端有数据交互的功能型网站，一个明显的使用场景就是电商网站。</p>
+<h2 id="如何使用预渲染"><a href="#如何使用预渲染" class="headerlink" title="如何使用预渲染"></a>如何使用预渲染</h2><p><strong>预渲染</strong>的核心是使用 <a href="https://github.com/chrisvfritz/prerender-spa-plugin" target="_blank" rel="external">prerender-spa-plugin</a>，如何使用它呢？我们还是以<a href="https://addonepiece.github.io/vue-tour/">这个网站</a>的<a href="https://github.com/addonepiece/prerender-website" target="_blank" rel="external">源代码</a>中的 webpack 配置为例：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> PrerenderSPAPlugin(&#123;</span><br><span class="line">  staticDir: path.join(__dirname, <span class="string">'dist'</span>),</span><br><span class="line">  routes: [ <span class="string">'/'</span>, <span class="string">'/home'</span>, <span class="string">'/infomation'</span>, <span class="string">'/ticket'</span>, <span class="string">'/scenery'</span>, <span class="string">'/about'</span> ],</span><br><span class="line">  renderer: <span class="keyword">new</span> Renderer(&#123;</span><br><span class="line">    headless: <span class="literal">false</span>,</span><br><span class="line">    renderAfterDocumentEvent: <span class="string">'render-event'</span></span><br><span class="line">  &#125;)</span><br><span class="line">&#125;),</span><br></pre></td></tr></table></figure></p>
 <p>我们需要简单的配置一下，项目所有的路由，最终生成后有几个页面，都是以这个配置为依据，而不是你在 vue-router 中配置的路由。</p>
 <p>最基础也最核心的配置项也就这几行代码，当然，如果你有更多的需求配置项，你可以去 github 上查看文档，文档中也有很详细的介绍。 </p>
-<h2 id="如何搭建一个预渲染开发环境"><a href="#如何搭建一个预渲染开发环境" class="headerlink" title="如何搭建一个预渲染开发环境"></a>如何搭建一个预渲染开发环境</h2><p>如果你也想要使用<strong>预渲染</strong>来开发你的网站的话，最简单的方法就是克隆<a href="https://github.com/Neveryu/prerender-website" target="_blank" rel="external">这个项目</a>，然后简单删减以后进行二次开发，整个的开发流程和 Vue 是一模一样的。</p>
+<h2 id="如何搭建一个预渲染开发环境"><a href="#如何搭建一个预渲染开发环境" class="headerlink" title="如何搭建一个预渲染开发环境"></a>如何搭建一个预渲染开发环境</h2><p>如果你也想要使用<strong>预渲染</strong>来开发你的网站的话，最简单的方法就是克隆<a href="https://github.com/addonepiece/prerender-website" target="_blank" rel="external">这个项目</a>，然后简单删减以后进行二次开发，整个的开发流程和 Vue 是一模一样的。</p>
 <h2 id="Tip"><a href="#Tip" class="headerlink" title="Tip"></a>Tip</h2><p>1、相较于 Vue 的模板中大而全的 webpack 配置项，<strong>预渲染</strong>中的 webpack 配置简单小巧，如果你有一些 webpack 的配置需求的话，你可能需要自己动手。</p>
-<p>2、我的<a href="https://github.com/Neveryu/prerender-website" target="_blank" rel="external">这个项目</a>使用的是 stylus 来作为 css 预编译语言，如果你想使用其他的 css 预编译语言的话，需要额外安装一些插件以及做一些简单配置。当然了，默认的 css 肯定是支持的。</p>
-<p>3、在写这个项目的过程中，也有做一些简单的知识点记录。<a href="https://github.com/Neveryu/prerender-website/blob/master/project-note.md" target="_blank" rel="external">vue-prerender 笔记</a></p>
-<p>4、最后项目打包发布到生产环境，使用 <code>npm run build</code> 一键操作即可。如果你想要部署到子目录下的话，那么，你可能需要做一些简单的修改，具体在 <a href="https://github.com/Neveryu/prerender-website/blob/master/project-note.md" target="_blank" rel="external">vue-prerender 笔记</a> 有提到。</p>
-<h2 id="写在最后"><a href="#写在最后" class="headerlink" title="写在最后"></a>写在最后</h2><p><a href="https://neveryu.github.io/vue-tour/" target="_blank" rel="external">项目预览</a><br><a href="https://github.com/Neveryu/prerender-website" target="_blank" rel="external">项目github地址</a></p>
+<p>2、我的<a href="https://github.com/addonepiece/prerender-website" target="_blank" rel="external">这个项目</a>使用的是 stylus 来作为 css 预编译语言，如果你想使用其他的 css 预编译语言的话，需要额外安装一些插件以及做一些简单配置。当然了，默认的 css 肯定是支持的。</p>
+<p>3、在写这个项目的过程中，也有做一些简单的知识点记录。<a href="https://github.com/addonepiece/prerender-website/blob/master/project-note.md" target="_blank" rel="external">vue-prerender 笔记</a></p>
+<p>4、最后项目打包发布到生产环境，使用 <code>npm run build</code> 一键操作即可。如果你想要部署到子目录下的话，那么，你可能需要做一些简单的修改，具体在 <a href="https://github.com/addonepiece/prerender-website/blob/master/project-note.md" target="_blank" rel="external">vue-prerender 笔记</a> 有提到。</p>
+<h2 id="写在最后"><a href="#写在最后" class="headerlink" title="写在最后"></a>写在最后</h2><p><a href="https://addonepiece.github.io/vue-tour/">项目预览</a><br><a href="https://github.com/addonepiece/prerender-website" target="_blank" rel="external">项目github地址</a></p>
 ]]></content>
       
         <categories>
@@ -675,7 +675,7 @@
 <h2 id="为什么写这个项目"><a href="#为什么写这个项目" class="headerlink" title="为什么写这个项目"></a>为什么写这个项目</h2><p>vue 的官网文档写的很好，很多同学在学习完文档以后，很难实际上手做项目，只能做一些 todo-list 的小 demo ,距离上手做项目还有一些差距。<br>这一套 vue 的实战视频可以说是非常适合新手入门进阶，让你可以动手用 vue 来做项目，解决 vue 在实战中的问题才是大家最想学习的，而不是小打小闹的 demo。<br><img src="/images/vue-sell-5.png" alt=""></p>
 <p>而且这套视频教程包含现在最新的前端必备技术点详细教学：webpack、eslint、vue-cli构建、模块打包、mock、vue-resource、axios、以及真实项目中会遇到的各种问题以及解决方案。</p>
 <h2 id="获取教程"><a href="#获取教程" class="headerlink" title="获取教程"></a>获取教程</h2><p>这个项目我从头到尾写了一遍，由于有一些包或者模块升级的原因，会有一些小的问题，我都已经解决过了。想获取教程或者有疑问的，可以加这个群。</p>
-<font color="#f69" size="5">建了一个qq群，可以点击这个logo<a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=32da7a18744756b0d8ffdd05b84999afecb5265dbad0fb119033e122abe803f3"><img border="0" width="150" src="https://neveryu.github.io/vue-tour/logo1.png" alt="Vue学习交流" title="Vue学习交流" style="vertical-align: middle"></a>，或者手动search群号：<a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=32da7a18744756b0d8ffdd05b84999afecb5265dbad0fb119033e122abe803f3">685486827</a></font>
+<font color="#f69" size="5">建了一个qq群，可以点击这个logo<a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=32da7a18744756b0d8ffdd05b84999afecb5265dbad0fb119033e122abe803f3"><img border="0" width="150" src="https://addonepiece.github.io/vue-tour/logo1.png" alt="Vue学习交流" title="Vue学习交流" style="vertical-align: middle"></a>，或者手动search群号：<a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=32da7a18744756b0d8ffdd05b84999afecb5265dbad0fb119033e122abe803f3">685486827</a></font>
 ]]></content>
       
         <categories>

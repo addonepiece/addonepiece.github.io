@@ -96,9 +96,9 @@
 <meta property="og:image" content="https://addonepiece.github.io/images/travis-ci-2.png">
 <meta property="og:image" content="https://addonepiece.github.io/images/travis-ci-3.png">
 <meta property="og:image" content="https://addonepiece.github.io/images/travis-encrypt.png">
-<meta property="og:image" content="https://travis-ci.org/Neveryu/web-bookmarks.svg?branch=master">
-<meta property="og:image" content="https://addonepiece.github.io/images/travis-ci-4.png">
-<meta property="og:updated_time" content="2019-11-20T06:33:52.657Z">
+<meta property="og:image" content="https://travis-ci.org/addonepiece/web-bookmarks.svg?branch=master">
+<meta property="og:image" content="https://addonepiece.github.io/images/travis-ci-4x.png">
+<meta property="og:updated_time" content="2019-12-12T09:42:09.662Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用 Travis CI 自动更新 GitHub Pages">
 <meta name="twitter:description" content="Travis CI 提供的是持续集成服务（Continuous Integration，简称 CI）。我们在软件开发过程中，有构建、测试、部署这些必不可少的步骤，而这些会花掉我们很多的时间。为了提高软件开发的效率，现在涌现了很多自动化工具。Travis CI 是目前市场份额最大的一个，而且有很详细的文档以及可以和 Github 很好的对接。">
@@ -583,7 +583,7 @@ for (var L = 0; L < C.length; L++) {
         <p><a href="https://travis-ci.org/" target="_blank" rel="external">Travis CI</a> 提供的是持续集成服务（Continuous Integration，简称 CI）。我们在软件开发过程中，有构建、测试、部署这些必不可少的步骤，而这些会花掉我们很多的时间。为了提高软件开发的效率，现在涌现了很多自动化工具。<a href="https://travis-ci.org/" target="_blank" rel="external">Travis CI</a> 是目前<a href="https://github.blog/2017-11-07-github-welcomes-all-ci-tools/" target="_blank" rel="external">市场份额</a>最大的一个，而且有很详细的文档以及可以和 Github 很好的对接。</p>
 <a id="more"></a>
 <p>Travis CI 还是很强大的，用好这个工具不仅可以提高效率，还能使开发流程更可靠和专业化。</p>
-<p>就我写的 <a href="https://neveryu.github.io/web-bookmarks/" target="_blank" rel="external">web-bookmarks</a> 这个项目来说的话，每次更改完都要手动部署到 GitHub Pages。</p>
+<p>就我写的 <a href="https://addonepiece.github.io/web-bookmarks/">web-bookmarks</a> 这个项目来说的话，每次更改完都要手动部署到 GitHub Pages。</p>
 <p>从最开始的手动构建部署：手动敲构建命令，然后手动推到 GitHub。(<em>重复的次数多了就显得很麻烦，出错的几率也会变大。</em>)</p>
 <p>后来写了一个构建部署的脚本：每次开发完，再手动执行脚本，完成构建部署。</p>
 <p>再到现在的使用 CI 自动更新：开发完，我只用将源码 push 到 GitHub 做版本管理，就 ok 了；Travis 监测到代码有变化，然后就会自动执行我们设定好的任务。【优秀～】</p>
@@ -619,15 +619,15 @@ for (var L = 0; L < C.length; L++) {
 <p>首先，安装 Ruby 的包 <code>travis</code> 。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 安装 Travis CI 命令行工具</span></span><br><span class="line">$ gem install travis</span><br></pre></td></tr></table></figure></p>
 <p>然后，就可以用 <code>travis encrypt</code> 命令加密信息。<br>在项目的根目录下，执行下面的命令。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ travis encrypt name=secretvalue</span><br></pre></td></tr></table></figure></p>
 <p>上面命令中，<code>gh_token</code> 是要加密的变量名，<code>secretvalue</code> 是要加密的变量值。执行以后，屏幕上会输出如下信息。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">secure: &quot;... encrypted data ...&quot;</span><br></pre></td></tr></table></figure></p>
-<p>现在，就可以把这一行加入 <code>.travis.yml</code> 。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">env:</span><br><span class="line">  global:</span><br><span class="line">    - GH_REF: github.com/Neveryu/xxxxx.git</span><br><span class="line">    - secure: <span class="string">"... entrypted data ..."</span></span><br></pre></td></tr></table></figure></p>
+<p>现在，就可以把这一行加入 <code>.travis.yml</code> 。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">env:</span><br><span class="line">  global:</span><br><span class="line">    - GH_REF: github.com/addonepiece/xxxxx.git</span><br><span class="line">    - secure: <span class="string">"... entrypted data ..."</span></span><br></pre></td></tr></table></figure></p>
 <p>然后，脚本里面就可以使用环境变量 <code>gh_token</code> 了，Travis 会在运行时自动对它解密。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># $&#123;gh_token&#125; 对应就是 Personal access tokens ， gh_token 是环境变量名</span></span><br><span class="line"><span class="comment"># $&#123;GH_REF&#125; 对应的是你的 Github 仓库地址，GH_REF 是变量名</span></span><br><span class="line">git push -f <span class="string">"https://<span class="variable">$&#123;gh_token&#125;</span>@<span class="variable">$&#123;GH_REF&#125;</span>"</span> master:gh-pages</span><br></pre></td></tr></table></figure>
 <p><code>travis encrypt</code> 命令的 <code>--add</code> 参数会把输出自动写入 <code>.travis.yml</code>，省掉了修改 <code>env</code> 字段的步骤。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ travis encrypt name=secretvalue --add</span><br></pre></td></tr></table></figure></p>
 <p>详细信息请看<a href="https://docs.travis-ci.com/user/encryption-keys/" target="_blank" rel="external">官方文档</a></p>
-<p id="div-border-top-red">可以参考我的 <a href="https://github.com/Neveryu/vue-cms" target="_blank" title="vue-cms">vue-cms</a> 这个项目中的 <code>.travis.yml</code> 文件</p>
+<p id="div-border-top-red">可以参考我的 <a href="https://github.com/addonepiece/vue-cms" target="_blank" title="vue-cms">vue-cms</a> 这个项目中的 <code>.travis.yml</code> 文件</p>
 
-<h1 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h1><h2 id="如何显示-Status-Image"><a href="#如何显示-Status-Image" class="headerlink" title="如何显示 Status Image"></a>如何显示 Status Image</h2><p><a href="https://travis-ci.org/Neveryu/web-bookmarks" target="_blank" rel="external"><img src="https://travis-ci.org/Neveryu/web-bookmarks.svg?branch=master" alt="Build Status"></a></p>
-<p><img src="/images/travis-ci-4.png" alt="travis-ci-4"></p>
+<h1 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h1><h2 id="如何显示-Status-Image"><a href="#如何显示-Status-Image" class="headerlink" title="如何显示 Status Image"></a>如何显示 Status Image</h2><p><a href="https://travis-ci.org/addonepiece/web-bookmarks" target="_blank" rel="external"><img src="https://travis-ci.org/addonepiece/web-bookmarks.svg?branch=master" alt="Build Status"></a></p>
+<p><img src="/images/travis-ci-4x.png" alt="travis-ci-4"></p>
 <h2 id="如何跳过自动构建"><a href="#如何跳过自动构建" class="headerlink" title="如何跳过自动构建"></a>如何跳过自动构建</h2><p>如果 commit 不想让 Travis 构建，那么就在 commit message 里加上 [ci skip] 就行了。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit -m <span class="string">"[ci skip] commit message"</span></span><br></pre></td></tr></table></figure></p>
 <h2 id="权限问题"><a href="#权限问题" class="headerlink" title="权限问题"></a>权限问题</h2><p>如果遇到脚本权限不够的提示或者问题，你可以给你的脚本加上权限：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod u+x deploy.sh</span><br></pre></td></tr></table></figure></p>
 <p>或者在 <code>.travis.yml</code> 里加：<br><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">before_install:</span></span><br><span class="line"><span class="bullet">  -</span> <span class="string">chmod</span> <span class="string">u+x</span> <span class="string">deploy.sh</span></span><br></pre></td></tr></table></figure></p>
