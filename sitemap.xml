@@ -2,9 +2,72 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://addonepiece.github.io/2017/06/08/service-worker/</loc>
+    
+    <lastmod>2019-12-12T07:45:13.652Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://addonepiece.github.io/2017/02/18/js-memory-management-and-gc/</loc>
+    
+    <lastmod>2019-12-12T07:32:41.311Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://addonepiece.github.io/2017/05/20/npm-two/</loc>
+    
+    <lastmod>2019-12-12T07:31:12.840Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://addonepiece.github.io/2018/06/01/js-this/</loc>
+    
+    <lastmod>2019-12-12T07:29:40.854Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://addonepiece.github.io/2017/01/18/html5shiv/</loc>
+    
+    <lastmod>2019-12-12T07:19:41.234Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://addonepiece.github.io/2016/10/07/git/</loc>
+    
+    <lastmod>2019-12-12T07:11:15.676Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://addonepiece.github.io/2016/09/25/essay-20160925/</loc>
     
-    <lastmod>2019-11-27T10:08:55.672Z</lastmod>
+    <lastmod>2019-12-12T07:08:55.563Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://addonepiece.github.io/2017/03/07/commonjs/</loc>
+    
+    <lastmod>2019-12-12T06:55:26.202Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://addonepiece.github.io/2017/03/20/amd-cmd/</loc>
+    
+    <lastmod>2019-12-12T06:30:23.367Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://addonepiece.github.io/2016/09/03/hexo-next-one/</loc>
+    
+    <lastmod>2019-12-12T06:16:10.611Z</lastmod>
     
   </url>
   
@@ -100,14 +163,14 @@
   </url>
   
   <url>
-    <loc>https://addonepiece.github.io/2019/07/01/vue-element-change-theme/</loc>
+    <loc>https://addonepiece.github.io/2018/05/01/vue-music/</loc>
     
     <lastmod>2019-11-20T06:33:52.658Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://addonepiece.github.io/2018/05/01/vue-music/</loc>
+    <loc>https://addonepiece.github.io/2019/07/01/vue-element-change-theme/</loc>
     
     <lastmod>2019-11-20T06:33:52.658Z</lastmod>
     
@@ -142,23 +205,9 @@
   </url>
   
   <url>
-    <loc>https://addonepiece.github.io/2017/06/08/service-worker/</loc>
-    
-    <lastmod>2019-11-20T06:33:52.655Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://addonepiece.github.io/2016/10/23/sass/</loc>
     
     <lastmod>2019-11-20T06:33:52.655Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://addonepiece.github.io/2017/05/20/npm-two/</loc>
-    
-    <lastmod>2019-11-20T06:33:52.654Z</lastmod>
     
   </url>
   
@@ -184,28 +233,7 @@
   </url>
   
   <url>
-    <loc>https://addonepiece.github.io/2018/06/01/js-this/</loc>
-    
-    <lastmod>2019-11-20T06:33:52.652Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://addonepiece.github.io/2017/02/18/js-memory-management-and-gc/</loc>
-    
-    <lastmod>2019-11-20T06:33:52.651Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://addonepiece.github.io/2019/05/01/js-exception-handing/</loc>
-    
-    <lastmod>2019-11-20T06:33:52.650Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://addonepiece.github.io/2017/01/18/html5shiv/</loc>
     
     <lastmod>2019-11-20T06:33:52.650Z</lastmod>
     
@@ -254,20 +282,6 @@
   </url>
   
   <url>
-    <loc>https://addonepiece.github.io/2016/09/03/hexo-next-one/</loc>
-    
-    <lastmod>2019-11-20T06:33:52.647Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://addonepiece.github.io/2016/10/07/git/</loc>
-    
-    <lastmod>2019-11-20T06:33:52.646Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://addonepiece.github.io/2017/05/01/gulp/</loc>
     
     <lastmod>2019-11-20T06:33:52.646Z</lastmod>
@@ -275,7 +289,7 @@
   </url>
   
   <url>
-    <loc>https://addonepiece.github.io/2017/03/20/amd-cmd/</loc>
+    <loc>https://addonepiece.github.io/2017/06/25/css-hack/</loc>
     
     <lastmod>2019-11-20T06:33:52.645Z</lastmod>
     
@@ -283,20 +297,6 @@
   
   <url>
     <loc>https://addonepiece.github.io/2016/11/18/china-javascript-environment/</loc>
-    
-    <lastmod>2019-11-20T06:33:52.645Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://addonepiece.github.io/2017/03/07/commonjs/</loc>
-    
-    <lastmod>2019-11-20T06:33:52.645Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://addonepiece.github.io/2017/06/25/css-hack/</loc>
     
     <lastmod>2019-11-20T06:33:52.645Z</lastmod>
     

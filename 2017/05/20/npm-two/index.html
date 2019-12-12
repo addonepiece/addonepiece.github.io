@@ -94,7 +94,7 @@
 <meta property="og:site_name" content="行囊">
 <meta property="og:description" content="在使用 electron 构建桌面应用的时候，在 package.json 里面的 scripts 字段是这样的123&amp;quot;scripts&amp;quot;: &amp;#123;  &amp;quot;start&amp;quot;: &amp;quot;electron .&amp;quot;&amp;#125;,
 我们可以执行 npm start ，那么它就会执行 electron . 这个命令。那么如果我们直接执行 electron .">
-<meta property="og:updated_time" content="2019-11-20T06:33:52.654Z">
+<meta property="og:updated_time" content="2019-12-12T07:31:12.840Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="npm 的一个小细节">
 <meta name="twitter:description" content="在使用 electron 构建桌面应用的时候，在 package.json 里面的 scripts 字段是这样的123&amp;quot;scripts&amp;quot;: &amp;#123;  &amp;quot;start&amp;quot;: &amp;quot;electron .&amp;quot;&amp;#125;,
@@ -584,7 +584,7 @@ for (var L = 0; L < C.length; L++) {
 <p>这就解释了，没有安装全局的 electron ，直接运行 <code>electron .</code> 是不行的，但是使用 <code>npm start</code> 来运行 <code>electron .</code> 可以。</p>
 <p><strong>下面介绍一个使用 npm 的实践：</strong><br>很多朋友使用 hexo 来构建博客；hexo 是基于 Node.js 产物，用它发表博文，很是方便；你只需 hexo clean, hexo g, hexo d三个命令即可；而且每一个命令必须等待前一个命令运行完成。文章数据一多，一套命令打下来，也得 20s+；如果略懂 npm，在 package.js 中加入点命名，例如像这样；<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"scripts"</span>: &#123;</span><br><span class="line">  <span class="string">"start"</span>: <span class="string">"sudo hexo clean &amp;&amp; sudo hexo g &amp;&amp; sudo gulp &amp;&amp; sudo hexo d"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>那么 只需运行 npm start 就好，可将时间消耗缩短至 2s节省时间虽说不多，却也是数量级的提升，而且代价只是那么小，并一劳永逸。所以有必要对此。</p>
-<p>关于 npm 的详细学习，可以查看：<a href="https://neveryu.github.io/2017/04/10/npm/" target="_blank" rel="external">npm 全面介绍</a></p>
+<p>关于 npm 的详细学习，可以查看：<a href="https://addonepiece.github.io/2017/04/10/npm/">npm 全面介绍</a></p>
 
       
     </div>
