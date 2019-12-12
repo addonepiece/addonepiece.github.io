@@ -94,7 +94,7 @@
 <meta property="og:description" content="背景在 Node 生态系统中，依赖通常安装在项目的 node_modules 文件夹中。然而，这个文件的结构和实际依赖树可能有所区别，因为重复的依赖可以合并到一起。npm 客户端把依赖安装到 node_modules 目录的过程具有不确定性。这意味着当依赖的安装顺序不同时，node_modules 目录的结构可能会发生变化。这种差异可能会导致类似“我的电脑上可以运行，别的电脑上不行”的情况，并且通">
 <meta property="og:image" content="https://img-blog.csdn.net/20180824142908356?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2NzZG5feXVkb25n/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
 <meta property="og:image" content="https://img-blog.csdn.net/20180824120236673?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2NzZG5feXVkb25n/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
-<meta property="og:updated_time" content="2019-11-20T06:33:52.660Z">
+<meta property="og:updated_time" content="2019-12-12T11:40:22.621Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Yarn安装与使用详细介绍">
 <meta name="twitter:description" content="背景在 Node 生态系统中，依赖通常安装在项目的 node_modules 文件夹中。然而，这个文件的结构和实际依赖树可能有所区别，因为重复的依赖可以合并到一起。npm 客户端把依赖安装到 node_modules 目录的过程具有不确定性。这意味着当依赖的安装顺序不同时，node_modules 目录的结构可能会发生变化。这种差异可能会导致类似“我的电脑上可以运行，别的电脑上不行”的情况，并且通">
@@ -605,7 +605,7 @@ for (var L = 0; L < C.length; L++) {
 <h1 id="Yarn-安装"><a href="#Yarn-安装" class="headerlink" title="Yarn 安装"></a>Yarn 安装</h1><h2 id="windows"><a href="#windows" class="headerlink" title="windows"></a>windows</h2><p>在 Yarn 中文网可以找到 window 下的三种安装方法：</p>
 <p><img src="https://img-blog.csdn.net/20180824120236673?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2NzZG5feXVkb25n/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="yarn-install"></p>
 <p>不过我觉得这三种方法都不好用，快速好用的安装方法应该还是使用 npm 来安装：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g yarn</span><br></pre></td></tr></table></figure></p>
-<p>关于为什么使用 <code>-g</code>，以及 <code>-g</code> 会带来哪来影响，这个可以看我的这篇文章：<a href="https://neveryu.github.io/2017/04/10/npm/" target="_blank" rel="external">npm详细介绍</a>，里面详细介绍了为什么要使用 <code>-g</code>，以及 <code>-g</code> 的作用。</p>
+<p>关于为什么使用 <code>-g</code>，以及 <code>-g</code> 会带来哪来影响，这个可以看我的这篇文章：<a href="https://addonepiece.github.io/2017/04/10/npm/">npm详细介绍</a>，里面详细介绍了为什么要使用 <code>-g</code>，以及 <code>-g</code> 的作用。</p>
 <h2 id="mac"><a href="#mac" class="headerlink" title="mac"></a>mac</h2><h3 id="方式一"><a href="#方式一" class="headerlink" title="方式一"></a>方式一</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g yarn</span><br></pre></td></tr></table></figure>
 <p>如果有报： <code>Please try running this command again as root/Administrator.</code>，可能就是权限不足，因此你需要切换到最高权限去执行命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo -s</span><br><span class="line">npm install yarn -g</span><br></pre></td></tr></table></figure></p>
 <h3 id="方式二"><a href="#方式二" class="headerlink" title="方式二"></a>方式二</h3><p>使用另一种初始化脚本的方法，可能就会比较简单一些：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -o- -L https://yarnpkg.com/install.sh | bash</span><br></pre></td></tr></table></figure></p>
@@ -829,7 +829,7 @@ for (var L = 0; L < C.length; L++) {
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">17</span>
+                <span class="site-state-item-count">16</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
