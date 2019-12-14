@@ -4,6 +4,46 @@
 
     
   <url>
+    <loc>https://addonepiece.github.io/2019/12/14/agile-scrum-master/</loc>
+    <lastmod>2019-12-14T03:31:09.615Z</lastmod>
+    <data>
+        <display>
+        <title>【翻译】敏捷中的Scrum Master</title>
+        <pubTime>2019-12-14T01:00:15.000Z</pubTime>
+        
+        <tag>敏捷/Agile</tag>
+         
+         
+           
+             
+              <breadCrumb title="敏捷" url="https://addonepiece.github.io/categories/%E6%95%8F%E6%8D%B7/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://addonepiece.github.io/2019/03/31/vue-ssr/</loc>
+    <lastmod>2019-12-14T02:06:55.760Z</lastmod>
+    <data>
+        <display>
+        <title>手把手教你 Vue 服务端渲染</title>
+        <pubTime>2019-03-30T23:25:24.000Z</pubTime>
+        
+        <tag>Vue</tag>
+         
+         
+           
+             
+              <breadCrumb title="前端" url="https://addonepiece.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://addonepiece.github.io/2019/12/12/agile-shoupoli/</loc>
     <lastmod>2019-12-13T09:46:13.875Z</lastmod>
     <data>
@@ -251,26 +291,6 @@
            
              
               <breadCrumb title="Hexo" url="https://addonepiece.github.io/categories/Hexo/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://addonepiece.github.io/2019/03/31/vue-ssr/</loc>
-    <lastmod>2019-12-12T10:08:24.008Z</lastmod>
-    <data>
-        <display>
-        <title>手把手教你 Vue 服务端渲染</title>
-        <pubTime>2019-03-30T23:25:24.000Z</pubTime>
-        
-        <tag>Vue</tag>
-         
-         
-           
-             
-              <breadCrumb title="前端" url="https://addonepiece.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
           
         </display>
     </data>
@@ -611,14 +631,14 @@
 
     
   <url>
-    <loc>https://addonepiece.github.io/2017/02/11/respond-js/</loc>
+    <loc>https://addonepiece.github.io/2017/04/10/npm/</loc>
     <lastmod>2019-11-20T06:33:52.654Z</lastmod>
     <data>
         <display>
-        <title>polyfill — Respond.js</title>
-        <pubTime>2017-02-11T15:25:24.000Z</pubTime>
+        <title>npm 全面介绍</title>
+        <pubTime>2017-04-09T19:25:24.000Z</pubTime>
         
-        <tag>JavaScript</tag>
+        <tag>npm</tag>
          
          
            
@@ -631,14 +651,14 @@
 
     
   <url>
-    <loc>https://addonepiece.github.io/2017/04/10/npm/</loc>
+    <loc>https://addonepiece.github.io/2017/02/11/respond-js/</loc>
     <lastmod>2019-11-20T06:33:52.654Z</lastmod>
     <data>
         <display>
-        <title>npm 全面介绍</title>
-        <pubTime>2017-04-09T19:25:24.000Z</pubTime>
+        <title>polyfill — Respond.js</title>
+        <pubTime>2017-02-11T15:25:24.000Z</pubTime>
         
-        <tag>npm</tag>
+        <tag>JavaScript</tag>
          
          
            
