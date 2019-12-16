@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://addonepiece.github.io/2018/12/16/java-pattern-singleton/</loc>
+    
+    <lastmod>2019-12-16T06:26:15.352Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://addonepiece.github.io/2019/12/15/agile-protectTeam/</loc>
     
     <lastmod>2019-12-15T09:16:48.903Z</lastmod>
@@ -289,14 +296,14 @@
   </url>
   
   <url>
-    <loc>https://addonepiece.github.io/2017/04/10/npm/</loc>
+    <loc>https://addonepiece.github.io/2017/02/11/respond-js/</loc>
     
     <lastmod>2019-11-20T06:33:52.654Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://addonepiece.github.io/2017/02/11/respond-js/</loc>
+    <loc>https://addonepiece.github.io/2017/04/10/npm/</loc>
     
     <lastmod>2019-11-20T06:33:52.654Z</lastmod>
     
