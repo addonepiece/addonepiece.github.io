@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>https://addonepiece.github.io/2019/01/17/java-REST/</loc>
+    <lastmod>2019-12-17T04:18:52.958Z</lastmod>
+    <data>
+        <display>
+        <title>什么是REST/RESTfuk API？</title>
+        <pubTime>2019-01-17T00:20:00.000Z</pubTime>
+        
+        <tag>Java</tag>
+         
+         
+           
+             
+              <breadCrumb title="后台" url="https://addonepiece.github.io/categories/%E5%90%8E%E5%8F%B0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://addonepiece.github.io/2018/12/16/java-pattern-singleton/</loc>
     <lastmod>2019-12-16T06:26:15.352Z</lastmod>
     <data>
@@ -691,14 +711,14 @@
 
     
   <url>
-    <loc>https://addonepiece.github.io/2017/02/11/respond-js/</loc>
+    <loc>https://addonepiece.github.io/2017/04/10/npm/</loc>
     <lastmod>2019-11-20T06:33:52.654Z</lastmod>
     <data>
         <display>
-        <title>polyfill — Respond.js</title>
-        <pubTime>2017-02-11T15:25:24.000Z</pubTime>
+        <title>npm 全面介绍</title>
+        <pubTime>2017-04-09T19:25:24.000Z</pubTime>
         
-        <tag>JavaScript</tag>
+        <tag>npm</tag>
          
          
            
@@ -711,14 +731,14 @@
 
     
   <url>
-    <loc>https://addonepiece.github.io/2017/04/10/npm/</loc>
+    <loc>https://addonepiece.github.io/2017/02/11/respond-js/</loc>
     <lastmod>2019-11-20T06:33:52.654Z</lastmod>
     <data>
         <display>
-        <title>npm 全面介绍</title>
-        <pubTime>2017-04-09T19:25:24.000Z</pubTime>
+        <title>polyfill — Respond.js</title>
+        <pubTime>2017-02-11T15:25:24.000Z</pubTime>
         
-        <tag>npm</tag>
+        <tag>JavaScript</tag>
          
          
            
