@@ -168,28 +168,6 @@
     </entry>
     
     <entry>
-      <title><![CDATA[Java中的几条基本原则]]></title>
-      <url>https://addonepiece.github.io/2019/12/12/Java-basicPrinciple/</url>
-      <content type="html"><![CDATA[<p>Java中的几条基本原则，清晰,正确,可用,健壮,灵活和可维护。摘自Effective Java。<br>Effective Java是这么定义Module，是指任何可从用的软件组件，从单个方法，到包含多个包的复杂系统，都可以是一个模块。代码应该被重用，而不是被拷贝。模块之间的依赖性应该最可能的降到最小。错误应该尽早被检测出来，最好是在编译时刻。你不应该盲目地遵循这些规则，但是，你应该只在偶尔的情况下，有充分的理由之后才去打破这些规则。同大多数学科一样，学习编程艺术首先要学会基本的规则，然后才能知道什么时候可以打破这些规则，即守,破,离。</p>
-<h1 id="一、为什么会有这些规则？"><a href="#一、为什么会有这些规则？" class="headerlink" title="一、为什么会有这些规则？"></a>一、为什么会有这些规则？</h1><h1 id="二、这些规则将对我们编码有什么好处？"><a href="#二、这些规则将对我们编码有什么好处？" class="headerlink" title="二、这些规则将对我们编码有什么好处？"></a>二、这些规则将对我们编码有什么好处？</h1><h1 id="三、怎么让这些规则更好的为我们服务？"><a href="#三、怎么让这些规则更好的为我们服务？" class="headerlink" title="三、怎么让这些规则更好的为我们服务？"></a>三、怎么让这些规则更好的为我们服务？</h1><p>未完待续…</p>
-]]></content>
-      
-        <categories>
-            
-            <category> 后台 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> Java </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
       <title><![CDATA[基于Vue、ElementUI的换肤解决方案]]></title>
       <url>https://addonepiece.github.io/2019/07/01/vue-element-change-theme/</url>
       <content type="html"><![CDATA[<h1 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h1><p>换肤这个功能，不能算是很常见，但是也是有需求的，所以这里提供几种前端的换肤解决方案，供大家参考。</p>
@@ -987,6 +965,88 @@
         <tags>
             
             <tag> vue </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Java中的几条基本原则]]></title>
+      <url>https://addonepiece.github.io/2017/12/12/Java-basicPrinciple/</url>
+      <content type="html"><![CDATA[<p>Java中的几条基本原则，清晰,正确,可用,健壮,灵活和可维护。摘自Effective Java。<br>Effective Java是这么定义Module，是指任何可从用的软件组件，从单个方法，到包含多个包的复杂系统，都可以是一个模块。代码应该被重用，而不是被拷贝。模块之间的依赖性应该最可能的降到最小。错误应该尽早被检测出来，最好是在编译时刻。你不应该盲目地遵循这些规则，但是，你应该只在偶尔的情况下，有充分的理由之后才去打破这些规则。同大多数学科一样，学习编程艺术首先要学会基本的规则，然后才能知道什么时候可以打破这些规则，即守,破,离。</p>
+<h1 id="码出优品。设计接口，类，方法时你需要考虑的条目。"><a href="#码出优品。设计接口，类，方法时你需要考虑的条目。" class="headerlink" title="码出优品。设计接口，类，方法时你需要考虑的条目。"></a>码出优品。设计接口，类，方法时你需要考虑的条目。</h1><ol>
+<li>考虑用静态工厂方法代替构造器</li>
+<li>用私有构造器或者枚举类型强化Singleton属性</li>
+<li>通过私有构造器强化不可实例化的能力</li>
+<li>避免创建不必要的的对象</li>
+<li>消除过期的对象引用</li>
+<li>避免使用终结方法</li>
+<li>覆盖equals时请遵守通用约定</li>
+<li>覆盖equals时总要覆盖hashCode</li>
+<li>始终要覆盖toString</li>
+<li>谨慎的覆盖clone</li>
+<li>考虑实现Comparable接口</li>
+<li>使类和成员的可访问性最小化</li>
+<li>使可变性最小化</li>
+<li>复合优先于继承</li>
+<li>要么为继承而设计，并提供文档说明，要么就禁止继承</li>
+<li>接口优于抽象类</li>
+<li>接口只用一定义类型</li>
+<li>优先考虑静态成员</li>
+<li>在公有类中使用访问方法而非公有域</li>
+<li>类层次优于标签类</li>
+<li>用enum代替int常量</li>
+<li>用函数对象表示策略</li>
+<li>检查参数的有效性</li>
+<li>必要时进行保护性拷贝</li>
+<li>谨慎设计方法签名</li>
+<li>慎用重载</li>
+<li>返回零长度的数组或集合而不是null</li>
+<li>为所有导出的API元素编写文档注释</li>
+<li>将局部变量的作用域最小化</li>
+<li>了解和使用类库</li>
+<li>如果需要精确的答案，请避免使用float和double</li>
+<li>如果其它类型更合适则尽量避免使用字符串</li>
+<li>当心字符串链接的性能</li>
+<li>通过接口引用对象</li>
+<li>接口优先于反射机制</li>
+<li>谨慎的使用本地方法</li>
+<li>谨慎的进行优化</li>
+<li>遵守普遍接受的命名惯例</li>
+<li>只针对异常的情况下蔡使用异常</li>
+<li>对可恢复的情况使用受检异常，对编程错误使用运行时异常</li>
+<li>避免不必要的使用受检的异常</li>
+<li>优先使用标准的异常</li>
+<li>抛出于抽象相对应的异常</li>
+<li>每个方法抛出的异常都要有文档</li>
+<li>在细节消息中包含能捕获失败的信息</li>
+<li>努力使失败保持原子性</li>
+<li>不要忽略异常</li>
+<li>同步访问共享的可变数据</li>
+<li>避免过度同步</li>
+<li>开发工具优先于wait和notify</li>
+<li>不要依赖于线程调度器</li>
+<li>线程安全性的文档化</li>
+<li>避免使用线程组</li>
+<li>谨慎的实现Serializable接口</li>
+<li>考虑使用自定的序列化形式</li>
+<li>保护性的编写readObject方法</li>
+<li>对于实例控制，枚举类型优先于readResolve</li>
+<li>考虑用序列化代理代替序列化实例</li>
+</ol>
+<p>现在各种框架的盛行，使得我们无暇顾及这些基本的规则。站在巨人的肩膀上的我们需要有意识的不断夯实基础和基本规则。只要我们夯实基础并能很好的使用这些规则我们就能以不变应万变，快速上手各种新技术新框架，立于不被淘汰之地。</p>
+]]></content>
+      
+        <categories>
+            
+            <category> 后台 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Java </tag>
             
         </tags>
         
