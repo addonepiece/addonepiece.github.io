@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>https://addonepiece.github.io/2017/10/20/java-maven/</loc>
+    <lastmod>2019-12-20T07:56:05.773Z</lastmod>
+    <data>
+        <display>
+        <title>maven仓库配置使用和依赖传递</title>
+        <pubTime>2017-10-20T00:56:40.000Z</pubTime>
+        
+        <tag>Java</tag>
+         
+         
+           
+             
+              <breadCrumb title="后台" url="https://addonepiece.github.io/categories/%E5%90%8E%E5%8F%B0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://addonepiece.github.io/2017/12/12/Java-basicPrinciple/</loc>
     <lastmod>2019-12-19T01:10:10.672Z</lastmod>
     <data>
@@ -711,14 +731,14 @@
 
     
   <url>
-    <loc>https://addonepiece.github.io/2017/02/11/respond-js/</loc>
+    <loc>https://addonepiece.github.io/2017/04/10/npm/</loc>
     <lastmod>2019-11-20T06:33:52.654Z</lastmod>
     <data>
         <display>
-        <title>polyfill — Respond.js</title>
-        <pubTime>2017-02-11T15:25:24.000Z</pubTime>
+        <title>npm 全面介绍</title>
+        <pubTime>2017-04-09T19:25:24.000Z</pubTime>
         
-        <tag>JavaScript</tag>
+        <tag>npm</tag>
          
          
            
@@ -731,14 +751,14 @@
 
     
   <url>
-    <loc>https://addonepiece.github.io/2017/04/10/npm/</loc>
+    <loc>https://addonepiece.github.io/2017/02/11/respond-js/</loc>
     <lastmod>2019-11-20T06:33:52.654Z</lastmod>
     <data>
         <display>
-        <title>npm 全面介绍</title>
-        <pubTime>2017-04-09T19:25:24.000Z</pubTime>
+        <title>polyfill — Respond.js</title>
+        <pubTime>2017-02-11T15:25:24.000Z</pubTime>
         
-        <tag>npm</tag>
+        <tag>JavaScript</tag>
          
          
            
@@ -833,6 +853,26 @@
 
     
   <url>
+    <loc>https://addonepiece.github.io/2017/06/25/css-hack/</loc>
+    <lastmod>2019-11-20T06:33:52.645Z</lastmod>
+    <data>
+        <display>
+        <title>CSS 各种Hack手段</title>
+        <pubTime>2017-06-24T19:25:24.000Z</pubTime>
+        
+        <tag>CSS</tag>
+         
+         
+           
+             
+              <breadCrumb title="前端" url="https://addonepiece.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://addonepiece.github.io/2016/11/18/china-javascript-environment/</loc>
     <lastmod>2019-11-20T06:33:52.645Z</lastmod>
     <data>
@@ -848,26 +888,6 @@
            
              
               <breadCrumb title="综合" url="https://addonepiece.github.io/categories/%E7%BB%BC%E5%90%88/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://addonepiece.github.io/2017/06/25/css-hack/</loc>
-    <lastmod>2019-11-20T06:33:52.645Z</lastmod>
-    <data>
-        <display>
-        <title>CSS 各种Hack手段</title>
-        <pubTime>2017-06-24T19:25:24.000Z</pubTime>
-        
-        <tag>CSS</tag>
-         
-         
-           
-             
-              <breadCrumb title="前端" url="https://addonepiece.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
           
         </display>
     </data>
