@@ -4,6 +4,70 @@
   
     
     <entry>
+      <title><![CDATA[User Stories/用户故事]]></title>
+      <url>https://addonepiece.github.io/2019/12/21/aigle-userStroies/</url>
+      <content type="html"><![CDATA[<h1 id="User-Stories-用户故事"><a href="#User-Stories-用户故事" class="headerlink" title="User Stories/用户故事"></a>User Stories/用户故事</h1><p>下文翻译自<a href="https://www.mountaingoatsoftware.com/agile/user-stories" target="_blank" rel="external">Mike Cohn的博客</a></p>
+<p><img src="/images/agile-userStories.jpeg" alt=""></p>
+<p>用户故事是敏捷方法的一部分，该方法有助于将重点从编写需求转移到讨论需求。所有的敏捷用户故事都包括一个或两个书面句子，以及关于这个需求的一系列描述。</p>
+<h2 id="什么是用户故事？"><a href="#什么是用户故事？" class="headerlink" title="什么是用户故事？"></a>什么是用户故事？</h2><p>用户故事是从需要新功能的人员（通常是系统的用户或客户）的角度出发，对功能的简短描述。它们通常遵循一个简单的模板：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">作为一个&lt;用户类型&gt;，我想要&lt;一些目标&gt;，以便&lt;一些原因&gt;。</span><br><span class="line">As a &lt; type of user &gt;, I want &lt; some goal &gt; so that &lt; some reason &gt;.</span><br></pre></td></tr></table></figure></p>
+<p>用户故事通常写在索引卡或便签上，并排贴在墙壁或桌子上，以方便计划和讨论。因此，他们将人们的注意力从写作需求转移到讨论功需求上。实际上，这些讨论比任何书面内容都重要。</p>
+<h2 id="可以展示一些用户故事的示例吗？"><a href="#可以展示一些用户故事的示例吗？" class="headerlink" title="可以展示一些用户故事的示例吗？"></a>可以展示一些用户故事的示例吗？</h2><p>用户故事的好处之一是可以描述各种大小的需求。我们可以编写一个用户用户来涵盖大量功能，这些大型用户故事通常被称为史诗（Epics）。这是一个桌面备份产品的史诗级用户故事（epic agile user story）的示例：</p>
+<ul>
+<li>作为用户，我可以备份整个硬盘。</li>
+<li>As a user, I can backup my entire hard drive.</li>
+</ul>
+<p>由于史诗（epic）太大，以至于敏捷团队通常无法在一个迭代中完成，因此在进入开发之前，史诗被拆分为多个较小的用户故事。上面的史诗可以分为数十个（或可能数百个），包括以下两个：</p>
+<ul>
+<li>作为高级用户，我可以根据文件大小，创建日期和修改日期指定要备份的文件或文件夹。</li>
+<li>作为用户，我可以指示不备份的文件夹，这样我的备份驱动器就不会充满不需要保存的内容。</li>
+</ul>
+<h2 id="如何将细节添加到用户故事？"><a href="#如何将细节添加到用户故事？" class="headerlink" title="如何将细节添加到用户故事？"></a>如何将细节添加到用户故事？</h2><p>可以通过两种方式将详细信息添加到用户故事：</p>
+<ul>
+<li>通过将用户故事分成多个较小的用户故事。</li>
+<li>通过添加“满足条件”（conditions of satisfaction）。</li>
+</ul>
+<p>当一个相对较大的故事分为多个较小的用户故事时，自然会添加详细信息。毕竟，已经写了更多的东西。</p>
+<p>满足的条件只是一个高层次的验收测试，在敏捷用户故事完成之后，这个测试才是真实的。考虑以下作为另一个敏捷用户故事示例：</p>
+<p>作为市场营销副总裁，我想选择一个假期用来回顾过去广告活动的效果，以便确定有收益的活动。</p>
+<p>通过添加以下满足条件，可以将详细信息添加到该用户故事：</p>
+<ul>
+<li>确保它适用于主要的零售假期：圣诞节，复活节，总统日，母亲节，父亲节，劳动节，元旦。</li>
+<li>支持跨两个日历年的假期（无跨三个假期）。</li>
+<li>假期可以从一个假期设置到下一个假期（例如，感恩节至圣诞节）。</li>
+<li>假期可以设置为假期前的几天。</li>
+</ul>
+<h2 id="谁撰写用户故事？"><a href="#谁撰写用户故事？" class="headerlink" title="谁撰写用户故事？"></a>谁撰写用户故事？</h2><p><img src="/images/agile-us-author.png" alt=""><br>任何人都可以编写用户故事。确保用户故事存在于产品待办列表（product backlog）是PO的责任，但这并不意味着PO是编写它们的人。在一个好的敏捷项目过程中，您应该期望每个团队成员都编写一些用户故事。</p>
+<p>另外，请注意，撰写用户故事的人远不如参与讨论的人重要。</p>
+<h2 id="用户故事何时编写？"><a href="#用户故事何时编写？" class="headerlink" title="用户故事何时编写？"></a>用户故事何时编写？</h2><p>用户故事是在整个敏捷项目中编写的。通常，在敏捷项目开始时会举行一个故事写作研讨会。团队中的每个人都以创建产品待办列表（product backlog）为目标，该待办列表完整描述了在项目过程中或项目三到六个月的发布周期内要被添加的功能。</p>
+<p>这些用户故事中肯定会出现一些史诗（Epic）级的需求。随后，史诗将被分解成较小的故事，这些故事更容易放入单个迭代中。此外，任何人都可以随时编写新故事并将其添加到产品待办列表中。</p>
+<h2 id="用户故事可以代替需求文档吗？"><a href="#用户故事可以代替需求文档吗？" class="headerlink" title="用户故事可以代替需求文档吗？"></a>用户故事可以代替需求文档吗？</h2><p>敏捷项目，特别是Scrum项目，使用产品待办列表（product backlog），这是一个包含了要在产品或服务中开发的功能的有序列表。尽管产品待办列表项（product backlog items）可以满足团队的任何需求，但用户故事已成为产品待办列表项的最佳和最受欢迎的形式。</p>
+<p>尽管可以将产品待办列表视为传统项目需求文档的替代品，但重要的是要记住，在讨论故事之前，敏捷用户故事的书面部分（“作为用户，我想要…”）是不完整的。</p>
+<p>通常最好将书面部分视为实际需求的参考。用户故事可能指向描述工作流程的图表，显示如何执行计算的电子表格，或PO/团队期望的任何其他工件。</p>
+<h2 id="与用户故事相关的推荐资源"><a href="#与用户故事相关的推荐资源" class="headerlink" title="与用户故事相关的推荐资源"></a>与用户故事相关的推荐资源</h2><ul>
+<li><a href="https://www.mountaingoatsoftware.com/blog/advantages-of-the-as-a-user-i-want-user-story-template" target="_blank" rel="external">“作为用户，我想要”用户故事模板的优点。</a></li>
+<li><a href="https://www.mountaingoatsoftware.com/blog/a-sample-format-for-a-spreadsheet-based-product-backlog" target="_blank" rel="external">基于电子表格的产品待办列表的样本格式</a></li>
+<li><a href="https://www.mountaingoatsoftware.com/articles/advantages-of-user-stories-for-requirements" target="_blank" rel="external">用户故事对需求的优势</a></li>
+<li><a href="https://www.mountaingoatsoftware.com/blog/non-functional-requirements-as-user-stories" target="_blank" rel="external">非功能需求作为用户故事</a></li>
+<li><a href="https://www.mountaingoatsoftware.com/presentations/introduction-to-user-stories" target="_blank" rel="external">用户故事简介</a></li>
+</ul>
+]]></content>
+      
+        <categories>
+            
+            <category> 敏捷 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 敏捷/Agile </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[Scrummaster保护团队是把双刃剑。]]></title>
       <url>https://addonepiece.github.io/2019/12/15/agile-protectTeam/</url>
       <content type="html"><![CDATA[<h1 id="一、【翻译】Scrummaster保护团队是把双刃剑。"><a href="#一、【翻译】Scrummaster保护团队是把双刃剑。" class="headerlink" title="一、【翻译】Scrummaster保护团队是把双刃剑。"></a>一、【翻译】Scrummaster保护团队是把双刃剑。</h1><h2 id="下文翻译自Mike-Cohn的博客"><a href="#下文翻译自Mike-Cohn的博客" class="headerlink" title="下文翻译自Mike Cohn的博客"></a>下文翻译自<a href="https://www.mountaingoatsoftware.com/blog/protecting-the-team-cuts-both-ways" target="_blank" rel="external">Mike Cohn的博客</a></h2><p>ScrumMaster的职责之一是保护团队，这是公认的Scrum格言。通常的例子是ScrumMaster必须保护团队不受过于激进的产品经理的影响。这个例子没有什么错，许多团队确实需要得到保护，不受产品经理的影响，因为他们对更多功能的渴望会促使团队在质量方面走捷径。</p>
