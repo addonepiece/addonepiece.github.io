@@ -1137,7 +1137,7 @@
 <p>runtime：编译不需要，在运行期有效，需要导入包中。（接口与实现分离）</p>
 <p>test：测试需要，不会打入包中。</p>
 <p>system：非本地仓库引入、存在系统的某个路径下的jar。（一般不使用）</p>
-<h2 id="8-本地仓库？Maven到底有哪些仓库？它们什么关系？"><a href="#8-本地仓库？Maven到底有哪些仓库？它们什么关系？" class="headerlink" title="8.本地仓库？Maven到底有哪些仓库？它们什么关系？"></a>8.本地仓库？Maven到底有哪些仓库？它们什么关系？</h2><p><img src="/images/java-maven-directorystructure.jpeg" alt=""><br>你要jar包，不可能每次都要联网去下载吧，多费劲，所以本地仓库就是相当于加了一层jar包缓存，先到这里来查。如果这里查不到，那么就去私服上找，如果私服也找不到，那么去中央仓库去找，找到jar后，会把jar的信息同步到私服和本地仓库中。</p>
+<h2 id="8-本地仓库？Maven到底有哪些仓库？它们什么关系？"><a href="#8-本地仓库？Maven到底有哪些仓库？它们什么关系？" class="headerlink" title="8.本地仓库？Maven到底有哪些仓库？它们什么关系？"></a>8.本地仓库？Maven到底有哪些仓库？它们什么关系？</h2><p><img src="/images/jJava-maven-relationship.jpeg" alt=""><br>你要jar包，不可能每次都要联网去下载吧，多费劲，所以本地仓库就是相当于加了一层jar包缓存，先到这里来查。如果这里查不到，那么就去私服上找，如果私服也找不到，那么去中央仓库去找，找到jar后，会把jar的信息同步到私服和本地仓库中。</p>
 <p>私服，就是公司内部局域网的一台服务器而已，你想一下，当你的工程Project-A依赖别人的Project-B的接口，怎么做呢？没有Maven的时候，当然是copy Project-B jar到你的本地lib中引入，那么Maven的方式，很显然需要其他人把Project-B deploy到私服仓库中供你使用。因此私服中存储了本公司的内部专用的jar！不仅如此，私服还充当了中央仓库的镜像，说白了就是一个代理！</p>
 <p>中央仓库：该仓库存储了互联网上的jar，由Maven团队来维护，地址是：<a href="http://repo1.maven.org/maven2/" target="_blank" rel="external">http://repo1.maven.org/maven2/</a> </p>
 ]]></content>
