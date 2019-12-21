@@ -101,7 +101,7 @@
 <p>在敏捷开发中，Scrum团队由两个特定的角色支持。第一个是ScrumMaster，他可以被认为是团队的教练，帮助团队成员使用Scrum流程在最高级别上执行任务。</p>
 <p>产品所有者（product owner，PO）在国内通常叫做产品经理，是Scrum软件开发中的另一个角色，代表业务、客户或用户，并指导团队构建正确的产品。</p>
 <h2 id="Scrum开发：涉及到什么？"><a href="#Scrum开发：涉及到什么？" class="headerlink" title="Scrum开发：涉及到什么？"></a>Scrum开发：涉及到什么？</h2><p>Scrum模型建议项目通过一系列的sprint进行。根据敏捷方法，sprint的时间限制不超过一个月，通常是两周。</p>
-<p>Scrum方法论提倡在sprint开始时召开计划会议，在会议上，团队成员计算出他们可以提交多少<a href="https://www.jianshu.com/p/d217cc3913a9" target="_blank" rel="external">用户故事/User Storie</a>，然后创建sprint backlog——sprint期间要执行的任务列表。</p>
+<p>Scrum方法论提倡在sprint开始时召开计划会议，在会议上，团队成员计算出他们可以提交多少<a href="https://addonepiece.github.io/2019/12/21/aigle-userStroies/">用户故事/User Storie</a>，然后创建sprint backlog——sprint期间要执行的任务列表。</p>
 <p>在敏捷Scrum冲刺过程中，Scrum团队从idea到编码和测试的功能都是<a href="https://www.jianshu.com/p/20065cd7d976" target="_blank" rel="external">特性/Features</a>的一小部分。最后，这些特性完成了，意味着编码、测试并集成到不断发展的产品或系统中。</p>
 <p><img src="/images/agile-EpicFeatureStory.png" alt=""></p>
 <p>在sprint的每一天，所有团队成员都应该参加Scrum的站会，包括ScrumMaster和PO（产品经理）。会议时间限制在15分钟以内。在此期间，团队成员分享他们在前一天所做的工作，并将在这一天工作，并记录和核对过程遇到的问题障碍和风险。Scrum模型将每日站会视为一种同步团队成员sprint工作的方式。</p>

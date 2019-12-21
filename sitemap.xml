@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://addonepiece.github.io/2019/12/14/agile-scrum/</loc>
+    
+    <lastmod>2019-12-21T02:29:28.232Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://addonepiece.github.io/2019/12/21/aigle-userStroies/</loc>
     
     <lastmod>2019-12-21T02:26:53.447Z</lastmod>
@@ -47,13 +54,6 @@
     <loc>https://addonepiece.github.io/2019/12/14/agile-scrum-master/</loc>
     
     <lastmod>2019-12-15T09:16:17.026Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://addonepiece.github.io/2019/12/14/agile-scrum/</loc>
-    
-    <lastmod>2019-12-14T11:23:27.144Z</lastmod>
     
   </url>
   
@@ -282,14 +282,14 @@
   </url>
   
   <url>
-    <loc>https://addonepiece.github.io/categories/index.html</loc>
+    <loc>https://addonepiece.github.io/example/index.html</loc>
     
     <lastmod>2019-11-20T06:33:52.662Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://addonepiece.github.io/example/index.html</loc>
+    <loc>https://addonepiece.github.io/categories/index.html</loc>
     
     <lastmod>2019-11-20T06:33:52.662Z</lastmod>
     
