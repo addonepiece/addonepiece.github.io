@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://addonepiece.github.io/"/>
-  <updated>2019-12-25T04:06:46.681Z</updated>
+  <updated>2020-01-02T03:27:42.209Z</updated>
   <id>https://addonepiece.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>敏捷-Scrum三大支柱</title>
+    <link href="https://addonepiece.github.io/2020/01/02/agile-scrum-pillars/"/>
+    <id>https://addonepiece.github.io/2020/01/02/agile-scrum-pillars/</id>
+    <published>2020-01-02T02:03:42.000Z</published>
+    <updated>2020-01-02T03:27:42.209Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="/images/agile-scrum-pillars2.jpeg" alt=""></p><h1 id="序言"><a href="#序言" class="headerlink" title="序言"></a>序言</h1><p>这三个支柱是在实现Scrum时驱动其他流程的动力，并解释了其中许多流程、仪式和行为背后的原因。理解这三个支柱可以在您的项目中更好地实现Scrum，也许还可以解释为什么事情是以这样的方式完成的。</p><h1 id="Scrum-理论的三大支柱"><a href="#Scrum-理论的三大支柱" class="headerlink" title="Scrum 理论的三大支柱"></a>Scrum 理论的三大支柱</h1><p>Scrum 基于经验过程控制理论，或称之为经验主义。经验主义主张知识源自实际经验以及 当前已知情况下做出的决定所获得。Scrum 采纳一种迭代、增量式的方法来优化对未来的 预测和控制风险。<br><i style="color:#f63;">透明、检视和适应</i>是经验过程控制的三大支柱，支撑起每一个经验过程的实施。<br><img src="/images/agile-scrum-pillars.jpeg" alt=""></p><h2 id="透明"><a href="#透明" class="headerlink" title="透明"></a>透明</h2><p>过程中的关键环节对于那些对产出负责的人必须是显而易见的。要拥有透明，就要为这些 关键环节制定统一的标准，这样所有留意这些环节的人都会对观察到的事物有统一的理 解。</p><p>例如</p><ul><li>所有参与者谈及过程时都必须使用统一的术语。</li><li>负责完成工作和检视结果增量的人必须对“完成”的定义，有一致的理解。</li></ul><h2 id="检视"><a href="#检视" class="headerlink" title="检视"></a>检视</h2><p>Scrum 的使用者必须经常检视 Scrum 的工件和完成 Sprint 目标的进展，以便发现不必要 的差异。检视不应该过于频繁而阻碍工作本身。当检视是由技能娴熟的检视者在工作中勤 勉地执行时，效果最佳。</p><h2 id="适应"><a href="#适应" class="headerlink" title="适应"></a>适应</h2><p>如果检视者发现过程中的一个或多个方面偏离可接受范围以外，并且将会导致产品不可接 受时，就必须对过程或过程化的内容加以调整。调整工作必须尽快执行如此才能最小化进 一步的偏离。</p><h2 id="三大支柱的作用"><a href="#三大支柱的作用" class="headerlink" title="三大支柱的作用"></a>三大支柱的作用</h2><p>Scrum之所以能够工作，并不是因为它有三个角色、五个事件和三个工件，而是因为它坚持迭代的、基于价值的增量交付的基本敏捷原则，通过频繁地收集客户反馈和接受变更。而Scrum的三大支柱为收集需求，发现问题，解决问题，改进问题提供支撑。这导致更快的上市时间、更好的交付可预测性、更高的客户响应能力、通过管理不断变化的优先级改变方向的能力、增强的软件质量和改进的风险管理。</p><h2 id="与用Scrum相关的推荐资源"><a href="#与用Scrum相关的推荐资源" class="headerlink" title="与用Scrum相关的推荐资源"></a>与用Scrum相关的推荐资源</h2><ul><li><a href="https://addonepiece.github.io">敏捷-Scrum 价值观 to do</a></li><li><a href="https://addonepiece.github.io">敏捷-Scrum 跨职能团队 to do</a></li><li><a href="https://addonepiece.github.io">敏捷-Scrum 自组织 todo</a></li><li><a href="https://addonepiece.github.io">敏捷-Scrum 持续改进 todo</a></li><li><a href="https://addonepiece.github.io">敏捷-Scrum 故事完成的定义todo</a></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;img src=&quot;/images/agile-scrum-pillars2.jpeg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;h1 id=&quot;序言&quot;&gt;&lt;a href=&quot;#序言&quot; class=&quot;headerlink&quot; title=&quot;序言&quot;&gt;&lt;/a&gt;序言&lt;/h1&gt;&lt;p&gt;这三个支柱是在实现S
+      
+    
+    </summary>
+    
+      <category term="敏捷" scheme="https://addonepiece.github.io/categories/%E6%95%8F%E6%8D%B7/"/>
+    
+    
+      <category term="敏捷/Agile" scheme="https://addonepiece.github.io/tags/%E6%95%8F%E6%8D%B7-Agile/"/>
+    
+  </entry>
   
   <entry>
     <title>重构改善即有代码设计</title>
@@ -487,31 +513,6 @@
     
     
       <category term="Java" scheme="https://addonepiece.github.io/tags/Java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>vue2.x 做一个外卖app</title>
-    <link href="https://addonepiece.github.io/2017/11/11/vue-sell/"/>
-    <id>https://addonepiece.github.io/2017/11/11/vue-sell/</id>
-    <published>2017-11-10T19:25:24.000Z</published>
-    <updated>2019-12-12T10:06:54.030Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p id="div-border-top-green">本项目是基于 vue2.4 最新的实战项目，vue-cli2.8 + vue2.4 + vue-resource + vue-router2.7 + es6 + mock + webpack 的一个移动端外卖 app。</p><p><img src="/images/vue-sell-1.png" alt=""></p><p id="div-border-left-red">现在最流行的开发方式就是前后分离了；<br><a href="/tags/vue">vue</a> 也是现在最流行的前端框架之一。</p><a id="more"></a><h2 id="截屏演示"><a href="#截屏演示" class="headerlink" title="截屏演示"></a>截屏演示</h2><p><img src="/images/vue-sell-3.gif" alt=""></p><h2 id="移动端演示"><a href="#移动端演示" class="headerlink" title="移动端演示"></a>移动端演示</h2><p>扫二维码在手机上查看效果更好<br><img src="/images/vue-sell-2.png" alt=""></p><h2 id="构建"><a href="#构建" class="headerlink" title="构建"></a>构建</h2><p>vue 有自己的脚手架构建工具 vue-cli 。使用起来非常方便，使用 webpack 来集成各种开发便捷工具，比如：</p><ul><li>代码热更新，修改代码之后网页无刷新改变，对前端开发来说非常的方便</li><li>Postcss，再也不用去管兼容性的问题了，只针对 chrome 写 css 代码，会自动编译生成支持多款浏览器的 css 代码</li><li>ESlint，统一代码风格</li><li>bable，ES2015 出来已经有一段事件了，但是不少浏览器还没有兼容 ES6。有了 bable，放心使用 ES6 语法，它会自动转义成 ES5 语法</li><li>Stylus，类似于 sass/scss ，但是可以不写 <code>{ }</code> 和 <code>:</code>，使用起来还是很方便的</li></ul><p>除此之外，vue-cli 已经使用 node 配置了一套本地服务器和安装命令等，本地运行和打包只需要一个命令就可以搞定，非常的方便。</p><h2 id="为什么写这个项目"><a href="#为什么写这个项目" class="headerlink" title="为什么写这个项目"></a>为什么写这个项目</h2><p>vue 的官网文档写的很好，很多同学在学习完文档以后，很难实际上手做项目，只能做一些 todo-list 的小 demo ,距离上手做项目还有一些差距。<br>这一套 vue 的实战视频可以说是非常适合新手入门进阶，让你可以动手用 vue 来做项目，解决 vue 在实战中的问题才是大家最想学习的，而不是小打小闹的 demo。<br><img src="/images/vue-sell-5.png" alt=""></p><p>而且这套视频教程包含现在最新的前端必备技术点详细教学：webpack、eslint、vue-cli构建、模块打包、mock、vue-resource、axios、以及真实项目中会遇到的各种问题以及解决方案。</p><h2 id="获取教程"><a href="#获取教程" class="headerlink" title="获取教程"></a>获取教程</h2><p>这个项目我从头到尾写了一遍，由于有一些包或者模块升级的原因，会有一些小的问题，我都已经解决过了。想获取教程或者有疑问的，可以加这个群。</p><font color="#f69" size="5">建了一个qq群，可以点击这个logo<a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=32da7a18744756b0d8ffdd05b84999afecb5265dbad0fb119033e122abe803f3"><img border="0" width="150" src="https://addonepiece.github.io/vue-tour/logo1.png" alt="Vue学习交流" title="Vue学习交流" style="vertical-align: middle"></a>，或者手动search群号：<a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=32da7a18744756b0d8ffdd05b84999afecb5265dbad0fb119033e122abe803f3">685486827</a></font>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h2&gt;&lt;p id=&quot;div-border-top-green&quot;&gt;本项目是基于 vue2.4 最新的实战项目，vue-cli2.8 + vue2.4 + vue-resource + vue-router2.7 + es6 + mock + webpack 的一个移动端外卖 app。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/vue-sell-1.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p id=&quot;div-border-left-red&quot;&gt;现在最流行的开发方式就是前后分离了；&lt;br&gt;&lt;a href=&quot;/tags/vue&quot;&gt;vue&lt;/a&gt; 也是现在最流行的前端框架之一。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="前端" scheme="https://addonepiece.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    
-      <category term="vue" scheme="https://addonepiece.github.io/tags/vue/"/>
     
   </entry>
   

@@ -4,6 +4,45 @@
   
     
     <entry>
+      <title><![CDATA[敏捷-Scrum三大支柱]]></title>
+      <url>https://addonepiece.github.io/2020/01/02/agile-scrum-pillars/</url>
+      <content type="html"><![CDATA[<p><img src="/images/agile-scrum-pillars2.jpeg" alt=""></p>
+<h1 id="序言"><a href="#序言" class="headerlink" title="序言"></a>序言</h1><p>这三个支柱是在实现Scrum时驱动其他流程的动力，并解释了其中许多流程、仪式和行为背后的原因。理解这三个支柱可以在您的项目中更好地实现Scrum，也许还可以解释为什么事情是以这样的方式完成的。</p>
+<h1 id="Scrum-理论的三大支柱"><a href="#Scrum-理论的三大支柱" class="headerlink" title="Scrum 理论的三大支柱"></a>Scrum 理论的三大支柱</h1><p>Scrum 基于经验过程控制理论，或称之为经验主义。经验主义主张知识源自实际经验以及 当前已知情况下做出的决定所获得。Scrum 采纳一种迭代、增量式的方法来优化对未来的 预测和控制风险。<br><i style="color:#f63;">透明、检视和适应</i>是经验过程控制的三大支柱，支撑起每一个经验过程的实施。<br><img src="/images/agile-scrum-pillars.jpeg" alt=""></p>
+<h2 id="透明"><a href="#透明" class="headerlink" title="透明"></a>透明</h2><p>过程中的关键环节对于那些对产出负责的人必须是显而易见的。要拥有透明，就要为这些 关键环节制定统一的标准，这样所有留意这些环节的人都会对观察到的事物有统一的理 解。</p>
+<p>例如</p>
+<ul>
+<li>所有参与者谈及过程时都必须使用统一的术语。</li>
+<li>负责完成工作和检视结果增量的人必须对“完成”的定义，有一致的理解。</li>
+</ul>
+<h2 id="检视"><a href="#检视" class="headerlink" title="检视"></a>检视</h2><p>Scrum 的使用者必须经常检视 Scrum 的工件和完成 Sprint 目标的进展，以便发现不必要 的差异。检视不应该过于频繁而阻碍工作本身。当检视是由技能娴熟的检视者在工作中勤 勉地执行时，效果最佳。</p>
+<h2 id="适应"><a href="#适应" class="headerlink" title="适应"></a>适应</h2><p>如果检视者发现过程中的一个或多个方面偏离可接受范围以外，并且将会导致产品不可接 受时，就必须对过程或过程化的内容加以调整。调整工作必须尽快执行如此才能最小化进 一步的偏离。</p>
+<h2 id="三大支柱的作用"><a href="#三大支柱的作用" class="headerlink" title="三大支柱的作用"></a>三大支柱的作用</h2><p>Scrum之所以能够工作，并不是因为它有三个角色、五个事件和三个工件，而是因为它坚持迭代的、基于价值的增量交付的基本敏捷原则，通过频繁地收集客户反馈和接受变更。而Scrum的三大支柱为收集需求，发现问题，解决问题，改进问题提供支撑。这导致更快的上市时间、更好的交付可预测性、更高的客户响应能力、通过管理不断变化的优先级改变方向的能力、增强的软件质量和改进的风险管理。</p>
+<h2 id="与用Scrum相关的推荐资源"><a href="#与用Scrum相关的推荐资源" class="headerlink" title="与用Scrum相关的推荐资源"></a>与用Scrum相关的推荐资源</h2><ul>
+<li><a href="https://addonepiece.github.io">敏捷-Scrum 价值观 to do</a></li>
+<li><a href="https://addonepiece.github.io">敏捷-Scrum 跨职能团队 to do</a></li>
+<li><a href="https://addonepiece.github.io">敏捷-Scrum 自组织 todo</a></li>
+<li><a href="https://addonepiece.github.io">敏捷-Scrum 持续改进 todo</a></li>
+<li><a href="https://addonepiece.github.io">敏捷-Scrum 故事完成的定义todo</a></li>
+</ul>
+]]></content>
+      
+        <categories>
+            
+            <category> 敏捷 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 敏捷/Agile </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[重构改善即有代码设计]]></title>
       <url>https://addonepiece.github.io/2019/12/24/java-restructure/</url>
       <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>公司最近在改造一个之前做好的产品级大项目。这个项目之前是用的Spring MVC + jsp做的。现在我们要把这个项目改成 Spring boot + Spring MVC + mybatis + react的架构。改造后的项目将按照业务分成十几个微服务，使用Spring cloud进行服务治理。说是改造但为了满足进度和工期，我们后台的做法是找到对应的模块代码迁移到新的微服务中。在这个过程中我们发现了很架构，性能，编码规范等一系列问题，于是我们这支追求卓越的开发团队一致要求加强过程中对代码的重构。<br>下面我将给出一些重构切入点以便团队参考。</p>
