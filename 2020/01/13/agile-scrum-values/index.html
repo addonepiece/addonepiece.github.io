@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="CSS," />
+  <meta name="keywords" content="敏捷/Agile," />
 
 
 
@@ -86,13 +86,27 @@
 
 
 
+<meta name="description" content="Scrum价值观是专注、开放、勇气、承诺和尊重。它们非常重要，而且经常被误解，以至于在2016年7月被添加到Scrum指南中。原文如下：
+
+Respect - Scrum Team members respect each other to be capable, independent people
+Focus - Everyone focuses on the work of the spri">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CSS 各种Hack手段">
-<meta property="og:url" content="https://addonepiece.github.io/2017/06/25/css-hack/index.html">
+<meta property="og:title" content="敏捷-Scrum5大价值观">
+<meta property="og:url" content="https://addonepiece.github.io/2020/01/13/agile-scrum-values/index.html">
 <meta property="og:site_name" content="行囊">
-<meta property="og:updated_time" content="2019-11-20T06:33:52.645Z">
+<meta property="og:description" content="Scrum价值观是专注、开放、勇气、承诺和尊重。它们非常重要，而且经常被误解，以至于在2016年7月被添加到Scrum指南中。原文如下：
+
+Respect - Scrum Team members respect each other to be capable, independent people
+Focus - Everyone focuses on the work of the spri">
+<meta property="og:image" content="https://addonepiece.github.io/images/agile-scrum-values.png">
+<meta property="og:updated_time" content="2020-01-14T07:31:05.251Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CSS 各种Hack手段">
+<meta name="twitter:title" content="敏捷-Scrum5大价值观">
+<meta name="twitter:description" content="Scrum价值观是专注、开放、勇气、承诺和尊重。它们非常重要，而且经常被误解，以至于在2016年7月被添加到Scrum指南中。原文如下：
+
+Respect - Scrum Team members respect each other to be capable, independent people
+Focus - Everyone focuses on the work of the spri">
+<meta name="twitter:image" content="https://addonepiece.github.io/images/agile-scrum-values.png">
 
 
 
@@ -113,12 +127,12 @@
 
 
 
-  <link rel="canonical" href="https://addonepiece.github.io/2017/06/25/css-hack/"/>
+  <link rel="canonical" href="https://addonepiece.github.io/2020/01/13/agile-scrum-values/"/>
 
 
 <!-- 网页加载条 -->
 <script src="/js/src/pace.min.js"></script>
-  <title> CSS 各种Hack手段 | 行囊 </title>
+  <title> 敏捷-Scrum5大价值观 | 行囊 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -508,7 +522,7 @@ for (var L = 0; L < C.length; L++) {
             
             
               
-                CSS 各种Hack手段
+                敏捷-Scrum5大价值观
               
             
           </h1>
@@ -520,8 +534,8 @@ for (var L = 0; L < C.length; L++) {
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-06-25T03:25:24+08:00" content="2017-06-25">
-              2017-06-25
+            <time itemprop="dateCreated" datetime="2020-01-13T14:52:57+08:00" content="2020-01-13">
+              2020-01-13
             </time>
           </span>
 
@@ -534,8 +548,8 @@ for (var L = 0; L < C.length; L++) {
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/前端/" itemprop="url" rel="index">
-                    <span itemprop="name">前端</span>
+                  <a href="/categories/敏捷/" itemprop="url" rel="index">
+                    <span itemprop="name">敏捷</span>
                   </a>
                 </span>
 
@@ -570,30 +584,107 @@ for (var L = 0; L < C.length; L++) {
       
 
       
-        <!-- <img src="/images/css-hack-1.png" alt="css-hack"> -->
-<a id="more"></a>
-<p>随着浏览器的发展，css hack 技术的使用应该越来越少了，但是在某些关键时刻以及综合的WEB应用或者老项目中，可能还需要使用 css hack 技术来解决一些问题。</p>
-<h1 id="css-hack-分类"><a href="#css-hack-分类" class="headerlink" title="css hack 分类"></a>css hack 分类</h1><p>css hack 分类大致有 3 种表现形式：<strong>IE条件注释法</strong>、<strong>CSS属性前缀法</strong>以及<strong>选择器前缀法</strong>。</p>
-<p>IE 条件注释法（即 HTML 条件注释 Hack）：<br>针对所有IE(注：IE10+ 已经不再支持条件注释)：<br><code>&lt;!--[if IE]&gt;IE浏览器显示的内容 &lt;![endif]--&gt;</code>；</p>
-<p>针对 IE6 及以下版本：<br><code>&lt;!--[if lt IE 6]&gt;只在IE6-显示的内容 &lt;![endif]--&gt;</code>。<br>这类 Hack 不仅对 CSS 生效，对写在判断语句里面的所有代码都会生效。</p>
-<p>属性前缀法（即类内部 Hack）：例如 IE6 能识别下划线 <code>_</code> 和星号 <code>*</code>，IE7 能识别星号 <code>*</code>，但不能识别下划线 <code>_</code>，IE6~IE10 都认识 <code>\9</code>，但 firefox 前述三个都不能认识。</p>
-<p>选择器前缀法（即选择器 Hack）：例如 IE6 能识别 <code>*html .class{}</code>，IE7 能识别 <code>*+html .class{}</code> 或者 <code>*:first-child+html .class{}</code>。</p>
-<p>css hack 书写顺序，一般是将适用范围广、被识别能力强的 CSS 定义在前面。</p>
-<h1 id="条件注释法"><a href="#条件注释法" class="headerlink" title="条件注释法"></a>条件注释法</h1><p><strong>语法：</strong><br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- [if &lt;keywords&gt;? IE &lt;version&gt; ?]&gt;</span></span><br><span class="line"><span class="comment">HTML 代码块</span></span><br><span class="line"><span class="comment">&lt;![endif]--&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p><strong>取值：</strong><br><code>&lt;keywords&gt;</code><br>if 条件共包含 6 种选择方式：是否、大于、大于或等于、小于、小于或等于、非指定版本<br><strong>是否</strong>：指定是否 IE 或 IE 某个版本。关键字：空<br><strong>大于</strong>：选择大鱼指定版本的 IE 版本。关键字：gt<br><strong>大于或等于</strong>：选择大于或等于指定版本的 IE 版本。关键字：gte<br><strong>小于</strong>：选择小于指定版本的IE版本。关键字：lt<br><strong>小于或等于</strong>：选择小于或等于指定版本的IE版本。关键字：lte<br><strong>非指定版本</strong>：选择除指定版本外的所有IE版本。关键字：!</p>
-<p><strong>说明：</strong><br>用于选择 IE 浏览器及IE的不同版本</p>
-<p><strong>示例：</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">只在IE下生效</span><br><span class="line">&lt;!--[if IE]&gt;</span><br><span class="line">这段文字只在IE浏览器显示</span><br><span class="line">&lt;![endif]--&gt;</span><br><span class="line"></span><br><span class="line">只在IE6下生效</span><br><span class="line">&lt;!--[if IE 6]&gt;</span><br><span class="line">这段文字只在IE6浏览器显示</span><br><span class="line">&lt;![endif]--&gt;</span><br><span class="line"></span><br><span class="line">只在IE6以上版本生效</span><br><span class="line">&lt;!--[if gte IE 6]&gt;</span><br><span class="line">这段文字只在IE6以上(包括)版本IE浏览器显示</span><br><span class="line">&lt;![endif]--&gt;</span><br><span class="line"></span><br><span class="line">只在IE8上不生效</span><br><span class="line">&lt;!--[if ! IE 8]&gt;</span><br><span class="line">这段文字在非IE8浏览器显示</span><br><span class="line">&lt;![endif]--&gt;</span><br><span class="line"></span><br><span class="line">非IE浏览器生效</span><br><span class="line">&lt;!--[if !IE]&gt;</span><br><span class="line">这段文字只在非IE浏览器显示</span><br><span class="line">&lt;![endif]--&gt;</span><br></pre></td></tr></table></figure>
-<p>需要说明的是，IE10和11已经不支持这种条件注释法了。<a href="/yu/css-hack.html" target="_blank">运行上面示例</a></p>
-<h1 id="CSS-属性前缀法"><a href="#CSS-属性前缀法" class="headerlink" title="CSS 属性前缀法"></a>CSS 属性前缀法</h1><p><strong>语法：</strong><br>selector {<hack>?property:value<hack>?;}</hack></hack></p>
-<p><strong>取值：</strong><br><code>_</code>：选择 IE6 及以下。连接线（中划线）（-）亦可使用，为了避免与某些带中划线的属性混淆，所以使用下划线（_）更为合适。<br><code>*</code>：选择 IE7 及以下。诸如：（+）与（#）之类的均可使用，不过业界对（*）的认知度更高。<br><code>\9</code>：选择 IE6+。<br><code>\0</code>：选择 IE8+ 和 Opera。<br><code>[;property:value;];</code>：选择 webkit 核心浏览器（Chrome,Safari）。IE7 及以下也能识别。中括号内外的 3 个分号必须保留，第一个分号前可以是任意规则或任意多个规则。<br><code>[;color:#f00;];</code> 与 <code>[color:#f00;color:#f00;];</code> 与 <code>[margin:0;padding:0;color:#f00;];</code> 是等价的。生效的始终是中括号内的最后一条规则，所以通常选用第一种写法最为简洁。</p>
-<p><strong>说明：</strong><br><strong>选择不同的浏览器及版本</strong>尽可能减少对 CSS Hack 的使用。Hack 有风险，谨慎使用。<br>一些 CSS Hack 由于浏览器存在交叉认识，所以需要通过层层覆盖的方式来实现对不同浏览器进行 Hack 的。如下面这个例子：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.test</span>&#123;</span><br><span class="line">  <span class="attribute">color</span>:<span class="number">#090</span>\<span class="number">9</span>; <span class="comment">/* For IE8+ */</span></span><br><span class="line">  *color:#f00;  /* For IE7 and earlier */</span><br><span class="line">  _<span class="selector-tag">color</span>:<span class="selector-id">#ff0</span>;  <span class="comment">/* For IE6 and earlier */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p id="div-border-left-yellow">上述 Hack 均需运行在标准模式下，若在怪异模式下运行，这些 Hack 将会被不同版本的 IE 相互识别，导致失效。</p>
-
-
-<h1 id="选择器前缀法"><a href="#选择器前缀法" class="headerlink" title="选择器前缀法"></a>选择器前缀法</h1><p><strong>语法：</strong><br><code>&lt;hack&gt;selector{sRules}</code></p>
-<p><strong>说明：</strong><br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">* <span class="selector-tag">html</span> <span class="selector-class">.test</span>&#123;<span class="attribute">color</span>:<span class="number">#090</span>;&#125;       <span class="comment">/* For IE6 and earlier */</span></span><br><span class="line">* + <span class="selector-tag">html</span> <span class="selector-class">.test</span>&#123;<span class="attribute">color</span>:<span class="number">#ff0</span>;&#125;     <span class="comment">/* For IE7 */</span></span><br><span class="line"><span class="selector-class">.test</span><span class="selector-pseudo">:lang(zh-cn)</span>&#123;<span class="attribute">color</span>:<span class="number">#f00</span>;&#125;  <span class="comment">/* For IE8+ and not IE */</span></span><br><span class="line"><span class="selector-class">.test</span><span class="selector-pseudo">:nth-child(1)</span>&#123;<span class="attribute">color</span>:<span class="number">#0ff</span>;&#125; <span class="comment">/* For IE9+ and not IE */</span></span><br></pre></td></tr></table></figure></p>
-<p id="div-border-left-yellow">上述代码中的3,4两行就是典型的利用能力来进行选择的 CSS Hack。</p>
+        <p><img src="/images/agile-scrum-values.png" alt=""><br>Scrum价值观是专注、开放、勇气、承诺和尊重。它们非常重要，而且经常被误解，以至于在2016年7月被添加到Scrum指南中。原文如下：</p>
+<ul>
+<li>Respect - Scrum Team members respect each other to be capable, independent people</li>
+<li>Focus - Everyone focuses on the work of the sprint and the goals of the Scrum Team</li>
+<li>Commitment - People personally commit to achieving the goals of the Scrum Team</li>
+<li>Courage - Scrum Team members have courage to do the right thing and work on tough problems</li>
+<li>Openness - The Scrum Team and its stakeholders agree to be open about all the work and the challenges with performing the work</li>
+</ul>
+<p>这五个价值观很容易记住，但是很难理解它们的含义，如何应用它们，以及如何在团队和个人中识别它们。没有Scrum的价值观，我们只是在做活动，不会最大化Scrum的好处，使业务敏捷。</p>
+<h1 id="Scrum-Values-Focus-Part-1-of-5"><a href="#Scrum-Values-Focus-Part-1-of-5" class="headerlink" title="Scrum Values: Focus (Part 1 of 5)"></a>Scrum Values: Focus (Part 1 of 5)</h1><p><i style="color:#f63;">Focus（专注）：专注于让客户满意。专注于冲刺（sprint）及其目标。</i><br>为了更好的完成任务，当我们处理复杂性和不可预测性任务时，专注是必不可少的。</p>
+<h2 id="专注有助于经验主义和团队协作。"><a href="#专注有助于经验主义和团队协作。" class="headerlink" title="专注有助于经验主义和团队协作。"></a>专注有助于经验主义和团队协作。</h2><ul>
+<li>当Scrum团队在一件或两件事情上进行协作时，他们通常会更有效，而不是独立地处理单独的产品待办事项。他们先做一件事，然后再做下一件事。这可以减少来自在制品和冲刺结束时未完成的工作的潜在浪费。虽然Scrum并没有告诉你如何交付，但是focus可以引导团队发现他们最好的工作方式，从而更快地完成工作并将浪费降到最低。</li>
+<li>当有多个问题时，focus可以帮助团队确定首先要解决的问题，经常检查他们的进度，并在他们努力寻找解决方案时尝试新的实验。</li>
+<li>当有相互竞争的优先事项时，专注可以帮助团队决定现在最重要的事情是什么。</li>
+<li>当未来不确定的时候，有一种趋势是渐近明细。专注有助于团队接受不确定性，看看他们今天所知道的，然后迈出一小步。这种方法之所以有效，是因为我们从实践中学习，并且可以根据所学改变方向。</li>
+<li>开发团队在交付“已完成”增量方面的共同责任，使人们关注整体结果，而不仅仅是每个人可以完成什么。</li>
+<li>有了产品愿景，就可以专注于我们要去的地方，并且可以帮助团队的判断和决策。</li>
+</ul>
+<h2 id="Scrum框架包含有助于提Focus高度的元素。"><a href="#Scrum框架包含有助于提Focus高度的元素。" class="headerlink" title="Scrum框架包含有助于提Focus高度的元素。"></a>Scrum框架包含有助于提Focus高度的元素。</h2><ul>
+<li>我们的重点是至少在每次冲刺结束时都有一个“完成”的增量。</li>
+<li>Scrum事件和工件有助于创建关注于检查进度和新信息的焦点，因此我们可以以足够频繁的间隔进行调整。</li>
+<li>我们专注于一个Sprint目标来指导团队交付什么。</li>
+<li>每个角色都有一个独特的责任感，可以帮助个人知道应该把什么作为他们的优先事项。这最终有助于团队的成果。</li>
+<li>产品Backlog是一个有序的列表，它创建了对下一步最重要事情的关注。</li>
+<li>有时间限制的活动会产生一种紧迫感，帮助我们专注于活动的目的。</li>
+</ul>
+<p>团队需要不断地和协作地精炼“专注”对他们意味着什么，以便真正最大化Scrum。</p>
+<h1 id="Scrum-Values-Openness-Part-2-of-5"><a href="#Scrum-Values-Openness-Part-2-of-5" class="headerlink" title="Scrum Values: Openness (Part 2 of 5)"></a>Scrum Values: Openness (Part 2 of 5)</h1><p><i style="color:#f63;">Openness（开放）：Scrum强调保持开放。</i><br>当我们处理复杂性和不可预测性时，开放是必不可少的。</p>
+<h2 id="开放性促进了经验主义和协作团队精神。"><a href="#开放性促进了经验主义和协作团队精神。" class="headerlink" title="开放性促进了经验主义和协作团队精神。"></a>开放性促进了经验主义和协作团队精神。</h2><ul>
+<li>公开我们的工作有助于为我们的进展创造透明度。没有透明度，任何检查和调整的尝试都将是有缺陷的。</li>
+<li>开放性使团队成员能够寻求帮助。</li>
+<li>开放性允许团队成员互相提供帮助。</li>
+<li>开放性使团队成员能够分享他们的观点，感受到同行的意见，并能够支持团队决策。</li>
+<li>当我们的假设被证明无效时，开放性帮助我们承认错误并改变方向。这适用于我们认为有价值的功能。这也适用于我们选择如何在产品中实现功能。</li>
+</ul>
+<h2 id="Scrum框架包含有助于促进开放性的元素。"><a href="#Scrum框架包含有助于促进开放性的元素。" class="headerlink" title="Scrum框架包含有助于促进开放性的元素。"></a>Scrum框架包含有助于促进开放性的元素。</h2><ul>
+<li>将Sprint时间限制在30天或30天以下，可以促进基于新信息的改变方向的开放性。</li>
+<li>Sprint目标是固定的并提供了指导，但是实现Sprint目标的计划是开放的，可以根据开发团队正在学习的内容进行更改。</li>
+<li>透明的产品待办事项清单向我们的利益相关者展示了对产品计划（以及未计划的）和下一步可能发生的事情的开放性。</li>
+<li>Sprint回顾的重点是不断改进我们团队的交互、流程和工具，这就要求我们对反馈、反思和改变工作方式持开放态度。</li>
+<li>Sprint评审展示了与利益相关者分享进展的开放性，以及对反馈和与他们合作的开放性。</li>
+</ul>
+<p>团队需要不断地和协作地精炼“开放”对他们意味着什么，以便真正最大化Scrum。</p>
+<h1 id="Scrum-Values-Courage-Part-3-of-5"><a href="#Scrum-Values-Courage-Part-3-of-5" class="headerlink" title="# Scrum Values: Courage (Part 3 of 5)"></a># Scrum Values: Courage (Part 3 of 5)</h1><p><i style="color:#f63;">Courage（勇气）：Scrum团队成员有勇气做正确的事情并解决棘手的问题。</i><br>勇气是解决复杂问题和培养高绩效团队的关键。</p>
+<p>##勇气有助于经验主义和团队合作。</p>
+<ul>
+<li>在压力下保持进展的透明度，以便更快地交付成果，这需要勇气。</li>
+<li>不让我们的利益相关者放弃工作需要勇气。</li>
+<li>寻求帮助或承认我们不知道怎么做需要勇气。</li>
+<li>当其他人没有履行对团队的承诺时，让他们承担责任需要勇气。</li>
+<li>我们可能会发现我们制造了顾客不想要的东西。承认我们的假设是错误的并改变方向需要勇气。</li>
+<li>尝试建立我们从未建立过的东西需要勇气，不知道它是否会起作用。</li>
+<li>与团队成员分享不同意见并进行富有成效的冲突需要勇气。</li>
+<li>承认错误需要勇气。这可能适用于我们的技术工作、我们的决定，或者我们的行为方式。</li>
+</ul>
+<h2 id="Scrum框架包含有助于提升勇气的元素。"><a href="#Scrum框架包含有助于提升勇气的元素。" class="headerlink" title="Scrum框架包含有助于提升勇气的元素。"></a>Scrum框架包含有助于提升勇气的元素。</h2><ul>
+<li>每一次Scrum活动都是一个检验和适应的机会。这种内在的假设，即改变方向是可以的，这使我们有了勇气。我们可以改变建设方向。我们可以改变建设方向。</li>
+<li>冲刺的时间限制了失败对冲刺长度的影响。这给了我们勇气去尝试新事物，去实验，去学习。</li>
+<li>Scrum的三个角色和他们各自的职责提升了勇气。产品负责人对产品价值最大化负责，因此她可以通过对低价值特征说“不”来表现勇气。开发团队负责交付高质量的产品，在压力下降低质量时，他们可以通过说“不”来展示勇气。</li>
+<li>通过Sprint Backlog和产品Backlog，我们对计划的工作是透明的。通过向利益相关者展示完成的增量，我们对进度是透明的。透明需要勇气，透明有助于我们建立信任。信任越多，勇气越大。这是一个良性循环。</li>
+<li>Sprint回顾的目的是检查我们作为Scrum团队的情况，并确定改进的行动。这使我们有勇气提出我们如何合作的问题。这使我们有勇气去尝试新事物，去想要更多。</li>
+</ul>
+<p>这仅仅是几个例子，说明Scrum值的勇气如何在Scrum Team中体现，帮助他们最大限度地发挥Scrum的好处。还有很多。团队需要不断地和协作地精炼“勇气”对他们意味着什么，以便真正最大化Scrum。</p>
+<h1 id="Scrum-Values-Commitment-Part-4-of-5"><a href="#Scrum-Values-Commitment-Part-4-of-5" class="headerlink" title="Scrum Values: Commitment (Part 4 of 5)"></a>Scrum Values: Commitment (Part 4 of 5)</h1><p><i style="color:#f63;">Commitment（承诺）：对致力于实现Scrum团队目标做出承诺。</i><br>承诺对于解决复杂问题和发展高绩效团队至关重要。Scrum中的承诺常常被误解为在指定日期交付一个指定范围的承诺。这从来不是Scrum指南中承诺这个词的本意。我希望这篇文章有助于阐明承诺的价值。</p>
+<h2 id="承诺有助于经验主义和团队协作。"><a href="#承诺有助于经验主义和团队协作。" class="headerlink" title="承诺有助于经验主义和团队协作。"></a>承诺有助于经验主义和团队协作。</h2><ul>
+<li>当我们致力于团队的成功，而不仅仅是关心我们个人的成就时，这就创造了一个信任、高效解决问题和高团队标准的环境。</li>
+<li>当我们致力于全面地进行Scrum时，而不仅仅是挑选容易的部分，我们可以充分体验透明、检查和适应的好处。</li>
+<li>致力于持续改进，更容易根据新信息或经验数据改变方向。</li>
+<li>承诺就是全力以赴。我们不能预测或控制产品开发中的所有复杂性，但我们可以承诺采取行动和调整我们的行为，基于反馈和新的学习。</li>
+<li>当我们致力于交付价值时，我们会感觉到一种更强烈的共同目标感，这种意识驱使我们去合作。</li>
+</ul>
+<h2 id="Scrum框架包括有助于促进承诺的元素。"><a href="#Scrum框架包括有助于促进承诺的元素。" class="headerlink" title="Scrum框架包括有助于促进承诺的元素。"></a>Scrum框架包括有助于促进承诺的元素。</h2><ul>
+<li>每个Scrum角色都有明确的责任，这是一种承诺。<br>1.产品经理（Product Owner）通过做出最佳决策来优化产品的价值，而不是简单地试图取悦每一个利益相关者，以此来证明自己的承诺。<br>2.开发团队通过创建一个符合他们“完成”定义的增量来展示他们的承诺，而不是几乎完成的事情。<br>3.Scrum Master通过维护Scrum框架来展示承诺，这意味着我们不会在压力下扩展Sprint或其他时间框来完成任务。Scrum Master通过消除Scrum团队无法解决的障碍来展示承诺，而不是容忍组织的现状。</li>
+<li>在Sprint结束时交付一个“完成”增量可以促进对质量和持续改进的承诺。</li>
+<li>产品待办事项清单能够保证透明度。涉众可以看到产品和当前工单中当前计划的内容。</li>
+<li>Sprint Backlog使我们能够致力于提高进度的透明度。开发团队拥有Sprint Backlog，它总是根据我们所学到的来反映我们当前的进度。</li>
+<li>Scrum每日站会是开发团队展示对彼此承诺的机会。他们合作检查他们的进展并调整他们的计划。它们决定了如何才能最好地协同工作来实现Sprint目标。</li>
+<li>Sprint回顾会促进团队对持续改进的承诺。我们检查我们的流程、工具和交互，确定并致力于可操作的改进。</li>
+</ul>
+<p>这只是几个例子，说明Scrum的承诺价值如何在Scrum Team内部实现，以帮助他们最大化Scrum的好处。还有很多。团队需要不断地和协作地精炼“承诺”对他们意味着什么，以便真正最大化Scrum。</p>
+<h1 id="Scrum-Values-Respect-Part-5-of-5"><a href="#Scrum-Values-Respect-Part-5-of-5" class="headerlink" title="Scrum Values: Respect (Part 5 of 5)"></a>Scrum Values: Respect (Part 5 of 5)</h1><p><i style="color:#f63;">Respect（尊重）：Scrum团队成员相互尊重，认为自己是有能力、独立的人。</i><br>尊重对于解决复杂问题和发展高绩效团队至关重要。这似乎是显而易见的，所以我将与大家分享Scrum中尊重价值的一些更微妙的例子。</p>
+<h2 id="尊重有助于经验主义和团队合作。"><a href="#尊重有助于经验主义和团队合作。" class="headerlink" title="尊重有助于经验主义和团队合作。"></a>尊重有助于经验主义和团队合作。</h2><ul>
+<li>如果我们尊重人们天生的足智多谋、富有创造力和能够合作解决复杂问题的能力，那么我们就赋予了自组织团队权力并使之成为可能。</li>
+<li>通过尊重人们不同的背景、经验和技能范围，团队能够以创造性的方式有效地解决复杂的问题。</li>
+<li>当我们尊重人们是由自主、掌握和目标所激励的时候，我们就创造了一个能吸引人们的环境，使团队变得比他们的部分总和还要强大。</li>
+<li>如果我们尊重人们在考虑到他们当时所知道的情况和他们目前的资源的情况下正在尽最大努力，我们就能实现透明度。我们可以根据所学改变方向。</li>
+<li>当我们表现出对他人的尊重，并假定他们有良好的意愿时，我们可以进行艰难的对话，帮助我们找出解决冲突的方法，并作为一个团队变得更强大。</li>
+<li>当尊重所有的意见和观点时，我们可以确保每个人都有机会被倾听。当我们感觉自己被听到时，即使这个决定不是我们的偏好，也有可能完全支持团队的决定。</li>
+</ul>
+<h2 id="Scrum框架包括有助于促进尊重的元素。"><a href="#Scrum框架包括有助于促进尊重的元素。" class="headerlink" title="Scrum框架包括有助于促进尊重的元素。"></a>Scrum框架包括有助于促进尊重的元素。</h2><ul>
+<li>整个Scrum团队参加Sprint计划、Sprint回顾和Sprint回顾。这促进了对每个角色、责任和不同观点的尊重。</li>
+<li>开发团队是跨职能的，这意味着作为一个整体，它拥有交付“完成”产品增量所需的所有技能。这促进了对每个人的经验、技能和想法的尊重。这也促进了学习和成长。</li>
+<li>Sprint Backlog归开发团队所有。因为他们是做这项工作的人，所以他们决定在一次冲刺中能做多少以及如何做这项工作。这表明了对他们的知识和技能的尊重，以及对以可持续的速度工作的尊重。</li>
+<li>通过在Sprint审查中只审查“完成”的产品，我们为真正的进展带来了透明度。这表明了对我们利益相关者的尊重。</li>
+<li>产品所有者寻求利益相关者的意见，与之合作，并为其设定现实的期望。这是对利益相关者的又一次尊重。</li>
+<li>Scrum Master关注的是Scrum团队的健康和Scrum的有效使用。拥有一个专注于教学、促进和指导的角色，表明了对人和团队及其成长能力的尊重。</li>
+<li>Scrum专注于交付价值，这表明了我们对组织的尊重，因为它不会把钱花在低价值的特性或可能永远不会使用的东西上。</li>
+<li>在Sprint结束时有一个潜在的可释放的增量，这表明了我们对组织的尊重，因为我们没有强迫更多的投资来实现价值。它给组织提供投资决策的灵活性。</li>
+</ul>
+<p>这仅仅是几个例子，说明Scrum的价值如何在Scrum Team内部体现，以帮助他们最大化Scrum的好处。还有很多。团队需要不断地和协作地精炼“尊重”对他们意味着什么，以便真正最大化Scrum。</p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>当Scrum团队体现并践行承诺、勇气、专注、开放和尊重的价值观时，Scrum的透明、检查和适应的支柱就会活跃起来，并为每个人建立信任。Scrum团队成员在处理Scrum事件、角色和工件时学习和探索这些价值观。</p>
 
       
     </div>
@@ -649,7 +740,7 @@ for (var L = 0; L < C.length; L++) {
       
         <div class="post-tags">
           
-            <a href="/tags/CSS/" rel="tag"><i class="fa fa-tag"></i> CSS</a>
+            <a href="/tags/敏捷-Agile/" rel="tag"><i class="fa fa-tag"></i> 敏捷/Agile</a>
           
         </div>
       
@@ -658,17 +749,13 @@ for (var L = 0; L < C.length; L++) {
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/06/08/service-worker/" rel="next" title="使用 Service worker 实现加速/离线访问博客">
-                <i class="fa fa-chevron-left"></i> 使用 Service worker 实现加速/离线访问博客
+              <a href="/2020/01/02/agile-scrum-pillars/" rel="next" title="敏捷-Scrum三大支柱">
+                <i class="fa fa-chevron-left"></i> 敏捷-Scrum三大支柱
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/07/15/hexo-next-five/" rel="prev" title="Hexo-NexT搭建个人博客（五）">
-                Hexo-NexT搭建个人博客（五） <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -854,7 +941,7 @@ for (var L = 0; L < C.length; L++) {
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#css-hack-分类"><span class="nav-number">1.</span> <span class="nav-text">css hack 分类</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#条件注释法"><span class="nav-number">2.</span> <span class="nav-text">条件注释法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#CSS-属性前缀法"><span class="nav-number">3.</span> <span class="nav-text">CSS 属性前缀法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#选择器前缀法"><span class="nav-number">4.</span> <span class="nav-text">选择器前缀法</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Scrum-Values-Focus-Part-1-of-5"><span class="nav-number">1.</span> <span class="nav-text">Scrum Values: Focus (Part 1 of 5)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#专注有助于经验主义和团队协作。"><span class="nav-number">1.1.</span> <span class="nav-text">专注有助于经验主义和团队协作。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Scrum框架包含有助于提Focus高度的元素。"><span class="nav-number">1.2.</span> <span class="nav-text">Scrum框架包含有助于提Focus高度的元素。</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Scrum-Values-Openness-Part-2-of-5"><span class="nav-number">2.</span> <span class="nav-text">Scrum Values: Openness (Part 2 of 5)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#开放性促进了经验主义和协作团队精神。"><span class="nav-number">2.1.</span> <span class="nav-text">开放性促进了经验主义和协作团队精神。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Scrum框架包含有助于促进开放性的元素。"><span class="nav-number">2.2.</span> <span class="nav-text">Scrum框架包含有助于促进开放性的元素。</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Scrum-Values-Courage-Part-3-of-5"><span class="nav-number">3.</span> <span class="nav-text"># Scrum Values: Courage (Part 3 of 5)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Scrum框架包含有助于提升勇气的元素。"><span class="nav-number">3.1.</span> <span class="nav-text">Scrum框架包含有助于提升勇气的元素。</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Scrum-Values-Commitment-Part-4-of-5"><span class="nav-number">4.</span> <span class="nav-text">Scrum Values: Commitment (Part 4 of 5)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#承诺有助于经验主义和团队协作。"><span class="nav-number">4.1.</span> <span class="nav-text">承诺有助于经验主义和团队协作。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Scrum框架包括有助于促进承诺的元素。"><span class="nav-number">4.2.</span> <span class="nav-text">Scrum框架包括有助于促进承诺的元素。</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Scrum-Values-Respect-Part-5-of-5"><span class="nav-number">5.</span> <span class="nav-text">Scrum Values: Respect (Part 5 of 5)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#尊重有助于经验主义和团队合作。"><span class="nav-number">5.1.</span> <span class="nav-text">尊重有助于经验主义和团队合作。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Scrum框架包括有助于促进尊重的元素。"><span class="nav-number">5.2.</span> <span class="nav-text">Scrum框架包括有助于促进尊重的元素。</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-number">6.</span> <span class="nav-text">总结</span></a></li></ol></div>
             
           </div>
         </section>

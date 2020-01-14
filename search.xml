@@ -4,6 +4,127 @@
   
     
     <entry>
+      <title><![CDATA[敏捷-Scrum5大价值观]]></title>
+      <url>https://addonepiece.github.io/2020/01/13/agile-scrum-values/</url>
+      <content type="html"><![CDATA[<p><img src="/images/agile-scrum-values.png" alt=""><br>Scrum价值观是专注、开放、勇气、承诺和尊重。它们非常重要，而且经常被误解，以至于在2016年7月被添加到Scrum指南中。原文如下：</p>
+<ul>
+<li>Respect - Scrum Team members respect each other to be capable, independent people</li>
+<li>Focus - Everyone focuses on the work of the sprint and the goals of the Scrum Team</li>
+<li>Commitment - People personally commit to achieving the goals of the Scrum Team</li>
+<li>Courage - Scrum Team members have courage to do the right thing and work on tough problems</li>
+<li>Openness - The Scrum Team and its stakeholders agree to be open about all the work and the challenges with performing the work</li>
+</ul>
+<p>这五个价值观很容易记住，但是很难理解它们的含义，如何应用它们，以及如何在团队和个人中识别它们。没有Scrum的价值观，我们只是在做活动，不会最大化Scrum的好处，使业务敏捷。</p>
+<h1 id="Scrum-Values-Focus-Part-1-of-5"><a href="#Scrum-Values-Focus-Part-1-of-5" class="headerlink" title="Scrum Values: Focus (Part 1 of 5)"></a>Scrum Values: Focus (Part 1 of 5)</h1><p><i style="color:#f63;">Focus（专注）：专注于让客户满意。专注于冲刺（sprint）及其目标。</i><br>为了更好的完成任务，当我们处理复杂性和不可预测性任务时，专注是必不可少的。</p>
+<h2 id="专注有助于经验主义和团队协作。"><a href="#专注有助于经验主义和团队协作。" class="headerlink" title="专注有助于经验主义和团队协作。"></a>专注有助于经验主义和团队协作。</h2><ul>
+<li>当Scrum团队在一件或两件事情上进行协作时，他们通常会更有效，而不是独立地处理单独的产品待办事项。他们先做一件事，然后再做下一件事。这可以减少来自在制品和冲刺结束时未完成的工作的潜在浪费。虽然Scrum并没有告诉你如何交付，但是focus可以引导团队发现他们最好的工作方式，从而更快地完成工作并将浪费降到最低。</li>
+<li>当有多个问题时，focus可以帮助团队确定首先要解决的问题，经常检查他们的进度，并在他们努力寻找解决方案时尝试新的实验。</li>
+<li>当有相互竞争的优先事项时，专注可以帮助团队决定现在最重要的事情是什么。</li>
+<li>当未来不确定的时候，有一种趋势是渐近明细。专注有助于团队接受不确定性，看看他们今天所知道的，然后迈出一小步。这种方法之所以有效，是因为我们从实践中学习，并且可以根据所学改变方向。</li>
+<li>开发团队在交付“已完成”增量方面的共同责任，使人们关注整体结果，而不仅仅是每个人可以完成什么。</li>
+<li>有了产品愿景，就可以专注于我们要去的地方，并且可以帮助团队的判断和决策。</li>
+</ul>
+<h2 id="Scrum框架包含有助于提Focus高度的元素。"><a href="#Scrum框架包含有助于提Focus高度的元素。" class="headerlink" title="Scrum框架包含有助于提Focus高度的元素。"></a>Scrum框架包含有助于提Focus高度的元素。</h2><ul>
+<li>我们的重点是至少在每次冲刺结束时都有一个“完成”的增量。</li>
+<li>Scrum事件和工件有助于创建关注于检查进度和新信息的焦点，因此我们可以以足够频繁的间隔进行调整。</li>
+<li>我们专注于一个Sprint目标来指导团队交付什么。</li>
+<li>每个角色都有一个独特的责任感，可以帮助个人知道应该把什么作为他们的优先事项。这最终有助于团队的成果。</li>
+<li>产品Backlog是一个有序的列表，它创建了对下一步最重要事情的关注。</li>
+<li>有时间限制的活动会产生一种紧迫感，帮助我们专注于活动的目的。</li>
+</ul>
+<p>团队需要不断地和协作地精炼“专注”对他们意味着什么，以便真正最大化Scrum。</p>
+<h1 id="Scrum-Values-Openness-Part-2-of-5"><a href="#Scrum-Values-Openness-Part-2-of-5" class="headerlink" title="Scrum Values: Openness (Part 2 of 5)"></a>Scrum Values: Openness (Part 2 of 5)</h1><p><i style="color:#f63;">Openness（开放）：Scrum强调保持开放。</i><br>当我们处理复杂性和不可预测性时，开放是必不可少的。</p>
+<h2 id="开放性促进了经验主义和协作团队精神。"><a href="#开放性促进了经验主义和协作团队精神。" class="headerlink" title="开放性促进了经验主义和协作团队精神。"></a>开放性促进了经验主义和协作团队精神。</h2><ul>
+<li>公开我们的工作有助于为我们的进展创造透明度。没有透明度，任何检查和调整的尝试都将是有缺陷的。</li>
+<li>开放性使团队成员能够寻求帮助。</li>
+<li>开放性允许团队成员互相提供帮助。</li>
+<li>开放性使团队成员能够分享他们的观点，感受到同行的意见，并能够支持团队决策。</li>
+<li>当我们的假设被证明无效时，开放性帮助我们承认错误并改变方向。这适用于我们认为有价值的功能。这也适用于我们选择如何在产品中实现功能。</li>
+</ul>
+<h2 id="Scrum框架包含有助于促进开放性的元素。"><a href="#Scrum框架包含有助于促进开放性的元素。" class="headerlink" title="Scrum框架包含有助于促进开放性的元素。"></a>Scrum框架包含有助于促进开放性的元素。</h2><ul>
+<li>将Sprint时间限制在30天或30天以下，可以促进基于新信息的改变方向的开放性。</li>
+<li>Sprint目标是固定的并提供了指导，但是实现Sprint目标的计划是开放的，可以根据开发团队正在学习的内容进行更改。</li>
+<li>透明的产品待办事项清单向我们的利益相关者展示了对产品计划（以及未计划的）和下一步可能发生的事情的开放性。</li>
+<li>Sprint回顾的重点是不断改进我们团队的交互、流程和工具，这就要求我们对反馈、反思和改变工作方式持开放态度。</li>
+<li>Sprint评审展示了与利益相关者分享进展的开放性，以及对反馈和与他们合作的开放性。</li>
+</ul>
+<p>团队需要不断地和协作地精炼“开放”对他们意味着什么，以便真正最大化Scrum。</p>
+<h1 id="Scrum-Values-Courage-Part-3-of-5"><a href="#Scrum-Values-Courage-Part-3-of-5" class="headerlink" title="# Scrum Values: Courage (Part 3 of 5)"></a># Scrum Values: Courage (Part 3 of 5)</h1><p><i style="color:#f63;">Courage（勇气）：Scrum团队成员有勇气做正确的事情并解决棘手的问题。</i><br>勇气是解决复杂问题和培养高绩效团队的关键。</p>
+<p>##勇气有助于经验主义和团队合作。</p>
+<ul>
+<li>在压力下保持进展的透明度，以便更快地交付成果，这需要勇气。</li>
+<li>不让我们的利益相关者放弃工作需要勇气。</li>
+<li>寻求帮助或承认我们不知道怎么做需要勇气。</li>
+<li>当其他人没有履行对团队的承诺时，让他们承担责任需要勇气。</li>
+<li>我们可能会发现我们制造了顾客不想要的东西。承认我们的假设是错误的并改变方向需要勇气。</li>
+<li>尝试建立我们从未建立过的东西需要勇气，不知道它是否会起作用。</li>
+<li>与团队成员分享不同意见并进行富有成效的冲突需要勇气。</li>
+<li>承认错误需要勇气。这可能适用于我们的技术工作、我们的决定，或者我们的行为方式。</li>
+</ul>
+<h2 id="Scrum框架包含有助于提升勇气的元素。"><a href="#Scrum框架包含有助于提升勇气的元素。" class="headerlink" title="Scrum框架包含有助于提升勇气的元素。"></a>Scrum框架包含有助于提升勇气的元素。</h2><ul>
+<li>每一次Scrum活动都是一个检验和适应的机会。这种内在的假设，即改变方向是可以的，这使我们有了勇气。我们可以改变建设方向。我们可以改变建设方向。</li>
+<li>冲刺的时间限制了失败对冲刺长度的影响。这给了我们勇气去尝试新事物，去实验，去学习。</li>
+<li>Scrum的三个角色和他们各自的职责提升了勇气。产品负责人对产品价值最大化负责，因此她可以通过对低价值特征说“不”来表现勇气。开发团队负责交付高质量的产品，在压力下降低质量时，他们可以通过说“不”来展示勇气。</li>
+<li>通过Sprint Backlog和产品Backlog，我们对计划的工作是透明的。通过向利益相关者展示完成的增量，我们对进度是透明的。透明需要勇气，透明有助于我们建立信任。信任越多，勇气越大。这是一个良性循环。</li>
+<li>Sprint回顾的目的是检查我们作为Scrum团队的情况，并确定改进的行动。这使我们有勇气提出我们如何合作的问题。这使我们有勇气去尝试新事物，去想要更多。</li>
+</ul>
+<p>这仅仅是几个例子，说明Scrum值的勇气如何在Scrum Team中体现，帮助他们最大限度地发挥Scrum的好处。还有很多。团队需要不断地和协作地精炼“勇气”对他们意味着什么，以便真正最大化Scrum。</p>
+<h1 id="Scrum-Values-Commitment-Part-4-of-5"><a href="#Scrum-Values-Commitment-Part-4-of-5" class="headerlink" title="Scrum Values: Commitment (Part 4 of 5)"></a>Scrum Values: Commitment (Part 4 of 5)</h1><p><i style="color:#f63;">Commitment（承诺）：对致力于实现Scrum团队目标做出承诺。</i><br>承诺对于解决复杂问题和发展高绩效团队至关重要。Scrum中的承诺常常被误解为在指定日期交付一个指定范围的承诺。这从来不是Scrum指南中承诺这个词的本意。我希望这篇文章有助于阐明承诺的价值。</p>
+<h2 id="承诺有助于经验主义和团队协作。"><a href="#承诺有助于经验主义和团队协作。" class="headerlink" title="承诺有助于经验主义和团队协作。"></a>承诺有助于经验主义和团队协作。</h2><ul>
+<li>当我们致力于团队的成功，而不仅仅是关心我们个人的成就时，这就创造了一个信任、高效解决问题和高团队标准的环境。</li>
+<li>当我们致力于全面地进行Scrum时，而不仅仅是挑选容易的部分，我们可以充分体验透明、检查和适应的好处。</li>
+<li>致力于持续改进，更容易根据新信息或经验数据改变方向。</li>
+<li>承诺就是全力以赴。我们不能预测或控制产品开发中的所有复杂性，但我们可以承诺采取行动和调整我们的行为，基于反馈和新的学习。</li>
+<li>当我们致力于交付价值时，我们会感觉到一种更强烈的共同目标感，这种意识驱使我们去合作。</li>
+</ul>
+<h2 id="Scrum框架包括有助于促进承诺的元素。"><a href="#Scrum框架包括有助于促进承诺的元素。" class="headerlink" title="Scrum框架包括有助于促进承诺的元素。"></a>Scrum框架包括有助于促进承诺的元素。</h2><ul>
+<li>每个Scrum角色都有明确的责任，这是一种承诺。<br>1.产品经理（Product Owner）通过做出最佳决策来优化产品的价值，而不是简单地试图取悦每一个利益相关者，以此来证明自己的承诺。<br>2.开发团队通过创建一个符合他们“完成”定义的增量来展示他们的承诺，而不是几乎完成的事情。<br>3.Scrum Master通过维护Scrum框架来展示承诺，这意味着我们不会在压力下扩展Sprint或其他时间框来完成任务。Scrum Master通过消除Scrum团队无法解决的障碍来展示承诺，而不是容忍组织的现状。</li>
+<li>在Sprint结束时交付一个“完成”增量可以促进对质量和持续改进的承诺。</li>
+<li>产品待办事项清单能够保证透明度。涉众可以看到产品和当前工单中当前计划的内容。</li>
+<li>Sprint Backlog使我们能够致力于提高进度的透明度。开发团队拥有Sprint Backlog，它总是根据我们所学到的来反映我们当前的进度。</li>
+<li>Scrum每日站会是开发团队展示对彼此承诺的机会。他们合作检查他们的进展并调整他们的计划。它们决定了如何才能最好地协同工作来实现Sprint目标。</li>
+<li>Sprint回顾会促进团队对持续改进的承诺。我们检查我们的流程、工具和交互，确定并致力于可操作的改进。</li>
+</ul>
+<p>这只是几个例子，说明Scrum的承诺价值如何在Scrum Team内部实现，以帮助他们最大化Scrum的好处。还有很多。团队需要不断地和协作地精炼“承诺”对他们意味着什么，以便真正最大化Scrum。</p>
+<h1 id="Scrum-Values-Respect-Part-5-of-5"><a href="#Scrum-Values-Respect-Part-5-of-5" class="headerlink" title="Scrum Values: Respect (Part 5 of 5)"></a>Scrum Values: Respect (Part 5 of 5)</h1><p><i style="color:#f63;">Respect（尊重）：Scrum团队成员相互尊重，认为自己是有能力、独立的人。</i><br>尊重对于解决复杂问题和发展高绩效团队至关重要。这似乎是显而易见的，所以我将与大家分享Scrum中尊重价值的一些更微妙的例子。</p>
+<h2 id="尊重有助于经验主义和团队合作。"><a href="#尊重有助于经验主义和团队合作。" class="headerlink" title="尊重有助于经验主义和团队合作。"></a>尊重有助于经验主义和团队合作。</h2><ul>
+<li>如果我们尊重人们天生的足智多谋、富有创造力和能够合作解决复杂问题的能力，那么我们就赋予了自组织团队权力并使之成为可能。</li>
+<li>通过尊重人们不同的背景、经验和技能范围，团队能够以创造性的方式有效地解决复杂的问题。</li>
+<li>当我们尊重人们是由自主、掌握和目标所激励的时候，我们就创造了一个能吸引人们的环境，使团队变得比他们的部分总和还要强大。</li>
+<li>如果我们尊重人们在考虑到他们当时所知道的情况和他们目前的资源的情况下正在尽最大努力，我们就能实现透明度。我们可以根据所学改变方向。</li>
+<li>当我们表现出对他人的尊重，并假定他们有良好的意愿时，我们可以进行艰难的对话，帮助我们找出解决冲突的方法，并作为一个团队变得更强大。</li>
+<li>当尊重所有的意见和观点时，我们可以确保每个人都有机会被倾听。当我们感觉自己被听到时，即使这个决定不是我们的偏好，也有可能完全支持团队的决定。</li>
+</ul>
+<h2 id="Scrum框架包括有助于促进尊重的元素。"><a href="#Scrum框架包括有助于促进尊重的元素。" class="headerlink" title="Scrum框架包括有助于促进尊重的元素。"></a>Scrum框架包括有助于促进尊重的元素。</h2><ul>
+<li>整个Scrum团队参加Sprint计划、Sprint回顾和Sprint回顾。这促进了对每个角色、责任和不同观点的尊重。</li>
+<li>开发团队是跨职能的，这意味着作为一个整体，它拥有交付“完成”产品增量所需的所有技能。这促进了对每个人的经验、技能和想法的尊重。这也促进了学习和成长。</li>
+<li>Sprint Backlog归开发团队所有。因为他们是做这项工作的人，所以他们决定在一次冲刺中能做多少以及如何做这项工作。这表明了对他们的知识和技能的尊重，以及对以可持续的速度工作的尊重。</li>
+<li>通过在Sprint审查中只审查“完成”的产品，我们为真正的进展带来了透明度。这表明了对我们利益相关者的尊重。</li>
+<li>产品所有者寻求利益相关者的意见，与之合作，并为其设定现实的期望。这是对利益相关者的又一次尊重。</li>
+<li>Scrum Master关注的是Scrum团队的健康和Scrum的有效使用。拥有一个专注于教学、促进和指导的角色，表明了对人和团队及其成长能力的尊重。</li>
+<li>Scrum专注于交付价值，这表明了我们对组织的尊重，因为它不会把钱花在低价值的特性或可能永远不会使用的东西上。</li>
+<li>在Sprint结束时有一个潜在的可释放的增量，这表明了我们对组织的尊重，因为我们没有强迫更多的投资来实现价值。它给组织提供投资决策的灵活性。</li>
+</ul>
+<p>这仅仅是几个例子，说明Scrum的价值如何在Scrum Team内部体现，以帮助他们最大化Scrum的好处。还有很多。团队需要不断地和协作地精炼“尊重”对他们意味着什么，以便真正最大化Scrum。</p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>当Scrum团队体现并践行承诺、勇气、专注、开放和尊重的价值观时，Scrum的透明、检查和适应的支柱就会活跃起来，并为每个人建立信任。Scrum团队成员在处理Scrum事件、角色和工件时学习和探索这些价值观。</p>
+]]></content>
+      
+        <categories>
+            
+            <category> 敏捷 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 敏捷/Agile </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[敏捷-Scrum三大支柱]]></title>
       <url>https://addonepiece.github.io/2020/01/02/agile-scrum-pillars/</url>
       <content type="html"><![CDATA[<p><img src="/images/agile-scrum-pillars2.jpeg" alt=""></p>
@@ -672,7 +793,7 @@
     </entry>
     
     <entry>
-      <title><![CDATA[什么是REST/RESTfuk API？]]></title>
+      <title><![CDATA[什么是REST/RESTful API？]]></title>
       <url>https://addonepiece.github.io/2019/01/17/java-REST/</url>
       <content type="html"><![CDATA[<h1 id="文章内容及目的（CONTENT-amp-OBJECTIVE）"><a href="#文章内容及目的（CONTENT-amp-OBJECTIVE）" class="headerlink" title="文章内容及目的（CONTENT &amp; OBJECTIVE）"></a>文章内容及目的（CONTENT &amp; OBJECTIVE）</h1><p>1.了解什么是REST<br>2.了解如何使用REST范式/风格设计各端<br><img src="/images/Java-REST.jpeg" alt=""></p>
 <h1 id="REST（REPRESENTATIONAL-STATE-TRANSFER）"><a href="#REST（REPRESENTATIONAL-STATE-TRANSFER）" class="headerlink" title="REST（REPRESENTATIONAL STATE TRANSFER）"></a>REST（REPRESENTATIONAL STATE TRANSFER）</h1><p>REST（英文：Representational State Transfer）是一种无状态资源传输体系范式，用在服务端和客户端之间提供标准，从而使系统之间的通信更容易。与REST兼容的系统，通常称为RESTful系统，其特点是它们是无状态的，并且分离了客户端和服务端的关注点。我们将讨论这些术语的含义以及它们为什么是Web等服务实现前后端分离的有益特性。</p>
