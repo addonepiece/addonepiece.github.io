@@ -4,6 +4,67 @@
 
     
   <url>
+    <loc>https://addonepiece.github.io/2020/02/17/maryKey/</loc>
+    <lastmod>2020-02-18T14:33:15.009Z</lastmod>
+    <data>
+        <display>
+        <title>玫琳凯自传读书分享</title>
+        <pubTime>2020-02-17T00:48:04.000Z</pubTime>
+        
+        <tag>bookClub</tag>
+         
+         
+           
+             
+              <breadCrumb title="读书分享" url="https://addonepiece.github.io/categories/%E8%AF%BB%E4%B9%A6%E5%88%86%E4%BA%AB/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://addonepiece.github.io/2017/05/20/npm-two/</loc>
+    <lastmod>2020-02-17T00:51:48.746Z</lastmod>
+    <data>
+        <display>
+        <title>npm 的一个小细节</title>
+        <pubTime>2017-05-19T17:25:24.000Z</pubTime>
+        
+        <tag>npm</tag>
+         
+         
+           
+             
+              <breadCrumb title="前端" url="https://addonepiece.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://addonepiece.github.io/2017/04/10/npm/</loc>
+    <lastmod>2020-02-17T00:51:42.785Z</lastmod>
+    <data>
+        <display>
+        <title>npm 全面介绍</title>
+        <pubTime>2017-04-09T19:25:24.000Z</pubTime>
+        
+        <tag>npm</tag>
+         
+         
+           
+             
+              <breadCrumb title="前端" url="https://addonepiece.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+    
+  <url>
     <loc>https://addonepiece.github.io/2020/01/13/agile-scrum-values/</loc>
     <lastmod>2020-01-14T07:41:42.192Z</lastmod>
     <data>
@@ -600,26 +661,6 @@
 
     
   <url>
-    <loc>https://addonepiece.github.io/2017/05/20/npm-two/</loc>
-    <lastmod>2019-12-12T07:31:12.840Z</lastmod>
-    <data>
-        <display>
-        <title>npm 的一个小细节</title>
-        <pubTime>2017-05-19T17:25:24.000Z</pubTime>
-        
-        <tag>npm</tag>
-         
-         
-           
-             
-              <breadCrumb title="前端" url="https://addonepiece.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://addonepiece.github.io/2018/06/01/js-this/</loc>
     <lastmod>2019-12-12T07:29:40.854Z</lastmod>
     <data>
@@ -747,7 +788,6 @@
     
     
     
-    
   <url>
     <loc>https://addonepiece.github.io/2017/02/14/why-we-dropped-zepto/</loc>
     <lastmod>2019-11-20T06:33:52.660Z</lastmod>
@@ -831,26 +871,6 @@
 
     
   <url>
-    <loc>https://addonepiece.github.io/2017/04/10/npm/</loc>
-    <lastmod>2019-11-20T06:33:52.654Z</lastmod>
-    <data>
-        <display>
-        <title>npm 全面介绍</title>
-        <pubTime>2017-04-09T19:25:24.000Z</pubTime>
-        
-        <tag>npm</tag>
-         
-         
-           
-             
-              <breadCrumb title="前端" url="https://addonepiece.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://addonepiece.github.io/2017/02/28/memory-leak/</loc>
     <lastmod>2019-11-20T06:33:52.653Z</lastmod>
     <data>
@@ -898,9 +918,9 @@
         <title>【转】在2016年学JavaScript是一种什么样的体验</title>
         <pubTime>2016-10-16T15:25:24.000Z</pubTime>
         
-        <tag>essay</tag>
-         
         <tag>JavaScript</tag>
+         
+        <tag>essay</tag>
          
          
            
@@ -940,9 +960,9 @@
         <title>中国国内 JavaScript 圈的现状如何</title>
         <pubTime>2016-11-18T05:25:24.000Z</pubTime>
         
-        <tag>essay</tag>
-         
         <tag>JavaScript</tag>
+         
+        <tag>essay</tag>
          
          
            
