@@ -2,6 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://addonepiece.github.io/2020/06/15/solr-one/</loc>
+    
+    <lastmod>2020-09-14T10:57:27.842Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://addonepiece.github.io/2020/08/24/javacodestandard/</loc>
+    
+    <lastmod>2020-09-14T10:57:27.841Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://addonepiece.github.io/2020/07/15/Centos7installSolr-8-4-1/</loc>
+    
+    <lastmod>2020-09-14T10:57:27.840Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://addonepiece.github.io/2020/02/17/maryKey/</loc>
     
     <lastmod>2020-02-19T02:28:34.687Z</lastmod>
@@ -317,14 +338,14 @@
   </url>
   
   <url>
-    <loc>https://addonepiece.github.io/categories/index.html</loc>
+    <loc>https://addonepiece.github.io/example/index.html</loc>
     
     <lastmod>2019-11-20T06:33:52.662Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://addonepiece.github.io/example/index.html</loc>
+    <loc>https://addonepiece.github.io/categories/index.html</loc>
     
     <lastmod>2019-11-20T06:33:52.662Z</lastmod>
     
