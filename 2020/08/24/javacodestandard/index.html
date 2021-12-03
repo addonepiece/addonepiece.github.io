@@ -1,0 +1,1218 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Courier New:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="Java,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="行囊" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon/favicon.ico?v=5.0.1">
+
+
+
+
+
+
+<meta name="description" content="alibaba的代码规范阿里巴巴开发手册git地址：https://github.com/alibaba/p3c 请使用如下插件，并遵守阿里编码规约 执行代码检查 代码样式 打开Window-&amp;gt;Preferences-&amp;gt;Java-&amp;gt;Code Style-&amp;gt;Code Templates点击import 插入eclipse-codetemplate(eclipse-codest">
+<meta name="keywords" content="Java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="java编码规范-基于alibaba的代码规范">
+<meta property="og:url" content="https://addonepiece.github.io/2020/08/24/javacodestandard/index.html">
+<meta property="og:site_name" content="行囊">
+<meta property="og:description" content="alibaba的代码规范阿里巴巴开发手册git地址：https://github.com/alibaba/p3c 请使用如下插件，并遵守阿里编码规约 执行代码检查 代码样式 打开Window-&amp;gt;Preferences-&amp;gt;Java-&amp;gt;Code Style-&amp;gt;Code Templates点击import 插入eclipse-codetemplate(eclipse-codest">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://addonepiece.github.io/images/alibabacodestyle/Alibabacodestyle1.png">
+<meta property="og:image" content="https://addonepiece.github.io/images/alibabacodestyle/Alibabacodestyle2.png">
+<meta property="og:image" content="https://addonepiece.github.io/images/alibabacodestyle/Alibabacodestyle3.png">
+<meta property="og:image" content="https://addonepiece.github.io/images/alibabacodestyle/4.png">
+<meta property="og:image" content="https://addonepiece.github.io/images/alibabacodestyle/5.png">
+<meta property="og:image" content="https://addonepiece.github.io/images/alibabacodestyle/6.png">
+<meta property="og:updated_time" content="2020-09-14T03:32:46.301Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="java编码规范-基于alibaba的代码规范">
+<meta name="twitter:description" content="alibaba的代码规范阿里巴巴开发手册git地址：https://github.com/alibaba/p3c 请使用如下插件，并遵守阿里编码规约 执行代码检查 代码样式 打开Window-&amp;gt;Preferences-&amp;gt;Java-&amp;gt;Code Style-&amp;gt;Code Templates点击import 插入eclipse-codetemplate(eclipse-codest">
+<meta name="twitter:image" content="https://addonepiece.github.io/images/alibabacodestyle/Alibabacodestyle1.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"hide"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: undefined,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="https://addonepiece.github.io/2020/08/24/javacodestandard/">
+
+
+<!-- 网页加载条 -->
+<script src="/js/src/pace.min.js"></script>
+  <title> java编码规范-基于alibaba的代码规范 | 行囊 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">行囊</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">大佬闫的博客</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-guestbook">
+          <a href="/guestbook" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-commenting"></i> <br>
+            
+            留言
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-example">
+          <a href="/example" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br>
+            
+            示例
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+      
+      
+        <li class="menu-item"> <a title="把这个链接拖到你的工具栏中,任何网页都可以High" href="javascript:(
+/*
+ * Copyright (C) 2016 Never_yu (Neveryu.github.io) <React.dong.yu@gmail.com>
+ * Sina Weibo (http://weibo.com/Neveryu)
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+function go() {
+
+var songs = [
+  "http://dl.stream.qqmusic.qq.com/C400001Qu4I30eVFYb.m4a?vkey=2127178E4405E7B8B268F20F05232485735CCF4FF8C1432F0360D2626D0B6C9564B5627C7AB481BBC685FEDB0946A50E97C66F0D1B008226&guid=7175649092&uin=0&fromtag=66",
+  "",
+  "",
+  ""
+];
+
+function c() {
+  var e = document.createElement("link");
+  e.setAttribute("type", "text/css");
+  e.setAttribute("rel", "stylesheet");
+  e.setAttribute("href", f);
+  e.setAttribute("class", l);
+  document.body.appendChild(e)
+}
+
+function h() {
+  var e = document.getElementsByClassName(l);
+  for (var t = 0; t < e.length; t++) {
+    document.body.removeChild(e[t])
+  }
+}
+
+function p() {
+  var e = document.createElement("div");
+  e.setAttribute("class", a);
+  document.body.appendChild(e);
+  setTimeout(function() {
+    document.body.removeChild(e)
+  }, 100)
+}
+
+function d(e) {
+  return {
+    height : e.offsetHeight,
+    width : e.offsetWidth
+  }
+}
+
+function v(i) {
+  var s = d(i);
+  return s.height > e && s.height < n && s.width > t && s.width < r
+}
+
+function m(e) {
+  var t = e;
+  var n = 0;
+  while (!!t) {
+    n += t.offsetTop;
+    t = t.offsetParent
+  }
+  return n
+}
+
+function g() {
+  var e = document.documentElement;
+  if (!!window.innerWidth) {
+    return window.innerHeight
+  } else if (e && !isNaN(e.clientHeight)) {
+    return e.clientHeight
+  }
+  return 0
+}
+
+function y() {
+  if (window.pageYOffset) {
+    return window.pageYOffset
+  }
+  return Math.max(document.documentElement.scrollTop, document.body.scrollTop)
+}
+
+function E(e) {
+  var t = m(e);
+  return t >= w && t <= b + w
+}
+
+function S() {
+  var e = document.getElementById("audio_element_id");
+  if(e != null){
+    var index = parseInt(e.getAttribute("curSongIndex"));
+    if(index > songs.length - 2) {
+      index = 0;
+    } else {
+      index++;
+    }
+    e.setAttribute("curSongIndex", index);
+    N();
+  }
+
+  e.src = i;
+  e.play()
+}
+
+function x(e) {
+  e.className += " " + s + " " + o
+}
+
+function T(e) {
+  e.className += " " + s + " " + u[Math.floor(Math.random() * u.length)]
+}
+
+function N() {
+  var e = document.getElementsByClassName(s);
+  var t = new RegExp("\\b" + s + "\\b");
+  for (var n = 0; n < e.length; ) {
+    e[n].className = e[n].className.replace(t, "")
+  }
+}
+
+function initAudioEle() {
+  var e = document.getElementById("audio_element_id");
+  if(e === null){
+    e = document.createElement("audio");
+    e.setAttribute("class", l);
+    e.setAttribute("curSongIndex", 0);
+    e.id = "audio_element_id";
+    e.loop = false;
+    e.bgcolor = 0;
+    e.addEventListener("canplay", function() {
+      setTimeout(function() {
+        x(k)
+      }, 500);
+      setTimeout(function() {
+        N();
+        p();
+        for (var e = 0; e < O.length; e++) {
+          T(O[e])
+        }
+      }, 15500)
+    }, true);
+    e.addEventListener("ended", function() {
+      N();
+      h();
+      go();
+    }, true);
+    e.innerHTML = " <p>If you are reading this, it is because your browser does not support the audio element. We recommend that you get a new browser.</p> <p>";
+    document.body.appendChild(e);
+  }
+}
+
+initAudioEle();
+var e = 30;
+var t = 30;
+var n = 350;
+var r = 350;
+
+var curSongIndex = parseInt(document.getElementById("audio_element_id").getAttribute("curSongIndex"));
+var i = songs[curSongIndex];
+
+var s = "mw-harlem_shake_me";
+var o = "im_first";
+var u = ["im_drunk", "im_baked", "im_trippin", "im_blown"];
+var a = "mw-strobe_light";
+
+/* harlem-shake-style.css，替换成你的位置，也可以直接使用：//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake-style.css */
+var f = "//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake-style.css";
+
+var l = "mw_added_css";
+var b = g();
+var w = y();
+var C = document.getElementsByTagName("*");
+var k = null;
+for (var L = 0; L < C.length; L++) {
+  var A = C[L];
+  if (v(A)) {
+    if (E(A)) {
+      k = A;
+      break
+    }
+  }
+}
+if (A === null) {
+  console.warn("Could not find a node of the right size. Please try a different page.");
+  return
+}
+c();
+S();
+var O = [];
+for (var L = 0; L < C.length; L++) {
+  var A = C[L];
+  if (v(A)) {
+    O.push(A)
+  }
+}
+})()"><i class="menu-item-icon fa fa-music fa-fw"></i> High一下</a></li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search fa-lg"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                java编码规范-基于alibaba的代码规范
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2020-08-24T09:41:45+08:00" content="2020-08-24">
+              2020-08-24
+            </time>
+          </span>
+
+          
+            <span class="post-category">
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/后台/" itemprop="url" rel="index">
+                    <span itemprop="name">后台</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+
+          
+
+          
+          
+
+          
+              &nbsp; | &nbsp;
+              <span class="page-pv">热度
+              <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>℃
+              </span>
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="alibaba的代码规范"><a href="#alibaba的代码规范" class="headerlink" title="alibaba的代码规范"></a>alibaba的代码规范</h2><p>阿里巴巴开发手册git地址：<a href="https://github.com/alibaba/p3c" target="_blank" rel="noopener">https://github.com/alibaba/p3c</a><br><img src="/images/alibabacodestyle/Alibabacodestyle1.png" alt><br><img src="/images/alibabacodestyle/Alibabacodestyle2.png" alt></p>
+<h2 id="请使用如下插件，并遵守阿里编码规约"><a href="#请使用如下插件，并遵守阿里编码规约" class="headerlink" title="请使用如下插件，并遵守阿里编码规约"></a>请使用如下插件，并遵守阿里编码规约</h2><p><img src="/images/alibabacodestyle/Alibabacodestyle3.png" alt></p>
+<h2 id="执行代码检查"><a href="#执行代码检查" class="headerlink" title="执行代码检查"></a>执行代码检查</h2><p><img src="/images/alibabacodestyle/4.png" alt></p>
+<h2 id="代码样式"><a href="#代码样式" class="headerlink" title="代码样式"></a>代码样式</h2><ol>
+<li><p>打开Window-&gt;Preferences-&gt;Java-&gt;Code Style-&gt;Code Templates<br>点击import 插入eclipse-codetemplate<br>(eclipse-codestyle.xml)</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br><span class="line">300</span><br><span class="line">301</span><br><span class="line">302</span><br><span class="line">303</span><br><span class="line">304</span><br><span class="line">305</span><br><span class="line">306</span><br><span class="line">307</span><br><span class="line">308</span><br><span class="line">309</span><br><span class="line">310</span><br><span class="line">311</span><br><span class="line">312</span><br><span class="line">313</span><br><span class="line">314</span><br><span class="line">315</span><br><span class="line">316</span><br><span class="line">317</span><br><span class="line">318</span><br><span class="line">319</span><br><span class="line">320</span><br><span class="line">321</span><br><span class="line">322</span><br><span class="line">323</span><br><span class="line">324</span><br><span class="line">325</span><br><span class="line">326</span><br><span class="line">327</span><br><span class="line">328</span><br><span class="line">329</span><br><span class="line">330</span><br><span class="line">331</span><br><span class="line">332</span><br><span class="line">333</span><br><span class="line">334</span><br><span class="line">335</span><br><span class="line">336</span><br><span class="line">337</span><br><span class="line">338</span><br><span class="line">339</span><br><span class="line">340</span><br><span class="line">341</span><br><span class="line">342</span><br><span class="line">343</span><br><span class="line">344</span><br><span class="line">345</span><br><span class="line">346</span><br><span class="line">347</span><br><span class="line">348</span><br><span class="line">349</span><br><span class="line">350</span><br><span class="line">351</span><br><span class="line">352</span><br><span class="line">353</span><br><span class="line">354</span><br><span class="line">355</span><br><span class="line">356</span><br><span class="line">357</span><br><span class="line">358</span><br><span class="line">359</span><br><span class="line">360</span><br><span class="line">361</span><br><span class="line">362</span><br><span class="line">363</span><br><span class="line">364</span><br><span class="line">365</span><br><span class="line">366</span><br><span class="line">367</span><br><span class="line">368</span><br><span class="line">369</span><br><span class="line">370</span><br><span class="line">371</span><br><span class="line">372</span><br><span class="line">373</span><br><span class="line">374</span><br><span class="line">375</span><br><span class="line">376</span><br><span class="line">377</span><br><span class="line">378</span><br><span class="line">379</span><br><span class="line">380</span><br><span class="line">381</span><br><span class="line">382</span><br><span class="line">383</span><br><span class="line">384</span><br><span class="line">385</span><br><span class="line">386</span><br><span class="line">387</span><br><span class="line">388</span><br><span class="line">389</span><br><span class="line">390</span><br><span class="line">391</span><br><span class="line">392</span><br><span class="line">393</span><br><span class="line">394</span><br><span class="line">395</span><br><span class="line">396</span><br><span class="line">397</span><br><span class="line">398</span><br><span class="line">399</span><br><span class="line">400</span><br><span class="line">401</span><br><span class="line">402</span><br><span class="line">403</span><br><span class="line">404</span><br><span class="line">405</span><br><span class="line">406</span><br><span class="line">407</span><br><span class="line">408</span><br><span class="line">409</span><br><span class="line">410</span><br><span class="line">411</span><br><span class="line">412</span><br><span class="line">413</span><br><span class="line">414</span><br><span class="line">415</span><br><span class="line">416</span><br><span class="line">417</span><br><span class="line">418</span><br><span class="line">419</span><br><span class="line">420</span><br><span class="line">421</span><br><span class="line">422</span><br><span class="line">423</span><br><span class="line">424</span><br><span class="line">425</span><br><span class="line">426</span><br><span class="line">427</span><br><span class="line">428</span><br><span class="line">429</span><br><span class="line">430</span><br><span class="line">431</span><br><span class="line">432</span><br><span class="line">433</span><br><span class="line">434</span><br><span class="line">435</span><br><span class="line">436</span><br><span class="line">437</span><br><span class="line">438</span><br><span class="line">439</span><br><span class="line">440</span><br><span class="line">441</span><br><span class="line">442</span><br><span class="line">443</span><br><span class="line">444</span><br><span class="line">445</span><br><span class="line">446</span><br><span class="line">447</span><br><span class="line">448</span><br><span class="line">449</span><br><span class="line">450</span><br><span class="line">451</span><br><span class="line">452</span><br><span class="line">453</span><br><span class="line">454</span><br><span class="line">455</span><br><span class="line">456</span><br><span class="line">457</span><br><span class="line">458</span><br><span class="line">459</span><br><span class="line">460</span><br><span class="line">461</span><br><span class="line">462</span><br><span class="line">463</span><br><span class="line">464</span><br><span class="line">465</span><br><span class="line">466</span><br><span class="line">467</span><br><span class="line">468</span><br><span class="line">469</span><br><span class="line">470</span><br><span class="line">471</span><br><span class="line">472</span><br><span class="line">473</span><br><span class="line">474</span><br><span class="line">475</span><br><span class="line">476</span><br><span class="line">477</span><br><span class="line">478</span><br><span class="line">479</span><br><span class="line">480</span><br><span class="line">481</span><br><span class="line">482</span><br><span class="line">483</span><br><span class="line">484</span><br><span class="line">485</span><br><span class="line">486</span><br><span class="line">487</span><br><span class="line">488</span><br><span class="line">489</span><br><span class="line">490</span><br><span class="line">491</span><br><span class="line">492</span><br><span class="line">493</span><br><span class="line">494</span><br><span class="line">495</span><br><span class="line">496</span><br><span class="line">497</span><br><span class="line">498</span><br><span class="line">499</span><br><span class="line">500</span><br><span class="line">501</span><br><span class="line">502</span><br><span class="line">503</span><br><span class="line">504</span><br><span class="line">505</span><br><span class="line">506</span><br><span class="line">507</span><br><span class="line">508</span><br><span class="line">509</span><br><span class="line">510</span><br><span class="line">511</span><br><span class="line">512</span><br><span class="line">513</span><br><span class="line">514</span><br><span class="line">515</span><br><span class="line">516</span><br><span class="line">517</span><br><span class="line">518</span><br><span class="line">519</span><br><span class="line">520</span><br><span class="line">521</span><br><span class="line">522</span><br><span class="line">523</span><br><span class="line">524</span><br><span class="line">525</span><br><span class="line">526</span><br><span class="line">527</span><br><span class="line">528</span><br><span class="line">529</span><br><span class="line">530</span><br><span class="line">531</span><br><span class="line">532</span><br><span class="line">533</span><br><span class="line">534</span><br><span class="line">535</span><br><span class="line">536</span><br><span class="line">537</span><br><span class="line">538</span><br><span class="line">539</span><br><span class="line">540</span><br><span class="line">541</span><br><span class="line">542</span><br><span class="line">543</span><br><span class="line">544</span><br><span class="line">545</span><br><span class="line">546</span><br><span class="line">547</span><br><span class="line">548</span><br><span class="line">549</span><br><span class="line">550</span><br><span class="line">551</span><br><span class="line">552</span><br><span class="line">553</span><br><span class="line">554</span><br><span class="line">555</span><br><span class="line">556</span><br><span class="line">557</span><br><span class="line">558</span><br><span class="line">559</span><br><span class="line">560</span><br><span class="line">561</span><br><span class="line">562</span><br><span class="line">563</span><br><span class="line">564</span><br><span class="line">565</span><br><span class="line">566</span><br><span class="line">567</span><br><span class="line">568</span><br><span class="line">569</span><br><span class="line">570</span><br><span class="line">571</span><br><span class="line">572</span><br><span class="line">573</span><br><span class="line">574</span><br><span class="line">575</span><br><span class="line">576</span><br><span class="line">577</span><br><span class="line">578</span><br><span class="line">579</span><br><span class="line">580</span><br><span class="line">581</span><br><span class="line">582</span><br><span class="line">583</span><br><span class="line">584</span><br><span class="line">585</span><br><span class="line">586</span><br><span class="line">587</span><br><span class="line">588</span><br><span class="line">589</span><br><span class="line">590</span><br><span class="line">591</span><br><span class="line">592</span><br><span class="line">593</span><br><span class="line">594</span><br><span class="line">595</span><br><span class="line">596</span><br><span class="line">597</span><br><span class="line">598</span><br><span class="line">599</span><br><span class="line">600</span><br><span class="line">601</span><br><span class="line">602</span><br><span class="line">603</span><br><span class="line">604</span><br><span class="line">605</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="UTF-8" standalone="no"?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">profiles</span> <span class="attr">version</span>=<span class="string">"12"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">profile</span> <span class="attr">kind</span>=<span class="string">"CodeFormatterProfile"</span> <span class="attr">name</span>=<span class="string">"P3C-CodeStyle"</span> <span class="attr">version</span>=<span class="string">"13"</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--可变参数的... Idea没有对应的配置项，强制insert--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_after_ellipsis"</span> <span class="attr">value</span>=<span class="string">"insert"</span>/&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--枚举值之间 Idea没有对应的配置项，强制insert--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_after_comma_in_enum_declarations"</span> <span class="attr">value</span>=<span class="string">"insert"</span>/&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!--org.eclipse.jdt.core.formatter.insert_space_before_comma_in_method_invocation_arguments=Java:SPACE_BEFORE_COMMA--&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--org.eclipse.jdt.core.formatter.insert_space_before_comma_in_method_declaration_parameters=Java:SPACE_BEFORE_COMMA</span></span><br><span class="line"><span class="comment">        由于IDEA只有一个SPACE_BEFORE_COMMA选项，所以统一设置 insert_space_before_comma 为 do not insert</span></span><br><span class="line"><span class="comment">        --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_before_comma_in_method_declaration_parameters"</span></span></span><br><span class="line"><span class="tag">                 <span class="attr">value</span>=<span class="string">"do not insert"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_before_comma_in_method_invocation_arguments"</span></span></span><br><span class="line"><span class="tag">                 <span class="attr">value</span>=<span class="string">"do not insert"</span>/&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_before_comma_in_allocation_expression"</span></span></span><br><span class="line"><span class="tag">                 <span class="attr">value</span>=<span class="string">"do not insert"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_before_comma_in_for_inits"</span> <span class="attr">value</span>=<span class="string">"do not insert"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_before_comma_in_method_declaration_throws"</span></span></span><br><span class="line"><span class="tag">                 <span class="attr">value</span>=<span class="string">"do not insert"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_before_comma_in_array_initializer"</span></span></span><br><span class="line"><span class="tag">                 <span class="attr">value</span>=<span class="string">"do not insert"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_before_comma_in_annotation"</span> <span class="attr">value</span>=<span class="string">"do not insert"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_before_comma_in_type_parameters"</span></span></span><br><span class="line"><span class="tag">                 <span class="attr">value</span>=<span class="string">"do not insert"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_before_comma_in_type_arguments"</span> <span class="attr">value</span>=<span class="string">"do not insert"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_before_comma_in_constructor_declaration_parameters"</span></span></span><br><span class="line"><span class="tag">                 <span class="attr">value</span>=<span class="string">"do not insert"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_before_comma_in_superinterfaces"</span></span></span><br><span class="line"><span class="tag">                 <span class="attr">value</span>=<span class="string">"do not insert"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_before_comma_in_parameterized_type_reference"</span></span></span><br><span class="line"><span class="tag">                 <span class="attr">value</span>=<span class="string">"do not insert"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_before_comma_in_enum_declarations"</span></span></span><br><span class="line"><span class="tag">                 <span class="attr">value</span>=<span class="string">"do not insert"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_before_comma_in_enum_constant_arguments"</span></span></span><br><span class="line"><span class="tag">                 <span class="attr">value</span>=<span class="string">"do not insert"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_before_comma_in_multiple_local_declarations"</span></span></span><br><span class="line"><span class="tag">                 <span class="attr">value</span>=<span class="string">"do not insert"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_before_comma_in_for_increments"</span> <span class="attr">value</span>=<span class="string">"do not insert"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_before_comma_in_explicitconstructorcall_arguments"</span></span></span><br><span class="line"><span class="tag">                 <span class="attr">value</span>=<span class="string">"do not insert"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_before_comma_in_constructor_declaration_throws"</span></span></span><br><span class="line"><span class="tag">                 <span class="attr">value</span>=<span class="string">"do not insert"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_before_comma_in_multiple_field_declarations"</span></span></span><br><span class="line"><span class="tag">                 <span class="attr">value</span>=<span class="string">"do not insert"</span>/&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--insert_space_before_comma end--&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!--org.eclipse.jdt.core.formatter.insert_space_after_comma_in_type_arguments=Java:SPACE_AFTER_COMMA_IN_TYPE_ARGUMENTS--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_after_comma_in_type_arguments"</span> <span class="attr">value</span>=<span class="string">"insert"</span>/&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--IDEA只有一个配置项SPACE_AFTER_COMMA，insert_space_after_comma*统一设置成insert--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_after_comma_in_constructor_declaration_parameters"</span></span></span><br><span class="line"><span class="tag">                 <span class="attr">value</span>=<span class="string">"insert"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_after_comma_in_for_increments"</span> <span class="attr">value</span>=<span class="string">"insert"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_after_comma_in_multiple_local_declarations"</span></span></span><br><span class="line"><span class="tag">                 <span class="attr">value</span>=<span class="string">"insert"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_after_comma_in_explicitconstructorcall_arguments"</span></span></span><br><span class="line"><span class="tag">                 <span class="attr">value</span>=<span class="string">"insert"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_after_and_in_type_parameter"</span> <span class="attr">value</span>=<span class="string">"insert"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_after_comma_in_for_inits"</span> <span class="attr">value</span>=<span class="string">"insert"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_after_comma_in_parameterized_type_reference"</span></span></span><br><span class="line"><span class="tag">                 <span class="attr">value</span>=<span class="string">"insert"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_after_comma_in_multiple_field_declarations"</span></span></span><br><span class="line"><span class="tag">                 <span class="attr">value</span>=<span class="string">"insert"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_after_comma_in_superinterfaces"</span> <span class="attr">value</span>=<span class="string">"insert"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_after_comma_in_array_initializer"</span> <span class="attr">value</span>=<span class="string">"insert"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_after_comma_in_method_invocation_arguments"</span></span></span><br><span class="line"><span class="tag">                 <span class="attr">value</span>=<span class="string">"insert"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_after_comma_in_constructor_declaration_throws"</span></span></span><br><span class="line"><span class="tag">                 <span class="attr">value</span>=<span class="string">"insert"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_after_comma_in_allocation_expression"</span> <span class="attr">value</span>=<span class="string">"insert"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_after_comma_in_method_declaration_parameters"</span></span></span><br><span class="line"><span class="tag">                 <span class="attr">value</span>=<span class="string">"insert"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_after_comma_in_method_declaration_throws"</span></span></span><br><span class="line"><span class="tag">                 <span class="attr">value</span>=<span class="string">"insert"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_after_comma_in_enum_constant_arguments"</span></span></span><br><span class="line"><span class="tag">                 <span class="attr">value</span>=<span class="string">"insert"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_after_comma_in_type_parameters"</span> <span class="attr">value</span>=<span class="string">"insert"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_after_comma_in_annotation"</span> <span class="attr">value</span>=<span class="string">"insert"</span>/&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--insert_space_after_comma end--&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!--org.eclipse.jdt.core.formatter.insert_space_before_colon_in_conditional=Java:SPACE_BEFORE_COLON--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_before_colon_in_conditional"</span> <span class="attr">value</span>=<span class="string">"insert"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_before_colon_in_assert"</span> <span class="attr">value</span>=<span class="string">"insert"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_before_colon_in_for"</span> <span class="attr">value</span>=<span class="string">"insert"</span>/&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!--org.eclipse.jdt.core.formatter.insert_space_after_colon_in_conditional=Java:SPACE_AFTER_COLON--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_after_colon_in_conditional"</span> <span class="attr">value</span>=<span class="string">"insert"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_after_colon_in_assert"</span> <span class="attr">value</span>=<span class="string">"insert"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_after_colon_in_for"</span> <span class="attr">value</span>=<span class="string">"insert"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_after_colon_in_labeled_statement"</span> <span class="attr">value</span>=<span class="string">"insert"</span>/&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!--IDEA不支持配置，默认do not insert--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_before_colon_in_default"</span> <span class="attr">value</span>=<span class="string">"do not insert"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_before_colon_in_labeled_statement"</span></span></span><br><span class="line"><span class="tag">                 <span class="attr">value</span>=<span class="string">"do not insert"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_before_colon_in_case"</span> <span class="attr">value</span>=<span class="string">"do not insert"</span>/&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--这个在Eclipse也没有找到配置的地方--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_after_colon_in_case"</span> <span class="attr">value</span>=<span class="string">"do not insert"</span>/&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!--org.eclipse.jdt.core.formatter.insert_space_before_semicolon=Java:SPACE_BEFORE_SEMICOLON</span></span><br><span class="line"><span class="comment">        程序导入的时候强制将SPACE_BEFORE_SEMICOLON设置为false</span></span><br><span class="line"><span class="comment">        --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_before_semicolon_in_try_resources"</span></span></span><br><span class="line"><span class="tag">                 <span class="attr">value</span>=<span class="string">"do not insert"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_before_semicolon"</span> <span class="attr">value</span>=<span class="string">"do not insert"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_before_semicolon_in_for"</span> <span class="attr">value</span>=<span class="string">"do not insert"</span>/&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!--SPACE_AFTER_SEMICOLON=true--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_after_semicolon_in_for"</span> <span class="attr">value</span>=<span class="string">"insert"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_after_semicolon_in_try_resources"</span> <span class="attr">value</span>=<span class="string">"insert"</span>/&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!--IDEA不支持配置,do not insert--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_between_empty_parens_in_enum_constant"</span></span></span><br><span class="line"><span class="tag">                 <span class="attr">value</span>=<span class="string">"do not insert"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span></span></span><br><span class="line"><span class="tag">                <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_between_empty_parens_in_annotation_type_member_declaration"</span></span></span><br><span class="line"><span class="tag">                <span class="attr">value</span>=<span class="string">"do not insert"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_between_empty_parens_in_constructor_declaration"</span></span></span><br><span class="line"><span class="tag">                 <span class="attr">value</span>=<span class="string">"do not insert"</span>/&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!--IDEA不支持，使用默认--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_after_postfix_operator"</span> <span class="attr">value</span>=<span class="string">"do not insert"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_before_postfix_operator"</span> <span class="attr">value</span>=<span class="string">"do not insert"</span>/&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!--org.eclipse.jdt.core.formatter.insert_space_after_binary_operator=Java:&lt;Programmatic&gt;--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_after_binary_operator"</span> <span class="attr">value</span>=<span class="string">"insert"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_before_binary_operator"</span> <span class="attr">value</span>=<span class="string">"insert"</span>/&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!--IDEA不支持配置，使用如下值，两者对应--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span></span></span><br><span class="line"><span class="tag">                <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_after_opening_angle_bracket_in_parameterized_type_reference"</span></span></span><br><span class="line"><span class="tag">                <span class="attr">value</span>=<span class="string">"do not insert"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_after_opening_angle_bracket_in_type_arguments"</span></span></span><br><span class="line"><span class="tag">                 <span class="attr">value</span>=<span class="string">"do not insert"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_after_opening_angle_bracket_in_type_parameters"</span></span></span><br><span class="line"><span class="tag">                 <span class="attr">value</span>=<span class="string">"do not insert"</span>/&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_after_closing_angle_bracket_in_type_parameters"</span></span></span><br><span class="line"><span class="tag">                 <span class="attr">value</span>=<span class="string">"insert"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span></span></span><br><span class="line"><span class="tag">                <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_before_opening_angle_bracket_in_parameterized_type_reference"</span></span></span><br><span class="line"><span class="tag">                <span class="attr">value</span>=<span class="string">"do not insert"</span>/&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_before_closing_angle_bracket_in_type_arguments"</span></span></span><br><span class="line"><span class="tag">                 <span class="attr">value</span>=<span class="string">"do not insert"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span></span></span><br><span class="line"><span class="tag">                <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_before_closing_angle_bracket_in_parameterized_type_reference"</span></span></span><br><span class="line"><span class="tag">                <span class="attr">value</span>=<span class="string">"do not insert"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_before_opening_angle_bracket_in_type_arguments"</span></span></span><br><span class="line"><span class="tag">                 <span class="attr">value</span>=<span class="string">"do not insert"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_before_closing_angle_bracket_in_type_parameters"</span></span></span><br><span class="line"><span class="tag">                 <span class="attr">value</span>=<span class="string">"do not insert"</span>/&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!--Java:SPACE_BEFORE_OPENING_ANGLE_BRACKET_IN_TYPE_PARAMETER--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_before_opening_angle_bracket_in_type_parameters"</span></span></span><br><span class="line"><span class="tag">                 <span class="attr">value</span>=<span class="string">"do not insert"</span>/&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--org.eclipse.jdt.core.formatter.insert_space_after_closing_angle_bracket_in_type_arguments=Java:SPACE_AFTER_CLOSING_ANGLE_BRACKET_IN_TYPE_ARGUMENT--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_after_closing_angle_bracket_in_type_arguments"</span></span></span><br><span class="line"><span class="tag">                 <span class="attr">value</span>=<span class="string">"do not insert"</span>/&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!--org.eclipse.jdt.core.formatter.insert_space_after_closing_brace_in_block=Java:&lt;Programmatic&gt;--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_after_closing_brace_in_block"</span> <span class="attr">value</span>=<span class="string">"insert"</span>/&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!--IDEA使用了对应的配置：Java:SPACE_WITHIN_ARRAY_INITIALIZER_BRACES，但感觉不太好，IDEA默认不插入，Eclipse也使用不插入--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_before_closing_brace_in_array_initializer"</span></span></span><br><span class="line"><span class="tag">                 <span class="attr">value</span>=<span class="string">"do not insert"</span>/&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!--use default insert--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_before_parenthesized_expression_in_return"</span></span></span><br><span class="line"><span class="tag">                 <span class="attr">value</span>=<span class="string">"insert"</span>/&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!--use default do not insert --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_before_closing_paren_in_while"</span> <span class="attr">value</span>=<span class="string">"do not insert"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_after_prefix_operator"</span> <span class="attr">value</span>=<span class="string">"do not insert"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_before_prefix_operator"</span> <span class="attr">value</span>=<span class="string">"do not insert"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_before_closing_paren_in_for"</span> <span class="attr">value</span>=<span class="string">"do not insert"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_after_opening_paren_in_catch"</span> <span class="attr">value</span>=<span class="string">"do not insert"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_after_opening_paren_in_switch"</span> <span class="attr">value</span>=<span class="string">"do not insert"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_after_opening_paren_in_for"</span> <span class="attr">value</span>=<span class="string">"do not insert"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_before_closing_paren_in_method_declaration"</span></span></span><br><span class="line"><span class="tag">                 <span class="attr">value</span>=<span class="string">"do not insert"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_between_brackets_in_array_type_reference"</span></span></span><br><span class="line"><span class="tag">                 <span class="attr">value</span>=<span class="string">"do not insert"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_after_opening_paren_in_parenthesized_expression"</span></span></span><br><span class="line"><span class="tag">                 <span class="attr">value</span>=<span class="string">"do not insert"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_between_empty_parens_in_method_declaration"</span></span></span><br><span class="line"><span class="tag">                 <span class="attr">value</span>=<span class="string">"do not insert"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_between_empty_parens_in_method_invocation"</span></span></span><br><span class="line"><span class="tag">                 <span class="attr">value</span>=<span class="string">"do not insert"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_before_closing_paren_in_method_invocation"</span></span></span><br><span class="line"><span class="tag">                 <span class="attr">value</span>=<span class="string">"do not insert"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_before_closing_paren_in_try"</span> <span class="attr">value</span>=<span class="string">"do not insert"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_before_closing_paren_in_if"</span> <span class="attr">value</span>=<span class="string">"do not insert"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_after_opening_paren_in_try"</span> <span class="attr">value</span>=<span class="string">"do not insert"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_before_closing_bracket_in_array_reference"</span></span></span><br><span class="line"><span class="tag">                 <span class="attr">value</span>=<span class="string">"do not insert"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_after_opening_paren_in_if"</span> <span class="attr">value</span>=<span class="string">"do not insert"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_after_opening_paren_in_synchronized"</span></span></span><br><span class="line"><span class="tag">                 <span class="attr">value</span>=<span class="string">"do not insert"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_after_opening_bracket_in_array_reference"</span></span></span><br><span class="line"><span class="tag">                 <span class="attr">value</span>=<span class="string">"do not insert"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_after_opening_paren_in_cast"</span> <span class="attr">value</span>=<span class="string">"do not insert"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_before_closing_paren_in_synchronized"</span></span></span><br><span class="line"><span class="tag">                 <span class="attr">value</span>=<span class="string">"do not insert"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_before_closing_paren_in_parenthesized_expression"</span></span></span><br><span class="line"><span class="tag">                 <span class="attr">value</span>=<span class="string">"do not insert"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_before_closing_paren_in_catch"</span> <span class="attr">value</span>=<span class="string">"do not insert"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_after_opening_paren_in_method_invocation"</span></span></span><br><span class="line"><span class="tag">                 <span class="attr">value</span>=<span class="string">"do not insert"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_after_opening_paren_in_method_declaration"</span></span></span><br><span class="line"><span class="tag">                 <span class="attr">value</span>=<span class="string">"do not insert"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_before_closing_paren_in_annotation"</span></span></span><br><span class="line"><span class="tag">                 <span class="attr">value</span>=<span class="string">"do not insert"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_after_opening_brace_in_array_initializer"</span></span></span><br><span class="line"><span class="tag">                 <span class="attr">value</span>=<span class="string">"do not insert"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_after_opening_paren_in_annotation"</span></span></span><br><span class="line"><span class="tag">                 <span class="attr">value</span>=<span class="string">"do not insert"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_after_opening_paren_in_while"</span> <span class="attr">value</span>=<span class="string">"do not insert"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_before_closing_paren_in_switch"</span> <span class="attr">value</span>=<span class="string">"do not insert"</span>/&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!--use default insert--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_before_opening_brace_in_anonymous_type_declaration"</span></span></span><br><span class="line"><span class="tag">                 <span class="attr">value</span>=<span class="string">"insert"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_before_opening_brace_in_enum_constant"</span> <span class="attr">value</span>=<span class="string">"insert"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_before_opening_brace_in_enum_declaration"</span></span></span><br><span class="line"><span class="tag">                 <span class="attr">value</span>=<span class="string">"insert"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_before_opening_brace_in_annotation_type_declaration"</span></span></span><br><span class="line"><span class="tag">                 <span class="attr">value</span>=<span class="string">"insert"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_before_opening_brace_in_constructor_declaration"</span></span></span><br><span class="line"><span class="tag">                 <span class="attr">value</span>=<span class="string">"insert"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_before_and_in_type_parameter"</span> <span class="attr">value</span>=<span class="string">"insert"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_before_parenthesized_expression_in_throw"</span></span></span><br><span class="line"><span class="tag">                 <span class="attr">value</span>=<span class="string">"insert"</span>/&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!--org.eclipse.jdt.core.formatter.insert_space_before_opening_brace_in_switch=Java:SPACE_BEFORE_SWITCH_LBRACE--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_before_opening_brace_in_switch"</span> <span class="attr">value</span>=<span class="string">"insert"</span>/&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--org.eclipse.jdt.core.formatter.insert_space_before_opening_brace_in_type_declaration=Java:SPACE_BEFORE_CLASS_LBRACE--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_before_opening_brace_in_type_declaration"</span></span></span><br><span class="line"><span class="tag">                 <span class="attr">value</span>=<span class="string">"insert"</span>/&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--org.eclipse.jdt.core.formatter.insert_space_before_opening_brace_in_block=Java:&lt;Programmatic&gt;--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_before_opening_brace_in_block"</span> <span class="attr">value</span>=<span class="string">"insert"</span>/&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--org.eclipse.jdt.core.formatter.insert_space_before_opening_brace_in_array_initializer=Java:SPACE_BEFORE_ARRAY_INITIALIZER_LBRACE--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_before_opening_brace_in_array_initializer"</span></span></span><br><span class="line"><span class="tag">                 <span class="attr">value</span>=<span class="string">"insert"</span>/&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--org.eclipse.jdt.core.formatter.insert_space_before_opening_brace_in_method_declaration=Java:SPACE_BEFORE_METHOD_LBRACE--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_before_opening_brace_in_method_declaration"</span></span></span><br><span class="line"><span class="tag">                 <span class="attr">value</span>=<span class="string">"insert"</span>/&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--org.eclipse.jdt.core.formatter.insert_space_after_question_in_conditional=Java:SPACE_AFTER_QUEST--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_after_question_in_conditional"</span> <span class="attr">value</span>=<span class="string">"insert"</span>/&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--org.eclipse.jdt.core.formatter.insert_space_before_question_in_conditional=Java:SPACE_BEFORE_QUEST--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_before_question_in_conditional"</span> <span class="attr">value</span>=<span class="string">"insert"</span>/&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--org.eclipse.jdt.core.formatter.insert_space_before_opening_paren_in_annotation=Java:SPACE_BEFORE_ANOTATION_PARAMETER_LIST--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_before_opening_paren_in_annotation"</span></span></span><br><span class="line"><span class="tag">                 <span class="attr">value</span>=<span class="string">"do not insert"</span>/&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!--use default do not insert--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_before_question_in_wildcard"</span> <span class="attr">value</span>=<span class="string">"do not insert"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_after_question_in_wildcard"</span> <span class="attr">value</span>=<span class="string">"do not insert"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_before_ellipsis"</span> <span class="attr">value</span>=<span class="string">"do not insert"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_between_empty_brackets_in_array_allocation_expression"</span></span></span><br><span class="line"><span class="tag">                 <span class="attr">value</span>=<span class="string">"do not insert"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_after_opening_paren_in_enum_constant"</span></span></span><br><span class="line"><span class="tag">                 <span class="attr">value</span>=<span class="string">"do not insert"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_before_closing_paren_in_constructor_declaration"</span></span></span><br><span class="line"><span class="tag">                 <span class="attr">value</span>=<span class="string">"do not insert"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_before_closing_bracket_in_array_allocation_expression"</span></span></span><br><span class="line"><span class="tag">                 <span class="attr">value</span>=<span class="string">"do not insert"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_before_at_in_annotation_type_declaration"</span></span></span><br><span class="line"><span class="tag">                 <span class="attr">value</span>=<span class="string">"do not insert"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_after_at_in_annotation"</span> <span class="attr">value</span>=<span class="string">"do not insert"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_after_at_in_annotation_type_declaration"</span></span></span><br><span class="line"><span class="tag">                 <span class="attr">value</span>=<span class="string">"do not insert"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_before_opening_paren_in_parenthesized_expression"</span></span></span><br><span class="line"><span class="tag">                 <span class="attr">value</span>=<span class="string">"do not insert"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_before_opening_paren_in_enum_constant"</span></span></span><br><span class="line"><span class="tag">                 <span class="attr">value</span>=<span class="string">"do not insert"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_before_opening_paren_in_constructor_declaration"</span></span></span><br><span class="line"><span class="tag">                 <span class="attr">value</span>=<span class="string">"do not insert"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_after_opening_paren_in_constructor_declaration"</span></span></span><br><span class="line"><span class="tag">                 <span class="attr">value</span>=<span class="string">"do not insert"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_before_closing_paren_in_cast"</span> <span class="attr">value</span>=<span class="string">"do not insert"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span></span></span><br><span class="line"><span class="tag">                <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_before_opening_paren_in_annotation_type_member_declaration"</span></span></span><br><span class="line"><span class="tag">                <span class="attr">value</span>=<span class="string">"do not insert"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_before_closing_paren_in_enum_constant"</span></span></span><br><span class="line"><span class="tag">                 <span class="attr">value</span>=<span class="string">"do not insert"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_before_opening_bracket_in_array_type_reference"</span></span></span><br><span class="line"><span class="tag">                 <span class="attr">value</span>=<span class="string">"do not insert"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_after_opening_bracket_in_array_allocation_expression"</span></span></span><br><span class="line"><span class="tag">                 <span class="attr">value</span>=<span class="string">"do not insert"</span>/&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_before_opening_bracket_in_array_allocation_expression"</span></span></span><br><span class="line"><span class="tag">                 <span class="attr">value</span>=<span class="string">"do not insert"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_before_opening_bracket_in_array_reference"</span></span></span><br><span class="line"><span class="tag">                 <span class="attr">value</span>=<span class="string">"do not insert"</span>/&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!--下面两个对应IDEA中的一个配置Java:SPACE_AROUND_ASSIGNMENT_OPERATORS，使用insert--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_after_assignment_operator"</span> <span class="attr">value</span>=<span class="string">"insert"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_before_assignment_operator"</span> <span class="attr">value</span>=<span class="string">"insert"</span>/&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!--org.eclipse.jdt.core.formatter.insert_space_before_opening_paren_in_catch=Java:SPACE_BEFORE_CATCH_PARENTHESES--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_before_opening_paren_in_catch"</span> <span class="attr">value</span>=<span class="string">"insert"</span>/&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--org.eclipse.jdt.core.formatter.insert_space_before_opening_paren_in_method_invocation=Java:SPACE_BEFORE_METHOD_CALL_PARENTHESES--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_before_opening_paren_in_method_invocation"</span></span></span><br><span class="line"><span class="tag">                 <span class="attr">value</span>=<span class="string">"do not insert"</span>/&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--org.eclipse.jdt.core.formatter.insert_space_before_opening_paren_in_try=Java:SPACE_BEFORE_TRY_PARENTHESES--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_before_opening_paren_in_try"</span> <span class="attr">value</span>=<span class="string">"insert"</span>/&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!--下面两个对应IDEA中的一个配置Java:SPACE_AROUND_UNARY_OPERATOR，使用do not insert--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_before_unary_operator"</span> <span class="attr">value</span>=<span class="string">"do not insert"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_after_unary_operator"</span> <span class="attr">value</span>=<span class="string">"do not insert"</span>/&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!--org.eclipse.jdt.core.formatter.insert_space_before_opening_paren_in_if=Java:SPACE_BEFORE_IF_PARENTHESES--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_before_opening_paren_in_if"</span> <span class="attr">value</span>=<span class="string">"insert"</span>/&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!--org.eclipse.jdt.core.formatter.insert_space_before_opening_paren_in_while=Java:SPACE_BEFORE_WHILE_PARENTHESES--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_before_opening_paren_in_while"</span> <span class="attr">value</span>=<span class="string">"insert"</span>/&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!--org.eclipse.jdt.core.formatter.insert_space_after_closing_paren_in_cast=Java:SPACE_AFTER_TYPE_CAST--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_after_closing_paren_in_cast"</span> <span class="attr">value</span>=<span class="string">"do not insert"</span>/&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!--org.eclipse.jdt.core.formatter.insert_space_before_opening_paren_in_method_declaration=Java:SPACE_BEFORE_METHOD_PARENTHESES--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_before_opening_paren_in_method_declaration"</span></span></span><br><span class="line"><span class="tag">                 <span class="attr">value</span>=<span class="string">"do not insert"</span>/&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!--org.eclipse.jdt.core.formatter.insert_space_before_opening_paren_in_for=Java:SPACE_BEFORE_FOR_PARENTHESES--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_before_opening_paren_in_for"</span> <span class="attr">value</span>=<span class="string">"insert"</span>/&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--org.eclipse.jdt.core.formatter.insert_space_before_opening_paren_in_synchronized=Java:SPACE_BEFORE_SYNCHRONIZED_PARENTHESES--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_before_opening_paren_in_synchronized"</span> <span class="attr">value</span>=<span class="string">"insert"</span>/&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!--org.eclipse.jdt.core.formatter.insert_space_before_opening_paren_in_switch=Java:SPACE_BEFORE_SWITCH_PARENTHESES--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_before_opening_paren_in_switch"</span> <span class="attr">value</span>=<span class="string">"insert"</span>/&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!--下面两个对应IDEA中的一个配置Java:SPACE_AROUND_LAMBDA_ARROW，使用insert--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_before_lambda_arrow"</span> <span class="attr">value</span>=<span class="string">"insert"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_after_lambda_arrow"</span> <span class="attr">value</span>=<span class="string">"insert"</span>/&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--SPACE_WITHIN_EMPTY_ARRAY_INITIALIZER_BRACES--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_space_between_empty_braces_in_array_initializer"</span></span></span><br><span class="line"><span class="tag">                 <span class="attr">value</span>=<span class="string">"do not insert"</span>/&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!--Idea -&gt; Wrapping And Braces -&gt; Simple classes in one line --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_new_line_in_empty_annotation_declaration"</span></span></span><br><span class="line"><span class="tag">                 <span class="attr">value</span>=<span class="string">"do not insert"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_new_line_in_empty_anonymous_type_declaration"</span></span></span><br><span class="line"><span class="tag">                 <span class="attr">value</span>=<span class="string">"do not insert"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_new_line_in_empty_type_declaration"</span> <span class="attr">value</span>=<span class="string">"do not insert"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_new_line_in_empty_enum_declaration"</span> <span class="attr">value</span>=<span class="string">"do not insert"</span>/&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--Idea -&gt; Wrapping And Braces -&gt; Simple method in one line --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_new_line_in_empty_method_body"</span> <span class="attr">value</span>=<span class="string">"do not insert"</span>/&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--因为Idea不支持配置，所以设置为 Idea默认值--&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_new_line_after_annotation_on_package"</span> <span class="attr">value</span>=<span class="string">"do not insert"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_new_line_after_annotation_on_parameter"</span></span></span><br><span class="line"><span class="tag">                 <span class="attr">value</span>=<span class="string">"do not insert"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_new_line_after_annotation_on_enum_constant"</span></span></span><br><span class="line"><span class="tag">                 <span class="attr">value</span>=<span class="string">"do not insert"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_new_line_in_empty_enum_constant"</span> <span class="attr">value</span>=<span class="string">"do not insert"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_new_line_after_type_annotation"</span> <span class="attr">value</span>=<span class="string">"do not insert"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_new_line_after_label"</span> <span class="attr">value</span>=<span class="string">"insert"</span>/&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--Idea可以通过Wrap Always实现 TODO--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_new_line_after_annotation_on_field"</span> <span class="attr">value</span>=<span class="string">"insert"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_new_line_after_annotation_on_method"</span> <span class="attr">value</span>=<span class="string">"insert"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_new_line_after_annotation_on_local_variable"</span> <span class="attr">value</span>=<span class="string">"insert"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_new_line_after_annotation_on_type"</span> <span class="attr">value</span>=<span class="string">"insert"</span>/&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--Idea -&gt; Wrapping And Braces -&gt; Simple block in one line -&gt; do not select --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_new_line_in_empty_block"</span> <span class="attr">value</span>=<span class="string">"insert"</span>/&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!--Idea -&gt; Wrapping And Braces -&gt; try statement -&gt; catch.... (Java:CATCH_ON_NEW_LINE)--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_new_line_before_catch_in_try_statement"</span></span></span><br><span class="line"><span class="tag">                 <span class="attr">value</span>=<span class="string">"do not insert"</span>/&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--org.eclipse.jdt.core.formatter.insert_new_line_at_end_of_file_if_missing=&lt;Programmatic&gt;--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_new_line_at_end_of_file_if_missing"</span> <span class="attr">value</span>=<span class="string">"do not insert"</span>/&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--org.eclipse.jdt.core.formatter.insert_new_line_before_closing_brace_in_array_initializer=Java:ARRAY_INITIALIZER_RBRACE_ON_NEXT_LINE--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_new_line_before_closing_brace_in_array_initializer"</span></span></span><br><span class="line"><span class="tag">                 <span class="attr">value</span>=<span class="string">"do not insert"</span>/&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--#org.eclipse.jdt.core.formatter.insert_new_line_after_opening_brace_in_array_initializer=Java:ARRAY_INITIALIZER_LBRACE_ON_NEXT_LINE--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_new_line_after_opening_brace_in_array_initializer"</span></span></span><br><span class="line"><span class="tag">                 <span class="attr">value</span>=<span class="string">"do not insert"</span>/&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--org.eclipse.jdt.core.formatter.insert_new_line_before_else_in_if_statement=Java:ELSE_ON_NEW_LINE--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_new_line_before_else_in_if_statement"</span> <span class="attr">value</span>=<span class="string">"do not insert"</span>/&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--org.eclipse.jdt.core.formatter.insert_new_line_before_while_in_do_statement=Java:WHILE_ON_NEW_LINE--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_new_line_before_while_in_do_statement"</span></span></span><br><span class="line"><span class="tag">                 <span class="attr">value</span>=<span class="string">"do not insert"</span>/&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--org.eclipse.jdt.core.formatter.insert_new_line_before_finally_in_try_statement=Java:FINALLY_ON_NEW_LINE--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.insert_new_line_before_finally_in_try_statement"</span></span></span><br><span class="line"><span class="tag">                 <span class="attr">value</span>=<span class="string">"do not insert"</span>/&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!--comment start--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.comment.line_length"</span> <span class="attr">value</span>=<span class="string">"120"</span>/&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--ENABLE_JAVADOC_FORMATTING--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.comment.format_javadoc_comments"</span> <span class="attr">value</span>=<span class="string">"true"</span>/&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--org.eclipse.jdt.core.formatter.comment.clear_blank_lines_in_javadoc_comment=&lt;Programmatic&gt;--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.comment.clear_blank_lines_in_javadoc_comment"</span> <span class="attr">value</span>=<span class="string">"false"</span>/&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--IDEA无对应设置，所以关闭对block comment的格式化 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.comment.format_block_comments"</span> <span class="attr">value</span>=<span class="string">"false"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.comment.clear_blank_lines_in_block_comment"</span> <span class="attr">value</span>=<span class="string">"false"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.comment.new_lines_at_block_boundaries"</span> <span class="attr">value</span>=<span class="string">"true"</span>/&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!--org.eclipse.jdt.core.formatter.never_indent_line_comments_on_first_column=Java:KEEP_FIRST_COLUMN_COMMENT--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.never_indent_line_comments_on_first_column"</span> <span class="attr">value</span>=<span class="string">"false"</span>/&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--org.eclipse.jdt.core.formatter.use_on_off_tags=FORMATTER_TAGS_ENABLED--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.use_on_off_tags"</span> <span class="attr">value</span>=<span class="string">"true"</span>/&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--org.eclipse.jdt.core.formatter.disabling_tag=FORMATTER_OFF_TAG--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.disabling_tag"</span> <span class="attr">value</span>=<span class="string">"@formatter:off"</span>/&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--org.eclipse.jdt.core.formatter.enabling_tag=FORMATTER_ON_TAG--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.enabling_tag"</span> <span class="attr">value</span>=<span class="string">"@formatter:on"</span>/&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!--use default do not insert--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.comment.insert_new_line_for_parameter"</span> <span class="attr">value</span>=<span class="string">"do not insert"</span>/&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!--下面的没有IDEA对应项，在代码里面对IDEA中使用默认值即可,LINE_COMMENT_AT_FIRST_COLUMN BLOCK_COMMENT_AT_FIRST_COLUMN设置为false--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.never_indent_block_comments_on_first_column"</span> <span class="attr">value</span>=<span class="string">"false"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.comment.insert_new_line_before_root_tags"</span> <span class="attr">value</span>=<span class="string">"insert"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.comment.indent_root_tags"</span> <span class="attr">value</span>=<span class="string">"true"</span>/&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.comment.preserve_white_space_between_code_and_line_comments"</span></span></span><br><span class="line"><span class="tag">                 <span class="attr">value</span>=<span class="string">"false"</span>/&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.format_line_comment_starting_on_first_column"</span> <span class="attr">value</span>=<span class="string">"true"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.comment.format_line_comments"</span> <span class="attr">value</span>=<span class="string">"true"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.comment.format_header"</span> <span class="attr">value</span>=<span class="string">"true"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.comment.new_lines_at_javadoc_boundaries"</span> <span class="attr">value</span>=<span class="string">"true"</span>/&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.comment.format_source_code"</span> <span class="attr">value</span>=<span class="string">"true"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.comment.format_html"</span> <span class="attr">value</span>=<span class="string">"true"</span>/&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.join_lines_in_comments"</span> <span class="attr">value</span>=<span class="string">"true"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.comment.indent_parameter_description"</span> <span class="attr">value</span>=<span class="string">"false"</span>/&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!--comment end--&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!--org.eclipse.jdt.core.formatter.blank_lines_after_imports=Java:BLANK_LINES_AFTER_IMPORTS--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.blank_lines_after_imports"</span> <span class="attr">value</span>=<span class="string">"1"</span>/&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--org.eclipse.jdt.core.formatter.blank_lines_before_imports=Java:BLANK_LINES_BEFORE_IMPORTS--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.blank_lines_before_imports"</span> <span class="attr">value</span>=<span class="string">"1"</span>/&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--org.eclipse.jdt.core.formatter.blank_lines_after_package=Java:BLANK_LINES_AFTER_PACKAGE--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.blank_lines_after_package"</span> <span class="attr">value</span>=<span class="string">"1"</span>/&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--org.eclipse.jdt.core.formatter.blank_lines_between_type_declarations=Java:BLANK_LINES_AROUND_CLASS--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.blank_lines_between_type_declarations"</span> <span class="attr">value</span>=<span class="string">"1"</span>/&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--org.eclipse.jdt.core.formatter.number_of_blank_lines_at_beginning_of_method_body=Java:BLANK_LINES_BEFORE_METHOD_BODY--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.number_of_blank_lines_at_beginning_of_method_body"</span> <span class="attr">value</span>=<span class="string">"0"</span>/&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--org.eclipse.jdt.core.formatter.blank_lines_before_first_class_body_declaration=Java:&lt;Programmatic&gt;--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.blank_lines_before_first_class_body_declaration"</span> <span class="attr">value</span>=<span class="string">"0"</span>/&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--org.eclipse.jdt.core.formatter.blank_lines_before_field=Java:BLANK_LINES_AROUND_FIELD--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.blank_lines_before_field"</span> <span class="attr">value</span>=<span class="string">"0"</span>/&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--org.eclipse.jdt.core.formatter.blank_lines_before_method=Java:BLANK_LINES_AROUND_METHOD--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.blank_lines_before_method"</span> <span class="attr">value</span>=<span class="string">"1"</span>/&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--org.eclipse.jdt.core.formatter.blank_lines_before_package=Java:BLANK_LINES_BEFORE_PACKAGE--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.blank_lines_before_package"</span> <span class="attr">value</span>=<span class="string">"0"</span>/&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!--下面IDEA没有对应设置，使用对应值即可--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.align_fields_grouping_blank_lines"</span> <span class="attr">value</span>=<span class="string">"2147483647"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.blank_lines_before_new_chunk"</span> <span class="attr">value</span>=<span class="string">"1"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.blank_lines_before_member_type"</span> <span class="attr">value</span>=<span class="string">"1"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.blank_lines_between_import_groups"</span> <span class="attr">value</span>=<span class="string">"1"</span>/&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!--org.eclipse.jdt.core.formatter.indentation.size=Java:IndentOptions:INDENT_SIZE--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.indentation.size"</span> <span class="attr">value</span>=<span class="string">"4"</span>/&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--org.eclipse.jdt.core.formatter.continuation_indentation=Java:IndentOptions:&lt;Programmatic&gt;--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.continuation_indentation"</span> <span class="attr">value</span>=<span class="string">"1"</span>/&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--org.eclipse.jdt.core.formatter.indent_body_declarations_compare_to_type_header=Java:&lt;Programmatic&gt;--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.indent_body_declarations_compare_to_type_header"</span> <span class="attr">value</span>=<span class="string">"true"</span>/&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--org.eclipse.jdt.core.formatter.use_tabs_only_for_leading_indentations=Java:IndentOptions:SMART_TABS--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.use_tabs_only_for_leading_indentations"</span> <span class="attr">value</span>=<span class="string">"false"</span>/&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--org.eclipse.jdt.core.formatter.indent_switchstatements_compare_to_switch=Java:INDENT_CASE_FROM_SWITCH--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.indent_switchstatements_compare_to_switch"</span> <span class="attr">value</span>=<span class="string">"true"</span>/&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--KEEP_INDENTS_ON_EMPTY_LINES--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.indent_empty_lines"</span> <span class="attr">value</span>=<span class="string">"false"</span>/&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--org.eclipse.jdt.core.formatter.tabulation.size=Java:IndentOptions:&lt;Programmatic&gt;--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.tabulation.size"</span> <span class="attr">value</span>=<span class="string">"4"</span>/&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--Java:IndentOptions:&lt;Programmatic&gt;--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.tabulation.char"</span> <span class="attr">value</span>=<span class="string">"space"</span>/&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!--下面IDEA没有对应设置，使用对应值即可--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.indent_statements_compare_to_block"</span> <span class="attr">value</span>=<span class="string">"true"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.indent_body_declarations_compare_to_annotation_declaration_header"</span></span></span><br><span class="line"><span class="tag">                 <span class="attr">value</span>=<span class="string">"true"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.indent_switchstatements_compare_to_cases"</span> <span class="attr">value</span>=<span class="string">"true"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.continuation_indentation_for_array_initializer"</span> <span class="attr">value</span>=<span class="string">"1"</span>/&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.indent_body_declarations_compare_to_enum_declaration_header"</span></span></span><br><span class="line"><span class="tag">                 <span class="attr">value</span>=<span class="string">"true"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.indent_breaks_compare_to_cases"</span> <span class="attr">value</span>=<span class="string">"true"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.indent_statements_compare_to_body"</span> <span class="attr">value</span>=<span class="string">"true"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.indent_body_declarations_compare_to_enum_constant_header"</span></span></span><br><span class="line"><span class="tag">                 <span class="attr">value</span>=<span class="string">"true"</span>/&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!--Java:&lt;Programmatic&gt;--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.alignment_for_arguments_in_method_invocation"</span> <span class="attr">value</span>=<span class="string">"16"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.alignment_for_selector_in_method_invocation"</span> <span class="attr">value</span>=<span class="string">"16"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.alignment_for_assignment"</span> <span class="attr">value</span>=<span class="string">"16"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.alignment_for_superinterfaces_in_type_declaration"</span> <span class="attr">value</span>=<span class="string">"16"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.alignment_for_binary_expression"</span> <span class="attr">value</span>=<span class="string">"16"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.alignment_for_throws_clause_in_method_declaration"</span> <span class="attr">value</span>=<span class="string">"16"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.alignment_for_parameters_in_method_declaration"</span> <span class="attr">value</span>=<span class="string">"16"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.alignment_for_resources_in_try"</span> <span class="attr">value</span>=<span class="string">"16"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.alignment_for_arguments_in_annotation"</span> <span class="attr">value</span>=<span class="string">"16"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.alignment_for_conditional_expression"</span> <span class="attr">value</span>=<span class="string">"16"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.alignment_for_expressions_in_array_initializer"</span> <span class="attr">value</span>=<span class="string">"16"</span>/&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!--下面没有对应的IDEA设置，Eclipse先使用对应值--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.alignment_for_enum_constants"</span> <span class="attr">value</span>=<span class="string">"16"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.alignment_for_arguments_in_enum_constant"</span> <span class="attr">value</span>=<span class="string">"16"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.alignment_for_parameterized_type_references"</span> <span class="attr">value</span>=<span class="string">"16"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.alignment_for_union_type_in_multicatch"</span> <span class="attr">value</span>=<span class="string">"16"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.alignment_for_arguments_in_explicit_constructor_call"</span> <span class="attr">value</span>=<span class="string">"16"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.alignment_for_parameters_in_constructor_declaration"</span> <span class="attr">value</span>=<span class="string">"16"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.alignment_for_type_parameters"</span> <span class="attr">value</span>=<span class="string">"16"</span>/&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.alignment_for_throws_clause_in_constructor_declaration"</span> <span class="attr">value</span>=<span class="string">"16"</span>/&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.alignment_for_arguments_in_allocation_expression"</span> <span class="attr">value</span>=<span class="string">"16"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.alignment_for_method_declaration"</span> <span class="attr">value</span>=<span class="string">"16"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.alignment_for_superclass_in_type_declaration"</span> <span class="attr">value</span>=<span class="string">"16"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.alignment_for_superinterfaces_in_enum_declaration"</span> <span class="attr">value</span>=<span class="string">"16"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.alignment_for_compact_if"</span> <span class="attr">value</span>=<span class="string">"16"</span>/&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.alignment_for_type_arguments"</span> <span class="attr">value</span>=<span class="string">"16"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.alignment_for_arguments_in_qualified_allocation_expression"</span></span></span><br><span class="line"><span class="tag">                 <span class="attr">value</span>=<span class="string">"16"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.alignment_for_multiple_fields"</span> <span class="attr">value</span>=<span class="string">"16"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.alignment_for_expressions_in_for_loop_header"</span> <span class="attr">value</span>=<span class="string">"16"</span>/&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!--IDEA默认配置在同一行，Eclipse使用对应值即可--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.parentheses_positions_in_for_statment"</span> <span class="attr">value</span>=<span class="string">"common_lines"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.parentheses_positions_in_method_invocation"</span> <span class="attr">value</span>=<span class="string">"common_lines"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.parentheses_positions_in_switch_statement"</span> <span class="attr">value</span>=<span class="string">"common_lines"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.parentheses_positions_in_enum_constant_declaration"</span></span></span><br><span class="line"><span class="tag">                 <span class="attr">value</span>=<span class="string">"common_lines"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.parentheses_positions_in_if_while_statement"</span> <span class="attr">value</span>=<span class="string">"common_lines"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.parentheses_positions_in_catch_clause"</span> <span class="attr">value</span>=<span class="string">"common_lines"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.parentheses_positions_in_annotation"</span> <span class="attr">value</span>=<span class="string">"common_lines"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.parentheses_positions_in_try_clause"</span> <span class="attr">value</span>=<span class="string">"common_lines"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.parentheses_positions_in_method_delcaration"</span> <span class="attr">value</span>=<span class="string">"common_lines"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.parentheses_positions_in_lambda_declaration"</span> <span class="attr">value</span>=<span class="string">"common_lines"</span>/&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!--Java:BINARY_OPERATION_SIGN_ON_NEXT_LINE--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.wrap_before_binary_operator"</span> <span class="attr">value</span>=<span class="string">"true"</span>/&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!--ASSIGNMENT_WRAP 需要设置为 WRAP_AS_NEEDED  WRAP_AS_NEEDED . Add in jdt.core-3.12，it's not work in previous version --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.wrap_before_assignment_operator"</span> <span class="attr">value</span>=<span class="string">"false"</span>/&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!--IDEA无配置项，Eclipse使用对应值即可--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.wrap_before_or_operator_multicatch"</span> <span class="attr">value</span>=<span class="string">"true"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.wrap_before_conditional_operator"</span> <span class="attr">value</span>=<span class="string">"true"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.wrap_outer_expressions_when_nested"</span> <span class="attr">value</span>=<span class="string">"true"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.keep_else_statement_on_same_line"</span> <span class="attr">value</span>=<span class="string">"false"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.put_empty_statement_on_new_line"</span> <span class="attr">value</span>=<span class="string">"false"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.format_guardian_clause_on_one_line"</span> <span class="attr">value</span>=<span class="string">"false"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.keep_empty_array_initializer_on_one_line"</span> <span class="attr">value</span>=<span class="string">"false"</span>/&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!--org.eclipse.jdt.core.formatter.keep_then_statement_on_same_line=Java:KEEP_CONTROL_STATEMENT_IN_ONE_LINE--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.keep_then_statement_on_same_line"</span> <span class="attr">value</span>=<span class="string">"false"</span>/&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--org.eclipse.jdt.core.formatter.compact_else_if=Java:SPECIAL_ELSE_IF_TREATMENT--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.compact_else_if"</span> <span class="attr">value</span>=<span class="string">"true"</span>/&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--Java:ALIGN_GROUP_FIELD_DECLARATIONS--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.align_type_members_on_columns"</span> <span class="attr">value</span>=<span class="string">"false"</span>/&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--Java:&lt;Programmatic&gt;--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.number_of_empty_lines_to_preserve"</span> <span class="attr">value</span>=<span class="string">"1"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.join_wrapped_lines"</span> <span class="attr">value</span>=<span class="string">"true"</span>/&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!--统一为end_of_lint，IDEA默认一致--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.brace_position_for_method_declaration"</span> <span class="attr">value</span>=<span class="string">"end_of_line"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.brace_position_for_anonymous_type_declaration"</span> <span class="attr">value</span>=<span class="string">"end_of_line"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.brace_position_for_block"</span> <span class="attr">value</span>=<span class="string">"end_of_line"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.brace_position_for_constructor_declaration"</span> <span class="attr">value</span>=<span class="string">"end_of_line"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.brace_position_for_lambda_body"</span> <span class="attr">value</span>=<span class="string">"end_of_line"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.brace_position_for_enum_declaration"</span> <span class="attr">value</span>=<span class="string">"end_of_line"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.brace_position_for_block_in_case"</span> <span class="attr">value</span>=<span class="string">"end_of_line"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.brace_position_for_annotation_type_declaration"</span></span></span><br><span class="line"><span class="tag">                 <span class="attr">value</span>=<span class="string">"end_of_line"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.brace_position_for_switch"</span> <span class="attr">value</span>=<span class="string">"end_of_line"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.brace_position_for_array_initializer"</span> <span class="attr">value</span>=<span class="string">"end_of_line"</span>/&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!--        &lt;setting id="org.eclipse.jdt.core.compiler.source" value="1.8"/&gt;</span></span><br><span class="line"><span class="comment">                &lt;setting id="org.eclipse.jdt.core.compiler.compliance" value="1.8"/&gt;</span></span><br><span class="line"><span class="comment">                &lt;setting id="org.eclipse.jdt.core.compiler.codegen.targetPlatform" value="1.8"/&gt;</span></span><br><span class="line"><span class="comment">                        &lt;setting id="org.eclipse.jdt.core.compiler.problem.enumIdentifier" value="error"/&gt;</span></span><br><span class="line"><span class="comment">                                &lt;setting id="org.eclipse.jdt.core.compiler.problem.assertIdentifier" value="error"/&gt;</span></span><br><span class="line"><span class="comment">                                        &lt;setting id="org.eclipse.jdt.core.compiler.codegen.inlineJsrBytecode" value="enabled"/&gt;</span></span><br><span class="line"><span class="comment">                --&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--Java:KEEP_SIMPLE_BLOCKS_IN_ONE_LINE--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.keep_imple_if_on_one_line"</span> <span class="attr">value</span>=<span class="string">"false"</span>/&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!--Java:CLASS_BRACE_STYLE，统一使用end_of_line TODO--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.brace_position_for_enum_constant"</span> <span class="attr">value</span>=<span class="string">"end_of_line"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.brace_position_for_type_declaration"</span> <span class="attr">value</span>=<span class="string">"end_of_line"</span>/&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!--org.eclipse.jdt.core.formatter.lineSplit=RIGHT_MARGIN--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.core.formatter.lineSplit"</span> <span class="attr">value</span>=<span class="string">"120"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">profile</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">profiles</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>打开Window-&gt;Preferences-&gt;Java-&gt;Code Style-&gt;Formatter<br>点击import 插入eclipse-codestyle<br>(eclipse-codetemplate.xml）</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="UTF-8" standalone="no"?&gt;</span><span class="tag">&lt;<span class="name">templates</span>&gt;</span><span class="tag">&lt;<span class="name">template</span> <span class="attr">autoinsert</span>=<span class="string">"true"</span> <span class="attr">context</span>=<span class="string">"gettercomment_context"</span> <span class="attr">deleted</span>=<span class="string">"false"</span> <span class="attr">description</span>=<span class="string">"Comment for getter method"</span> <span class="attr">enabled</span>=<span class="string">"true"</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.ui.text.codetemplates.gettercomment"</span> <span class="attr">name</span>=<span class="string">"gettercomment"</span>&gt;</span>/**</span><br><span class="line"> * @return the $&#123;bare_field_name&#125;</span><br><span class="line"> */<span class="tag">&lt;/<span class="name">template</span>&gt;</span><span class="tag">&lt;<span class="name">template</span> <span class="attr">autoinsert</span>=<span class="string">"true"</span> <span class="attr">context</span>=<span class="string">"settercomment_context"</span> <span class="attr">deleted</span>=<span class="string">"false"</span> <span class="attr">description</span>=<span class="string">"Comment for setter method"</span> <span class="attr">enabled</span>=<span class="string">"true"</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.ui.text.codetemplates.settercomment"</span> <span class="attr">name</span>=<span class="string">"settercomment"</span>&gt;</span>/**</span><br><span class="line"> * @param $&#123;param&#125; the $&#123;bare_field_name&#125; to set</span><br><span class="line"> */<span class="tag">&lt;/<span class="name">template</span>&gt;</span><span class="tag">&lt;<span class="name">template</span> <span class="attr">autoinsert</span>=<span class="string">"true"</span> <span class="attr">context</span>=<span class="string">"constructorcomment_context"</span> <span class="attr">deleted</span>=<span class="string">"false"</span> <span class="attr">description</span>=<span class="string">"Comment for created constructors"</span> <span class="attr">enabled</span>=<span class="string">"true"</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.ui.text.codetemplates.constructorcomment"</span> <span class="attr">name</span>=<span class="string">"constructorcomment"</span>&gt;</span>/**</span><br><span class="line"> * $&#123;tags&#125;</span><br><span class="line"> */<span class="tag">&lt;/<span class="name">template</span>&gt;</span><span class="tag">&lt;<span class="name">template</span> <span class="attr">autoinsert</span>=<span class="string">"true"</span> <span class="attr">context</span>=<span class="string">"filecomment_context"</span> <span class="attr">deleted</span>=<span class="string">"false"</span> <span class="attr">description</span>=<span class="string">"Comment for created Java files"</span> <span class="attr">enabled</span>=<span class="string">"true"</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.ui.text.codetemplates.filecomment"</span> <span class="attr">name</span>=<span class="string">"filecomment"</span>/&gt;</span><span class="tag">&lt;<span class="name">template</span> <span class="attr">autoinsert</span>=<span class="string">"true"</span> <span class="attr">context</span>=<span class="string">"typecomment_context"</span> <span class="attr">deleted</span>=<span class="string">"false"</span> <span class="attr">description</span>=<span class="string">"Comment for created types"</span> <span class="attr">enabled</span>=<span class="string">"true"</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.ui.text.codetemplates.typecomment"</span> <span class="attr">name</span>=<span class="string">"typecomment"</span>&gt;</span>/**</span><br><span class="line"> * @author $&#123;user&#125;</span><br><span class="line"> * @date $&#123;currentDate:date('YYYY/MM/dd')&#125;</span><br><span class="line"> */<span class="tag">&lt;/<span class="name">template</span>&gt;</span><span class="tag">&lt;<span class="name">template</span> <span class="attr">autoinsert</span>=<span class="string">"true"</span> <span class="attr">context</span>=<span class="string">"fieldcomment_context"</span> <span class="attr">deleted</span>=<span class="string">"false"</span> <span class="attr">description</span>=<span class="string">"Comment for fields"</span> <span class="attr">enabled</span>=<span class="string">"true"</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.ui.text.codetemplates.fieldcomment"</span> <span class="attr">name</span>=<span class="string">"fieldcomment"</span>&gt;</span>/**</span><br><span class="line"> *</span><br><span class="line"> */<span class="tag">&lt;/<span class="name">template</span>&gt;</span><span class="tag">&lt;<span class="name">template</span> <span class="attr">autoinsert</span>=<span class="string">"true"</span> <span class="attr">context</span>=<span class="string">"methodcomment_context"</span> <span class="attr">deleted</span>=<span class="string">"false"</span> <span class="attr">description</span>=<span class="string">"Comment for non-overriding methods"</span> <span class="attr">enabled</span>=<span class="string">"true"</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.ui.text.codetemplates.methodcomment"</span> <span class="attr">name</span>=<span class="string">"methodcomment"</span>&gt;</span>/**</span><br><span class="line"> * $&#123;tags&#125;</span><br><span class="line"> */<span class="tag">&lt;/<span class="name">template</span>&gt;</span><span class="tag">&lt;<span class="name">template</span> <span class="attr">autoinsert</span>=<span class="string">"true"</span> <span class="attr">context</span>=<span class="string">"overridecomment_context"</span> <span class="attr">deleted</span>=<span class="string">"false"</span> <span class="attr">description</span>=<span class="string">"Comment for overriding methods"</span> <span class="attr">enabled</span>=<span class="string">"true"</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.ui.text.codetemplates.overridecomment"</span> <span class="attr">name</span>=<span class="string">"overridecomment"</span>&gt;</span>/* (non-Javadoc)</span><br><span class="line"> * $&#123;see_to_overridden&#125;</span><br><span class="line"> */<span class="tag">&lt;/<span class="name">template</span>&gt;</span><span class="tag">&lt;<span class="name">template</span> <span class="attr">autoinsert</span>=<span class="string">"true"</span> <span class="attr">context</span>=<span class="string">"delegatecomment_context"</span> <span class="attr">deleted</span>=<span class="string">"false"</span> <span class="attr">description</span>=<span class="string">"Comment for delegate methods"</span> <span class="attr">enabled</span>=<span class="string">"true"</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.ui.text.codetemplates.delegatecomment"</span> <span class="attr">name</span>=<span class="string">"delegatecomment"</span>&gt;</span>/**</span><br><span class="line"> * $&#123;tags&#125;</span><br><span class="line"> * $&#123;see_to_target&#125;</span><br><span class="line"> */<span class="tag">&lt;/<span class="name">template</span>&gt;</span><span class="tag">&lt;<span class="name">template</span> <span class="attr">autoinsert</span>=<span class="string">"true"</span> <span class="attr">context</span>=<span class="string">"newtype_context"</span> <span class="attr">deleted</span>=<span class="string">"false"</span> <span class="attr">description</span>=<span class="string">"Newly created files"</span> <span class="attr">enabled</span>=<span class="string">"true"</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.ui.text.codetemplates.newtype"</span> <span class="attr">name</span>=<span class="string">"newtype"</span>&gt;</span>$&#123;filecomment&#125;</span><br><span class="line"> $&#123;package_declaration&#125;</span><br><span class="line"></span><br><span class="line"> $&#123;typecomment&#125;</span><br><span class="line"> $&#123;type_declaration&#125;<span class="tag">&lt;/<span class="name">template</span>&gt;</span><span class="tag">&lt;<span class="name">template</span> <span class="attr">autoinsert</span>=<span class="string">"true"</span> <span class="attr">context</span>=<span class="string">"classbody_context"</span> <span class="attr">deleted</span>=<span class="string">"false"</span> <span class="attr">description</span>=<span class="string">"Code in new class type bodies"</span> <span class="attr">enabled</span>=<span class="string">"true"</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.ui.text.codetemplates.classbody"</span> <span class="attr">name</span>=<span class="string">"classbody"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span><span class="tag">&lt;<span class="name">template</span> <span class="attr">autoinsert</span>=<span class="string">"true"</span> <span class="attr">context</span>=<span class="string">"interfacebody_context"</span> <span class="attr">deleted</span>=<span class="string">"false"</span> <span class="attr">description</span>=<span class="string">"Code in new interface type bodies"</span> <span class="attr">enabled</span>=<span class="string">"true"</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.ui.text.codetemplates.interfacebody"</span> <span class="attr">name</span>=<span class="string">"interfacebody"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span><span class="tag">&lt;<span class="name">template</span> <span class="attr">autoinsert</span>=<span class="string">"true"</span> <span class="attr">context</span>=<span class="string">"enumbody_context"</span> <span class="attr">deleted</span>=<span class="string">"false"</span> <span class="attr">description</span>=<span class="string">"Code in new enum type bodies"</span> <span class="attr">enabled</span>=<span class="string">"true"</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.ui.text.codetemplates.enumbody"</span> <span class="attr">name</span>=<span class="string">"enumbody"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span><span class="tag">&lt;<span class="name">template</span> <span class="attr">autoinsert</span>=<span class="string">"true"</span> <span class="attr">context</span>=<span class="string">"annotationbody_context"</span> <span class="attr">deleted</span>=<span class="string">"false"</span> <span class="attr">description</span>=<span class="string">"Code in new annotation type bodies"</span> <span class="attr">enabled</span>=<span class="string">"true"</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.ui.text.codetemplates.annotationbody"</span> <span class="attr">name</span>=<span class="string">"annotationbody"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span><span class="tag">&lt;<span class="name">template</span> <span class="attr">autoinsert</span>=<span class="string">"true"</span> <span class="attr">context</span>=<span class="string">"catchblock_context"</span> <span class="attr">deleted</span>=<span class="string">"false"</span> <span class="attr">description</span>=<span class="string">"Code in new catch blocks"</span> <span class="attr">enabled</span>=<span class="string">"true"</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.ui.text.codetemplates.catchblock"</span> <span class="attr">name</span>=<span class="string">"catchblock"</span>&gt;</span>// $&#123;todo&#125; Auto-generated catch block</span><br><span class="line"> $&#123;exception_var&#125;.printStackTrace();<span class="tag">&lt;/<span class="name">template</span>&gt;</span><span class="tag">&lt;<span class="name">template</span> <span class="attr">autoinsert</span>=<span class="string">"true"</span> <span class="attr">context</span>=<span class="string">"methodbody_context"</span> <span class="attr">deleted</span>=<span class="string">"false"</span> <span class="attr">description</span>=<span class="string">"Code in created method stubs"</span> <span class="attr">enabled</span>=<span class="string">"true"</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.ui.text.codetemplates.methodbody"</span> <span class="attr">name</span>=<span class="string">"methodbody"</span>&gt;</span>// $&#123;todo&#125; Auto-generated method stub</span><br><span class="line"> $&#123;body_statement&#125;<span class="tag">&lt;/<span class="name">template</span>&gt;</span><span class="tag">&lt;<span class="name">template</span> <span class="attr">autoinsert</span>=<span class="string">"true"</span> <span class="attr">context</span>=<span class="string">"constructorbody_context"</span> <span class="attr">deleted</span>=<span class="string">"false"</span> <span class="attr">description</span>=<span class="string">"Code in created constructor stubs"</span> <span class="attr">enabled</span>=<span class="string">"true"</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.ui.text.codetemplates.constructorbody"</span> <span class="attr">name</span>=<span class="string">"constructorbody"</span>&gt;</span>$&#123;body_statement&#125;</span><br><span class="line"> // $&#123;todo&#125; Auto-generated constructor stub<span class="tag">&lt;/<span class="name">template</span>&gt;</span><span class="tag">&lt;<span class="name">template</span> <span class="attr">autoinsert</span>=<span class="string">"true"</span> <span class="attr">context</span>=<span class="string">"getterbody_context"</span> <span class="attr">deleted</span>=<span class="string">"false"</span> <span class="attr">description</span>=<span class="string">"Code in created getters"</span> <span class="attr">enabled</span>=<span class="string">"true"</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.ui.text.codetemplates.getterbody"</span> <span class="attr">name</span>=<span class="string">"getterbody"</span>&gt;</span>return $&#123;field&#125;;<span class="tag">&lt;/<span class="name">template</span>&gt;</span><span class="tag">&lt;<span class="name">template</span> <span class="attr">autoinsert</span>=<span class="string">"true"</span> <span class="attr">context</span>=<span class="string">"setterbody_context"</span> <span class="attr">deleted</span>=<span class="string">"false"</span> <span class="attr">description</span>=<span class="string">"Code in created setters"</span> <span class="attr">enabled</span>=<span class="string">"true"</span> <span class="attr">id</span>=<span class="string">"org.eclipse.jdt.ui.text.codetemplates.setterbody"</span> <span class="attr">name</span>=<span class="string">"setterbody"</span>&gt;</span>$&#123;field&#125; = $&#123;param&#125;;<span class="tag">&lt;/<span class="name">template</span>&gt;</span><span class="tag">&lt;/<span class="name">templates</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>设置代码格式化的实现时间（一般为当保存的时候自动格式化）：<br>进入eclipse菜单: Window &gt; Preferences &gt; Java &gt; Editor &gt; Save Actions，勾选上Perform the selected actions on save 下的Format source code，并选择 Format all lines，勾选上Organize imports，点击右下角的Apply 使其生效。</p>
+</li>
+</ol>
+<h2 id="代码质量检查-Findbugs"><a href="#代码质量检查-Findbugs" class="headerlink" title="代码质量检查 - Findbugs"></a>代码质量检查 - Findbugs</h2><h3 id="安装spotbugs"><a href="#安装spotbugs" class="headerlink" title="安装spotbugs"></a>安装spotbugs</h3><p><img src="/images/alibabacodestyle/5.png" alt></p>
+<h3 id="代码修复"><a href="#代码修复" class="headerlink" title="代码修复"></a>代码修复</h3><p><img src="/images/alibabacodestyle/6.png" alt></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/images/blog-mobile.png" alt="dalaoyan wechat" style="width: 200px; max-width: 100%;">
+    <div>扫一扫，用手机访问本站</div>
+</div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+<blockquote class="blockquote-center" style="color: #ccc;">
+    -------------本文结束 <i class="fa fa-apple"></i> 感谢您的阅读-------------
+</blockquote>
+
+  <span id="inline-green" style="border-radius:3px;">作者</span>：<a class="link-blue" href="https://github.com/addonepiece" target="_blank">dalaoyan</a><br>有问题请 <a class="link-blue" href="https://addonepiece.github.io/guestbook" target="_blank">留言</a> 或者私信我的 <a class="link-blue" href="https://weibo.com/u/1889106977" target="_blank">微博</a>。
+
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>满分是10分的话，这篇文章你给几分</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/reward/reward_wechat.png" alt="dalaoyan WeChat Pay">
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/reward/reward_alipay.png" alt="dalaoyan Alipay">
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Java/" rel="tag"><i class="fa fa-tag"></i> Java</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/07/15/Centos7installSolr-8-4-1/" rel="next" title="Centos7上安装Solr-8.4.1">
+                <i class="fa fa-chevron-left"></i> Centos7上安装Solr-8.4.1
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/09/14/dockerCommand4Windows/" rel="prev" title="dockerCommand4Windows">
+                dockerCommand4Windows <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript">
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/avatar/avatar.png" alt="dalaoyan">
+          <p class="site-author-name" itemprop="name">dalaoyan</p>
+          <p class="site-description motion-element" itemprop="description">你的行囊，是充实，还是丢弃？看你的！</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">52</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">19</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/addonepiece" target="_blank" title="Github">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  Github
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://addonepiece.github.io/" target="_blank" title="Blog">
+                  
+                    <i class="fa fa-fw fa-blog"></i>
+                  
+                  Blog
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+          <div class="cc-license motion-element" itemprop="license">
+            <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank">
+              <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons">
+            </a>
+          </div>
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              友情链接
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://fir.im/5u9j" title="淘宝优惠券app" target="_blank">淘宝优惠券app</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://addonepiece.github.io/about/" title="个人首页" target="_blank">个人首页</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="/weblog" title="建站日志" target="_blank">建站日志</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#alibaba的代码规范"><span class="nav-number">1.</span> <span class="nav-text">alibaba的代码规范</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#请使用如下插件，并遵守阿里编码规约"><span class="nav-number">2.</span> <span class="nav-text">请使用如下插件，并遵守阿里编码规约</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#执行代码检查"><span class="nav-number">3.</span> <span class="nav-text">执行代码检查</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码样式"><span class="nav-number">4.</span> <span class="nav-text">代码样式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码质量检查-Findbugs"><span class="nav-number">5.</span> <span class="nav-text">代码质量检查 - Findbugs</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装spotbugs"><span class="nav-number">5.1.</span> <span class="nav-text">安装spotbugs</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码修复"><span class="nav-number">5.2.</span> <span class="nav-text">代码修复</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+      
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        
+
+<div class="busuanzi-count">
+
+  <!-- <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script> -->
+  <!-- 上面这个是之前的，不知道为什么失效了，改成下面这个 -->
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">您是第<span class="busuanzi-value" id="busuanzi_value_site_uv"></span>个小伙伴</span>
+  
+
+  
+    <span class="site-pv">本站总浏览<span class="busuanzi-value" id="busuanzi_value_site_pv"></span>次</span>
+  
+  
+</div>
+
+
+
+        <div class="copyright">
+  
+  &copy;  2016 - 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">dalaoyan</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io" rel="external nofollow">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next" rel="external nofollow">
+    NexT.Pisces
+  </a>
+</div>
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count" style="color: #e90f92;">全站共 281k 字</span>
+</div>
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+       search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+    'use strict';
+    $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+            // get the contents from search data
+            isfetched = true;
+            $('.popup').detach().appendTo('.header-inner');
+            var datas = $( "entry", xmlResponse ).map(function() {
+                return {
+                    title: $( "title", this ).text(),
+                    content: $("content",this).text(),
+                    url: $( "url" , this).text()
+                };
+            }).get();
+            var $input = document.getElementById(search_id);
+            var $resultContent = document.getElementById(content_id);
+            $input.addEventListener('input', function(){
+                var matchcounts = 0;
+                var str='<ul class=\"search-result-list\">';
+                var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                $resultContent.innerHTML = "";
+                if (this.value.trim().length > 1) {
+                // perform local searching
+                datas.forEach(function(data) {
+                    var isMatch = true;
+                    var content_index = [];
+                    var data_title = data.title.trim().toLowerCase();
+                    var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                    var data_url = data.url;
+                    var index_title = -1;
+                    var index_content = -1;
+                    var first_occur = -1;
+                    // only match artiles with not empty titles and contents
+                    if(data_title != '' && data_content != '') {
+                        keywords.forEach(function(keyword, i) {
+                            index_title = data_title.indexOf(keyword);
+                            index_content = data_content.indexOf(keyword);
+                            if( index_title < 0 && index_content < 0 ){
+                                isMatch = false;
+                            } else {
+                                if (index_content < 0) {
+                                    index_content = 0;
+                                }
+                                if (i == 0) {
+                                    first_occur = index_content;
+                                }
+                            }
+                        });
+                    }
+                    // show search results
+                    if (isMatch) {
+                        matchcounts += 1;
+                        str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                        var content = data.content.trim().replace(/<[^>]+>/g,"");
+                        if (first_occur >= 0) {
+                            // cut out 100 characters
+                            var start = first_occur - 20;
+                            var end = first_occur + 80;
+                            if(start < 0){
+                                start = 0;
+                            }
+                            if(start == 0){
+                                end = 50;
+                            }
+                            if(end > content.length){
+                                end = content.length;
+                            }
+                            var match_content = content.substring(start, end);
+                            // highlight all keywords
+                            keywords.forEach(function(keyword){
+                                var regS = new RegExp(keyword, "gi");
+                                match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                            });
+
+                            str += "<p class=\"search-result\">" + match_content +"...</p>"
+                        }
+                        str += "</li>";
+                    }
+                })};
+                str += "</ul>";
+                if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+                if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+                $resultContent.innerHTML = str;
+            });
+            proceedsearch();
+        }
+    });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+  
+
+  
+
+  
+<script type="text/javascript" async src="//push.zhanzhang.baidu.com/push.js">
+</script>
+
+
+  <!-- 按需加载背景 -->
+  <!-- 背景动画 -->
+<script type="text/javascript">
+  // 按需加载背景
+  // 如果是all，就直接加载了
+  if("pc" == "all") {
+    $.getScript("/js/src/particle.js?v=5.0.1");
+  }
+  // 识别手机或电脑的js开始
+  (function(){
+    var res = GetRequest();
+    var par = res['index'];
+    if(par!='gfan'){
+      var ua=navigator.userAgent.toLowerCase();
+      var contains=function (a, b){
+          if(a.indexOf(b)!=-1){return true;}
+      };
+      if((contains(ua,"android") && contains(ua,"mobile"))||(contains(ua,"android") && contains(ua,"mozilla"))||(contains(ua,"android") && contains(ua,"opera"))||contains(ua,"ucweb7")||contains(ua,"iphone")){
+        return false;
+      } else {
+        $.getScript("/js/src/particle.js?v=5.0.1");
+      }
+    }
+  })();
+  function GetRequest() {
+    var url = location.search;
+    var theRequest = new Object();
+    if (url.indexOf("?") != -1) {
+      var str = url.substr(1);
+      strs = str.split("&");
+      for(var i = 0; i < strs.length; i ++) {
+        theRequest[strs[i].split("=")[0]]=unescape(strs[i].split("=")[1]);
+      }
+    }
+    return theRequest;
+  }
+</script>
+<!-- 识别手机或电脑的js结束 -->  
+
+  <!-- 页面点击小红心 -->
+  <!-- 页面点击小红心 -->
+
+  <script type="text/javascript" src="/js/src/love.js?v=5.0.1"></script>
+
+
+  <!-- 鼠标移动，效果 -->
+  <!-- 鼠标移动特效 -->
+
+  <script type="text/javascript" src="/js/src/jquery-stars.js?v=5.0.1"></script>
+  <script type="text/javascript">
+  jQuery('body').jstars({
+  	image_path: '/images',
+  	image: 'candy-cane-stars.png',
+  	style: 'white',
+  	width: 34,
+  	height: 34,
+  	delay: 700,
+  	frequency: 5
+  });
+  </script>
+
+
+  <!-- 页面 title 进入/离开 效果 -->
+
+  <script type="text/javascript">var OriginTitile=document.title,st;document.addEventListener("visibilitychange",function(){document.hidden?(document.title="≡[。。]≡ 回不去了吗？!",clearTimeout(st)):(document.title="(ฅ>ω<*ฅ) Thank Vue~ "+OriginTitile,st=setTimeout(function(){document.title=OriginTitile},4e3))})</script>
+
+
+</body>
+</html>

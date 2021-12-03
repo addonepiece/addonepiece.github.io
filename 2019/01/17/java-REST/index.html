@@ -1,0 +1,1297 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Courier New:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="Java,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="行囊" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon/favicon.ico?v=5.0.1">
+
+
+
+
+
+
+<meta name="description" content="文章内容及目的（CONTENT &amp;amp; OBJECTIVE）1.了解什么是REST2.了解如何使用REST范式/风格设计各端 REST（REPRESENTATIONAL STATE TRANSFER）REST（英文：Representational State Transfer）是一种无状态资源传输体系范式，用在服务端和客户端之间提供标准，从而使系统之间的通信更容易。与REST兼容的系统，通常">
+<meta name="keywords" content="Java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="什么是REST&#x2F;RESTful API？">
+<meta property="og:url" content="https://addonepiece.github.io/2019/01/17/java-REST/index.html">
+<meta property="og:site_name" content="行囊">
+<meta property="og:description" content="文章内容及目的（CONTENT &amp;amp; OBJECTIVE）1.了解什么是REST2.了解如何使用REST范式/风格设计各端 REST（REPRESENTATIONAL STATE TRANSFER）REST（英文：Representational State Transfer）是一种无状态资源传输体系范式，用在服务端和客户端之间提供标准，从而使系统之间的通信更容易。与REST兼容的系统，通常">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://addonepiece.github.io/images/Java-REST.jpeg">
+<meta property="og:image" content="https://addonepiece.github.io/images/java-rest-MIME.jpg">
+<meta property="og:updated_time" content="2020-09-14T03:32:46.300Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="什么是REST&#x2F;RESTful API？">
+<meta name="twitter:description" content="文章内容及目的（CONTENT &amp;amp; OBJECTIVE）1.了解什么是REST2.了解如何使用REST范式/风格设计各端 REST（REPRESENTATIONAL STATE TRANSFER）REST（英文：Representational State Transfer）是一种无状态资源传输体系范式，用在服务端和客户端之间提供标准，从而使系统之间的通信更容易。与REST兼容的系统，通常">
+<meta name="twitter:image" content="https://addonepiece.github.io/images/Java-REST.jpeg">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"hide"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: undefined,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="https://addonepiece.github.io/2019/01/17/java-REST/">
+
+
+<!-- 网页加载条 -->
+<script src="/js/src/pace.min.js"></script>
+  <title> 什么是REST/RESTful API？ | 行囊 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">行囊</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">大佬闫的博客</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-guestbook">
+          <a href="/guestbook" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-commenting"></i> <br>
+            
+            留言
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-example">
+          <a href="/example" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br>
+            
+            示例
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+      
+      
+        <li class="menu-item"> <a title="把这个链接拖到你的工具栏中,任何网页都可以High" href="javascript:(
+/*
+ * Copyright (C) 2016 Never_yu (Neveryu.github.io) <React.dong.yu@gmail.com>
+ * Sina Weibo (http://weibo.com/Neveryu)
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+function go() {
+
+var songs = [
+  "http://dl.stream.qqmusic.qq.com/C400001Qu4I30eVFYb.m4a?vkey=2127178E4405E7B8B268F20F05232485735CCF4FF8C1432F0360D2626D0B6C9564B5627C7AB481BBC685FEDB0946A50E97C66F0D1B008226&guid=7175649092&uin=0&fromtag=66",
+  "",
+  "",
+  ""
+];
+
+function c() {
+  var e = document.createElement("link");
+  e.setAttribute("type", "text/css");
+  e.setAttribute("rel", "stylesheet");
+  e.setAttribute("href", f);
+  e.setAttribute("class", l);
+  document.body.appendChild(e)
+}
+
+function h() {
+  var e = document.getElementsByClassName(l);
+  for (var t = 0; t < e.length; t++) {
+    document.body.removeChild(e[t])
+  }
+}
+
+function p() {
+  var e = document.createElement("div");
+  e.setAttribute("class", a);
+  document.body.appendChild(e);
+  setTimeout(function() {
+    document.body.removeChild(e)
+  }, 100)
+}
+
+function d(e) {
+  return {
+    height : e.offsetHeight,
+    width : e.offsetWidth
+  }
+}
+
+function v(i) {
+  var s = d(i);
+  return s.height > e && s.height < n && s.width > t && s.width < r
+}
+
+function m(e) {
+  var t = e;
+  var n = 0;
+  while (!!t) {
+    n += t.offsetTop;
+    t = t.offsetParent
+  }
+  return n
+}
+
+function g() {
+  var e = document.documentElement;
+  if (!!window.innerWidth) {
+    return window.innerHeight
+  } else if (e && !isNaN(e.clientHeight)) {
+    return e.clientHeight
+  }
+  return 0
+}
+
+function y() {
+  if (window.pageYOffset) {
+    return window.pageYOffset
+  }
+  return Math.max(document.documentElement.scrollTop, document.body.scrollTop)
+}
+
+function E(e) {
+  var t = m(e);
+  return t >= w && t <= b + w
+}
+
+function S() {
+  var e = document.getElementById("audio_element_id");
+  if(e != null){
+    var index = parseInt(e.getAttribute("curSongIndex"));
+    if(index > songs.length - 2) {
+      index = 0;
+    } else {
+      index++;
+    }
+    e.setAttribute("curSongIndex", index);
+    N();
+  }
+
+  e.src = i;
+  e.play()
+}
+
+function x(e) {
+  e.className += " " + s + " " + o
+}
+
+function T(e) {
+  e.className += " " + s + " " + u[Math.floor(Math.random() * u.length)]
+}
+
+function N() {
+  var e = document.getElementsByClassName(s);
+  var t = new RegExp("\\b" + s + "\\b");
+  for (var n = 0; n < e.length; ) {
+    e[n].className = e[n].className.replace(t, "")
+  }
+}
+
+function initAudioEle() {
+  var e = document.getElementById("audio_element_id");
+  if(e === null){
+    e = document.createElement("audio");
+    e.setAttribute("class", l);
+    e.setAttribute("curSongIndex", 0);
+    e.id = "audio_element_id";
+    e.loop = false;
+    e.bgcolor = 0;
+    e.addEventListener("canplay", function() {
+      setTimeout(function() {
+        x(k)
+      }, 500);
+      setTimeout(function() {
+        N();
+        p();
+        for (var e = 0; e < O.length; e++) {
+          T(O[e])
+        }
+      }, 15500)
+    }, true);
+    e.addEventListener("ended", function() {
+      N();
+      h();
+      go();
+    }, true);
+    e.innerHTML = " <p>If you are reading this, it is because your browser does not support the audio element. We recommend that you get a new browser.</p> <p>";
+    document.body.appendChild(e);
+  }
+}
+
+initAudioEle();
+var e = 30;
+var t = 30;
+var n = 350;
+var r = 350;
+
+var curSongIndex = parseInt(document.getElementById("audio_element_id").getAttribute("curSongIndex"));
+var i = songs[curSongIndex];
+
+var s = "mw-harlem_shake_me";
+var o = "im_first";
+var u = ["im_drunk", "im_baked", "im_trippin", "im_blown"];
+var a = "mw-strobe_light";
+
+/* harlem-shake-style.css，替换成你的位置，也可以直接使用：//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake-style.css */
+var f = "//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake-style.css";
+
+var l = "mw_added_css";
+var b = g();
+var w = y();
+var C = document.getElementsByTagName("*");
+var k = null;
+for (var L = 0; L < C.length; L++) {
+  var A = C[L];
+  if (v(A)) {
+    if (E(A)) {
+      k = A;
+      break
+    }
+  }
+}
+if (A === null) {
+  console.warn("Could not find a node of the right size. Please try a different page.");
+  return
+}
+c();
+S();
+var O = [];
+for (var L = 0; L < C.length; L++) {
+  var A = C[L];
+  if (v(A)) {
+    O.push(A)
+  }
+}
+})()"><i class="menu-item-icon fa fa-music fa-fw"></i> High一下</a></li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search fa-lg"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                什么是REST/RESTful API？
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2019-01-17T08:20:00+08:00" content="2019-01-17">
+              2019-01-17
+            </time>
+          </span>
+
+          
+            <span class="post-category">
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/后台/" itemprop="url" rel="index">
+                    <span itemprop="name">后台</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+
+          
+
+          
+          
+
+          
+              &nbsp; | &nbsp;
+              <span class="page-pv">热度
+              <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>℃
+              </span>
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="文章内容及目的（CONTENT-amp-OBJECTIVE）"><a href="#文章内容及目的（CONTENT-amp-OBJECTIVE）" class="headerlink" title="文章内容及目的（CONTENT &amp; OBJECTIVE）"></a>文章内容及目的（CONTENT &amp; OBJECTIVE）</h1><p>1.了解什么是REST<br>2.了解如何使用REST范式/风格设计各端<br><img src="/images/Java-REST.jpeg" alt></p>
+<h1 id="REST（REPRESENTATIONAL-STATE-TRANSFER）"><a href="#REST（REPRESENTATIONAL-STATE-TRANSFER）" class="headerlink" title="REST（REPRESENTATIONAL STATE TRANSFER）"></a>REST（REPRESENTATIONAL STATE TRANSFER）</h1><p>REST（英文：Representational State Transfer）是一种无状态资源传输体系范式，用在服务端和客户端之间提供标准，从而使系统之间的通信更容易。与REST兼容的系统，通常称为RESTful系统，其特点是它们是无状态的，并且分离了客户端和服务端的关注点。我们将讨论这些术语的含义以及它们为什么是Web等服务实现前后端分离的有益特性。</p>
+<h1 id="客户端与服务端分离（SEPARATION-OF-CLIENT-AND-SERVER）"><a href="#客户端与服务端分离（SEPARATION-OF-CLIENT-AND-SERVER）" class="headerlink" title="客户端与服务端分离（SEPARATION OF CLIENT AND SERVER）"></a>客户端与服务端分离（SEPARATION OF CLIENT AND SERVER）</h1><p>在REST架构范式中，客户端的实现和服务端的实现可以独立完成，而彼此不必知道对方。这意味着客户端的代码可以在不影响服务端操作的情况下随时更改，服务端的代码可以在不影响客户端操作的情况下更改。<br>只要双方都知道要向对方发送什么格式的消息，它们就可以保持模块化和分离。将用户界面关注点与数据存储关注点分开，通过简化服务端组件，我们改进了跨平台的接口的灵活性，并提高了可伸缩性。此外，分离允许每个组件独立地发展。</p>
+<p>通过使用一个REST接口，不同的客户端访问相同的REST端点，执行相同的操作，并接收相同的响应。</p>
+<h1 id="无状态性（STATELESSNESS）"><a href="#无状态性（STATELESSNESS）" class="headerlink" title="无状态性（STATELESSNESS）"></a>无状态性（STATELESSNESS）</h1><p>遵循REST范式的系统是无状态的，这意味着服务端不需要知道客户端处于什么状态，反之亦然。这样，服务端和客户端都可以理解接收到的任何消息，即使没有看到以前的消息。这种无状态限制是通过使用资源而不是命令来实现的。资源是网络中的名词-它们描述任何对象、文档或东西，您可能需要存储或发送到其他服务。</p>
+<p>因为REST系统通过对资源的标准操作进行交互，所以它们不依赖于接口的实现。</p>
+<p>这些约束有助于RESTful应用程序实现可靠性、快速性能和可伸缩性，因为这些组件可以在不影响整个系统的情况下进行管理、更新和重用，甚至在系统运行期间也是如此。</p>
+<p>现在，我们将探讨在实现RESTful接口时，客户端和服务端之间的通信实际上是如何发生的。</p>
+<h1 id="客户端和服务端之间的通信（COMMUNICATION-BETWEEN-CLIENT-AND-SERVER）"><a href="#客户端和服务端之间的通信（COMMUNICATION-BETWEEN-CLIENT-AND-SERVER）" class="headerlink" title="客户端和服务端之间的通信（COMMUNICATION BETWEEN CLIENT AND SERVER）"></a>客户端和服务端之间的通信（COMMUNICATION BETWEEN CLIENT AND SERVER）</h1><p>在REST体系结构中，客户端发送请求以检索或修改资源，而服务端则向这些请求发送响应。让我们看看发出请求和发送响应的标准方法。</p>
+<h1 id="提交请求（MAKING-REQUESTS）"><a href="#提交请求（MAKING-REQUESTS）" class="headerlink" title="提交请求（MAKING REQUESTS）"></a>提交请求（MAKING REQUESTS）</h1><p>REST要求客户端向服务端发出请求，以便检索或修改服务端上的数据。请求通常包括：</p>
+<ul>
+<li>一个HTTP动词，定义要执行的操作类型.</li>
+<li>HTTP的头域，允许客户端传递有关请求的头信息。</li>
+<li>资源的路径</li>
+<li>包含数据的可选消息正文</li>
+</ul>
+<h2 id="1-HTTP动词（HTTP-VERBS）"><a href="#1-HTTP动词（HTTP-VERBS）" class="headerlink" title="1.HTTP动词（HTTP VERBS）"></a>1.HTTP动词（HTTP VERBS）</h2><p>我们在请求中使用5个基本HTTP动词来与REST系统中的资源交互：</p>
+<ul>
+<li>GET （SELECT）：从服务端检索特定资源，或资源列表。</li>
+<li>POST （CREATE）：在服务端上创建一个新的资源。</li>
+<li>PUT （UPDATE）：更新服务端上的资源，提供整个资源。</li>
+<li>PATCH （UPDATE）：更新服务端上的资源，仅提供更改的属性。</li>
+<li>DELETE （DELETE）：从服务端删除资源。<br>这里有两个较少知名的HTTP动词：<ul>
+<li>HEAD - 检索有关资源的元数据，例如数据的哈希或上次更新时间。</li>
+<li>OPTIONS - 检索关于客户端被允许对资源做什么的信息。</li>
+<li>一个好的RESTful API将使用四个半HTTP动词，允许第三方与其数据进行交互，并且不会将动作/动词作为URL段。</li>
+</ul>
+</li>
+</ul>
+<p>通常，GET请求可以被缓存（通常是！）在浏览器，例如将缓存请求头用于第二次用户的POST请求。 HEAD请求基本上是一个没有响应主体的GET，并且也可以被缓存。</p>
+<h2 id="2-头信息和接收参数（HEADERS-AND-ACCEPT-PARAMETERS）"><a href="#2-头信息和接收参数（HEADERS-AND-ACCEPT-PARAMETERS）" class="headerlink" title="2.头信息和接收参数（HEADERS AND ACCEPT PARAMETERS）"></a>2.头信息和接收参数（HEADERS AND ACCEPT PARAMETERS）</h2><p>在请求头中，客户端发送它能够从服务端接收的内容类型。这称为Accept字段，它确保服务端不会发送客户端无法理解或处理的数据。<br>例如，包含HTML的文本文件将使用text/HTML类型指定。如果此文本文件包含CSS，则将其指定为text/CSS。通用文本文件将被表示为文本/纯文本。但是，这个默认值text/plain并不是一个全部捕获的值。如果客户端需要文本/css并接收到文本/plain，则它将无法识别内容。内容类型的选项是MIME类型。</p>
+<p>MIME类型，MIME（Multipurpose Internet Mail Extensions，多功能因特网邮件扩展）原来是用来判断电子邮件附件的格式而设计的一个字符串，后来演变为网络文档，及企业网和Internet上的其他应用程序中的文件格式的规范。<br>MIME类型是由一个媒体类型和一个子类型组成。媒体类型和子类型用一个斜杠（/）分隔开，例如text/css，它会告诉浏览器文件是纯文本文件，也是一个CSS样式表。每一个媒体类型都表示一种文件类型，媒体类型及说明见下表。<br><img src="/images/java-rest-MIME.jpg" alt></p>
+<p>其他类型和常用子类型：</p>
+<ul>
+<li>image — image/png, image/jpeg, image/gif</li>
+<li>audio — audio/wav, image/mpeg</li>
+<li>video — video/mp4, video/ogg</li>
+<li>application — application/json, application/pdf,</li>
+<li>application/xml, application/octet-stream</li>
+</ul>
+<p>例如，访问服务端上项目资源中id为23的资源的客户端可能会发送如下GET请求：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">GET /articles/23</span><br><span class="line">Accept: text/html, application/xhtml</span><br></pre></td></tr></table></figure></p>
+<p>在本例中，Accept header字段表示客户机将接受text/html或application/xhtml格式的内容。</p>
+<h2 id="3-资源路径（PATHS）"><a href="#3-资源路径（PATHS）" class="headerlink" title="3.资源路径（PATHS）"></a>3.资源路径（PATHS）</h2><p>请求必须包含应对其执行操作的资源的路径。在restfulapi中，路径的设计应该帮助客户端知道发生了什么。</p>
+<p>按照惯例，路径的第一部分应该是资源的复数形式。这使得嵌套路径易于阅读和理解。</p>
+<p>像fashionboutique.com/customers/223/orders/12这样的路径在它指向什么方面是清楚的，即使您以前从未见过这种特定的路径，因为它是层次化的描述明确的。我们可以看到，对于id为223的客户，我们正在访问id为12的订单。</p>
+<p>路径应包含定位所需资源的特定信息。当引用资源的列表或集合时，无需向fashionboutique.com/customers路径中的POST请求添加id，因为服务器将为新对象生成id。</p>
+<p>如果我们试图访问一个资源，我们需要在路径上附加一个id。例如：GET fashionboutique.com/customers/：id-检索客户资源中具有指定id的项目。DELETE fashionboutique.com/customers/：id-删除客户资源中具有指定id的项。</p>
+<h1 id="发送响应（SENDING-RESPONSES）"><a href="#发送响应（SENDING-RESPONSES）" class="headerlink" title="发送响应（SENDING RESPONSES）"></a>发送响应（SENDING RESPONSES）</h1><h2 id="1-内容类型-CONTENT-TYPES"><a href="#1-内容类型-CONTENT-TYPES" class="headerlink" title="1.内容类型(CONTENT TYPES)"></a>1.内容类型(CONTENT TYPES)</h2><p>在服务端向客户端返回数据的情况下，服务端必须在响应的头中包含一个内容类型。此内容类型标题字段提醒客户端它在响应正文中发送的数据类型。这些内容类型是MIME类型，就像它们在请求头的accept字段中一样。服务端在响应中发回的内容类型应该是客户端在请求的accept字段中指定的选项之一。</p>
+<p>例如，当客户端使用此GET请求访问项目资源中id为23的资源时：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">GET /articles/23 HTTP/1.1</span><br><span class="line">Accept: text/html, application/xhtml</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">HTTP/1.1 200 (OK)</span><br><span class="line">Content-Type: text/html</span><br></pre></td></tr></table></figure>
+<p>这意味着请求的内容正以text/html的内容类型返回到响应体中，客户端表示可以接受。</p>
+<h2 id="2-响应状态码（RESPONSE-CODES）"><a href="#2-响应状态码（RESPONSE-CODES）" class="headerlink" title="2.响应状态码（RESPONSE CODES）"></a>2.响应状态码（RESPONSE CODES）</h2><p>服务端的响应包含状态码，用于提醒客户端有关操作成功的信息。作为一名开发人员，您不需要知道每个状态码（其中有许多），但您应该知道最常见的状态代码以及如何使用它们：</p>
+<ul>
+<li>200 OK - [GET]<br>客户端从服务器请求数据，服务器为它们找到它（等幂）</li>
+<li>201 CREATED - [POST / PUT / PATCH]<br>客户端提供了服务器数据，并且服务器创建了一个资源</li>
+<li>204 无内容 - [删除]<br>客户端要求服务器删除资源，并且服务器将其删除</li>
+<li>400 无效请求 - [POST / PUT / PATCH]<br>客户端给服务器的数据不良，服务器没有做任何事情（幂等）</li>
+<li>404错误<br>客户端引用了一个不存在的资源或集合，并且服务器什么也不做（幂等）</li>
+<li>500内部服务器错误<br>服务器遇到错误，并且客户端不知道请求是否成功</li>
+</ul>
+<h2 id="3-响应状态码范围（RESPONSE-CODES-RANGE）"><a href="#3-响应状态码范围（RESPONSE-CODES-RANGE）" class="headerlink" title="3.响应状态码范围（RESPONSE CODES RANGE）"></a>3.响应状态码范围（RESPONSE CODES RANGE）</h2><ul>
+<li>1xx 范围保留用于底层HTTP的东西，你很可能永远也用不到。</li>
+<li>2xx 范围保留用于成功消息，尽可能确保您的服务器尽可能多地向客户端发送这些消息。</li>
+<li>3xx 范围保留用于重定向。大多数API不使用这些请求很多（不像SEO人使用它们那么频繁），然而，较新的超媒体风格API将更多地使用这些请求。</li>
+<li>4xx 范围保留用于响应客户端做出的错误，例如。他们提供不良数据或要求不存在的东西。这些请求应该是幂等的，而不是更改服务器的状态。</li>
+<li>5xx 范围的状态码是保留给服务器端错误用的。这些错误常常是从底层的函数抛出来的，甚至开发人员也通常没法处理，发送这类状态码的目的以确保客户端获得某种响应。当收到5xx响应时，客户端不可能知道服务器的状态，所以这类状态码是要尽可能的避免。</li>
+</ul>
+<h1 id="EXAMPLES-OF-REQUESTS-AND-RESPONSES-请求和响应示例"><a href="#EXAMPLES-OF-REQUESTS-AND-RESPONSES-请求和响应示例" class="headerlink" title="(EXAMPLES OF REQUESTS AND RESPONSES)请求和响应示例"></a>(EXAMPLES OF REQUESTS AND RESPONSES)请求和响应示例</h1><p>假设我们有一个应用程序，允许您查看、创建、编辑和删除fashionboutique.com上的一家小型服装店的客户和订单。我们可以创建一个HTTP API，允许客户端执行以下功能：<br>如果我们想查看所有客户，请求如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">GET http://fashionboutique.com/customers</span><br><span class="line">Accept: application/json</span><br></pre></td></tr></table></figure></p>
+<p>可能的响应头如下所示：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Status Code: 200 (OK)</span><br><span class="line">Content-type: application/json</span><br></pre></td></tr></table></figure></p>
+<p>然后是以application/json格式请求的客户数据。<br>通过提交据创建新客户：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">POST http://fashionboutique.com/customers</span><br><span class="line">Body:</span><br><span class="line">&#123;</span><br><span class="line">  “customer”: &#123;</span><br><span class="line">    “name” = “Scylla Buss”</span><br><span class="line">    “email” = “scylla.buss@codecademy.org”</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>然后，服务器为该对象生成一个id，并将其返回给客户端，其响应头类似于：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">201 (CREATED)</span><br><span class="line">Content-type: application/json</span><br></pre></td></tr></table></figure></p>
+<p>要查看单个客户，我们需要指定该客户的id：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">GET http://fashionboutique.com/customers/123</span><br><span class="line">Accept: application/json</span><br></pre></td></tr></table></figure></p>
+<p>可能的响应头如下所示：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Status Code: 200 (OK)</span><br><span class="line">Content-type: application/json</span><br></pre></td></tr></table></figure></p>
+<p>后面是application/json格式的id为23的客户资源的数据。<br>我们可以通过输入新数据来更新该客户：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">PUT http://fashionboutique.com/customers/123</span><br><span class="line">Body:</span><br><span class="line">&#123;</span><br><span class="line">  “customer”: &#123;</span><br><span class="line">    “name” = “Scylla Buss”</span><br><span class="line">    “email” = “scyllabuss1@codecademy.com”</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>可能的响应头的状态代码为：200（OK），用于通知客户端id为123的项已被修改。<br>我们还可以通过指定该客户的id来删除该客户：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DELETE http://fashionboutique.com/customers/123</span><br></pre></td></tr></table></figure></p>
+<p>响应将有一个包含状态代码204（无内容）的头，通知客户端id为123的项已被删除，而正文中没有任何内容。</p>
+<h1 id="课后练习（PRACTICE-WITH-REST）"><a href="#课后练习（PRACTICE-WITH-REST）" class="headerlink" title="课后练习（PRACTICE WITH REST）"></a>课后练习（PRACTICE WITH REST）</h1><p>让我们想象一下，我们正在建立一个照片收集网站，要做一个API来跟踪不同用户、用户空间和用户空间的照片。此网站有index.html和style.css。每个用户都有用户名和密码。每张照片都有一个路径和一个所有者（即拍摄照片的用户）。每个空间都有名字和文件路径。您能否设计一个可以容纳以下内容的REST系统：</p>
+<ul>
+<li>存储用户、照片和路径。</li>
+<li>访问空间和访问某个空间的某些照片。首先给出：<br>  1.我们想提出什么样的要求<br>  2.服务器应该返回什么响应<br>  3.每个响应的内容类型应该是什么</li>
+</ul>
+<h2 id="1-可能的解决方案-模型（POSSIBLE-SOLUTION-MODELS）"><a href="#1-可能的解决方案-模型（POSSIBLE-SOLUTION-MODELS）" class="headerlink" title="1.可能的解决方案-模型（POSSIBLE SOLUTION - MODELS）"></a>1.可能的解决方案-模型（POSSIBLE SOLUTION - MODELS）</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  “user”: &#123;</span><br><span class="line">    &quot;id&quot;: &lt;Integer&gt;,</span><br><span class="line">    “username”: &lt;String&gt;,</span><br><span class="line">    “password”:  &lt;String&gt;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  “photo”: &#123;</span><br><span class="line">    &quot;id&quot;: &lt;Integer&gt;,</span><br><span class="line">    “venue_id”: &lt;Integer&gt;,</span><br><span class="line">    “author_id”: &lt;Integer&gt;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  “venue”: &#123;</span><br><span class="line">    &quot;id&quot;: &lt;Integer&gt;,</span><br><span class="line">    “name”: &lt;String&gt;,</span><br><span class="line">    “address”: &lt;String&gt;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="2-可能的解决方案-请求-响应（POSSIBLE-SOLUTION-REQUESTS-RESPONSES）"><a href="#2-可能的解决方案-请求-响应（POSSIBLE-SOLUTION-REQUESTS-RESPONSES）" class="headerlink" title="2.可能的解决方案-请求/响应（POSSIBLE SOLUTION - REQUESTS/RESPONSES）"></a>2.可能的解决方案-请求/响应（POSSIBLE SOLUTION - REQUESTS/RESPONSES）</h2><h3 id="GET方式请求（GET-REQUESTS）"><a href="#GET方式请求（GET-REQUESTS）" class="headerlink" title="GET方式请求（GET REQUESTS）"></a>GET方式请求（GET REQUESTS）</h3><p>Request- GET /index.html Accept: text/html Response- 200 (OK) Content-type: text/html</p>
+<p>Request- GET /style.css Accept: text/css Response- 200 (OK) Content-type: text/css</p>
+<p>Request- GET /venues Accept:application/json Response- 200 (OK) Content-type: application/json</p>
+<p>Request- GET /venues/:id Accept: application/json Response- 200 (OK) Content-type: application/json</p>
+<p>Request- GET /venues/:id/photos/:id Accept: application/json Response- 200 (OK) Content-type: image/png</p>
+<h3 id="POST方式请求（POST-REQUESTS）"><a href="#POST方式请求（POST-REQUESTS）" class="headerlink" title="POST方式请求（POST REQUESTS）"></a>POST方式请求（POST REQUESTS）</h3><p>Request- POST /users Response- 201 (CREATED) Content-type: application/json</p>
+<p>Request- POST /venues Response- 201 (CREATED) Content-type: application/json</p>
+<p>Request- POST /venues/:id/photos Response- 201 (CREATED) Content-type: application/json</p>
+<h3 id="PUT方式请求（PUT-REQUESTS）"><a href="#PUT方式请求（PUT-REQUESTS）" class="headerlink" title="PUT方式请求（PUT REQUESTS）"></a>PUT方式请求（PUT REQUESTS）</h3><p>Request- PUT /users/:id Response- 200 (OK)</p>
+<p>Request- PUT /venues/:id Response- 200 (OK)</p>
+<p>Request- PUT /venues/:id/photos/:id Response- 200 (OK)</p>
+<h3 id="DELETE方式请求-DELETE-REQUESTS"><a href="#DELETE方式请求-DELETE-REQUESTS" class="headerlink" title="DELETE方式请求(DELETE REQUESTS)"></a>DELETE方式请求(DELETE REQUESTS)</h3><p>Request- DELETE /venues/:id Response- 204 (NO CONTENT)</p>
+<p>Request- DELETE /venues/:id/photos/:id Response- 204 (NO CONTENT)</p>
+<h1 id="一起讨论学习"><a href="#一起讨论学习" class="headerlink" title="一起讨论学习"></a>一起讨论学习</h1><p>欢迎您一起学习和留言讨论RESTFUL，让我们一起写出真正的RESTFUL API。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/images/blog-mobile.png" alt="dalaoyan wechat" style="width: 200px; max-width: 100%;">
+    <div>扫一扫，用手机访问本站</div>
+</div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+<blockquote class="blockquote-center" style="color: #ccc;">
+    -------------本文结束 <i class="fa fa-apple"></i> 感谢您的阅读-------------
+</blockquote>
+
+  <span id="inline-green" style="border-radius:3px;">作者</span>：<a class="link-blue" href="https://github.com/addonepiece" target="_blank">dalaoyan</a><br>有问题请 <a class="link-blue" href="https://addonepiece.github.io/guestbook" target="_blank">留言</a> 或者私信我的 <a class="link-blue" href="https://weibo.com/u/1889106977" target="_blank">微博</a>。
+
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>满分是10分的话，这篇文章你给几分</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/reward/reward_wechat.png" alt="dalaoyan WeChat Pay">
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/reward/reward_alipay.png" alt="dalaoyan Alipay">
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Java/" rel="tag"><i class="fa fa-tag"></i> Java</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/12/16/java-pattern-singleton/" rel="next" title="Java单例模式的最佳实现-单元素枚举实现单例">
+                <i class="fa fa-chevron-left"></i> Java单例模式的最佳实现-单元素枚举实现单例
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/02/05/travis-ci/" rel="prev" title="使用 Travis CI 自动更新 GitHub Pages">
+                使用 Travis CI 自动更新 GitHub Pages <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript">
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/avatar/avatar.png" alt="dalaoyan">
+          <p class="site-author-name" itemprop="name">dalaoyan</p>
+          <p class="site-description motion-element" itemprop="description">你的行囊，是充实，还是丢弃？看你的！</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">52</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">19</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/addonepiece" target="_blank" title="Github">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  Github
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://addonepiece.github.io/" target="_blank" title="Blog">
+                  
+                    <i class="fa fa-fw fa-blog"></i>
+                  
+                  Blog
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+          <div class="cc-license motion-element" itemprop="license">
+            <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank">
+              <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons">
+            </a>
+          </div>
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              友情链接
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://fir.im/5u9j" title="淘宝优惠券app" target="_blank">淘宝优惠券app</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://addonepiece.github.io/about/" title="个人首页" target="_blank">个人首页</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="/weblog" title="建站日志" target="_blank">建站日志</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#文章内容及目的（CONTENT-amp-OBJECTIVE）"><span class="nav-number">1.</span> <span class="nav-text">文章内容及目的（CONTENT &amp; OBJECTIVE）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#REST（REPRESENTATIONAL-STATE-TRANSFER）"><span class="nav-number">2.</span> <span class="nav-text">REST（REPRESENTATIONAL STATE TRANSFER）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#客户端与服务端分离（SEPARATION-OF-CLIENT-AND-SERVER）"><span class="nav-number">3.</span> <span class="nav-text">客户端与服务端分离（SEPARATION OF CLIENT AND SERVER）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#无状态性（STATELESSNESS）"><span class="nav-number">4.</span> <span class="nav-text">无状态性（STATELESSNESS）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#客户端和服务端之间的通信（COMMUNICATION-BETWEEN-CLIENT-AND-SERVER）"><span class="nav-number">5.</span> <span class="nav-text">客户端和服务端之间的通信（COMMUNICATION BETWEEN CLIENT AND SERVER）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#提交请求（MAKING-REQUESTS）"><span class="nav-number">6.</span> <span class="nav-text">提交请求（MAKING REQUESTS）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-HTTP动词（HTTP-VERBS）"><span class="nav-number">6.1.</span> <span class="nav-text">1.HTTP动词（HTTP VERBS）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-头信息和接收参数（HEADERS-AND-ACCEPT-PARAMETERS）"><span class="nav-number">6.2.</span> <span class="nav-text">2.头信息和接收参数（HEADERS AND ACCEPT PARAMETERS）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-资源路径（PATHS）"><span class="nav-number">6.3.</span> <span class="nav-text">3.资源路径（PATHS）</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#发送响应（SENDING-RESPONSES）"><span class="nav-number">7.</span> <span class="nav-text">发送响应（SENDING RESPONSES）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-内容类型-CONTENT-TYPES"><span class="nav-number">7.1.</span> <span class="nav-text">1.内容类型(CONTENT TYPES)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-响应状态码（RESPONSE-CODES）"><span class="nav-number">7.2.</span> <span class="nav-text">2.响应状态码（RESPONSE CODES）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-响应状态码范围（RESPONSE-CODES-RANGE）"><span class="nav-number">7.3.</span> <span class="nav-text">3.响应状态码范围（RESPONSE CODES RANGE）</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#EXAMPLES-OF-REQUESTS-AND-RESPONSES-请求和响应示例"><span class="nav-number">8.</span> <span class="nav-text">(EXAMPLES OF REQUESTS AND RESPONSES)请求和响应示例</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#课后练习（PRACTICE-WITH-REST）"><span class="nav-number">9.</span> <span class="nav-text">课后练习（PRACTICE WITH REST）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-可能的解决方案-模型（POSSIBLE-SOLUTION-MODELS）"><span class="nav-number">9.1.</span> <span class="nav-text">1.可能的解决方案-模型（POSSIBLE SOLUTION - MODELS）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-可能的解决方案-请求-响应（POSSIBLE-SOLUTION-REQUESTS-RESPONSES）"><span class="nav-number">9.2.</span> <span class="nav-text">2.可能的解决方案-请求/响应（POSSIBLE SOLUTION - REQUESTS/RESPONSES）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#GET方式请求（GET-REQUESTS）"><span class="nav-number">9.2.1.</span> <span class="nav-text">GET方式请求（GET REQUESTS）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#POST方式请求（POST-REQUESTS）"><span class="nav-number">9.2.2.</span> <span class="nav-text">POST方式请求（POST REQUESTS）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PUT方式请求（PUT-REQUESTS）"><span class="nav-number">9.2.3.</span> <span class="nav-text">PUT方式请求（PUT REQUESTS）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DELETE方式请求-DELETE-REQUESTS"><span class="nav-number">9.2.4.</span> <span class="nav-text">DELETE方式请求(DELETE REQUESTS)</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#一起讨论学习"><span class="nav-number">10.</span> <span class="nav-text">一起讨论学习</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+      
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        
+
+<div class="busuanzi-count">
+
+  <!-- <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script> -->
+  <!-- 上面这个是之前的，不知道为什么失效了，改成下面这个 -->
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">您是第<span class="busuanzi-value" id="busuanzi_value_site_uv"></span>个小伙伴</span>
+  
+
+  
+    <span class="site-pv">本站总浏览<span class="busuanzi-value" id="busuanzi_value_site_pv"></span>次</span>
+  
+  
+</div>
+
+
+
+        <div class="copyright">
+  
+  &copy;  2016 - 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">dalaoyan</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io" rel="external nofollow">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next" rel="external nofollow">
+    NexT.Pisces
+  </a>
+</div>
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count" style="color: #e90f92;">全站共 281k 字</span>
+</div>
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+       search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+    'use strict';
+    $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+            // get the contents from search data
+            isfetched = true;
+            $('.popup').detach().appendTo('.header-inner');
+            var datas = $( "entry", xmlResponse ).map(function() {
+                return {
+                    title: $( "title", this ).text(),
+                    content: $("content",this).text(),
+                    url: $( "url" , this).text()
+                };
+            }).get();
+            var $input = document.getElementById(search_id);
+            var $resultContent = document.getElementById(content_id);
+            $input.addEventListener('input', function(){
+                var matchcounts = 0;
+                var str='<ul class=\"search-result-list\">';
+                var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                $resultContent.innerHTML = "";
+                if (this.value.trim().length > 1) {
+                // perform local searching
+                datas.forEach(function(data) {
+                    var isMatch = true;
+                    var content_index = [];
+                    var data_title = data.title.trim().toLowerCase();
+                    var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                    var data_url = data.url;
+                    var index_title = -1;
+                    var index_content = -1;
+                    var first_occur = -1;
+                    // only match artiles with not empty titles and contents
+                    if(data_title != '' && data_content != '') {
+                        keywords.forEach(function(keyword, i) {
+                            index_title = data_title.indexOf(keyword);
+                            index_content = data_content.indexOf(keyword);
+                            if( index_title < 0 && index_content < 0 ){
+                                isMatch = false;
+                            } else {
+                                if (index_content < 0) {
+                                    index_content = 0;
+                                }
+                                if (i == 0) {
+                                    first_occur = index_content;
+                                }
+                            }
+                        });
+                    }
+                    // show search results
+                    if (isMatch) {
+                        matchcounts += 1;
+                        str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                        var content = data.content.trim().replace(/<[^>]+>/g,"");
+                        if (first_occur >= 0) {
+                            // cut out 100 characters
+                            var start = first_occur - 20;
+                            var end = first_occur + 80;
+                            if(start < 0){
+                                start = 0;
+                            }
+                            if(start == 0){
+                                end = 50;
+                            }
+                            if(end > content.length){
+                                end = content.length;
+                            }
+                            var match_content = content.substring(start, end);
+                            // highlight all keywords
+                            keywords.forEach(function(keyword){
+                                var regS = new RegExp(keyword, "gi");
+                                match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                            });
+
+                            str += "<p class=\"search-result\">" + match_content +"...</p>"
+                        }
+                        str += "</li>";
+                    }
+                })};
+                str += "</ul>";
+                if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+                if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+                $resultContent.innerHTML = str;
+            });
+            proceedsearch();
+        }
+    });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+  
+
+  
+
+  
+<script type="text/javascript" async src="//push.zhanzhang.baidu.com/push.js">
+</script>
+
+
+  <!-- 按需加载背景 -->
+  <!-- 背景动画 -->
+<script type="text/javascript">
+  // 按需加载背景
+  // 如果是all，就直接加载了
+  if("pc" == "all") {
+    $.getScript("/js/src/particle.js?v=5.0.1");
+  }
+  // 识别手机或电脑的js开始
+  (function(){
+    var res = GetRequest();
+    var par = res['index'];
+    if(par!='gfan'){
+      var ua=navigator.userAgent.toLowerCase();
+      var contains=function (a, b){
+          if(a.indexOf(b)!=-1){return true;}
+      };
+      if((contains(ua,"android") && contains(ua,"mobile"))||(contains(ua,"android") && contains(ua,"mozilla"))||(contains(ua,"android") && contains(ua,"opera"))||contains(ua,"ucweb7")||contains(ua,"iphone")){
+        return false;
+      } else {
+        $.getScript("/js/src/particle.js?v=5.0.1");
+      }
+    }
+  })();
+  function GetRequest() {
+    var url = location.search;
+    var theRequest = new Object();
+    if (url.indexOf("?") != -1) {
+      var str = url.substr(1);
+      strs = str.split("&");
+      for(var i = 0; i < strs.length; i ++) {
+        theRequest[strs[i].split("=")[0]]=unescape(strs[i].split("=")[1]);
+      }
+    }
+    return theRequest;
+  }
+</script>
+<!-- 识别手机或电脑的js结束 -->  
+
+  <!-- 页面点击小红心 -->
+  <!-- 页面点击小红心 -->
+
+  <script type="text/javascript" src="/js/src/love.js?v=5.0.1"></script>
+
+
+  <!-- 鼠标移动，效果 -->
+  <!-- 鼠标移动特效 -->
+
+  <script type="text/javascript" src="/js/src/jquery-stars.js?v=5.0.1"></script>
+  <script type="text/javascript">
+  jQuery('body').jstars({
+  	image_path: '/images',
+  	image: 'candy-cane-stars.png',
+  	style: 'white',
+  	width: 34,
+  	height: 34,
+  	delay: 700,
+  	frequency: 5
+  });
+  </script>
+
+
+  <!-- 页面 title 进入/离开 效果 -->
+
+  <script type="text/javascript">var OriginTitile=document.title,st;document.addEventListener("visibilitychange",function(){document.hidden?(document.title="≡[。。]≡ 回不去了吗？!",clearTimeout(st)):(document.title="(ฅ>ω<*ฅ) Thank Vue~ "+OriginTitile,st=setTimeout(function(){document.title=OriginTitile},4e3))})</script>
+
+
+</body>
+</html>

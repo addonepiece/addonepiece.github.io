@@ -1,0 +1,1229 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Courier New:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="Java,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="行囊" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon/favicon.ico?v=5.0.1">
+
+
+
+
+
+
+<meta name="description" content="前言公司最近在改造一个之前做好的产品级大项目。这个项目之前是用的Spring MVC + jsp做的。现在我们要把这个项目改成 Spring boot + Spring MVC + mybatis + react的架构。改造后的项目将按照业务分成十几个微服务，使用Spring cloud进行服务治理。说是改造但为了满足进度和工期，我们后台的做法是找到对应的模块代码迁移到新的微服务中。在这个过程中我">
+<meta name="keywords" content="Java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="重构改善即有代码设计">
+<meta property="og:url" content="https://addonepiece.github.io/2019/12/24/java-restructure/index.html">
+<meta property="og:site_name" content="行囊">
+<meta property="og:description" content="前言公司最近在改造一个之前做好的产品级大项目。这个项目之前是用的Spring MVC + jsp做的。现在我们要把这个项目改成 Spring boot + Spring MVC + mybatis + react的架构。改造后的项目将按照业务分成十几个微服务，使用Spring cloud进行服务治理。说是改造但为了满足进度和工期，我们后台的做法是找到对应的模块代码迁移到新的微服务中。在这个过程中我">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://addonepiece.github.io/images/java-rebuild-unsetparameter.png">
+<meta property="og:image" content="https://addonepiece.github.io/images/java-rebuild-filedown.png">
+<meta property="og:image" content="https://addonepiece.github.io/images/java-rebuild-privatefile.png">
+<meta property="og:image" content="https://addonepiece.github.io/images/Java-rebuild-renamemethod.jpeg">
+<meta property="og:image" content="https://addonepiece.github.io/images/java-rebuild-delparameter.png">
+<meta property="og:image" content="https://addonepiece.github.io/images/java-rebuild-methoddown.png">
+<meta property="og:image" content="https://addonepiece.github.io/images/java-rebuild-extractsuperclass.png">
+<meta property="og:updated_time" content="2020-09-14T03:32:46.300Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="重构改善即有代码设计">
+<meta name="twitter:description" content="前言公司最近在改造一个之前做好的产品级大项目。这个项目之前是用的Spring MVC + jsp做的。现在我们要把这个项目改成 Spring boot + Spring MVC + mybatis + react的架构。改造后的项目将按照业务分成十几个微服务，使用Spring cloud进行服务治理。说是改造但为了满足进度和工期，我们后台的做法是找到对应的模块代码迁移到新的微服务中。在这个过程中我">
+<meta name="twitter:image" content="https://addonepiece.github.io/images/java-rebuild-unsetparameter.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"hide"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: undefined,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="https://addonepiece.github.io/2019/12/24/java-restructure/">
+
+
+<!-- 网页加载条 -->
+<script src="/js/src/pace.min.js"></script>
+  <title> 重构改善即有代码设计 | 行囊 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">行囊</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">大佬闫的博客</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-guestbook">
+          <a href="/guestbook" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-commenting"></i> <br>
+            
+            留言
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-example">
+          <a href="/example" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br>
+            
+            示例
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+      
+      
+        <li class="menu-item"> <a title="把这个链接拖到你的工具栏中,任何网页都可以High" href="javascript:(
+/*
+ * Copyright (C) 2016 Never_yu (Neveryu.github.io) <React.dong.yu@gmail.com>
+ * Sina Weibo (http://weibo.com/Neveryu)
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+function go() {
+
+var songs = [
+  "http://dl.stream.qqmusic.qq.com/C400001Qu4I30eVFYb.m4a?vkey=2127178E4405E7B8B268F20F05232485735CCF4FF8C1432F0360D2626D0B6C9564B5627C7AB481BBC685FEDB0946A50E97C66F0D1B008226&guid=7175649092&uin=0&fromtag=66",
+  "",
+  "",
+  ""
+];
+
+function c() {
+  var e = document.createElement("link");
+  e.setAttribute("type", "text/css");
+  e.setAttribute("rel", "stylesheet");
+  e.setAttribute("href", f);
+  e.setAttribute("class", l);
+  document.body.appendChild(e)
+}
+
+function h() {
+  var e = document.getElementsByClassName(l);
+  for (var t = 0; t < e.length; t++) {
+    document.body.removeChild(e[t])
+  }
+}
+
+function p() {
+  var e = document.createElement("div");
+  e.setAttribute("class", a);
+  document.body.appendChild(e);
+  setTimeout(function() {
+    document.body.removeChild(e)
+  }, 100)
+}
+
+function d(e) {
+  return {
+    height : e.offsetHeight,
+    width : e.offsetWidth
+  }
+}
+
+function v(i) {
+  var s = d(i);
+  return s.height > e && s.height < n && s.width > t && s.width < r
+}
+
+function m(e) {
+  var t = e;
+  var n = 0;
+  while (!!t) {
+    n += t.offsetTop;
+    t = t.offsetParent
+  }
+  return n
+}
+
+function g() {
+  var e = document.documentElement;
+  if (!!window.innerWidth) {
+    return window.innerHeight
+  } else if (e && !isNaN(e.clientHeight)) {
+    return e.clientHeight
+  }
+  return 0
+}
+
+function y() {
+  if (window.pageYOffset) {
+    return window.pageYOffset
+  }
+  return Math.max(document.documentElement.scrollTop, document.body.scrollTop)
+}
+
+function E(e) {
+  var t = m(e);
+  return t >= w && t <= b + w
+}
+
+function S() {
+  var e = document.getElementById("audio_element_id");
+  if(e != null){
+    var index = parseInt(e.getAttribute("curSongIndex"));
+    if(index > songs.length - 2) {
+      index = 0;
+    } else {
+      index++;
+    }
+    e.setAttribute("curSongIndex", index);
+    N();
+  }
+
+  e.src = i;
+  e.play()
+}
+
+function x(e) {
+  e.className += " " + s + " " + o
+}
+
+function T(e) {
+  e.className += " " + s + " " + u[Math.floor(Math.random() * u.length)]
+}
+
+function N() {
+  var e = document.getElementsByClassName(s);
+  var t = new RegExp("\\b" + s + "\\b");
+  for (var n = 0; n < e.length; ) {
+    e[n].className = e[n].className.replace(t, "")
+  }
+}
+
+function initAudioEle() {
+  var e = document.getElementById("audio_element_id");
+  if(e === null){
+    e = document.createElement("audio");
+    e.setAttribute("class", l);
+    e.setAttribute("curSongIndex", 0);
+    e.id = "audio_element_id";
+    e.loop = false;
+    e.bgcolor = 0;
+    e.addEventListener("canplay", function() {
+      setTimeout(function() {
+        x(k)
+      }, 500);
+      setTimeout(function() {
+        N();
+        p();
+        for (var e = 0; e < O.length; e++) {
+          T(O[e])
+        }
+      }, 15500)
+    }, true);
+    e.addEventListener("ended", function() {
+      N();
+      h();
+      go();
+    }, true);
+    e.innerHTML = " <p>If you are reading this, it is because your browser does not support the audio element. We recommend that you get a new browser.</p> <p>";
+    document.body.appendChild(e);
+  }
+}
+
+initAudioEle();
+var e = 30;
+var t = 30;
+var n = 350;
+var r = 350;
+
+var curSongIndex = parseInt(document.getElementById("audio_element_id").getAttribute("curSongIndex"));
+var i = songs[curSongIndex];
+
+var s = "mw-harlem_shake_me";
+var o = "im_first";
+var u = ["im_drunk", "im_baked", "im_trippin", "im_blown"];
+var a = "mw-strobe_light";
+
+/* harlem-shake-style.css，替换成你的位置，也可以直接使用：//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake-style.css */
+var f = "//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake-style.css";
+
+var l = "mw_added_css";
+var b = g();
+var w = y();
+var C = document.getElementsByTagName("*");
+var k = null;
+for (var L = 0; L < C.length; L++) {
+  var A = C[L];
+  if (v(A)) {
+    if (E(A)) {
+      k = A;
+      break
+    }
+  }
+}
+if (A === null) {
+  console.warn("Could not find a node of the right size. Please try a different page.");
+  return
+}
+c();
+S();
+var O = [];
+for (var L = 0; L < C.length; L++) {
+  var A = C[L];
+  if (v(A)) {
+    O.push(A)
+  }
+}
+})()"><i class="menu-item-icon fa fa-music fa-fw"></i> High一下</a></li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search fa-lg"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                重构改善即有代码设计
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2019-12-24T15:49:23+08:00" content="2019-12-24">
+              2019-12-24
+            </time>
+          </span>
+
+          
+            <span class="post-category">
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/后台/" itemprop="url" rel="index">
+                    <span itemprop="name">后台</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+
+          
+
+          
+          
+
+          
+              &nbsp; | &nbsp;
+              <span class="page-pv">热度
+              <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>℃
+              </span>
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>公司最近在改造一个之前做好的产品级大项目。这个项目之前是用的Spring MVC + jsp做的。现在我们要把这个项目改成 Spring boot + Spring MVC + mybatis + react的架构。改造后的项目将按照业务分成十几个微服务，使用Spring cloud进行服务治理。说是改造但为了满足进度和工期，我们后台的做法是找到对应的模块代码迁移到新的微服务中。在这个过程中我们发现了很架构，性能，编码规范等一系列问题，于是我们这支追求卓越的开发团队一致要求加强过程中对代码的重构。<br>下面我将给出一些重构切入点以便团队参考。</p>
+<h1 id="重构前提"><a href="#重构前提" class="headerlink" title="重构前提"></a>重构前提</h1><p>重构也是有前提的。重构就是对既有代码的修改，那么即有代码肯定有他原来的业务逻辑，我们进行重构时一定要满足原来的业务逻辑。那么，我们怎么保证这一点呢？那就是为即将修改的代码建立一组可靠的测试环境。这些测试是必要的，因为尽管<i style="color:#f63;">遵循重构手法可以使我避免绝大多数引入bug的情形</i>，但我毕竟不是神，还是有可能犯错。所以我需要可靠的测试环境。</p>
+<p>在此推荐大家阅读并参照《重构改善即有代码的设计》，《阿里巴巴Java开发手册》等书目进行重构。</p>
+<h1 id="重构切入点"><a href="#重构切入点" class="headerlink" title="重构切入点"></a>重构切入点</h1><h2 id="移除不必要的属性设值方法"><a href="#移除不必要的属性设值方法" class="headerlink" title="移除不必要的属性设值方法"></a>移除不必要的属性设值方法</h2><p>如果你为某个字段提供了设置函数，这就暗示这个字段值可以被改变。如果你不希望在对象被创建之后此字段还有机会被改变，那就不要为它提供设值函数，同时将该字段设置为final。这样你的意图会更加清晰，并且可以排除其值被修改的可能性—-这种可能性往往是非常大的。<br><img src="/images/java-rebuild-unsetparameter.png" alt></p>
+<h2 id="属性下放"><a href="#属性下放" class="headerlink" title="属性下放"></a>属性下放</h2><p>超类中的某个字段只被部分（而非全部）子类用到。将这个字段移到需要它的那些子类去。<br><img src="/images/java-rebuild-filedown.png" alt></p>
+<h2 id="封装字段（Encapsulate-Field）"><a href="#封装字段（Encapsulate-Field）" class="headerlink" title="封装字段（Encapsulate Field）"></a>封装字段（Encapsulate Field）</h2><p>你的类中存在一个public字段，将它声明为private，并提供相应的访问函数。<br>面向对象的首要原则之一就是封装，或者称为“数据封装”。按此原则你绝对不应该将数据声明为private，否则其他对象就有可能访问甚至修改修改这项数据，而拥有该数据的对象却毫无感觉。<br>通过这项重构手法，你可以将数据隐藏起来，并提供相应的访问函数。但它毕竟只是第一步。如果一个类除了访问函数不能提供其他行为，它终究只是一个哑巴类。这样的类不能享受对象技术带来的好处。而你知道，浪费任何一个对象都是很不好的。实施Encapsulate Field之后，我会尝试寻找到新建访问函数的代码，看看是否可以通过简单的Move Method轻快的将它们移动到新对象中。<br><img src="/images/java-rebuild-privatefile.png" alt></p>
+<h2 id="分解并重组过长的方法"><a href="#分解并重组过长的方法" class="headerlink" title="分解并重组过长的方法"></a>分解并重组过长的方法</h2><p>要知道，代码块越小，代码的功能就越容易管理，代码的处理和移动也就越轻松，可读性也会更强。对方法的行数进行限制也是很多编码规范中的要求。</p>
+<p>分解并重组过长的方法三部曲：抽取方法、移动方法、使用多态。<br>目的是：对象方法责任合理分配、代码易于维护。</p>
+<h2 id="重命名方法名"><a href="#重命名方法名" class="headerlink" title="重命名方法名"></a>重命名方法名</h2><p>函数的名称未能揭示函数的用途，则考虑对重命名方法名。<br><img src="/images/Java-rebuild-renamemethod.jpeg" alt></p>
+<h2 id="移除未使用的参数"><a href="#移除未使用的参数" class="headerlink" title="移除未使用的参数"></a>移除未使用的参数</h2><p><img src="/images/java-rebuild-delparameter.png" alt><br>程序员可能经常添加参数，却往往不愿意去掉它们。他们打的如意算盘是：无论如何，多余的参数不会引起任何问题，而且以后还可能用上它。<br>这是恶魔的诱惑，一定要把它从脑子里赶出去！参数代表着函数所需的信息，不同的参数代表不同的意义。函数调用者必须为每一个参数操心该传什么东西进去。如果你不去掉多余参数，就是让你的每一位用户多操一份心。是很不划算的。</p>
+<h2 id="方法下放"><a href="#方法下放" class="headerlink" title="方法下放"></a>方法下放</h2><p>超类中的某个方法只被部分（而非全部）子类用到。将这个方法移到需要它的那些子类去。<br><img src="/images/java-rebuild-methoddown.png" alt></p>
+<h2 id="方法隐藏"><a href="#方法隐藏" class="headerlink" title="方法隐藏"></a>方法隐藏</h2><p>有一个函数，从来没有被其他任何类使用到，将这个函数设置为private。<br>重构往往促使你修改函数的可见度。</p>
+<h2 id="简化条件语句"><a href="#简化条件语句" class="headerlink" title="简化条件语句"></a>简化条件语句</h2><p>简化条件语句（if else、switch case等），使得程序逻辑更加清楚，同时方便扩展。</p>
+<h3 id="做法"><a href="#做法" class="headerlink" title="做法"></a>做法</h3><ol>
+<li><p>合并条件语句：能合则合<br> 将多个条件合并，并以一个函数（Extract Method）的形式表示这个条件，即将复 杂逻辑判断的结果赋值给一个有意义的布尔变量名，以提高可读性。<br> 例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">// 伪代码如下</span><br><span class="line">if ((file.open(fileName, &quot;w&quot;) != null) &amp;&amp; (...) || (...)) &#123; ...</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 上面代码应该进行如下重构</span><br><span class="line">final boolean existed = (file.open(fileName, &quot;w&quot;) != null) &amp;&amp; (...) || (...); if (existed) &#123;</span><br><span class="line">... &#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>合并重复的条件执行片段<br> 重复的条件执行片段，可以提出到条件之外，根据情况提到条件之前或条件之后。</p>
+</li>
+<li>用守卫语句代替嵌套条件：特别条件直接return<br> 含义：守卫语句就是要么return要么抛异常的语句。<br> 用法：守卫语句通常用在一些不。寻常的条件处，表示一旦发生直接返回。守卫语句可以减少很多if - then - else的跳转，使逻辑变得清晰明了。有的时候，为了使用守卫语句，需要将已有的条件逆转，在逆转条件的时候不要使用非操作，这样不直接，非操作的条件都可以改成反向的条件。</li>
+<li>引入Null对象：Null对象也是对象，利用多态<br> 注意：空对象一定是常量，它们的任何成分从来不发生变化。因此，我们实现空对象的时候使用单例模式。<br> 做法：主要是考虑 NullObject和isNull方法。</li>
+</ol>
+<h2 id="提炼超类"><a href="#提炼超类" class="headerlink" title="提炼超类"></a>提炼超类</h2><p>重复代码是系统中最糟糕的东西之一。如果你在不同地方做同一件事，一旦需要修改那些代码，你就得平白做更多的修改。</p>
+<p>重复代码的某种形式就是：<br>两个类以相同的方式做类似的事情，或者以不同的方式做类似的事情。对象提供了一种简化这种情况的机制，那就是继承。<br>另一种选择就是Extract Class，这两种方案之间的选择就是继承和委托之间的选择。<br><img src="/images/java-rebuild-extractsuperclass.png" alt></p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>万能切入点，看着不顺眼的地方。但记得前提是你有良好的编码习惯,可靠的测试环境和高覆盖率的自测。<br>重构的节奏：测试、小修改、测试、小修改、测试、小修改……正是这种节奏让重构得以快速而安全地前进。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/images/blog-mobile.png" alt="dalaoyan wechat" style="width: 200px; max-width: 100%;">
+    <div>扫一扫，用手机访问本站</div>
+</div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+<blockquote class="blockquote-center" style="color: #ccc;">
+    -------------本文结束 <i class="fa fa-apple"></i> 感谢您的阅读-------------
+</blockquote>
+
+  <span id="inline-green" style="border-radius:3px;">作者</span>：<a class="link-blue" href="https://github.com/addonepiece" target="_blank">dalaoyan</a><br>有问题请 <a class="link-blue" href="https://addonepiece.github.io/guestbook" target="_blank">留言</a> 或者私信我的 <a class="link-blue" href="https://weibo.com/u/1889106977" target="_blank">微博</a>。
+
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>满分是10分的话，这篇文章你给几分</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/reward/reward_wechat.png" alt="dalaoyan WeChat Pay">
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/reward/reward_alipay.png" alt="dalaoyan Alipay">
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Java/" rel="tag"><i class="fa fa-tag"></i> Java</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/12/21/aigle-userStroies/" rel="next" title="User Stories/用户故事">
+                <i class="fa fa-chevron-left"></i> User Stories/用户故事
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/01/02/agile-scrum-pillars/" rel="prev" title="敏捷-Scrum三大支柱">
+                敏捷-Scrum三大支柱 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript">
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/avatar/avatar.png" alt="dalaoyan">
+          <p class="site-author-name" itemprop="name">dalaoyan</p>
+          <p class="site-description motion-element" itemprop="description">你的行囊，是充实，还是丢弃？看你的！</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">52</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">19</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/addonepiece" target="_blank" title="Github">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  Github
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://addonepiece.github.io/" target="_blank" title="Blog">
+                  
+                    <i class="fa fa-fw fa-blog"></i>
+                  
+                  Blog
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+          <div class="cc-license motion-element" itemprop="license">
+            <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank">
+              <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons">
+            </a>
+          </div>
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              友情链接
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://fir.im/5u9j" title="淘宝优惠券app" target="_blank">淘宝优惠券app</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://addonepiece.github.io/about/" title="个人首页" target="_blank">个人首页</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="/weblog" title="建站日志" target="_blank">建站日志</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#重构前提"><span class="nav-number">2.</span> <span class="nav-text">重构前提</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#重构切入点"><span class="nav-number">3.</span> <span class="nav-text">重构切入点</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#移除不必要的属性设值方法"><span class="nav-number">3.1.</span> <span class="nav-text">移除不必要的属性设值方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#属性下放"><span class="nav-number">3.2.</span> <span class="nav-text">属性下放</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#封装字段（Encapsulate-Field）"><span class="nav-number">3.3.</span> <span class="nav-text">封装字段（Encapsulate Field）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分解并重组过长的方法"><span class="nav-number">3.4.</span> <span class="nav-text">分解并重组过长的方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#重命名方法名"><span class="nav-number">3.5.</span> <span class="nav-text">重命名方法名</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#移除未使用的参数"><span class="nav-number">3.6.</span> <span class="nav-text">移除未使用的参数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方法下放"><span class="nav-number">3.7.</span> <span class="nav-text">方法下放</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方法隐藏"><span class="nav-number">3.8.</span> <span class="nav-text">方法隐藏</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#简化条件语句"><span class="nav-number">3.9.</span> <span class="nav-text">简化条件语句</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#做法"><span class="nav-number">3.9.1.</span> <span class="nav-text">做法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#提炼超类"><span class="nav-number">3.10.</span> <span class="nav-text">提炼超类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">3.11.</span> <span class="nav-text">总结</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+      
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        
+
+<div class="busuanzi-count">
+
+  <!-- <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script> -->
+  <!-- 上面这个是之前的，不知道为什么失效了，改成下面这个 -->
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">您是第<span class="busuanzi-value" id="busuanzi_value_site_uv"></span>个小伙伴</span>
+  
+
+  
+    <span class="site-pv">本站总浏览<span class="busuanzi-value" id="busuanzi_value_site_pv"></span>次</span>
+  
+  
+</div>
+
+
+
+        <div class="copyright">
+  
+  &copy;  2016 - 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">dalaoyan</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io" rel="external nofollow">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next" rel="external nofollow">
+    NexT.Pisces
+  </a>
+</div>
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count" style="color: #e90f92;">全站共 281k 字</span>
+</div>
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+       search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+    'use strict';
+    $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+            // get the contents from search data
+            isfetched = true;
+            $('.popup').detach().appendTo('.header-inner');
+            var datas = $( "entry", xmlResponse ).map(function() {
+                return {
+                    title: $( "title", this ).text(),
+                    content: $("content",this).text(),
+                    url: $( "url" , this).text()
+                };
+            }).get();
+            var $input = document.getElementById(search_id);
+            var $resultContent = document.getElementById(content_id);
+            $input.addEventListener('input', function(){
+                var matchcounts = 0;
+                var str='<ul class=\"search-result-list\">';
+                var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                $resultContent.innerHTML = "";
+                if (this.value.trim().length > 1) {
+                // perform local searching
+                datas.forEach(function(data) {
+                    var isMatch = true;
+                    var content_index = [];
+                    var data_title = data.title.trim().toLowerCase();
+                    var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                    var data_url = data.url;
+                    var index_title = -1;
+                    var index_content = -1;
+                    var first_occur = -1;
+                    // only match artiles with not empty titles and contents
+                    if(data_title != '' && data_content != '') {
+                        keywords.forEach(function(keyword, i) {
+                            index_title = data_title.indexOf(keyword);
+                            index_content = data_content.indexOf(keyword);
+                            if( index_title < 0 && index_content < 0 ){
+                                isMatch = false;
+                            } else {
+                                if (index_content < 0) {
+                                    index_content = 0;
+                                }
+                                if (i == 0) {
+                                    first_occur = index_content;
+                                }
+                            }
+                        });
+                    }
+                    // show search results
+                    if (isMatch) {
+                        matchcounts += 1;
+                        str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                        var content = data.content.trim().replace(/<[^>]+>/g,"");
+                        if (first_occur >= 0) {
+                            // cut out 100 characters
+                            var start = first_occur - 20;
+                            var end = first_occur + 80;
+                            if(start < 0){
+                                start = 0;
+                            }
+                            if(start == 0){
+                                end = 50;
+                            }
+                            if(end > content.length){
+                                end = content.length;
+                            }
+                            var match_content = content.substring(start, end);
+                            // highlight all keywords
+                            keywords.forEach(function(keyword){
+                                var regS = new RegExp(keyword, "gi");
+                                match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                            });
+
+                            str += "<p class=\"search-result\">" + match_content +"...</p>"
+                        }
+                        str += "</li>";
+                    }
+                })};
+                str += "</ul>";
+                if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+                if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+                $resultContent.innerHTML = str;
+            });
+            proceedsearch();
+        }
+    });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+  
+
+  
+
+  
+<script type="text/javascript" async src="//push.zhanzhang.baidu.com/push.js">
+</script>
+
+
+  <!-- 按需加载背景 -->
+  <!-- 背景动画 -->
+<script type="text/javascript">
+  // 按需加载背景
+  // 如果是all，就直接加载了
+  if("pc" == "all") {
+    $.getScript("/js/src/particle.js?v=5.0.1");
+  }
+  // 识别手机或电脑的js开始
+  (function(){
+    var res = GetRequest();
+    var par = res['index'];
+    if(par!='gfan'){
+      var ua=navigator.userAgent.toLowerCase();
+      var contains=function (a, b){
+          if(a.indexOf(b)!=-1){return true;}
+      };
+      if((contains(ua,"android") && contains(ua,"mobile"))||(contains(ua,"android") && contains(ua,"mozilla"))||(contains(ua,"android") && contains(ua,"opera"))||contains(ua,"ucweb7")||contains(ua,"iphone")){
+        return false;
+      } else {
+        $.getScript("/js/src/particle.js?v=5.0.1");
+      }
+    }
+  })();
+  function GetRequest() {
+    var url = location.search;
+    var theRequest = new Object();
+    if (url.indexOf("?") != -1) {
+      var str = url.substr(1);
+      strs = str.split("&");
+      for(var i = 0; i < strs.length; i ++) {
+        theRequest[strs[i].split("=")[0]]=unescape(strs[i].split("=")[1]);
+      }
+    }
+    return theRequest;
+  }
+</script>
+<!-- 识别手机或电脑的js结束 -->  
+
+  <!-- 页面点击小红心 -->
+  <!-- 页面点击小红心 -->
+
+  <script type="text/javascript" src="/js/src/love.js?v=5.0.1"></script>
+
+
+  <!-- 鼠标移动，效果 -->
+  <!-- 鼠标移动特效 -->
+
+  <script type="text/javascript" src="/js/src/jquery-stars.js?v=5.0.1"></script>
+  <script type="text/javascript">
+  jQuery('body').jstars({
+  	image_path: '/images',
+  	image: 'candy-cane-stars.png',
+  	style: 'white',
+  	width: 34,
+  	height: 34,
+  	delay: 700,
+  	frequency: 5
+  });
+  </script>
+
+
+  <!-- 页面 title 进入/离开 效果 -->
+
+  <script type="text/javascript">var OriginTitile=document.title,st;document.addEventListener("visibilitychange",function(){document.hidden?(document.title="≡[。。]≡ 回不去了吗？!",clearTimeout(st)):(document.title="(ฅ>ω<*ฅ) Thank Vue~ "+OriginTitile,st=setTimeout(function(){document.title=OriginTitile},4e3))})</script>
+
+
+</body>
+</html>

@@ -1,0 +1,11 @@
+这是一个我的个人博客，博客地址： [https://addonepiece.github.io/](https://addonepiece.github.io/)
+
+移动端快速访问：
+
+![my-blog](https://addonepiece.github.io/images/view-my-blog.png)
+
+## 浏览器支持 Browser support
+![Browser support](http://iissnan.com/nexus/next/browser-support.png)
+
+
+[建站日志](https://addonepiece.github.io/weblog/) | [给我留言](https://addonepiece.github.io/guestbook/)

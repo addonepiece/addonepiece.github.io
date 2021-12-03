@@ -1,0 +1,1459 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Courier New:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="Java,Solr,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="行囊" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon/favicon.ico?v=5.0.1">
+
+
+
+
+
+
+<meta name="description" content="初识Solr这几天新接触了一个Apache开源的搜索服务器Solr。 介绍Solr是一个独立的企业级搜索应用服务器，它对外提供 API 接口。用户可以通过HTTP请求向Solr服务器提出插入数据和查找请求。交互数据主要是 JSON，但也可以是 XML、CSV 或其他格式。Solr的部署分两种：单节点/SolrCloud集群。Solr和一般的NoSQL 数据库一样，它是一种非关系数据存储和处理技术。">
+<meta name="keywords" content="Java,Solr">
+<meta property="og:type" content="article">
+<meta property="og:title" content="企业级搜索应用服务器Solr（一）">
+<meta property="og:url" content="https://addonepiece.github.io/2020/06/15/solr-one/index.html">
+<meta property="og:site_name" content="行囊">
+<meta property="og:description" content="初识Solr这几天新接触了一个Apache开源的搜索服务器Solr。 介绍Solr是一个独立的企业级搜索应用服务器，它对外提供 API 接口。用户可以通过HTTP请求向Solr服务器提出插入数据和查找请求。交互数据主要是 JSON，但也可以是 XML、CSV 或其他格式。Solr的部署分两种：单节点/SolrCloud集群。Solr和一般的NoSQL 数据库一样，它是一种非关系数据存储和处理技术。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://addonepiece.github.io/images/solr1/solr1-1.png">
+<meta property="og:image" content="https://addonepiece.github.io/images/solr1/solr1-2.png">
+<meta property="og:image" content="https://addonepiece.github.io/images/solr1/solr1-3.png">
+<meta property="og:image" content="https://addonepiece.github.io/images/solr1/solr1-4.png">
+<meta property="og:image" content="https://addonepiece.github.io/images/solr1/solr1-5.png">
+<meta property="og:image" content="https://addonepiece.github.io/images/solr1/solr1-6.png">
+<meta property="og:image" content="https://addonepiece.github.io/images/solr1/solr1-7.png">
+<meta property="og:image" content="https://addonepiece.github.io/images/solr1/solr1-8.png">
+<meta property="og:image" content="https://addonepiece.github.io/images/solr1/solr1-9.png">
+<meta property="og:image" content="https://addonepiece.github.io/images/solr1/solr1-10.png">
+<meta property="og:image" content="https://addonepiece.github.io/images/solr1/solr1-11.png">
+<meta property="og:image" content="https://addonepiece.github.io/images/solr1/solr1-12.png">
+<meta property="og:image" content="https://addonepiece.github.io/images/solr1/solr1-13.png">
+<meta property="og:image" content="https://addonepiece.github.io/images/solr1/solr1-14.png">
+<meta property="og:image" content="https://addonepiece.github.io/images/solr1/solr1-15.png">
+<meta property="og:image" content="https://addonepiece.github.io/images/solr1/solr1-16.png">
+<meta property="og:image" content="https://addonepiece.github.io/images/solr1/solr1-17.png">
+<meta property="og:image" content="https://addonepiece.github.io/images/solr1/solr1-18.png">
+<meta property="og:image" content="https://addonepiece.github.io/images/solr1/solr1-19.png">
+<meta property="og:image" content="https://addonepiece.github.io/images/solr1/solr1-20.png">
+<meta property="og:image" content="https://addonepiece.github.io/images/solr1/solr1-21.png">
+<meta property="og:image" content="https://addonepiece.github.io/images/solr1/solr1-22.png">
+<meta property="og:image" content="https://addonepiece.github.io/images/solr1/solr1-23.png">
+<meta property="og:image" content="https://addonepiece.github.io/images/solr1/solr1-24.png">
+<meta property="og:image" content="https://addonepiece.github.io/images/solr1/solr1-25.png">
+<meta property="og:image" content="https://addonepiece.github.io/images/solr1/solr1-26.png">
+<meta property="og:image" content="https://addonepiece.github.io/images/solr1/solr1-27.png">
+<meta property="og:image" content="https://addonepiece.github.io/images/solr1/solr1-28.png">
+<meta property="og:image" content="https://addonepiece.github.io/images/solr1/solr1-29.png">
+<meta property="og:image" content="https://addonepiece.github.io/images/solr1/solr1-30.png">
+<meta property="og:image" content="https://addonepiece.github.io/images/solr1/solr1-31.png">
+<meta property="og:image" content="https://addonepiece.github.io/images/solr1/solr1-32.png">
+<meta property="og:image" content="https://addonepiece.github.io/images/solr1/solr1-33.png">
+<meta property="og:image" content="https://addonepiece.github.io/images/solr1/solr1-34.png">
+<meta property="og:image" content="https://addonepiece.github.io/images/solr1/solr1-35.png">
+<meta property="og:image" content="https://addonepiece.github.io/images/solr1/solr1-36.png">
+<meta property="og:image" content="https://addonepiece.github.io/images/solr1/solr1-37.png">
+<meta property="og:updated_time" content="2020-09-14T03:32:46.303Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="企业级搜索应用服务器Solr（一）">
+<meta name="twitter:description" content="初识Solr这几天新接触了一个Apache开源的搜索服务器Solr。 介绍Solr是一个独立的企业级搜索应用服务器，它对外提供 API 接口。用户可以通过HTTP请求向Solr服务器提出插入数据和查找请求。交互数据主要是 JSON，但也可以是 XML、CSV 或其他格式。Solr的部署分两种：单节点/SolrCloud集群。Solr和一般的NoSQL 数据库一样，它是一种非关系数据存储和处理技术。">
+<meta name="twitter:image" content="https://addonepiece.github.io/images/solr1/solr1-1.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"hide"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: undefined,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="https://addonepiece.github.io/2020/06/15/solr-one/">
+
+
+<!-- 网页加载条 -->
+<script src="/js/src/pace.min.js"></script>
+  <title> 企业级搜索应用服务器Solr（一） | 行囊 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">行囊</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">大佬闫的博客</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-guestbook">
+          <a href="/guestbook" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-commenting"></i> <br>
+            
+            留言
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-example">
+          <a href="/example" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br>
+            
+            示例
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+      
+      
+        <li class="menu-item"> <a title="把这个链接拖到你的工具栏中,任何网页都可以High" href="javascript:(
+/*
+ * Copyright (C) 2016 Never_yu (Neveryu.github.io) <React.dong.yu@gmail.com>
+ * Sina Weibo (http://weibo.com/Neveryu)
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+function go() {
+
+var songs = [
+  "http://dl.stream.qqmusic.qq.com/C400001Qu4I30eVFYb.m4a?vkey=2127178E4405E7B8B268F20F05232485735CCF4FF8C1432F0360D2626D0B6C9564B5627C7AB481BBC685FEDB0946A50E97C66F0D1B008226&guid=7175649092&uin=0&fromtag=66",
+  "",
+  "",
+  ""
+];
+
+function c() {
+  var e = document.createElement("link");
+  e.setAttribute("type", "text/css");
+  e.setAttribute("rel", "stylesheet");
+  e.setAttribute("href", f);
+  e.setAttribute("class", l);
+  document.body.appendChild(e)
+}
+
+function h() {
+  var e = document.getElementsByClassName(l);
+  for (var t = 0; t < e.length; t++) {
+    document.body.removeChild(e[t])
+  }
+}
+
+function p() {
+  var e = document.createElement("div");
+  e.setAttribute("class", a);
+  document.body.appendChild(e);
+  setTimeout(function() {
+    document.body.removeChild(e)
+  }, 100)
+}
+
+function d(e) {
+  return {
+    height : e.offsetHeight,
+    width : e.offsetWidth
+  }
+}
+
+function v(i) {
+  var s = d(i);
+  return s.height > e && s.height < n && s.width > t && s.width < r
+}
+
+function m(e) {
+  var t = e;
+  var n = 0;
+  while (!!t) {
+    n += t.offsetTop;
+    t = t.offsetParent
+  }
+  return n
+}
+
+function g() {
+  var e = document.documentElement;
+  if (!!window.innerWidth) {
+    return window.innerHeight
+  } else if (e && !isNaN(e.clientHeight)) {
+    return e.clientHeight
+  }
+  return 0
+}
+
+function y() {
+  if (window.pageYOffset) {
+    return window.pageYOffset
+  }
+  return Math.max(document.documentElement.scrollTop, document.body.scrollTop)
+}
+
+function E(e) {
+  var t = m(e);
+  return t >= w && t <= b + w
+}
+
+function S() {
+  var e = document.getElementById("audio_element_id");
+  if(e != null){
+    var index = parseInt(e.getAttribute("curSongIndex"));
+    if(index > songs.length - 2) {
+      index = 0;
+    } else {
+      index++;
+    }
+    e.setAttribute("curSongIndex", index);
+    N();
+  }
+
+  e.src = i;
+  e.play()
+}
+
+function x(e) {
+  e.className += " " + s + " " + o
+}
+
+function T(e) {
+  e.className += " " + s + " " + u[Math.floor(Math.random() * u.length)]
+}
+
+function N() {
+  var e = document.getElementsByClassName(s);
+  var t = new RegExp("\\b" + s + "\\b");
+  for (var n = 0; n < e.length; ) {
+    e[n].className = e[n].className.replace(t, "")
+  }
+}
+
+function initAudioEle() {
+  var e = document.getElementById("audio_element_id");
+  if(e === null){
+    e = document.createElement("audio");
+    e.setAttribute("class", l);
+    e.setAttribute("curSongIndex", 0);
+    e.id = "audio_element_id";
+    e.loop = false;
+    e.bgcolor = 0;
+    e.addEventListener("canplay", function() {
+      setTimeout(function() {
+        x(k)
+      }, 500);
+      setTimeout(function() {
+        N();
+        p();
+        for (var e = 0; e < O.length; e++) {
+          T(O[e])
+        }
+      }, 15500)
+    }, true);
+    e.addEventListener("ended", function() {
+      N();
+      h();
+      go();
+    }, true);
+    e.innerHTML = " <p>If you are reading this, it is because your browser does not support the audio element. We recommend that you get a new browser.</p> <p>";
+    document.body.appendChild(e);
+  }
+}
+
+initAudioEle();
+var e = 30;
+var t = 30;
+var n = 350;
+var r = 350;
+
+var curSongIndex = parseInt(document.getElementById("audio_element_id").getAttribute("curSongIndex"));
+var i = songs[curSongIndex];
+
+var s = "mw-harlem_shake_me";
+var o = "im_first";
+var u = ["im_drunk", "im_baked", "im_trippin", "im_blown"];
+var a = "mw-strobe_light";
+
+/* harlem-shake-style.css，替换成你的位置，也可以直接使用：//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake-style.css */
+var f = "//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake-style.css";
+
+var l = "mw_added_css";
+var b = g();
+var w = y();
+var C = document.getElementsByTagName("*");
+var k = null;
+for (var L = 0; L < C.length; L++) {
+  var A = C[L];
+  if (v(A)) {
+    if (E(A)) {
+      k = A;
+      break
+    }
+  }
+}
+if (A === null) {
+  console.warn("Could not find a node of the right size. Please try a different page.");
+  return
+}
+c();
+S();
+var O = [];
+for (var L = 0; L < C.length; L++) {
+  var A = C[L];
+  if (v(A)) {
+    O.push(A)
+  }
+}
+})()"><i class="menu-item-icon fa fa-music fa-fw"></i> High一下</a></li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search fa-lg"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                企业级搜索应用服务器Solr（一）
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2020-06-15T15:32:20+08:00" content="2020-06-15">
+              2020-06-15
+            </time>
+          </span>
+
+          
+            <span class="post-category">
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/后台/" itemprop="url" rel="index">
+                    <span itemprop="name">后台</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+
+          
+
+          
+          
+
+          
+              &nbsp; | &nbsp;
+              <span class="page-pv">热度
+              <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>℃
+              </span>
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="初识Solr"><a href="#初识Solr" class="headerlink" title="初识Solr"></a>初识Solr</h1><p>这几天新接触了一个Apache开源的搜索服务器Solr。</p>
+<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>Solr是一个独立的企业级搜索应用服务器，它对外提供 API 接口。用户可以通过HTTP请求向Solr服务器提出插入数据和查找请求。交互数据主要是 JSON，但也可以是 XML、CSV 或其他格式。<br>Solr的部署分两种：单节点/SolrCloud集群。<br>Solr和一般的NoSQL 数据库一样，它是一种非关系数据存储和处理技术。存储结构是文档，文档都是扁平结构的，文档之间不存在相互依赖关系。</p>
+<p>为什么要solr：</p>
+<ul>
+<li>solr是将整个索引操作功能封装好了的搜索引擎系统(企业级搜索引擎产品)。</li>
+<li>solr可以部署到单独的服务器上(WEB服务)，它可以提供服务，我们的业务系统就只要发送请求，接收响应即 可，降低了业务系统的负载。</li>
+<li>solr部署在专门的服务器上，它的索引库就不会受业务系统服务器存储空间的限制。</li>
+<li>solr支持分布式集群，索引服务的容量和能力可以线性扩展。</li>
+</ul>
+<h2 id="windows下安装Solr"><a href="#windows下安装Solr" class="headerlink" title="windows下安装Solr"></a>windows下安装Solr</h2><p>安装 1.8+ 版本jdk。<br>下载solr-8.4.1.zip，并解压到自定义路径下。<a href="http://apache.cs.utah.edu/lucene/solr/8.4.1/solr-8.4.1.zip" target="_blank" rel="noopener">http://apache.cs.utah.edu/lucene/solr/8.4.1/solr-8.4.1.zip</a><br><img src="/images/solr1/solr1-1.png" alt><br>使用bin\solr.cmd，启动和停止 Solr、创建核心和集合、检查系统的状态…<br>这里只介绍启动单个Solr节点。</p>
+<p>solr 启动、停止、重启命令<br>solr.cmd start -p 端口号<br>solr.cmd stop -all<br>solr.cmd restart -p 端口号<br>启动 Solr。默认端口：8983。<br><img src="/images/solr1/solr1-2.png" alt><br>检查Solr是否正在运行。<br><img src="/images/solr1/solr1-3.png" alt><br>访问管理控制台：<a href="http://localhost:8983/solr/" target="_blank" rel="noopener">http://localhost:8983/solr/</a><br>需要创建一个core才能进行索引和搜索。<br><img src="/images/solr1/solr1-4.png" alt><br>接下来就可以把文档存放到这个core上了。<br>core我的理解是：一个Solr 服务器实例，在实例上可以进行数据的CRUD了。这个数据一般存放类型相同的一类文档。我这边干脆就取名为user，准备放user一类的文档数据了。<br>一个Solr服务可以有多个core。<br><img src="/images/solr1/solr1-5.png" alt><br>core配置文件介绍：<br><img src="/images/solr1/solr1-6.png" alt></p>
+<ul>
+<li>solr.xml：为Solr 服务器实例指定配置选项。</li>
+<li>每个 Solr 核心：<ul>
+<li>core.properties：为每个核心定义特定的属性，例如其名称、模式的位置以及其他参数。</li>
+<li>solrconfig.xml：控制高级行为。主要定义了Solr的一些处理规则，包括索引数据的存放位置，更新，删除，查询的一些规则配置。</li>
+<li>managed-schema：描述将要求 Solr 索引的文档。为文档量身配置各种规则。这个配置文件非常重要。可以定义字段如何索引，字段类型有多少filter chain分词器、过滤器…以及其他很重要的配置。修改配置可以通过http请求api修改。</li>
+<li>data/：索引、日志文件等。</li>
+</ul>
+</li>
+</ul>
+<h2 id="字段、字段类型等配置说明"><a href="#字段、字段类型等配置说明" class="headerlink" title="字段、字段类型等配置说明"></a>字段、字段类型等配置说明</h2><h3 id="字段定义"><a href="#字段定义" class="headerlink" title="字段定义"></a>字段定义</h3><p><img src="/images/solr1/solr1-7.png" alt><br>name：该字段的名称。<br>type：该fieldType字段的名称，必填。<br>indexed：如果为 true，则可以在查询中使用该字段的值来检索匹配的文档。默认true。<br>…</p>
+<h3 id="字段类型定义"><a href="#字段类型定义" class="headerlink" title="字段类型定义"></a>字段类型定义</h3><p><img src="/images/solr1/solr1-8.png" alt><br><img src="/images/solr1/solr1-9.png" alt><br>name：fieldType 的名称<br>class：用于存储和索引此类型数据的类名<br>索引（indexed）：如果为 true，则可以在查询中使用该字段的值来检索匹配的文档。默认true<br>存储（stored）: 如果为 true，则字段的实际值可以通过查询来检索。默认true<br>docValues：如果为 true，则该字段的值将被放入一个面向列的 DocValues 结构中。<br>…</p>
+<h3 id="Schema-API-操作managed-schema"><a href="#Schema-API-操作managed-schema" class="headerlink" title="Schema API 操作managed-schema"></a>Schema API 操作managed-schema</h3><p>使用 HTTP API 来管理这些配置<br><img src="/images/solr1/solr1-10.png" alt><br><img src="/images/solr1/solr1-11.png" alt><br>可以看到uesr这个core中，申明的字段和索引情况。<br><img src="/images/solr1/solr1-12.png" alt><br>add-field<br><img src="/images/solr1/solr1-13.png" alt><br>刚定义的字段，在文档中生成了<br><img src="/images/solr1/solr1-14.png" alt></p>
+<h2 id="Solr分析器、标记器和过滤器"><a href="#Solr分析器、标记器和过滤器" class="headerlink" title="Solr分析器、标记器和过滤器"></a>Solr分析器、标记器和过滤器</h2><p><img src="/images/solr1/solr1-15.png" alt><br>标记器：Tokenizer 的工作是将文本流分解为令牌，其中每个令牌（通常）是文本中字符的子序列。分析器知道它配置的字段，但 tokenizer 不是。Tokenizers 从字符流（Reader）中读取并生成一系列令牌对象（TokenStream）。<br><img src="/images/solr1/solr1-16.png" alt><br>过滤器：过滤器的工作通常比 tokenizer 更容易，因为在大多数情况下，过滤器会依次查看流中的每个标记，并决定是否将其传递、替换或丢弃。<br><img src="/images/solr1/solr1-17.png" alt><br>去管理页面，感受下分析器、标记器和过滤器是如何链式运作的<br><img src="/images/solr1/solr1-18.png" alt></p>
+<h2 id="上传数据"><a href="#上传数据" class="headerlink" title="上传数据"></a>上传数据</h2><p>Solr 可以接受来自许多不同来源的数据，包括 XML 文件、JSON文件、逗号分隔值（CSV）文件、从数据库表格中提取的数据以及常用文件格式（如 Microsoft Word 或 PDF）中的文件。<br>介绍3种方式，第一种方式用来上传数据库数据，后两种方式比较常见。<br>①Solr DataImportHandler<br>②HTTP 请求到 Solr 服务器来上传 XML 文件、json文件。XML格式的更新请求可以使用 Content-type: application/xml 或者 Content-type: text/xml 作为 XML 消息发送到更新处理程序；JSON 格式的更新请求可以使用 Content-Type: application/json 或 Content-Type: text/json 发送到 Solr 的 /update 处理程序。<br>③编写自定义 Java 应用程序以通过 SolrJ来获取数据（推荐）<br>前期准备： 添加field，与数据库表的字段对应起来<br>这是我们的数据源，将前5个作为字段传输。这里准备了435510 条数据<br><img src="/images/solr1/solr1-19.png" alt><br>先确认。这5个字段，managed-schema没被定义过<br>使用Postman 批量添加field<br><img src="/images/solr1/solr1-20.png" alt></p>
+<h3 id="Solr-DataImportHandler来上传数据库数据"><a href="#Solr-DataImportHandler来上传数据库数据" class="headerlink" title="Solr DataImportHandler来上传数据库数据"></a>Solr DataImportHandler来上传数据库数据</h3><p>DataImportHandler提供一种可配置的方式向Solr导入数据，可以全量导入，也可以增量导入，还可声明式提供可配置的任务调度，让数据定时从关系型数据库中更新数据到Solr服务器。详见<br><a href="https://blog.csdn.net/qq_41674409/article/details/85143606" target="_blank" rel="noopener">https://blog.csdn.net/qq_41674409/article/details/85143606</a><br>下载 mysql-connector-java-5.1.40.jar（版本不要太高，会不兼容） 添加到solr-8.4.1\server\solr-webapp\webapp\WEB-INF\lib 下。<br>将solr-dataimporthandler-8.4.1.jar 、solr-dataimporthandler-extras-8.4.1.jar 从 solr-8.4.1\dist 复制到solr-8.4.1\server\solr-webapp\webapp\WEB-INF\lib 下。<br>修改 solrconfig.xml 添加 dataImport 请求资源映射。添加在<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">config</span>&gt;</span><span class="tag">&lt;/<span class="name">config</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p><img src="/images/solr1/solr1-21.png" alt><br>\solr-8.4.1\server\solr\user\conf目录下创建 data-config.xml，配置访问数据库的用户名、密码、查询语句，column对应数据库中字段、name对应solr的schema.xml中字段。<br><img src="/images/solr1/solr1-22.png" alt><br>重启Solr： solr restart -p 8983<br>导入数据<br><img src="/images/solr1/solr1-23.png" alt><br>查看数据<br><img src="/images/solr1/solr1-24.png" alt><br><img src="/images/solr1/solr1-25.png" alt></p>
+<h3 id="HTTP-请求到-Solr-服务器来上传-XML-文件"><a href="#HTTP-请求到-Solr-服务器来上传-XML-文件" class="headerlink" title="HTTP 请求到 Solr 服务器来上传 XML 文件"></a>HTTP 请求到 Solr 服务器来上传 XML 文件</h3><p>准备好满足条件的xml文件，格式为：<br><img src="/images/solr1/solr1-26.png" alt><br>新开一个core，并配置field。<br><img src="/images/solr1/solr1-27.png" alt><br><img src="/images/solr1/solr1-28.png" alt><br>查看数据<br><img src="/images/solr1/solr1-29.png" alt></p>
+<h3 id="编写自定义-Java-应用程序以通过-SolrJ来获取数据"><a href="#编写自定义-Java-应用程序以通过-SolrJ来获取数据" class="headerlink" title="编写自定义 Java 应用程序以通过 SolrJ来获取数据"></a>编写自定义 Java 应用程序以通过 SolrJ来获取数据</h3><p>SolrJ导入，放在下面SolrJ模块。</p>
+<h2 id="Solr搜索"><a href="#Solr搜索" class="headerlink" title="Solr搜索"></a>Solr搜索</h2><h3 id="Solr搜索的工作流程"><a href="#Solr搜索的工作流程" class="headerlink" title="Solr搜索的工作流程"></a>Solr搜索的工作流程</h3><p><img src="/images/solr1/solr1-30.png" alt><br>补充：下列这些情况，建议该字段配置docValues属性，提高性能。<br>需要聚合的字段，包括sort，agg，group，facet等 。<br>需要提供函数查询的字段。<br>需要高亮的字段。</p>
+<h3 id="通用查询参数"><a href="#通用查询参数" class="headerlink" title="通用查询参数"></a>通用查询参数</h3><ol>
+<li><p>defType 参数<br>defType 参数指定 Solr 应该用来处理请求中的主查询参数（q）的查询解析器。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">defType=dismax</span><br></pre></td></tr></table></figure>
+<p> Solr中提供了三种解析器供选择：<br> lucene：   solr的Standard Query Parser  标准查询解析器（默认）<br> dismax：   DisMax Query Parser<br> edismax： Extended DisMax Query Parser (eDismax)</p>
+</li>
+<li><p>sort 参数<br>sort 参数按升序 (asc) 或降序 (desc) 顺序排列搜索结果。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sort=&lt;field name&gt;&lt;direction&gt;,&lt;field name&gt;&lt;direction&gt;],…</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>start 参数<br>分页查询的起始行号，默认为0；</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">start=0</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>rows 参数<br>将查询的结果分页，返回最大文档数目。默认值是10。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rows=20</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>fq（Filter Query）参数<br>fq 参数定义了一个查询，可以用来限制可以返回的文档的超集，而不影响 score。这对于加快复杂查询非常有用，因为指定的查询 fq 是独立于主查询而被缓存的。当以后的查询使用相同的过滤器时，会有一个缓存命中，过滤器结果从缓存中快速返回。<br>fq的传参说明：<br>在下面的例子中，只有流行度大于10并且段落为0的文档才会匹配。<br>可以一次传传多个fq：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fq=popularity:[10 TO *]&amp;fq=section:0</span><br></pre></td></tr></table></figure>
+<p> 也可将多个过滤条件组合在一个fq:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fq=+popularity:[10 TO *] +section:0</span><br></pre></td></tr></table></figure>
+<p> 每个过滤器查询的文档集都是独立缓存的，几个fq就缓存几个过滤结果集。</p>
+</li>
+<li><p>fl（Field List）参数<br>该 fl 参数将查询响应中包含的信息限制在指定的字段列表中。这些字段必须是 stored=”true” 或 docValues=”true”。<br>字段列表可以指定为空格分隔或逗号分隔的字段名称列表。<br>通配符 * 选择文档中的所有字段，它们是 stored=”true”、docValues=”true” 和 useDocValuesAsStored=”true”。<br>还可以添加伪字段（pseudo-fields）、函数和变换器。<br>示例：<br><img src="/images/solr1/solr1-31.png" alt><br>函数与 fl：<br>可以为结果中的每个文档计算函数，并将其作为伪字段（pseudo-field）返回：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fl=id,title,product(price,popularity)</span><br></pre></td></tr></table></figure>
+<p> 文件变换器与 fl：<br> 文档变换器可以用来修改查询结果中每个文档返回的信息：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fl=id,title,[explain]</span><br></pre></td></tr></table></figure>
+<p> 字段名称别名：<br> 可以通过使用 “displayName” 前缀来更改对字段、函数或转换器的响应中使用的键。例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">l=id,sales_price:price,secret_sauce:prod(price,popularity),why_score:[explain style=nl]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>debug 参数<br>用于指定在结果中返回调试信息。</p>
+</li>
+<li>timeAllowed 参数<br>限定查询在多少毫秒内返回，如果到时间了还未执行完成，则直接返回部分结果。</li>
+<li>wt 参数<br>指定响应的内容格式：json、xml、csv……  SearchHandler根据它选择ResponseWriter。默认JSON 将作为响应的格式返回。</li>
+<li>cache 参数<br>设置是否对查询结果、过滤查询的结果进行缓存。默认是都会被缓存的。如果不需要缓存明确设置 cache=false。<br>…</li>
+</ol>
+<h3 id="查询解析器"><a href="#查询解析器" class="headerlink" title="查询解析器"></a>查询解析器</h3><ul>
+<li>标准查询解析器</li>
+<li>DisMax 查询解析器</li>
+<li>扩展的 DisMax 查询解析器</li>
+<li>其他解析器<br>查询解析器插件是 QParserPlugin 的所有子类。可自定义扩展自己的查询分析器。</li>
+</ul>
+<h4 id="标准查询解析器"><a href="#标准查询解析器" class="headerlink" title="标准查询解析器"></a>标准查询解析器</h4><p>Solr 的标准查询解析器（Query Parser）也被称为 “lucene” 解析器。<br>标准查询解析器的关键优势在于它支持强大且相当直观的语法，允许您创建各种结构化查询。最大的缺点是它不容忍出现语法错误，与 DisMax 查询解析器相比， DisMax 查询解析器的设计目的是尽可能地减少抛出错误。</p>
+<h5 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h5><p>q<br>使用标准查询语法定义查询。必须项。<br>……</p>
+<h5 id="响应"><a href="#响应" class="headerlink" title="响应"></a>响应</h5><p>我们通过Solr Admin页面-Query来看看吧。内核user上，有我们之前存入的大量数据。<br><img src="/images/solr1/solr1-32.png" alt><br><img src="/images/solr1/solr1-33.png" alt></p>
+<h5 id="指定标准查询分析器的条件"><a href="#指定标准查询分析器的条件" class="headerlink" title="指定标准查询分析器的条件"></a>指定标准查询分析器的条件</h5><p>检索词<br>有2种类型的检索词：单词和短语</p>
+<ul>
+<li>单词是一个单独的词，例如 “test” 或 “hello”</li>
+<li>短语是一组由双引号包围的词组，如 “hello dolly”<br>多个检索词可以与布尔运算符组合在一起，形成更复杂的查询（如下所述）：</li>
+</ul>
+<p>操作符<br>条件修饰<br>根据需要，Solr支持多样的能够增加灵活度或精度的检索词模糊匹配。这些模糊匹配包括可以进行模糊查询或一般查询的通配符。</p>
+<ul>
+<li>通配符查询<br>solr标准查询支持在单词中使用一个或多个通配符。通配符可以应用于单词，但不能用于短语中。<table><br>  <tr><br>      <td>通配符查询类型</td><br>      <td>字符</td><br>      <td>示例</td><br>  </tr><br>  <tr><br>      <td>单个字符（匹配单个字符）</td><br>      <td>？</td><br>      <td>搜索字符串te?t将匹配 test 和 text。</td><br>  </tr><br>  <tr><br>      <td>多个字符（匹配0个或多个字符） </td><br>      <td> * </td><br>      <td>tes* -&gt; test, testing, 或 tester。<br>te*t -&gt; test 或 text. <br>*est -&gt; pest 或 test</td><br>  </tr><br></table></li>
+<li><p>模糊查询<br>在单词词尾添加波浪号 〜 符号</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">roam~</span><br></pre></td></tr></table></figure>
+<p>  这个搜索将匹配像 roams、foam、foams。它也将匹配“roam”这个词本身。<br>  一个可选的距离参数指定的最大可编辑数介于0和2之间，默认为2。例如：</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">roam~1</span><br></pre></td></tr></table></figure>
+<p>  这将匹配 roams 和 foam 等术语，但不包括 foams，因为它的编辑距离为“2”。</p>
+</li>
+<li><p>邻近搜索<br>邻近查询将查询一个检索词与另一个检索词有指定距离的结果。<br>执行邻近查询，在查询检索词组最后添加～符号和一个数值。比如，要查询文档中的 “apache” 和 “jakarta” 之间有10个单词：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&quot;jakarta apache&quot;~10</span><br></pre></td></tr></table></figure>
+<p>  这里所说的距离，是匹配指定检索词所需移动单词的数量。在上面的例子中，“apache” 和 “jakarta” 之间有10个词的距离则匹配。如果 “apache” 在 “jakarta” 前面，则需要更大的数，使 “apache” 能够在 “jakarta” 后面。</p>
+</li>
+<li><p>范围搜索<br>范围搜索指定字段的值范围。如果是非数字字段，按照字典排序。<br>比如，下面的例子是匹配所有的mod_date检索字段在20020101和20030101之间的结果（包括20020101和20030101）：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mod_date:[20020101 TO 20030101]</span><br></pre></td></tr></table></figure>
+<p>  范围查询不限于日期字段或数字格式，还可以查询非日期字段：</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">title:&#123;Aida TO Carmen&#125;</span><br></pre></td></tr></table></figure>
+<p>  将会查询所有 title 在 Aida 与 Carmen之间的文档（不包括Aida 和 Carmen）。<br>  通过括号决定是否包括上限和下限：<br>  1.方括号[]表示包含上限和下限；<br>  2.花括号{}表示不包含上限和下限；<br>  3.也可以同时使用两种括号，表示一个包含，一个不包含，比如：count:{ 1 TO 10 ]。</p>
+</li>
+<li><p>控制相关度查询<br>加权查询允许通过加权单词控制文档的相关度。比如，你查询 “jakarta apache” ，并且希望 “jakarta” 相关度更高，你可以使用 ^符号，比如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jakarta^4 apache</span><br></pre></td></tr></table></figure>
+<p>  默认，加权因子是1。尽管加权因子必须是正数，但是可以小于1（比如，0.2）。</p>
+</li>
+<li><p>使用“^=”打分<br>常量打分查询使用 &lt;query_clause&gt;^=<score>，对整个变量设置指定分值。当你只关心一个特定的匹配条件，不希望其他因素产生影响，比如检索词频率或逆文献频率。<br>例如：</score></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(description:blue OR color:blue)^=1.0 text:shoes</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查询指定字段<br>在solr中对数据创建索引是以字段为基准的，这是在solr的managed-schema文件中定义的。<br>搜索可以利用字段增加查询精度。比如，你可以指定一个字段来搜索，比如一个title字段。<br>在managed-schema文件中定义一个字段作为默认字段。如果你在查询的时候没有指定字段，solr只搜索默认字段。另外，你可以在查询过程中指定一个字段或字段组合。<br>要指定一个字段，只需要在检索词前面加上字段和冒号（:），然后就能够使用这个字段进行查询了。<br>比如，假设一个索引包括两个字段，title和text，并且text是默认字段。如果你想查询查询名为The Right Way的文档和包含don’t go this way的文档，你可以使用下面的检索方法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">title:&quot;The Right Way&quot; AND text:&quot;don&apos;t go this way&quot;</span><br><span class="line">title:&quot;Do it right&quot; AND &quot;don&apos;t go this way&quot;</span><br></pre></td></tr></table></figure>
+<p>  既然text是默认字段，可以不用明确指明；所以，上面第二种方式忽略它。<br>  默认字段先于指定字段，所以查询title:Do it right将只在title字段查询Do，在默认字段上查询it和right。</p>
+</li>
+<li><p>标准查询支持的布尔运算符<br>布尔运算符可以在查询时使用布尔逻辑，在匹配文档时查询存在或不存在指定检索词或条件。下面的表格总结了标准查询可以使用的布尔运算符。<br><table><br><tr><br>  <td>布尔运算符</td><br>  <td>替代符号</td><br>  <td>描述</td><br></tr><br><tr><br>  <td>AND</td><br>  <td>&amp;&amp;</td><br>  <td>要求在布尔运算符两侧的任何一方都要匹配。</td><br></tr><br><tr><br>  <td>NOT </td><br>  <td>!</td><br>  <td>要求对应搜索词不存在。</td><br></tr><br><tr><br>  <td>OR</td><br>  <td>||</td><br>  <td>要求布尔运算符两侧一个或两个检索词都会出现。</td><br></tr><br><tr><br>  <td></td><br>  <td>+</td><br>  <td>要求符号”+”后的项必须在文档相应的域中存在</td><br></tr><br><tr><br>  <td></td><br>  <td>-</td><br>  <td>要求符号”-”后的项不存在。</td><br></tr><br></table><br>布尔运算符允许使用逻辑运算符的组合检索词。Lucene支持<code>AND</code>、<code>+</code>、<code>OR</code>、<code>NOT</code>和<code>-</code>作为逻辑运算符。<br>注：<br>当使用关键词（如AND、NOT）指定布尔表达式时，必须使用大写字母。</p>
+<p>  布尔运算符OR (||)<br>  OR运算符是默认运算符。这就意味着，如果两个检索词之间没有布尔表达式，默认使用OR运算符。OR运算符链接的两个检索词，如果任何一个检索词存在文档中，这个文档将成为匹配文档。这就相当于并集。可以使用||代替OR。查询包含 “jakarta apache” 或 “jakarta,”，可以使用</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&quot;jakarta apache&quot; jakarta</span><br><span class="line">&quot;jakarta apache&quot; OR jakarta</span><br></pre></td></tr></table></figure>
+<p>  布尔运算符AND (&amp;&amp;)<br>  AND操作要求在一个文档中包含两个检索词，这相当于交集。可以使用&amp;&amp;代替AND。<br>  要查询包含 “jakarta apache” 和 “Apache Lucene”的文档，可以使用</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&quot;jakarta apache&quot; AND &quot;Apache Lucene&quot;</span><br><span class="line">&quot;jakarta apache&quot; &amp;&amp; &quot;Apache Lucene&quot;</span><br></pre></td></tr></table></figure>
+<p>  布尔运算符NOT (!)<br>  NOT运算符不包括那些包含NOT之后的检索词的文档。这相当于差集。可以使用!代替NOT。<br>  要查询包含 “jakarta apache” 但不包括 “Apache Lucene”的文档，可以使用</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&quot;jakarta apache&quot; NOT &quot;Apache Lucene&quot;</span><br><span class="line">&quot;jakarta apache&quot; ! &quot;Apache Lucene&quot;</span><br></pre></td></tr></table></figure>
+<p>  布尔运算符+<br>  +要求+之后检索词存在于至少一个文档的某个字段中，以便查询返回。<br>  比如，要查询文件，必须包含”jakarta”，可能或可能不包含”lucene”，可以使用查询</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">+jakarta lucene</span><br></pre></td></tr></table></figure>
+<p>  布尔运算符-<br>  -或“禁止”运算符不包括符号后包含检索词的文件。<br>  比如，要查询文件，必须包含”jakarta apache”，不包含”Apache Lucene”，可以使用查询</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&quot;jakarta apache&quot; -&quot;Apache Lucene&quot;</span><br></pre></td></tr></table></figure>
+<p>  转义特殊字符<br>  在solr的一次查询中，下列字符存在特殊含义：+ - &amp;&amp; || ! ( ) { } [ ] ^ “ ~ * ? : /。<br>  为了让solr解读这些字符时使用字面量，而不是特殊字符，可以在字符前加一个反斜杠\字符。例如，查询(1+1):2，为了不让solr把+、括号()对两个检索词进行子查询，需要在特殊字符前加上反斜杠转义字符：\(1\+1\)\:2。</p>
+<p>  分组子查询<br>  支持使用括号来组合子句形式的子查询。如果你想控制一个查询的布尔逻辑，这是非常有用的。<br>  The query below searches for either “jakarta” or “apache” and “website”:<br>  下面的查询搜索 “jakarta” 或 “apache” 和 “website”：(jakarta OR apache) AND website。<br>  这样增加了查询的准确性，“website”必须存在，需要”jakarta” 或 “apache” 存在。</p>
+<p>  group从句作为字段<br>  在查询过程中多一个字段使用两个或多个布尔运算符，需要使用括号组织布尔从句。比如，下面查询title字段必须包含”return”单词和”pink panther”短语：title:(+return +”pink panther”)。</p>
+<p>  注释<br>  在查询串中支持C语言风格的注释。比如：”jakarta apache” /* 这是在一个普通查询串中间的注释 */ OR jakarta。注释可以被嵌套。</p>
+</li>
+</ul>
+<h4 id="DisMax-查询解析器"><a href="#DisMax-查询解析器" class="headerlink" title="DisMax 查询解析器"></a>DisMax 查询解析器</h4><p>DisMax查询解析器设计用于处理用户输入的简单短语（无复杂语法），并根据每个字段的重要性使用不同的权重（升序）在多个字段中搜索单个术语。其他选项允许用户根据特定于每个用例的规则（独立于用户输入）影响分数。<br>一般来说，与“Lucene”Solr查询解析器的接口相比，DisMax查询解析器的接口更像Google的接口。这种相似性使DisMax成为许多用户应用程序的适当查询解析器。它接受一个简单的语法，很少产生错误消息。<br>DisMax查询解析器主要设计为易于使用，并且几乎可以接受任何输入而不返回错误。<br>语法：略</p>
+<h4 id="扩展的-DisMax-查询解析器：eDismax"><a href="#扩展的-DisMax-查询解析器：eDismax" class="headerlink" title="扩展的 DisMax 查询解析器：eDismax"></a>扩展的 DisMax 查询解析器：eDismax</h4><p>除了支持所有的 DisMax 查询解析器参数外，同时支持完整的 Lucene 查询分析器语法，它与 Solr 的标准查询解析器具有相同的增强功能。</p>
+<h3 id="Solr的函数查询"><a href="#Solr的函数查询" class="headerlink" title="Solr的函数查询"></a>Solr的函数查询</h3><p>函数查询允许你使用一个或多个数字字段的真实值生成一个相关性分数，函数查询在standard，DisMax，eDisMax下都能使用。<br>查询函数可以是常量，字段或者其他函数的组合。使用函数可以影响结果的排序。</p>
+<h4 id="使用Function-Query"><a href="#使用Function-Query" class="headerlink" title="使用Function Query"></a>使用Function Query</h4><ol>
+<li><p>直接向QParser指定函数参数，如func或frange：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">q=&#123;!func&#125;div(popularity,price)&amp;fq=&#123;!frange l=1000&#125;customer_ratings</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在排序时使用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sort=div(popularity,price) desc, score desc</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>将函数的结果作为伪字段（pseudo-fields）添加到查询结果中的文档</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&amp;fl=sum(x, y),id,a,b,c,score</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>指定函数的一个参数：在dDisMax中指定boost参数，在DisMax中指定bf参数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">q=dismax&amp;bf=&quot;ord(popularity)^0.5 recip(rord(price),1,1000,1000)^0.3&quot;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在Lucene的QParser中使用<em>val</em>关键字指定函数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">q=_val_:mynumericfield _val_:&quot;recip(rord(myfield),1,2,3)&quot;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h4 id="使用Function-Query-1"><a href="#使用Function-Query-1" class="headerlink" title="使用Function Query"></a>使用Function Query</h4><p>Solr中的可用函数<br>todo</p>
+<h3 id="响应编写器"><a href="#响应编写器" class="headerlink" title="响应编写器"></a>响应编写器</h3><p>Solr 支持各种响应编写器，以确保查询响应可以被适当的语言或应用程序解析。<br>该 wt 参数选择要使用的响应编写器。</p>
+<ul>
+<li>JSON</li>
+<li>XML</li>
+<li>CSV</li>
+<li>GeoJSON</li>
+<li>javabin</li>
+<li>PHP</li>
+<li>PHPS</li>
+<li>python</li>
+<li>ruby</li>
+<li>smile</li>
+<li>velocity</li>
+<li>XLSX</li>
+<li>XSLT</li>
+</ul>
+<h4 id="JSON响应编写器"><a href="#JSON响应编写器" class="headerlink" title="JSON响应编写器"></a>JSON响应编写器</h4><p>默认的 Solr 响应编写器是 JsonResponseWriter。在请求中没有设置 wt 参数，则默认情况下将获得 JSON。<br>参数介绍：略</p>
+<h4 id="标准的XML响应编写器"><a href="#标准的XML响应编写器" class="headerlink" title="标准的XML响应编写器"></a>标准的XML响应编写器</h4><p>XML 响应编写器是 Solr 当前包含的最通用和可重用的响应编写器。这是大多数关于 Solr 查询响应的讨论和文档中使用的格式。<br>参数介绍：略</p>
+<h3 id="Solr的提交方式"><a href="#Solr的提交方式" class="headerlink" title="Solr的提交方式"></a>Solr的提交方式</h3><p>Solr的提交方式有两种，标准提交（硬提交，hard commit）和软提交(soft commit)。</p>
+<h4 id="Hard-commit"><a href="#Hard-commit" class="headerlink" title="Hard commit"></a>Hard commit</h4><ul>
+<li>默认的提交即硬提交，commit之后会立刻将文档同步到硬盘，在开启新搜索器之前会阻塞，直到同步完成。</li>
+<li>默认情况下commit后会开启一个新搜索器（newSearcher），然后进行预热，预热完成后顶替旧搜索器，使旧缓存失效，但是开启新searcher及预热的过程（IO消耗）耗费资源过大，且可能被阻塞，所以应尽量避免在高峰期开启newsearcher,搜索器同一时间只能有一个处于active状态。</li>
+<li>为了避免频繁commit，solr提供了autocommit功能，可以设置每隔多久提交一次，或者待提交文档量达到阀值提交一次，并且可定义是否在提交后开启新的搜索器，若不开启，则缓存不能够被刷新，新更新文档不能够被实时读取到。<br><img src="/images/solr1/solr1-34.png" alt></li>
+</ul>
+<h4 id="Soft-commit"><a href="#Soft-commit" class="headerlink" title="Soft commit"></a>Soft commit</h4><ul>
+<li>软提交是将文档提交到内存，并不实时写入硬盘，减少了耗时的I/O操作。</li>
+<li>为了保证实时搜索，solr在软提交基础上引入了近实时搜索（NRT），NRT并不会被文档更新所阻塞，也不会等待文档合并完成再打开一个搜索器。</li>
+<li>在lucene4.x 之前，solr采用NRTManager实现NRT,之后使用ControlledRealTimeReopenThread实现，它通过IndexWriter对象来监控内存中的文档变化，从而得到最新的文档信息，该过程既不需要高耗时的I/O操作，也不需要刷新搜索器，所以非常之快，耗费资源很少。</li>
+<li>所以近实时搜索（NRT）是软提交的一个特性。</li>
+<li>同样的软提交也支持自动提交的方式，配置如下：<br><img src="/images/solr1/solr1-35.png" alt></li>
+</ul>
+<h4 id="结合优化"><a href="#结合优化" class="headerlink" title="结合优化"></a>结合优化</h4><p>上述两种提交方式并不冲突，试想我们程序使用了软提交，但何时可以把数据真正同步到磁盘呢？这时候就可以两者结合达到目的。我们设置每隔5000ms进行一次软提交，文档存入了内存，也可以实时搜索，然后每隔300000ms又会进行进行一次硬提交，同步到磁盘，无需刷新Searcher，如此两者兼顾。在配置文件中配置后，在客户端就不需要维护提交方式和提交时间了。<br><img src="/images/solr1/solr1-36.png" alt></p>
+<h3 id="导出Solr结果集"><a href="#导出Solr结果集" class="headerlink" title="导出Solr结果集"></a>导出Solr结果集</h3><h4 id="介绍-1"><a href="#介绍-1" class="headerlink" title="介绍"></a>介绍</h4><ul>
+<li>可以使用特殊的秩查询解析器和响应编写器来导出完全排序的结果集，这种解析器和响应编写器专门设计用于处理涉及排序和导出数百万条记录的场景。</li>
+<li>此功能使用 stream 排序技术，在毫秒内开始发送记录，并继续对结果进行 stream 处理，直到整个结果集被排序并且导出为止。</li>
+<li>此功能可能有用的情况包括：会话分析、分布式合并联接、时间序列汇总、高基数字段上的聚合、完全分布式字段合并和基于排序的统计信息。</li>
+</ul>
+<h4 id="请求结果导出"><a href="#请求结果导出" class="headerlink" title="请求结果导出"></a>请求结果导出</h4><ul>
+<li>可以使用 /export 来请求导出查询的结果集。</li>
+<li>所有查询都必须包括 sort 和 fl 参数，否则查询将返回一个错误。过滤器查询也被支持。</li>
+<li>受支持的响应编写器是 json 和 javabin。由于向后兼容性的原因，wt=xsort也被支持作为输入，但是 wt=xsort 与 wt=json 的行为相同。默认的输出格式是 json。<br>  示例：  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://localhost:8983/solr/core_name/export?q=my-query&amp;sort=severity+desc,timestamp+desc&amp;fl=severity,timestamp,msg</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="SolrJ"><a href="#SolrJ" class="headerlink" title="SolrJ"></a>SolrJ</h2><p>solrj是访问Solr服务的java客户端，提供索引和搜索的请求方法，SolrJ通常嵌入在业务系统中，通过SolrJ的API接口操作Solr服务，如下图：<br><img src="/images/solr1/solr1-37.png" alt><br>demo代码：详见cfa-tagging项目的SolrJTest.java。</p>
+<ul>
+<li><p>SolrTag类定义如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//忽略未匹配到的字段</span></span><br><span class="line"><span class="meta">@JsonIgnoreProperties</span>(ignoreUnknown = <span class="keyword">true</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SolrTag</span> </span>&#123;</span><br><span class="line">    <span class="comment">// solr查询若直接将数据转为对象，需要指定Field，该值需要和managed-schema配置Field的name一致</span></span><br><span class="line">    <span class="meta">@Field</span>(<span class="string">"leId"</span>)</span><br><span class="line">    <span class="keyword">private</span> Integer leId;</span><br><span class="line">    <span class="meta">@Field</span>(<span class="string">"enterpriseName"</span>)</span><br><span class="line">    <span class="keyword">private</span> String enterpriseName;</span><br><span class="line">    <span class="meta">@Field</span>(<span class="string">"enterpriseAttr"</span>)</span><br><span class="line">    <span class="keyword">private</span> String enterpriseAttr;</span><br><span class="line">    <span class="meta">@Field</span>(<span class="string">"enterpriseValue"</span>)</span><br><span class="line">    <span class="keyword">private</span> String enterpriseValue;</span><br><span class="line">    <span class="meta">@Field</span>(<span class="string">"valueValue"</span>)</span><br><span class="line">    <span class="keyword">private</span> String valueValue;</span><br><span class="line"> </span><br><span class="line">    <span class="function"><span class="keyword">public</span> Integer <span class="title">getLeId</span><span class="params">()</span> </span>&#123;</span><br><span class="line"> <span class="keyword">return</span> leId;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setLeId</span><span class="params">(Integer leId)</span> </span>&#123;</span><br><span class="line"> <span class="keyword">this</span>.leId = leId;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getEnterpriseName</span><span class="params">()</span> </span>&#123;</span><br><span class="line"> <span class="keyword">return</span> enterpriseName;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setEnterpriseName</span><span class="params">(String enterpriseName)</span> </span>&#123;</span><br><span class="line"> <span class="keyword">this</span>.enterpriseName = enterpriseName;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getEnterpriseAttr</span><span class="params">()</span> </span>&#123;</span><br><span class="line"> <span class="keyword">return</span> enterpriseAttr;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setEnterpriseAttr</span><span class="params">(String enterpriseAttr)</span> </span>&#123;</span><br><span class="line"> <span class="keyword">this</span>.enterpriseAttr = enterpriseAttr;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getEnterpriseValue</span><span class="params">()</span> </span>&#123;</span><br><span class="line"> <span class="keyword">return</span> enterpriseValue;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setEnterpriseValue</span><span class="params">(String enterpriseValue)</span> </span>&#123;</span><br><span class="line"> <span class="keyword">this</span>.enterpriseValue = enterpriseValue;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getValueValue</span><span class="params">()</span> </span>&#123;</span><br><span class="line"> <span class="keyword">return</span> valueValue;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setValueValue</span><span class="params">(String valueValue)</span> </span>&#123;</span><br><span class="line"> <span class="keyword">this</span>.valueValue = valueValue;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span> </span>&#123;</span><br><span class="line"> <span class="keyword">return</span> <span class="string">"SolrTag [leId="</span> + leId + <span class="string">", enterpriseName="</span> + enterpriseName + <span class="string">", enterpriseAttr="</span> + enterpriseAttr</span><br><span class="line">   + <span class="string">", enterpriseValue="</span> + enterpriseValue + <span class="string">", valueValue="</span> + valueValue + <span class="string">"]"</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>SolrJTest单元测试类定义如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br><span class="line">300</span><br><span class="line">301</span><br><span class="line">302</span><br><span class="line">303</span><br><span class="line">304</span><br><span class="line">305</span><br><span class="line">306</span><br><span class="line">307</span><br><span class="line">308</span><br><span class="line">309</span><br><span class="line">310</span><br><span class="line">311</span><br><span class="line">312</span><br><span class="line">313</span><br><span class="line">314</span><br><span class="line">315</span><br><span class="line">316</span><br><span class="line">317</span><br><span class="line">318</span><br><span class="line">319</span><br><span class="line">320</span><br><span class="line">321</span><br><span class="line">322</span><br><span class="line">323</span><br><span class="line">324</span><br><span class="line">325</span><br><span class="line">326</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* Description : SolrJ CRUD操作的单元测试类</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="meta">@RunWith</span>(SpringRunner<span class="class">.<span class="keyword">class</span>)</span></span><br><span class="line"><span class="class">@<span class="title">SpringBootTest</span></span></span><br><span class="line"><span class="class">@<span class="title">WebAppConfiguration</span></span></span><br><span class="line"><span class="class"><span class="title">public</span> <span class="title">class</span> <span class="title">SolrJTest</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    SolrTagMapper solrTagMapper;</span><br><span class="line">    <span class="keyword">private</span> SolrClient solrClient;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 初始化SolrClient</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">    <span class="meta">@Before</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setUp</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line"> String solrUrl = <span class="string">"http://localhost:8983/solr/c4c_tag"</span>;</span><br><span class="line"> solrClient = <span class="keyword">new</span> HttpSolrClient.Builder(solrUrl).build();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 查询所有字段</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">queryFields</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line"> SchemaRequest.Fields queryFields = <span class="keyword">new</span> SchemaRequest.Fields();</span><br><span class="line"> NamedList&lt;Object&gt; existFields = solrClient.request(queryFields);</span><br><span class="line"> Iterator&lt;Entry&lt;String, Object&gt;&gt; iter = existFields.iterator();</span><br><span class="line"> <span class="keyword">while</span> (iter.hasNext()) &#123;</span><br><span class="line">    Entry&lt;String, Object&gt; next = iter.next();</span><br><span class="line">    System.out.println(next.getKey() + <span class="string">":"</span> + next.getValue());</span><br><span class="line"> &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 添加字段，包括字段的名称、类型、是否存储，是否索引等</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">addFields</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line"> List&lt;Map&lt;String, Object&gt;&gt; fieldAttributesList = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line"> Map&lt;String, Object&gt; fieldAttributes = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line"> <span class="comment">// 域名</span></span><br><span class="line"> fieldAttributes.put(<span class="string">"name"</span>, <span class="string">"leId"</span>);</span><br><span class="line"> <span class="comment">// 域的类型，可以是string，pint，如果需要分词设为text_ik</span></span><br><span class="line"> fieldAttributes.put(<span class="string">"type"</span>, <span class="string">"pint"</span>);</span><br><span class="line"> <span class="comment">// 是否索引，默认为true</span></span><br><span class="line"> fieldAttributes.put(<span class="string">"indexed"</span>, <span class="keyword">true</span>);</span><br><span class="line"> <span class="comment">// 是否存储，默认为true</span></span><br><span class="line"> fieldAttributes.put(<span class="string">"stored"</span>, <span class="keyword">true</span>);</span><br><span class="line"> <span class="comment">// 是否多值，默认为false</span></span><br><span class="line"> fieldAttributes.put(<span class="string">"multiValued"</span>, <span class="keyword">false</span>);</span><br><span class="line"> <span class="comment">// 是否必须，默认false，schema文件中有一个id已默认必须</span></span><br><span class="line"> fieldAttributes.put(<span class="string">"required"</span>, <span class="keyword">false</span>);</span><br><span class="line"> fieldAttributesList.add(fieldAttributes);</span><br><span class="line"> fieldAttributes = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line"> fieldAttributes.put(<span class="string">"name"</span>, <span class="string">"enterpriseName"</span>);</span><br><span class="line"> fieldAttributes.put(<span class="string">"type"</span>, <span class="string">"string"</span>);</span><br><span class="line"> fieldAttributes.put(<span class="string">"indexed"</span>, <span class="keyword">true</span>);</span><br><span class="line"> fieldAttributes.put(<span class="string">"stored"</span>, <span class="keyword">true</span>);</span><br><span class="line"> fieldAttributes.put(<span class="string">"multiValued"</span>, <span class="keyword">false</span>);</span><br><span class="line"> fieldAttributes.put(<span class="string">"required"</span>, <span class="keyword">false</span>);</span><br><span class="line"> fieldAttributesList.add(fieldAttributes);</span><br><span class="line"> fieldAttributes = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line"> fieldAttributes.put(<span class="string">"name"</span>, <span class="string">"enterpriseAttr"</span>);</span><br><span class="line"> fieldAttributes.put(<span class="string">"type"</span>, <span class="string">"string"</span>);</span><br><span class="line"> fieldAttributes.put(<span class="string">"indexed"</span>, <span class="keyword">true</span>);</span><br><span class="line"> fieldAttributes.put(<span class="string">"stored"</span>, <span class="keyword">true</span>);</span><br><span class="line"> fieldAttributes.put(<span class="string">"multiValued"</span>, <span class="keyword">false</span>);</span><br><span class="line"> fieldAttributes.put(<span class="string">"required"</span>, <span class="keyword">false</span>);</span><br><span class="line"> fieldAttributesList.add(fieldAttributes);</span><br><span class="line"> fieldAttributes = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line"> fieldAttributes.put(<span class="string">"name"</span>, <span class="string">"enterpriseValue"</span>);</span><br><span class="line"> fieldAttributes.put(<span class="string">"type"</span>, <span class="string">"string"</span>);</span><br><span class="line"> fieldAttributes.put(<span class="string">"indexed"</span>, <span class="keyword">true</span>);</span><br><span class="line"> fieldAttributes.put(<span class="string">"stored"</span>, <span class="keyword">true</span>);</span><br><span class="line"> fieldAttributes.put(<span class="string">"multiValued"</span>, <span class="keyword">false</span>);</span><br><span class="line"> fieldAttributes.put(<span class="string">"required"</span>, <span class="keyword">false</span>);</span><br><span class="line"> fieldAttributesList.add(fieldAttributes);</span><br><span class="line"> fieldAttributes = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line"> fieldAttributes.put(<span class="string">"name"</span>, <span class="string">"valueValue"</span>);</span><br><span class="line"> fieldAttributes.put(<span class="string">"type"</span>, <span class="string">"string"</span>);</span><br><span class="line"> fieldAttributes.put(<span class="string">"indexed"</span>, <span class="keyword">true</span>);</span><br><span class="line"> fieldAttributes.put(<span class="string">"stored"</span>, <span class="keyword">true</span>);</span><br><span class="line"> fieldAttributes.put(<span class="string">"multiValued"</span>, <span class="keyword">false</span>);</span><br><span class="line"> fieldAttributes.put(<span class="string">"required"</span>, <span class="keyword">false</span>);</span><br><span class="line"> fieldAttributesList.add(fieldAttributes);</span><br><span class="line"> SchemaRequest.AddField addField = <span class="keyword">null</span>;</span><br><span class="line"> <span class="keyword">for</span> (Map&lt;String, Object&gt; map : fieldAttributesList) &#123;</span><br><span class="line">    addField = <span class="keyword">new</span> SchemaRequest.AddField(map);</span><br><span class="line">    solrClient.request(addField);</span><br><span class="line"> &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 添加字段，包括字段的名称、类型、是否存储，是否索引等</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">deleteField</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line"> SchemaRequest.DeleteField delField = <span class="keyword">new</span> SchemaRequest.DeleteField(<span class="string">"delField"</span>);</span><br><span class="line"> solrClient.request(delField);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 通过对象添加单条数据，若添加时id已存在，那么solr会执行修改操作</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">addBean</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line"> SolrTag tag = <span class="keyword">new</span> SolrTag();</span><br><span class="line"> tag.setLeId(<span class="number">1</span>);</span><br><span class="line"> tag.setEnterpriseName(<span class="string">"国企"</span>);</span><br><span class="line"> tag.setEnterpriseAttr(<span class="string">"2-5 年"</span>);</span><br><span class="line"> tag.setEnterpriseValue(<span class="string">"AA有限公司"</span>);</span><br><span class="line"> tag.setValueValue(<span class="string">"IT行业"</span>);</span><br><span class="line"> solrClient.addBean(tag);</span><br><span class="line"> solrClient.commit();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 批量添加</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">addBeans</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line"> <span class="comment">// 从数据库查出所有的记录</span></span><br><span class="line"> List&lt;SolrTag&gt; solrTags = solrTagMapper.listAll();</span><br><span class="line"> <span class="comment">// 添加</span></span><br><span class="line"> solrClient.addBeans(solrTags);</span><br><span class="line"> solrClient.commit();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 通过document添加单条数据</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">addDocument</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line"> SolrInputDocument document = <span class="keyword">new</span> SolrInputDocument();</span><br><span class="line"> document.addField(<span class="string">"leId"</span>, <span class="number">2</span>);</span><br><span class="line"> document.addField(<span class="string">"enterpriseName"</span>, <span class="string">"国企"</span>);</span><br><span class="line"> document.addField(<span class="string">"enterpriseAttr"</span>, <span class="string">"3年以上"</span>);</span><br><span class="line"> document.addField(<span class="string">"enterpriseValue"</span>, <span class="string">"BB有限公司"</span>);</span><br><span class="line"> document.addField(<span class="string">"valueValue"</span>, <span class="string">"IT行业"</span>);</span><br><span class="line"> solrClient.add(document);</span><br><span class="line"> solrClient.commit();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 两种删除方式</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">deleteById</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line"> <span class="comment">// 方式一：根据id删除</span></span><br><span class="line"><span class="comment">//  solrClient.deleteById(id);</span></span><br><span class="line"> <span class="comment">// 方式二：根据查询结构删除</span></span><br><span class="line"> solrClient.deleteByQuery(<span class="string">"enterpriseName:国企"</span>);</span><br><span class="line"> solrClient.commit();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 查询所有/select?q=*:*</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">queryAll</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line"> <span class="comment">// 构造搜索条件</span></span><br><span class="line"> SolrQuery solrQuery = <span class="keyword">new</span> SolrQuery();</span><br><span class="line"> <span class="comment">// 设置搜索关键词</span></span><br><span class="line"> solrQuery.setQuery(<span class="string">"*:*"</span>);</span><br><span class="line"> <span class="comment">// 执行查询</span></span><br><span class="line"> QueryResponse response = solrClient.query(solrQuery);</span><br><span class="line"> <span class="comment">// 获取查询结果</span></span><br><span class="line"> List&lt;SolrTag&gt; solrTags = response.getBeans(SolrTag<span class="class">.<span class="keyword">class</span>)</span>;</span><br><span class="line"> <span class="comment">// 打印匹配总数</span></span><br><span class="line"> System.out.println(<span class="string">"匹配总数为："</span> + response.getResults().getNumFound());</span><br><span class="line"> <span class="comment">// 打印搜索结果</span></span><br><span class="line"> <span class="keyword">for</span> (SolrTag solrTag : solrTags) &#123;</span><br><span class="line">    System.out.println(solrTag);</span><br><span class="line"> &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 限定返回字段/select?q=*:*&amp;fl=param1,param2</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">queryFl</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line"> <span class="comment">// 构造搜索条件</span></span><br><span class="line"> SolrQuery solrQuery = <span class="keyword">new</span> SolrQuery();</span><br><span class="line"> <span class="comment">// 设置搜索关键词</span></span><br><span class="line"> solrQuery.setQuery(<span class="string">"*:*"</span>);</span><br><span class="line"> <span class="comment">// 设置限定返回字段</span></span><br><span class="line"> solrQuery.setFields(<span class="string">"leId"</span>, <span class="string">"enterpriseName"</span>, <span class="string">"enterpriseAttr"</span>);</span><br><span class="line"> <span class="comment">// 执行查询</span></span><br><span class="line"> QueryResponse response = solrClient.query(solrQuery);</span><br><span class="line"> <span class="comment">// 获取查询结果</span></span><br><span class="line"> List&lt;SolrTag&gt; solrTags = response.getBeans(SolrTag<span class="class">.<span class="keyword">class</span>)</span>;</span><br><span class="line"> <span class="comment">// 打印匹配总数</span></span><br><span class="line"> System.out.println(<span class="string">"匹配总数为："</span> + response.getResults().getNumFound());</span><br><span class="line"> <span class="comment">// 打印搜索结果</span></span><br><span class="line"> <span class="keyword">for</span> (SolrTag solrTag : solrTags) &#123;</span><br><span class="line">    System.out.println(solrTag);</span><br><span class="line"> &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 分页/select?q=*:*&amp;rows=5&amp;start=0</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">queryPage</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line"> <span class="comment">// 构造搜索条件</span></span><br><span class="line"> SolrQuery solrQuery = <span class="keyword">new</span> SolrQuery();</span><br><span class="line"> <span class="comment">// 设置搜索关键词</span></span><br><span class="line"> solrQuery.setQuery(<span class="string">"*:*"</span>);</span><br><span class="line"> <span class="comment">// 设置分页信息</span></span><br><span class="line"> solrQuery.setStart(<span class="number">0</span>);</span><br><span class="line"> solrQuery.setRows(<span class="number">20</span>);</span><br><span class="line"> <span class="comment">// 执行查询</span></span><br><span class="line"> QueryResponse response = solrClient.query(solrQuery);</span><br><span class="line"> <span class="comment">// 获取查询结果</span></span><br><span class="line"> List&lt;SolrTag&gt; solrTags = response.getBeans(SolrTag<span class="class">.<span class="keyword">class</span>)</span>;</span><br><span class="line"> <span class="comment">// 打印匹配总数</span></span><br><span class="line"> System.out.println(<span class="string">"匹配总数为："</span> + response.getResults().getNumFound());</span><br><span class="line"> <span class="comment">// 打印搜索结果</span></span><br><span class="line"> <span class="keyword">for</span> (SolrTag solrTag : solrTags) &#123;</span><br><span class="line">    System.out.println(solrTag);</span><br><span class="line"> &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 增加限定条件/select?q=*:*&amp;fq=leId:&#123;70 TO *]&amp;fq=valueValue:公司</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">queryFq</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line"> <span class="comment">// 构造搜索条件</span></span><br><span class="line"> SolrQuery solrQuery = <span class="keyword">new</span> SolrQuery();</span><br><span class="line"> <span class="comment">// 设置搜索关键词</span></span><br><span class="line"> solrQuery.setQuery(<span class="string">"*:*"</span>);</span><br><span class="line"> <span class="comment">// 设置限定条件</span></span><br><span class="line"> solrQuery.setFilterQueries(<span class="string">"leId:&#123;70 TO *]"</span>, <span class="string">"valueValue:公司"</span>);</span><br><span class="line"> <span class="comment">// 执行查询</span></span><br><span class="line"> QueryResponse response = solrClient.query(solrQuery);</span><br><span class="line"> <span class="comment">// 获取查询结果</span></span><br><span class="line"> List&lt;SolrTag&gt; solrTags = response.getBeans(SolrTag<span class="class">.<span class="keyword">class</span>)</span>;</span><br><span class="line"> <span class="comment">// 打印匹配总数</span></span><br><span class="line"> System.out.println(<span class="string">"匹配总数为："</span> + response.getResults().getNumFound());</span><br><span class="line"> <span class="comment">// 打印搜索结果</span></span><br><span class="line"> <span class="keyword">for</span> (SolrTag solrTag : solrTags) &#123;</span><br><span class="line">    System.out.println(solrTag);</span><br><span class="line"> &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 使用函数,并设置别名/select?q=*:*&amp;fl:"leId", "alias:sum(leId,0.1)", "valueValue"</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">queryFunction</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line"> <span class="comment">// 构造搜索条件</span></span><br><span class="line"> SolrQuery solrQuery = <span class="keyword">new</span> SolrQuery();</span><br><span class="line"> <span class="comment">// 设置搜索关键词</span></span><br><span class="line"> solrQuery.setQuery(<span class="string">"*:*"</span>);</span><br><span class="line"> <span class="comment">// 将函数的结果作为伪字段,添加到查询结果中的文档</span></span><br><span class="line"> solrQuery.setFields(<span class="string">"leId"</span>, <span class="string">"alias:sum(leId,0.1)"</span>, <span class="string">"valueValue"</span>);</span><br><span class="line"> <span class="comment">// 执行查询</span></span><br><span class="line"> QueryResponse response = solrClient.query(solrQuery);</span><br><span class="line"> <span class="comment">// 获取查询结果</span></span><br><span class="line"> List&lt;SolrTag&gt; solrTags = response.getBeans(SolrTag<span class="class">.<span class="keyword">class</span>)</span>;</span><br><span class="line"> <span class="comment">// 打印匹配总数</span></span><br><span class="line"> System.out.println(<span class="string">"匹配总数为："</span> + response.getResults().getNumFound());</span><br><span class="line"> <span class="comment">// 打印搜索结果</span></span><br><span class="line"> <span class="keyword">for</span> (SolrTag solrTag : solrTags) &#123;</span><br><span class="line">    System.out.println(solrTag);</span><br><span class="line"> &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 添加排序/select?q=*:*&amp;sort:leId desc</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">querySort</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line"> <span class="comment">// 构造搜索条件</span></span><br><span class="line"> SolrQuery solrQuery = <span class="keyword">new</span> SolrQuery();</span><br><span class="line"> <span class="comment">// 设置搜索关键词</span></span><br><span class="line"> solrQuery.setQuery(<span class="string">"*:*"</span>);</span><br><span class="line"> <span class="comment">// 添加排序</span></span><br><span class="line"> solrQuery.setSort(<span class="string">"leId"</span>, SolrQuery.ORDER.desc);</span><br><span class="line"> <span class="comment">// 执行查询</span></span><br><span class="line"> QueryResponse response = solrClient.query(solrQuery);</span><br><span class="line"> <span class="comment">// 获取查询结果</span></span><br><span class="line"> List&lt;SolrTag&gt; solrTags = response.getBeans(SolrTag<span class="class">.<span class="keyword">class</span>)</span>;</span><br><span class="line"> <span class="comment">// 打印匹配总数</span></span><br><span class="line"> System.out.println(<span class="string">"匹配总数为："</span> + response.getResults().getNumFound());</span><br><span class="line"> <span class="comment">// 打印搜索结果</span></span><br><span class="line"> <span class="keyword">for</span> (SolrTag solrTag : solrTags) &#123;</span><br><span class="line">    System.out.println(solrTag);</span><br><span class="line"> &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 分组/select?q=*:*&amp;group.limit=20&amp;group.offset=0&amp;group.ngroups=true&amp;wt=javabin&amp;version=2&amp;group.field=enterpriseName&amp;group=true</span></span><br><span class="line"><span class="comment"> * group=true：设置开启分组查询 group.field=xx：设置分组字段 group.limit=20：设置分组后展示分组下数据量</span></span><br><span class="line"><span class="comment"> * group.ngroups=true：设置为true表示会返回分组的分组</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">queryGroup</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line"> <span class="comment">// 构造搜索条件</span></span><br><span class="line"> SolrQuery solrQuery = <span class="keyword">new</span> SolrQuery();</span><br><span class="line"> <span class="comment">// 设置搜索关键词</span></span><br><span class="line"> solrQuery.setQuery(<span class="string">"*:*"</span>);</span><br><span class="line"> <span class="comment">// 开启分组功能</span></span><br><span class="line"> solrQuery.set(GroupParams.GROUP, <span class="keyword">true</span>);</span><br><span class="line"> <span class="comment">// 按照enterpriseName分组</span></span><br><span class="line"> solrQuery.set(GroupParams.GROUP_FIELD, <span class="string">"enterpriseName"</span>);</span><br><span class="line"> <span class="comment">// 设置每个分组里从第几条数据开始返回，用于组内分页，这里不进行分页</span></span><br><span class="line"> solrQuery.set(GroupParams.GROUP_OFFSET, <span class="number">0</span>);</span><br><span class="line"> <span class="comment">// 设置每个分组最多返回几条数据</span></span><br><span class="line"> solrQuery.set(GroupParams.GROUP_LIMIT, <span class="number">20</span>);</span><br><span class="line"> <span class="comment">// 是否返回总的组数</span></span><br><span class="line"> solrQuery.set(GroupParams.GROUP_TOTAL_COUNT, <span class="keyword">true</span>);</span><br><span class="line"><span class="comment">//  //组内排序</span></span><br><span class="line"><span class="comment">//  solrQuery.set(GroupParams.GROUP_SORT,"filed asc");</span></span><br><span class="line"><span class="comment">//        //组间排序</span></span><br><span class="line"><span class="comment">//  solrQuery.set(CommonParams.SORT,"filed desc");</span></span><br><span class="line"> <span class="comment">// 执行查询</span></span><br><span class="line"> QueryResponse response = solrClient.query(solrQuery);</span><br><span class="line"> <span class="comment">// 获取查询结果列表</span></span><br><span class="line"> GroupResponse groupResponse = response.getGroupResponse();</span><br><span class="line"> <span class="comment">// 获取根据不同分组方式查询到的结果</span></span><br><span class="line"> List&lt;GroupCommand&gt; groupCommandList = groupResponse.getValues();</span><br><span class="line"> <span class="comment">// 由于这里只有一种分组策略，所以直接取第一个对象</span></span><br><span class="line"> GroupCommand groupCommand = groupCommandList.get(<span class="number">0</span>);</span><br><span class="line"> List&lt;Group&gt; groups = groupCommand.getValues();</span><br><span class="line"> <span class="comment">// 打印每个分组信息</span></span><br><span class="line"> SolrDocumentList list = <span class="keyword">null</span>;</span><br><span class="line"> <span class="keyword">for</span> (Group group : groups) &#123;</span><br><span class="line">    <span class="comment">// 获取每个分组内的数据</span></span><br><span class="line">    list = group.getResult();</span><br><span class="line">    System.out.println(<span class="string">"------------"</span>);</span><br><span class="line">    <span class="keyword">for</span> (SolrDocument solrDocument : list) &#123;</span><br><span class="line">   <span class="comment">// 方便演示，直接转换成json打印</span></span><br><span class="line">   String record = JSON.toJSONString(solrDocument);</span><br><span class="line">   System.out.println(record);</span><br><span class="line">    &#125;</span><br><span class="line"> &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h2><h3 id="以下内容属于Solr可选扩展功能："><a href="#以下内容属于Solr可选扩展功能：" class="headerlink" title="以下内容属于Solr可选扩展功能："></a>以下内容属于Solr可选扩展功能：</h3><ul>
+<li>身份验证插件</li>
+<li>hadoop</li>
+<li>授权插件</li>
+<li>签名证书SSL</li>
+<li>HDFS存储</li>
+<li>备份与还原</li>
+<li>……</li>
+</ul>
+<h3 id="以下内容属于集群SolrCloud的功能："><a href="#以下内容属于集群SolrCloud的功能：" class="headerlink" title="以下内容属于集群SolrCloud的功能："></a>以下内容属于集群SolrCloud的功能：</h3><ul>
+<li>SolrCloud介绍</li>
+<li>SolrCloud集群部署</li>
+<li>SolrCloud工作原理</li>
+<li>碎片、副本、索引数据</li>
+<li>分布式请求</li>
+<li>扩展与容错</li>
+<li>ZooKeeper搭建</li>
+<li>ZooKeeper控制访问</li>
+<li>ZooKeeper管理配置文件</li>
+<li>SolrCloud的Collections API</li>
+<li>流表达式</li>
+<li>并行SQL接口</li>
+<li>并行SQL体系结构的三个逻辑层组成。</li>
+<li>……</li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/images/blog-mobile.png" alt="dalaoyan wechat" style="width: 200px; max-width: 100%;">
+    <div>扫一扫，用手机访问本站</div>
+</div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+<blockquote class="blockquote-center" style="color: #ccc;">
+    -------------本文结束 <i class="fa fa-apple"></i> 感谢您的阅读-------------
+</blockquote>
+
+  <span id="inline-green" style="border-radius:3px;">作者</span>：<a class="link-blue" href="https://github.com/addonepiece" target="_blank">dalaoyan</a><br>有问题请 <a class="link-blue" href="https://addonepiece.github.io/guestbook" target="_blank">留言</a> 或者私信我的 <a class="link-blue" href="https://weibo.com/u/1889106977" target="_blank">微博</a>。
+
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>满分是10分的话，这篇文章你给几分</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/reward/reward_wechat.png" alt="dalaoyan WeChat Pay">
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/reward/reward_alipay.png" alt="dalaoyan Alipay">
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Java/" rel="tag"><i class="fa fa-tag"></i> Java</a>
+          
+            <a href="/tags/Solr/" rel="tag"><i class="fa fa-tag"></i> Solr</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/01/13/agile-scrum-values/" rel="next" title="敏捷-Scrum5大价值观">
+                <i class="fa fa-chevron-left"></i> 敏捷-Scrum5大价值观
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/07/15/Centos7installSolr-8-4-1/" rel="prev" title="Centos7上安装Solr-8.4.1">
+                Centos7上安装Solr-8.4.1 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript">
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/avatar/avatar.png" alt="dalaoyan">
+          <p class="site-author-name" itemprop="name">dalaoyan</p>
+          <p class="site-description motion-element" itemprop="description">你的行囊，是充实，还是丢弃？看你的！</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">52</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">19</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/addonepiece" target="_blank" title="Github">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  Github
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://addonepiece.github.io/" target="_blank" title="Blog">
+                  
+                    <i class="fa fa-fw fa-blog"></i>
+                  
+                  Blog
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+          <div class="cc-license motion-element" itemprop="license">
+            <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank">
+              <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons">
+            </a>
+          </div>
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              友情链接
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://fir.im/5u9j" title="淘宝优惠券app" target="_blank">淘宝优惠券app</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://addonepiece.github.io/about/" title="个人首页" target="_blank">个人首页</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="/weblog" title="建站日志" target="_blank">建站日志</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#初识Solr"><span class="nav-number">1.</span> <span class="nav-text">初识Solr</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#介绍"><span class="nav-number">1.1.</span> <span class="nav-text">介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#windows下安装Solr"><span class="nav-number">1.2.</span> <span class="nav-text">windows下安装Solr</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字段、字段类型等配置说明"><span class="nav-number">1.3.</span> <span class="nav-text">字段、字段类型等配置说明</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#字段定义"><span class="nav-number">1.3.1.</span> <span class="nav-text">字段定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字段类型定义"><span class="nav-number">1.3.2.</span> <span class="nav-text">字段类型定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Schema-API-操作managed-schema"><span class="nav-number">1.3.3.</span> <span class="nav-text">Schema API 操作managed-schema</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Solr分析器、标记器和过滤器"><span class="nav-number">1.4.</span> <span class="nav-text">Solr分析器、标记器和过滤器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#上传数据"><span class="nav-number">1.5.</span> <span class="nav-text">上传数据</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Solr-DataImportHandler来上传数据库数据"><span class="nav-number">1.5.1.</span> <span class="nav-text">Solr DataImportHandler来上传数据库数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTTP-请求到-Solr-服务器来上传-XML-文件"><span class="nav-number">1.5.2.</span> <span class="nav-text">HTTP 请求到 Solr 服务器来上传 XML 文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#编写自定义-Java-应用程序以通过-SolrJ来获取数据"><span class="nav-number">1.5.3.</span> <span class="nav-text">编写自定义 Java 应用程序以通过 SolrJ来获取数据</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Solr搜索"><span class="nav-number">1.6.</span> <span class="nav-text">Solr搜索</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Solr搜索的工作流程"><span class="nav-number">1.6.1.</span> <span class="nav-text">Solr搜索的工作流程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#通用查询参数"><span class="nav-number">1.6.2.</span> <span class="nav-text">通用查询参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查询解析器"><span class="nav-number">1.6.3.</span> <span class="nav-text">查询解析器</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#标准查询解析器"><span class="nav-number">1.6.3.1.</span> <span class="nav-text">标准查询解析器</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#参数"><span class="nav-number">1.6.3.1.1.</span> <span class="nav-text">参数</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#响应"><span class="nav-number">1.6.3.1.2.</span> <span class="nav-text">响应</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#指定标准查询分析器的条件"><span class="nav-number">1.6.3.1.3.</span> <span class="nav-text">指定标准查询分析器的条件</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#DisMax-查询解析器"><span class="nav-number">1.6.3.2.</span> <span class="nav-text">DisMax 查询解析器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#扩展的-DisMax-查询解析器：eDismax"><span class="nav-number">1.6.3.3.</span> <span class="nav-text">扩展的 DisMax 查询解析器：eDismax</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Solr的函数查询"><span class="nav-number">1.6.4.</span> <span class="nav-text">Solr的函数查询</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#使用Function-Query"><span class="nav-number">1.6.4.1.</span> <span class="nav-text">使用Function Query</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用Function-Query-1"><span class="nav-number">1.6.4.2.</span> <span class="nav-text">使用Function Query</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#响应编写器"><span class="nav-number">1.6.5.</span> <span class="nav-text">响应编写器</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#JSON响应编写器"><span class="nav-number">1.6.5.1.</span> <span class="nav-text">JSON响应编写器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#标准的XML响应编写器"><span class="nav-number">1.6.5.2.</span> <span class="nav-text">标准的XML响应编写器</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Solr的提交方式"><span class="nav-number">1.6.6.</span> <span class="nav-text">Solr的提交方式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Hard-commit"><span class="nav-number">1.6.6.1.</span> <span class="nav-text">Hard commit</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Soft-commit"><span class="nav-number">1.6.6.2.</span> <span class="nav-text">Soft commit</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#结合优化"><span class="nav-number">1.6.6.3.</span> <span class="nav-text">结合优化</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#导出Solr结果集"><span class="nav-number">1.6.7.</span> <span class="nav-text">导出Solr结果集</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#介绍-1"><span class="nav-number">1.6.7.1.</span> <span class="nav-text">介绍</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#请求结果导出"><span class="nav-number">1.6.7.2.</span> <span class="nav-text">请求结果导出</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SolrJ"><span class="nav-number">1.7.</span> <span class="nav-text">SolrJ</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其它"><span class="nav-number">1.8.</span> <span class="nav-text">其它</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#以下内容属于Solr可选扩展功能："><span class="nav-number">1.8.1.</span> <span class="nav-text">以下内容属于Solr可选扩展功能：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#以下内容属于集群SolrCloud的功能："><span class="nav-number">1.8.2.</span> <span class="nav-text">以下内容属于集群SolrCloud的功能：</span></a></li></ol></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+      
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        
+
+<div class="busuanzi-count">
+
+  <!-- <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script> -->
+  <!-- 上面这个是之前的，不知道为什么失效了，改成下面这个 -->
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">您是第<span class="busuanzi-value" id="busuanzi_value_site_uv"></span>个小伙伴</span>
+  
+
+  
+    <span class="site-pv">本站总浏览<span class="busuanzi-value" id="busuanzi_value_site_pv"></span>次</span>
+  
+  
+</div>
+
+
+
+        <div class="copyright">
+  
+  &copy;  2016 - 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">dalaoyan</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io" rel="external nofollow">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next" rel="external nofollow">
+    NexT.Pisces
+  </a>
+</div>
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count" style="color: #e90f92;">全站共 281k 字</span>
+</div>
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+       search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+    'use strict';
+    $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+            // get the contents from search data
+            isfetched = true;
+            $('.popup').detach().appendTo('.header-inner');
+            var datas = $( "entry", xmlResponse ).map(function() {
+                return {
+                    title: $( "title", this ).text(),
+                    content: $("content",this).text(),
+                    url: $( "url" , this).text()
+                };
+            }).get();
+            var $input = document.getElementById(search_id);
+            var $resultContent = document.getElementById(content_id);
+            $input.addEventListener('input', function(){
+                var matchcounts = 0;
+                var str='<ul class=\"search-result-list\">';
+                var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                $resultContent.innerHTML = "";
+                if (this.value.trim().length > 1) {
+                // perform local searching
+                datas.forEach(function(data) {
+                    var isMatch = true;
+                    var content_index = [];
+                    var data_title = data.title.trim().toLowerCase();
+                    var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                    var data_url = data.url;
+                    var index_title = -1;
+                    var index_content = -1;
+                    var first_occur = -1;
+                    // only match artiles with not empty titles and contents
+                    if(data_title != '' && data_content != '') {
+                        keywords.forEach(function(keyword, i) {
+                            index_title = data_title.indexOf(keyword);
+                            index_content = data_content.indexOf(keyword);
+                            if( index_title < 0 && index_content < 0 ){
+                                isMatch = false;
+                            } else {
+                                if (index_content < 0) {
+                                    index_content = 0;
+                                }
+                                if (i == 0) {
+                                    first_occur = index_content;
+                                }
+                            }
+                        });
+                    }
+                    // show search results
+                    if (isMatch) {
+                        matchcounts += 1;
+                        str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                        var content = data.content.trim().replace(/<[^>]+>/g,"");
+                        if (first_occur >= 0) {
+                            // cut out 100 characters
+                            var start = first_occur - 20;
+                            var end = first_occur + 80;
+                            if(start < 0){
+                                start = 0;
+                            }
+                            if(start == 0){
+                                end = 50;
+                            }
+                            if(end > content.length){
+                                end = content.length;
+                            }
+                            var match_content = content.substring(start, end);
+                            // highlight all keywords
+                            keywords.forEach(function(keyword){
+                                var regS = new RegExp(keyword, "gi");
+                                match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                            });
+
+                            str += "<p class=\"search-result\">" + match_content +"...</p>"
+                        }
+                        str += "</li>";
+                    }
+                })};
+                str += "</ul>";
+                if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+                if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+                $resultContent.innerHTML = str;
+            });
+            proceedsearch();
+        }
+    });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+  
+
+  
+
+  
+<script type="text/javascript" async src="//push.zhanzhang.baidu.com/push.js">
+</script>
+
+
+  <!-- 按需加载背景 -->
+  <!-- 背景动画 -->
+<script type="text/javascript">
+  // 按需加载背景
+  // 如果是all，就直接加载了
+  if("pc" == "all") {
+    $.getScript("/js/src/particle.js?v=5.0.1");
+  }
+  // 识别手机或电脑的js开始
+  (function(){
+    var res = GetRequest();
+    var par = res['index'];
+    if(par!='gfan'){
+      var ua=navigator.userAgent.toLowerCase();
+      var contains=function (a, b){
+          if(a.indexOf(b)!=-1){return true;}
+      };
+      if((contains(ua,"android") && contains(ua,"mobile"))||(contains(ua,"android") && contains(ua,"mozilla"))||(contains(ua,"android") && contains(ua,"opera"))||contains(ua,"ucweb7")||contains(ua,"iphone")){
+        return false;
+      } else {
+        $.getScript("/js/src/particle.js?v=5.0.1");
+      }
+    }
+  })();
+  function GetRequest() {
+    var url = location.search;
+    var theRequest = new Object();
+    if (url.indexOf("?") != -1) {
+      var str = url.substr(1);
+      strs = str.split("&");
+      for(var i = 0; i < strs.length; i ++) {
+        theRequest[strs[i].split("=")[0]]=unescape(strs[i].split("=")[1]);
+      }
+    }
+    return theRequest;
+  }
+</script>
+<!-- 识别手机或电脑的js结束 -->  
+
+  <!-- 页面点击小红心 -->
+  <!-- 页面点击小红心 -->
+
+  <script type="text/javascript" src="/js/src/love.js?v=5.0.1"></script>
+
+
+  <!-- 鼠标移动，效果 -->
+  <!-- 鼠标移动特效 -->
+
+  <script type="text/javascript" src="/js/src/jquery-stars.js?v=5.0.1"></script>
+  <script type="text/javascript">
+  jQuery('body').jstars({
+  	image_path: '/images',
+  	image: 'candy-cane-stars.png',
+  	style: 'white',
+  	width: 34,
+  	height: 34,
+  	delay: 700,
+  	frequency: 5
+  });
+  </script>
+
+
+  <!-- 页面 title 进入/离开 效果 -->
+
+  <script type="text/javascript">var OriginTitile=document.title,st;document.addEventListener("visibilitychange",function(){document.hidden?(document.title="≡[。。]≡ 回不去了吗？!",clearTimeout(st)):(document.title="(ฅ>ω<*ฅ) Thank Vue~ "+OriginTitile,st=setTimeout(function(){document.title=OriginTitile},4e3))})</script>
+
+
+</body>
+</html>
