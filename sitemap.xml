@@ -51,14 +51,14 @@
   </url>
   
   <url>
-    <loc>https://addonepiece.github.io/guestbook/index.html</loc>
+    <loc>https://addonepiece.github.io/example/index.html</loc>
     
     <lastmod>2020-09-14T03:32:46.306Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://addonepiece.github.io/example/index.html</loc>
+    <loc>https://addonepiece.github.io/guestbook/index.html</loc>
     
     <lastmod>2020-09-14T03:32:46.306Z</lastmod>
     
@@ -93,13 +93,6 @@
   </url>
   
   <url>
-    <loc>https://addonepiece.github.io/2018/06/18/vue-prerender/</loc>
-    
-    <lastmod>2020-09-14T03:32:46.304Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://addonepiece.github.io/2019/07/01/vue-element-change-theme/</loc>
     
     <lastmod>2020-09-14T03:32:46.304Z</lastmod>
@@ -114,7 +107,7 @@
   </url>
   
   <url>
-    <loc>https://addonepiece.github.io/2017/11/11/vue-sell/</loc>
+    <loc>https://addonepiece.github.io/2018/06/18/vue-prerender/</loc>
     
     <lastmod>2020-09-14T03:32:46.304Z</lastmod>
     
@@ -135,14 +128,14 @@
   </url>
   
   <url>
-    <loc>https://addonepiece.github.io/2017/06/08/service-worker/</loc>
+    <loc>https://addonepiece.github.io/2017/11/11/vue-sell/</loc>
     
-    <lastmod>2020-09-14T03:32:46.303Z</lastmod>
+    <lastmod>2020-09-14T03:32:46.304Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://addonepiece.github.io/2020/06/15/solr-one/</loc>
+    <loc>https://addonepiece.github.io/2017/06/08/service-worker/</loc>
     
     <lastmod>2020-09-14T03:32:46.303Z</lastmod>
     
@@ -156,21 +149,14 @@
   </url>
   
   <url>
+    <loc>https://addonepiece.github.io/2020/06/15/solr-one/</loc>
+    
+    <lastmod>2020-09-14T03:32:46.303Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://addonepiece.github.io/2017/02/28/memory-leak/</loc>
-    
-    <lastmod>2020-09-14T03:32:46.302Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://addonepiece.github.io/2017/05/20/npm-two/</loc>
-    
-    <lastmod>2020-09-14T03:32:46.302Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://addonepiece.github.io/2017/02/11/respond-js/</loc>
     
     <lastmod>2020-09-14T03:32:46.302Z</lastmod>
     
@@ -191,21 +177,28 @@
   </url>
   
   <url>
-    <loc>https://addonepiece.github.io/2019/05/01/js-exception-handing/</loc>
+    <loc>https://addonepiece.github.io/2017/05/20/npm-two/</loc>
     
-    <lastmod>2020-09-14T03:32:46.301Z</lastmod>
+    <lastmod>2020-09-14T03:32:46.302Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://addonepiece.github.io/2017/02/18/js-memory-management-and-gc/</loc>
+    <loc>https://addonepiece.github.io/2017/02/11/respond-js/</loc>
     
-    <lastmod>2020-09-14T03:32:46.301Z</lastmod>
+    <lastmod>2020-09-14T03:32:46.302Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://addonepiece.github.io/2020/08/24/javacodestandard/</loc>
+    
+    <lastmod>2020-09-14T03:32:46.301Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://addonepiece.github.io/2019/05/01/js-exception-handing/</loc>
     
     <lastmod>2020-09-14T03:32:46.301Z</lastmod>
     
@@ -219,14 +212,14 @@
   </url>
   
   <url>
-    <loc>https://addonepiece.github.io/2017/01/18/html5shiv/</loc>
+    <loc>https://addonepiece.github.io/2017/02/18/js-memory-management-and-gc/</loc>
     
-    <lastmod>2020-09-14T03:32:46.300Z</lastmod>
+    <lastmod>2020-09-14T03:32:46.301Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://addonepiece.github.io/2019/01/17/java-REST/</loc>
+    <loc>https://addonepiece.github.io/2017/01/18/html5shiv/</loc>
     
     <lastmod>2020-09-14T03:32:46.300Z</lastmod>
     
@@ -240,14 +233,21 @@
   </url>
   
   <url>
-    <loc>https://addonepiece.github.io/2017/10/20/java-maven/</loc>
+    <loc>https://addonepiece.github.io/2018/12/16/java-pattern-singleton/</loc>
     
     <lastmod>2020-09-14T03:32:46.300Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://addonepiece.github.io/2018/12/16/java-pattern-singleton/</loc>
+    <loc>https://addonepiece.github.io/2019/01/17/java-REST/</loc>
+    
+    <lastmod>2020-09-14T03:32:46.300Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://addonepiece.github.io/2017/10/20/java-maven/</loc>
     
     <lastmod>2020-09-14T03:32:46.300Z</lastmod>
     
@@ -257,13 +257,6 @@
     <loc>https://addonepiece.github.io/2019/12/24/java-restructure/</loc>
     
     <lastmod>2020-09-14T03:32:46.300Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://addonepiece.github.io/2016/12/15/hexo-next-four/</loc>
-    
-    <lastmod>2020-09-14T03:32:46.299Z</lastmod>
     
   </url>
   
@@ -289,6 +282,13 @@
   </url>
   
   <url>
+    <loc>https://addonepiece.github.io/2016/12/15/hexo-next-four/</loc>
+    
+    <lastmod>2020-09-14T03:32:46.299Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://addonepiece.github.io/2016/09/30/hexo-next-two/</loc>
     
     <lastmod>2020-09-14T03:32:46.299Z</lastmod>
@@ -296,14 +296,14 @@
   </url>
   
   <url>
-    <loc>https://addonepiece.github.io/2017/03/07/commonjs/</loc>
+    <loc>https://addonepiece.github.io/2017/06/25/css-hack/</loc>
     
     <lastmod>2020-09-14T03:32:46.298Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://addonepiece.github.io/2017/06/25/css-hack/</loc>
+    <loc>https://addonepiece.github.io/2017/03/07/commonjs/</loc>
     
     <lastmod>2020-09-14T03:32:46.298Z</lastmod>
     
@@ -324,14 +324,14 @@
   </url>
   
   <url>
-    <loc>https://addonepiece.github.io/2017/07/15/hexo-next-five/</loc>
+    <loc>https://addonepiece.github.io/2017/05/01/gulp/</loc>
     
     <lastmod>2020-09-14T03:32:46.298Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://addonepiece.github.io/2017/05/01/gulp/</loc>
+    <loc>https://addonepiece.github.io/2017/07/15/hexo-next-five/</loc>
     
     <lastmod>2020-09-14T03:32:46.298Z</lastmod>
     
@@ -359,14 +359,14 @@
   </url>
   
   <url>
-    <loc>https://addonepiece.github.io/2019/12/21/aigle-userStroies/</loc>
+    <loc>https://addonepiece.github.io/2017/03/20/amd-cmd/</loc>
     
     <lastmod>2020-09-14T03:32:46.297Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://addonepiece.github.io/2017/03/20/amd-cmd/</loc>
+    <loc>https://addonepiece.github.io/2019/12/21/aigle-userStroies/</loc>
     
     <lastmod>2020-09-14T03:32:46.297Z</lastmod>
     
@@ -380,13 +380,6 @@
   </url>
   
   <url>
-    <loc>https://addonepiece.github.io/2019/12/15/agile-protectTeam/</loc>
-    
-    <lastmod>2020-09-14T03:32:46.296Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://addonepiece.github.io/2019/12/13/Java-pattern-builder/</loc>
     
     <lastmod>2020-09-14T03:32:46.296Z</lastmod>
@@ -394,7 +387,7 @@
   </url>
   
   <url>
-    <loc>https://addonepiece.github.io/2019/12/14/agile-scrum-master/</loc>
+    <loc>https://addonepiece.github.io/2019/12/15/agile-protectTeam/</loc>
     
     <lastmod>2020-09-14T03:32:46.296Z</lastmod>
     
@@ -408,14 +401,21 @@
   </url>
   
   <url>
-    <loc>https://addonepiece.github.io/2020/07/15/Centos7installSolr-8-4-1/</loc>
+    <loc>https://addonepiece.github.io/2019/12/14/agile-scrum-master/</loc>
+    
+    <lastmod>2020-09-14T03:32:46.296Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://addonepiece.github.io/2017/12/12/Java-basicPrinciple/</loc>
     
     <lastmod>2020-09-14T03:32:46.295Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://addonepiece.github.io/2017/12/12/Java-basicPrinciple/</loc>
+    <loc>https://addonepiece.github.io/2020/07/15/Centos7installSolr-8-4-1/</loc>
     
     <lastmod>2020-09-14T03:32:46.295Z</lastmod>
     
